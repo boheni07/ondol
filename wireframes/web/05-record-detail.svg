@@ -1,0 +1,182 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- G-25 · ST-03 Detail / ST-02 List Split Pane · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">G-25 · ST-03 Record Detail (Split Pane 1024px+) · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- SIDEBAR -->
+  <rect width="240" height="900" fill="#F5F5F5"/>
+  <rect width="240" height="64" fill="#FFFFFF"/>
+  <line x1="0" y1="64" x2="240" y2="64" stroke="#E5E7EB"/>
+  <text x="24" y="42" font-family="Arial" font-size="18" font-weight="bold" fill="#3B7D8E">온돌</text>
+  <circle cx="32" cy="86" r="7" fill="#D1D5DB"/>
+  <text x="52" y="91" font-family="Arial" font-size="13" fill="#374151">홈</text>
+  <circle cx="32" cy="130" r="7" fill="#D1D5DB"/>
+  <text x="52" y="135" font-family="Arial" font-size="13" fill="#374151">타임라인</text>
+  <rect y="152" width="240" height="44" fill="#EEF4FD"/>
+  <rect y="152" width="3" height="44" fill="#3B7D8E"/>
+  <circle cx="32" cy="174" r="7" fill="#4377C0"/>
+  <text x="52" y="179" font-family="Arial" font-size="13" font-weight="bold" fill="#2E5FA8">기록 관리</text>
+  <circle cx="32" cy="218" r="7" fill="#D1D5DB"/>
+  <text x="52" y="223" font-family="Arial" font-size="13" fill="#374151">권한 관리</text>
+  <circle cx="32" cy="262" r="7" fill="#D1D5DB"/>
+  <text x="52" y="267" font-family="Arial" font-size="13" fill="#374151">접근 로그</text>
+  <circle cx="32" cy="306" r="7" fill="#D1D5DB"/>
+  <text x="52" y="311" font-family="Arial" font-size="13" fill="#374151">알림</text>
+  <line x1="16" y1="820" x2="224" y2="820" stroke="#E5E7EB"/>
+  <circle cx="32" cy="878" r="18" fill="#3B7D8E"/>
+  <text x="32" y="884" text-anchor="middle" font-family="Arial" font-size="12" fill="white">김</text>
+  <text x="58" y="874" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">김보호자</text>
+  <text x="58" y="888" font-family="Arial" font-size="11" fill="#6B7280">보호자</text>
+
+  <!-- HEADER -->
+  <rect x="240" width="1200" height="64" fill="#FFFFFF"/>
+  <line x1="240" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="272" y="30" font-family="Arial" font-size="11" fill="#9CA3AF">홈 / 기록 관리 / 의료 / 정기 진료 기록</text>
+  <text x="272" y="50" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">기록 상세</text>
+  <circle cx="1090" cy="32" r="18" fill="#F3F4F6"/>
+  <text x="1090" y="38" text-anchor="middle" font-family="Arial" font-size="15" fill="#374151">🔔</text>
+  <circle cx="1146" cy="32" r="20" fill="#3B7D8E"/>
+  <text x="1146" y="38" text-anchor="middle" font-family="Arial" font-size="13" fill="white">김</text>
+
+  <!-- SPLIT PANE LABEL -->
+  <line x1="700" y1="64" x2="700" y2="900" stroke="#E5E7EB"/>
+  <text x="460" y="80" text-anchor="middle" font-family="Arial" font-size="10" fill="#9CA3AF">LIST PANEL (460px)</text>
+  <text x="1070" y="80" text-anchor="middle" font-family="Arial" font-size="10" fill="#9CA3AF">DETAIL PANEL (740px)</text>
+
+  <!-- ═══ LEFT PANEL: List (x=240, w=460) ═══ -->
+  <!-- Filter row -->
+  <rect x="240" y="64" width="460" height="48" fill="#F9FAFB"/>
+  <line x1="240" y1="112" x2="700" y2="112" stroke="#E5E7EB"/>
+  <rect x="256" y="76" width="200" height="28" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="272" y="95" font-family="Arial" font-size="12" fill="#9CA3AF">🔍 검색...</text>
+  <rect x="468" y="76" width="80" height="28" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="488" y="95" font-family="Arial" font-size="12" fill="#374151">최신순 ▾</text>
+  <!-- List cards -->
+  <!-- Card selected -->
+  <rect x="240" y="112" width="460" height="80" fill="#EEF4FD"/>
+  <rect x="240" y="112" width="4" height="80" fill="#3B7D8E"/>
+  <line x1="240" y1="192" x2="700" y2="192" stroke="#E5E7EB"/>
+  <rect x="256" y="124" width="48" height="18" rx="9" fill="#FEF0F0"/>
+  <text x="280" y="137" text-anchor="middle" font-family="Arial" font-size="10" fill="#BF3030">의료</text>
+  <text x="312" y="135" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">정기 진료 기록</text>
+  <text x="680" y="135" text-anchor="end" font-family="Arial" font-size="11" fill="#6B7280">오늘</text>
+  <text x="256" y="155" font-family="Arial" font-size="12" fill="#6B7280">서울대학교병원 소아청소년과</text>
+  <circle cx="268" cy="178" r="9" fill="#3B7D8E"/>
+  <text x="268" y="183" text-anchor="middle" font-family="Arial" font-size="8" fill="white">김</text>
+  <text x="282" y="182" font-family="Arial" font-size="11" fill="#374151">김치료사</text>
+
+  <!-- Card 2 -->
+  <rect x="240" y="192" width="460" height="72" fill="#FFFFFF"/>
+  <line x1="240" y1="264" x2="700" y2="264" stroke="#E5E7EB"/>
+  <rect x="256" y="204" width="48" height="18" rx="9" fill="#FEF0F0"/>
+  <text x="280" y="217" text-anchor="middle" font-family="Arial" font-size="10" fill="#BF3030">의료</text>
+  <text x="312" y="215" font-family="Arial" font-size="13" fill="#374151">복약 기록 — 리스페리돈</text>
+  <text x="680" y="215" text-anchor="end" font-family="Arial" font-size="11" fill="#6B7280">06.10</text>
+  <text x="256" y="248" font-family="Arial" font-size="12" fill="#9CA3AF">경구 투여 · 부작용 없음</text>
+
+  <!-- Card 3 draft -->
+  <rect x="240" y="264" width="460" height="72" fill="#FFFFFF"/>
+  <line x1="240" y1="336" x2="700" y2="336" stroke="#E5E7EB"/>
+  <rect x="256" y="276" width="48" height="18" rx="9" fill="#FEF0F0"/>
+  <text x="280" y="289" text-anchor="middle" font-family="Arial" font-size="10" fill="#BF3030">의료</text>
+  <rect x="312" y="276" width="48" height="18" rx="9" fill="#F3F4F6"/>
+  <text x="336" y="289" text-anchor="middle" font-family="Arial" font-size="10" fill="#9CA3AF">임시저장</text>
+  <text x="368" y="287" font-family="Arial" font-size="13" fill="#9CA3AF">치료 평가 보고서</text>
+  <text x="680" y="287" text-anchor="end" font-family="Arial" font-size="11" fill="#9CA3AF">06.09</text>
+  <text x="256" y="322" font-family="Arial" font-size="12" fill="#9CA3AF">작성 중...</text>
+
+  <!-- Card 4 -->
+  <rect x="240" y="336" width="460" height="72" fill="#FFFFFF"/>
+  <line x1="240" y1="408" x2="700" y2="408" stroke="#E5E7EB"/>
+  <rect x="256" y="348" width="48" height="18" rx="9" fill="#FEF0F0"/>
+  <text x="280" y="361" text-anchor="middle" font-family="Arial" font-size="10" fill="#BF3030">의료</text>
+  <rect x="312" y="348" width="48" height="18" rx="9" fill="#FFF8F4"/>
+  <text x="336" y="361" text-anchor="middle" font-family="Arial" font-size="10" fill="#E8724A">이정표</text>
+  <text x="368" y="359" font-family="Arial" font-size="13" fill="#374151">입원 치료 기록</text>
+  <text x="680" y="359" text-anchor="end" font-family="Arial" font-size="11" fill="#6B7280">05.20</text>
+  <text x="256" y="394" font-family="Arial" font-size="12" fill="#9CA3AF">서울대학교병원 2박 3일</text>
+
+  <!-- Card 5 -->
+  <rect x="240" y="408" width="460" height="64" fill="#FFFFFF"/>
+  <line x1="240" y1="472" x2="700" y2="472" stroke="#E5E7EB"/>
+  <rect x="256" y="420" width="48" height="18" rx="9" fill="#FEF0F0"/>
+  <text x="280" y="433" text-anchor="middle" font-family="Arial" font-size="10" fill="#BF3030">의료</text>
+  <text x="312" y="431" font-family="Arial" font-size="13" fill="#374151">예방접종 — 독감</text>
+  <text x="680" y="431" text-anchor="end" font-family="Arial" font-size="11" fill="#6B7280">04.15</text>
+
+  <!-- ═══ RIGHT PANEL: Detail (x=700, w=740) ═══ -->
+  <rect x="700" y="64" width="740" height="836" fill="#FFFFFF"/>
+
+  <!-- Detail header -->
+  <rect x="700" y="64" width="740" height="56" fill="#FFFFFF"/>
+  <line x1="700" y1="120" x2="1440" y2="120" stroke="#E5E7EB"/>
+  <rect x="720" y="76" width="56" height="24" rx="12" fill="#FEF0F0"/>
+  <text x="748" y="92" text-anchor="middle" font-family="Arial" font-size="11" fill="#BF3030">의료</text>
+  <text x="784" y="92" font-family="Arial" font-size="12" fill="#6B7280">MED-003 정기 외래진료 기록</text>
+  <!-- Action buttons -->
+  <rect x="1280" y="74" width="60" height="28" rx="6" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="1310" y="93" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">수정</text>
+  <rect x="1352" y="74" width="60" height="28" rx="6" fill="#FEF0F0" stroke="#E04545"/>
+  <text x="1382" y="93" text-anchor="middle" font-family="Arial" font-size="12" fill="#BF3030">삭제</text>
+
+  <!-- Title -->
+  <text x="720" y="155" font-family="Arial" font-size="22" font-weight="bold" fill="#111827">정기 진료 기록 — 서울대학교병원 소아청소년과</text>
+
+  <!-- Meta info row -->
+  <text x="720" y="183" font-family="Arial" font-size="12" fill="#6B7280">2026년 6월 12일 (오늘) · </text>
+  <circle cx="910" cy="178" r="10" fill="#3B7D8E"/>
+  <text x="910" y="183" text-anchor="middle" font-family="Arial" font-size="8" fill="white">김</text>
+  <text x="926" y="183" font-family="Arial" font-size="12" fill="#374151">김치료사</text>
+  <rect x="1020" y="172" width="56" height="20" rx="10" fill="#EDFAF3"/>
+  <text x="1048" y="186" text-anchor="middle" font-family="Arial" font-size="10" fill="#276B4C">아동기</text>
+  <rect x="1084" y="172" width="56" height="20" rx="10" fill="#FFF8F4"/>
+  <text x="1112" y="186" text-anchor="middle" font-family="Arial" font-size="10" fill="#E8724A">이정표</text>
+
+  <line x1="720" y1="200" x2="1420" y2="200" stroke="#E5E7EB"/>
+
+  <!-- Summary for person -->
+  <rect x="720" y="212" width="700" height="60" rx="8" fill="#F0F8FA"/>
+  <text x="736" y="232" font-family="Arial" font-size="12" font-weight="bold" fill="#3B7D8E">당사자용 요약</text>
+  <text x="736" y="252" font-family="Arial" font-size="12" fill="#374151">오늘 병원에 갔어요. 의사선생님이 건강하다고 했어요. 다음에 또 와요.</text>
+
+  <!-- Content sections -->
+  <text x="720" y="298" font-family="Arial" font-size="14" font-weight="bold" fill="#374151">진료 정보</text>
+  <line x1="720" y1="306" x2="1420" y2="306" stroke="#E5E7EB"/>
+  <!-- Fields 2-column -->
+  <text x="720" y="328" font-family="Arial" font-size="12" fill="#9CA3AF">진료 기관</text>
+  <text x="880" y="328" font-family="Arial" font-size="12" fill="#374151">서울대학교병원 소아청소년과</text>
+  <text x="720" y="352" font-family="Arial" font-size="12" fill="#9CA3AF">담당 의사</text>
+  <text x="880" y="352" font-family="Arial" font-size="12" fill="#374151">박소아 전문의</text>
+  <text x="720" y="376" font-family="Arial" font-size="12" fill="#9CA3AF">진료 유형</text>
+  <text x="880" y="376" font-family="Arial" font-size="12" fill="#374151">정기 외래진료</text>
+  <text x="1080" y="328" font-family="Arial" font-size="12" fill="#9CA3AF">다음 예약</text>
+  <text x="1200" y="328" font-family="Arial" font-size="12" fill="#374151">2026.09.12</text>
+  <text x="1080" y="352" font-family="Arial" font-size="12" fill="#9CA3AF">진료비</text>
+  <text x="1200" y="352" font-family="Arial" font-size="12" fill="#374151">15,000원 (감면)</text>
+
+  <text x="720" y="412" font-family="Arial" font-size="14" font-weight="bold" fill="#374151">진료 내용</text>
+  <line x1="720" y1="420" x2="1420" y2="420" stroke="#E5E7EB"/>
+  <rect x="720" y="430" width="700" height="80" rx="8" fill="#F9FAFB"/>
+  <text x="736" y="450" font-family="Arial" font-size="12" fill="#374151">정기 외래진료. 전반적인 건강 상태 확인. 상동행동 빈도 소폭 감소 확인.</text>
+  <text x="736" y="468" font-family="Arial" font-size="12" fill="#374151">현재 복약(리스페리돈 0.5mg) 유지 결정. 감각처리 훈련 추천.</text>
+
+  <text x="720" y="540" font-family="Arial" font-size="14" font-weight="bold" fill="#374151">처방 및 용약</text>
+  <line x1="720" y1="548" x2="1420" y2="548" stroke="#E5E7EB"/>
+  <text x="720" y="568" font-family="Arial" font-size="12" fill="#374151">리스페리돈 0.5mg — 1일 1회 · 30일분</text>
+
+  <!-- Attachments section -->
+  <text x="720" y="612" font-family="Arial" font-size="14" font-weight="bold" fill="#374151">첨부파일 (2)</text>
+  <line x1="720" y1="620" x2="1420" y2="620" stroke="#E5E7EB"/>
+  <rect x="720" y="632" width="200" height="64" rx="8" fill="#F9FAFB" stroke="#E5E7EB"/>
+  <text x="740" y="657" font-family="Arial" font-size="20" fill="#E04545">📄</text>
+  <text x="772" y="652" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">진료기록부.pdf</text>
+  <text x="772" y="668" font-family="Arial" font-size="11" fill="#9CA3AF">245 KB</text>
+  <rect x="936" y="632" width="200" height="64" rx="8" fill="#F9FAFB" stroke="#E5E7EB"/>
+  <text x="956" y="657" font-family="Arial" font-size="20" fill="#4377C0">📷</text>
+  <text x="988" y="652" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">처방전.jpg</text>
+  <text x="988" y="668" font-family="Arial" font-size="11" fill="#9CA3AF">89 KB</text>
+
+  <!-- Access log -->
+  <text x="720" y="730" font-family="Arial" font-size="12" fill="#9CA3AF">마지막 접근: 오늘 14:32 · 김보호자 · 조회</text>
+  <text x="720" y="748" font-family="Arial" font-size="12" fill="#9CA3AF">작성: 2026.06.12 14:20 · 수정: 없음</text>
+</svg>

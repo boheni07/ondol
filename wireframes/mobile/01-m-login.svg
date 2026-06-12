@@ -1,0 +1,76 @@
+<svg viewBox="0 0 390 844" xmlns="http://www.w3.org/2000/svg">
+  <!-- A-01 · ST-09 Auth · Mobile 390×844 (iPhone 14) -->
+  <text x="8" y="12" font-family="Arial" font-size="9" fill="#9CA3AF">A-01 · ST-09 Auth · Mobile 390×844</text>
+  <rect width="390" height="844" fill="#FFFFFF"/>
+  <!-- Phone frame hint -->
+  <rect width="390" height="844" rx="0" fill="none" stroke="#E5E7EB" stroke-width="1"/>
+
+  <!-- Status bar (44px) -->
+  <rect width="390" height="44" fill="#FFFFFF"/>
+  <text x="20" y="30" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">9:41</text>
+  <text x="340" y="30" font-family="Arial" font-size="12" fill="#111827">● ●● ■■■</text>
+
+  <!-- Logo area -->
+  <rect width="390" height="200" fill="#3B7D8E" y="44"/>
+  <circle cx="195" cy="108" r="50" fill="rgba(255,255,255,0.1)"/>
+  <text x="195" y="120" text-anchor="middle" font-family="Arial" font-size="36" font-weight="bold" fill="white">온돌</text>
+  <text x="195" y="154" text-anchor="middle" font-family="Arial" font-size="14" fill="rgba(255,255,255,0.7)">발달장애인 생애기록 플랫폼</text>
+  <text x="195" y="178" text-anchor="middle" font-family="Arial" font-size="13" fill="rgba(255,255,255,0.5)">OnDol</text>
+  <path d="M 0 230 Q 195 200 390 230 L 390 244 L 0 244 Z" fill="#FFFFFF"/>
+
+  <!-- Role selector -->
+  <text x="20" y="276" font-family="Arial" font-size="14" font-weight="bold" fill="#374151">역할 선택 <tspan font-size="12" fill="#9CA3AF">(필수)</tspan></text>
+  <!-- 2×3 role grid -->
+  <!-- Row 1 -->
+  <rect x="20" y="286" width="108" height="44" rx="10" fill="#EEF4FD" stroke="#4377C0" stroke-width="2"/>
+  <text x="74" y="313" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#2E5FA8">보호자 ✓</text>
+  <rect x="140" y="286" width="108" height="44" rx="10" fill="#F9FAFB" stroke="#E5E7EB"/>
+  <text x="194" y="313" text-anchor="middle" font-family="Arial" font-size="13" fill="#374151">당사자</text>
+  <rect x="260" y="286" width="110" height="44" rx="10" fill="#F9FAFB" stroke="#E5E7EB"/>
+  <text x="315" y="313" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">활동지원사</text>
+  <!-- Row 2 -->
+  <rect x="20" y="340" width="108" height="44" rx="10" fill="#F9FAFB" stroke="#E5E7EB"/>
+  <text x="74" y="367" text-anchor="middle" font-family="Arial" font-size="13" fill="#374151">특수교사</text>
+  <rect x="140" y="340" width="108" height="44" rx="10" fill="#F9FAFB" stroke="#E5E7EB"/>
+  <text x="194" y="367" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">사회복지사</text>
+  <rect x="260" y="340" width="110" height="44" rx="10" fill="#F9FAFB" stroke="#E5E7EB"/>
+  <text x="315" y="367" text-anchor="middle" font-family="Arial" font-size="13" fill="#374151">치료사</text>
+
+  <!-- Email -->
+  <text x="20" y="414" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">이메일</text>
+  <rect x="20" y="424" width="350" height="48" rx="10" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="36" y="453" font-family="Arial" font-size="14" fill="#9CA3AF">example@email.com</text>
+
+  <!-- Password -->
+  <text x="20" y="492" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">비밀번호</text>
+  <rect x="20" y="502" width="350" height="48" rx="10" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="36" y="531" font-family="Arial" font-size="14" fill="#9CA3AF">••••••••••••</text>
+  <text x="354" y="531" text-anchor="end" font-family="Arial" font-size="13" fill="#6B7280">표시</text>
+
+  <!-- Forgot password -->
+  <text x="370" y="562" text-anchor="end" font-family="Arial" font-size="13" fill="#3B7D8E">비밀번호 찾기</text>
+
+  <!-- Login button -->
+  <rect x="20" y="572" width="350" height="52" rx="12" fill="#3B7D8E"/>
+  <text x="195" y="603" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="white">로그인</text>
+
+  <!-- Divider -->
+  <line x1="20" y1="644" x2="160" y2="644" stroke="#E5E7EB"/>
+  <text x="195" y="649" text-anchor="middle" font-family="Arial" font-size="13" fill="#9CA3AF">또는</text>
+  <line x1="230" y1="644" x2="370" y2="644" stroke="#E5E7EB"/>
+
+  <!-- Social login -->
+  <rect x="20" y="658" width="168" height="48" rx="10" fill="#FEE500"/>
+  <text x="104" y="688" text-anchor="middle" font-family="Arial" font-size="13" fill="#3C1E1E">카카오 로그인</text>
+  <rect x="200" y="658" width="170" height="48" rx="10" fill="#03C75A"/>
+  <text x="285" y="688" text-anchor="middle" font-family="Arial" font-size="13" fill="white">네이버 로그인</text>
+
+  <!-- Sign up -->
+  <text x="195" y="734" text-anchor="middle" font-family="Arial" font-size="14" fill="#6B7280">계정이 없으신가요?</text>
+  <text x="195" y="756" text-anchor="middle" font-family="Arial" font-size="15" font-weight="bold" fill="#3B7D8E">회원가입</text>
+
+  <!-- Bottom safe area -->
+  <rect y="800" width="390" height="44" fill="#FFFFFF"/>
+  <!-- Home indicator -->
+  <rect x="155" y="820" width="80" height="5" rx="2.5" fill="#D1D5DB"/>
+</svg>

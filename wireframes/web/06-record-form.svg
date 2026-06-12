@@ -1,0 +1,141 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- G-30 · ST-05 Form Multi-step · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">G-30 · ST-05 Form-Multi-step (Step 2/5) · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- SIDEBAR -->
+  <rect width="240" height="900" fill="#F5F5F5"/>
+  <rect width="240" height="64" fill="#FFFFFF"/>
+  <line x1="0" y1="64" x2="240" y2="64" stroke="#E5E7EB"/>
+  <text x="24" y="42" font-family="Arial" font-size="18" font-weight="bold" fill="#3B7D8E">온돌</text>
+  <circle cx="32" cy="86" r="7" fill="#D1D5DB"/>
+  <text x="52" y="91" font-family="Arial" font-size="13" fill="#374151">홈</text>
+  <circle cx="32" cy="130" r="7" fill="#D1D5DB"/>
+  <text x="52" y="135" font-family="Arial" font-size="13" fill="#374151">타임라인</text>
+  <rect y="152" width="240" height="44" fill="#EEF4FD"/>
+  <rect y="152" width="3" height="44" fill="#3B7D8E"/>
+  <circle cx="32" cy="174" r="7" fill="#4377C0"/>
+  <text x="52" y="179" font-family="Arial" font-size="13" font-weight="bold" fill="#2E5FA8">기록 관리</text>
+  <circle cx="32" cy="218" r="7" fill="#D1D5DB"/>
+  <text x="52" y="223" font-family="Arial" font-size="13" fill="#374151">권한 관리</text>
+  <circle cx="32" cy="262" r="7" fill="#D1D5DB"/>
+  <text x="52" y="267" font-family="Arial" font-size="13" fill="#374151">접근 로그</text>
+  <circle cx="32" cy="306" r="7" fill="#D1D5DB"/>
+  <text x="52" y="311" font-family="Arial" font-size="13" fill="#374151">알림</text>
+  <line x1="16" y1="820" x2="224" y2="820" stroke="#E5E7EB"/>
+  <circle cx="32" cy="878" r="18" fill="#3B7D8E"/>
+  <text x="32" y="884" text-anchor="middle" font-family="Arial" font-size="12" fill="white">김</text>
+  <text x="58" y="878" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">김보호자</text>
+
+  <!-- HEADER -->
+  <rect x="240" width="1200" height="64" fill="#FFFFFF"/>
+  <line x1="240" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="272" y="30" font-family="Arial" font-size="11" fill="#9CA3AF">홈 / 기록 관리 / 새 기록 작성</text>
+  <text x="272" y="50" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">새 기록 작성 — 이온돌 · 의료</text>
+  <circle cx="1146" cy="32" r="20" fill="#3B7D8E"/>
+  <text x="1146" y="38" text-anchor="middle" font-family="Arial" font-size="13" fill="white">김</text>
+
+  <!-- STEP INDICATOR bar (x=240, y=64, w=1200, h=64) -->
+  <rect x="240" y="64" width="1200" height="64" fill="#FFFFFF"/>
+  <line x1="240" y1="128" x2="1440" y2="128" stroke="#E5E7EB"/>
+  <!-- Progress line background -->
+  <line x1="420" y1="96" x2="1220" y2="96" stroke="#E5E7EB" stroke-width="2"/>
+  <!-- Progress line filled (step 2 complete) -->
+  <line x1="420" y1="96" x2="620" y2="96" stroke="#3B7D8E" stroke-width="2"/>
+
+  <!-- Step 1: 기록 유형 선택 (done) -->
+  <circle cx="420" cy="96" r="14" fill="#3B7D8E"/>
+  <text x="420" y="101" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="white">✓</text>
+  <text x="420" y="120" text-anchor="middle" font-family="Arial" font-size="11" fill="#3B7D8E">기록 유형</text>
+
+  <!-- Step 2: 기본 정보 (current) -->
+  <circle cx="620" cy="96" r="16" fill="#3B7D8E" stroke="#3B7D8E" stroke-width="2"/>
+  <text x="620" y="101" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">2</text>
+  <text x="620" y="120" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#3B7D8E">기본 정보</text>
+
+  <!-- Step 3: 상세 내용 (pending) -->
+  <circle cx="820" cy="96" r="14" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="2"/>
+  <text x="820" y="101" text-anchor="middle" font-family="Arial" font-size="11" fill="#9CA3AF">3</text>
+  <text x="820" y="120" text-anchor="middle" font-family="Arial" font-size="11" fill="#9CA3AF">상세 내용</text>
+
+  <!-- Step 4: 첨부파일 (pending) -->
+  <circle cx="1020" cy="96" r="14" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="2"/>
+  <text x="1020" y="101" text-anchor="middle" font-family="Arial" font-size="11" fill="#9CA3AF">4</text>
+  <text x="1020" y="120" text-anchor="middle" font-family="Arial" font-size="11" fill="#9CA3AF">첨부파일</text>
+
+  <!-- Step 5: 확인 (pending) -->
+  <circle cx="1220" cy="96" r="14" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="2"/>
+  <text x="1220" y="101" text-anchor="middle" font-family="Arial" font-size="11" fill="#9CA3AF">5</text>
+  <text x="1220" y="120" text-anchor="middle" font-family="Arial" font-size="11" fill="#9CA3AF">확인</text>
+
+  <!-- FORM CONTENT (x=440, y=148 centered, max-width=700) -->
+  <rect x="370" y="148" width="700" height="640" rx="16" fill="#FFFFFF" stroke="#E5E7EB"/>
+
+  <!-- Form title -->
+  <text x="720" y="198" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">기본 정보 입력</text>
+  <text x="720" y="222" text-anchor="middle" font-family="Arial" font-size="13" fill="#6B7280">MED-003 정기 외래진료 기록 · 이온돌</text>
+  <line x1="394" y1="238" x2="1046" y2="238" stroke="#F3F4F6"/>
+
+  <!-- Field: 진료 기관 -->
+  <text x="410" y="272" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">진료 기관 <tspan fill="#E04545">*</tspan></text>
+  <rect x="410" y="282" width="620" height="44" rx="8" fill="#FFFFFF" stroke="#3B7D8E" stroke-width="2"/>
+  <text x="426" y="309" font-family="Arial" font-size="13" fill="#374151">서울대학교병원 소아청소년과</text>
+  <!-- Focus ring annotation -->
+  <text x="1038" y="309" text-anchor="end" font-family="Arial" font-size="10" fill="#3B7D8E">포커스 상태</text>
+
+  <!-- Field: 담당 의사 -->
+  <text x="410" y="348" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">담당 의사</text>
+  <rect x="410" y="358" width="620" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="426" y="385" font-family="Arial" font-size="13" fill="#9CA3AF">의사 이름 입력 (선택)</text>
+
+  <!-- Field: 진료 날짜 -->
+  <text x="410" y="424" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">진료 날짜 <tspan fill="#E04545">*</tspan></text>
+  <rect x="410" y="434" width="296" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="426" y="461" font-family="Arial" font-size="13" fill="#374151">2026. 06. 12</text>
+  <text x="700" y="461" text-anchor="end" font-family="Arial" font-size="14" fill="#6B7280">📅</text>
+  <!-- Next appt -->
+  <text x="730" y="424" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">다음 예약일</text>
+  <rect x="730" y="434" width="300" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="746" y="461" font-family="Arial" font-size="13" fill="#9CA3AF">예약일 선택 (선택)</text>
+  <text x="1024" y="461" text-anchor="end" font-family="Arial" font-size="14" fill="#6B7280">📅</text>
+
+  <!-- Field: 진료 유형 -->
+  <text x="410" y="500" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">진료 유형 <tspan fill="#E04545">*</tspan></text>
+  <!-- Radio options -->
+  <circle cx="430" cy="526" r="8" fill="#3B7D8E"/>
+  <circle cx="430" cy="526" r="4" fill="white"/>
+  <text x="446" y="531" font-family="Arial" font-size="13" fill="#374151">정기 외래진료</text>
+  <circle cx="600" cy="526" r="8" fill="white" stroke="#D1D5DB" stroke-width="2"/>
+  <text x="616" y="531" font-family="Arial" font-size="13" fill="#374151">응급 진료</text>
+  <circle cx="750" cy="526" r="8" fill="white" stroke="#D1D5DB" stroke-width="2"/>
+  <text x="766" y="531" font-family="Arial" font-size="13" fill="#374151">입원</text>
+  <circle cx="860" cy="526" r="8" fill="white" stroke="#D1D5DB" stroke-width="2"/>
+  <text x="876" y="531" font-family="Arial" font-size="13" fill="#374151">기타</text>
+
+  <!-- Field: 이정표 여부 -->
+  <text x="410" y="568" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">이정표 등록</text>
+  <rect x="410" y="580" width="44" height="24" rx="12" fill="#3B7D8E"/>
+  <circle cx="442" cy="592" r="10" fill="white"/>
+  <text x="464" y="597" font-family="Arial" font-size="12" fill="#374151">이 기록을 이정표로 표시합니다</text>
+
+  <!-- Tags -->
+  <text x="410" y="630" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">태그</text>
+  <rect x="410" y="640" width="620" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <rect x="422" y="652" width="80" height="22" rx="11" fill="#EEF4FD"/>
+  <text x="462" y="667" text-anchor="middle" font-family="Arial" font-size="11" fill="#2E5FA8">소아과 ×</text>
+  <rect x="510" y="652" width="80" height="22" rx="11" fill="#EEF4FD"/>
+  <text x="550" y="667" text-anchor="middle" font-family="Arial" font-size="11" fill="#2E5FA8">정기진료 ×</text>
+  <text x="606" y="669" font-family="Arial" font-size="12" fill="#9CA3AF">+ 태그 추가</text>
+
+  <!-- STICKY FOOTER (bottom of viewport) -->
+  <rect x="240" y="840" width="1200" height="60" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+  <!-- Auto-save notice -->
+  <text x="280" y="874" font-family="Arial" font-size="12" fill="#9CA3AF">자동 저장됨 · 14:20</text>
+  <!-- Buttons -->
+  <rect x="1040" y="852" width="120" height="36" rx="8" fill="#F3F4F6" stroke="#E5E7EB"/>
+  <text x="1100" y="875" text-anchor="middle" font-family="Arial" font-size="13" fill="#374151">← 이전</text>
+  <rect x="1176" y="852" width="136" height="36" rx="8" fill="#3B7D8E"/>
+  <text x="1244" y="875" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">다음 →</text>
+  <!-- Save draft -->
+  <text x="924" y="875" text-anchor="end" font-family="Arial" font-size="12" fill="#3B7D8E">임시저장</text>
+</svg>

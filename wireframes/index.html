@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OnDol 와이어프레임 — 미리보기</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif; background: #F9FAFB; color: #111827; }
+
+    header { background: #3B7D8E; color: white; padding: 20px 32px; display: flex; align-items: center; gap: 16px; }
+    header h1 { font-size: 22px; font-weight: 700; }
+    header span { font-size: 13px; opacity: 0.75; }
+
+    .tabs { display: flex; gap: 0; border-bottom: 1px solid #E5E7EB; background: white; padding: 0 32px; }
+    .tab { padding: 14px 20px; font-size: 14px; font-weight: 500; cursor: pointer; color: #6B7280; border-bottom: 3px solid transparent; }
+    .tab.active { color: #3B7D8E; border-bottom-color: #3B7D8E; font-weight: 700; }
+
+    .panel { display: none; padding: 32px; }
+    .panel.active { display: block; }
+
+    .section-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #9CA3AF; margin-bottom: 16px; }
+
+    .grid { display: grid; gap: 24px; }
+    .grid-web { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+    .grid-mobile { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+
+    .wireframe-card { background: white; border-radius: 12px; border: 1px solid #E5E7EB; overflow: hidden; transition: box-shadow 0.2s, transform 0.2s; cursor: pointer; }
+    .wireframe-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.10); transform: translateY(-2px); }
+    .wireframe-card a { text-decoration: none; color: inherit; display: block; }
+
+    .card-thumb { width: 100%; background: #F3F4F6; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .card-thumb img { width: 100%; height: 100%; object-fit: contain; }
+    .card-thumb.web { height: 180px; }
+    .card-thumb.mobile { height: 280px; }
+
+    .card-info { padding: 12px 16px; }
+    .card-id { font-size: 11px; color: #9CA3AF; font-weight: 500; margin-bottom: 4px; }
+    .card-name { font-size: 14px; font-weight: 700; color: #111827; margin-bottom: 4px; }
+    .card-meta { font-size: 12px; color: #6B7280; }
+
+    .st-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; background: #EEF4FD; color: #2E5FA8; margin-top: 4px; }
+
+    .figma-note { background: #EEF4FD; border: 1px solid #A8C4E4; border-radius: 10px; padding: 16px 20px; margin-bottom: 24px; font-size: 13px; color: #2E5FA8; }
+    .figma-note strong { display: block; font-size: 14px; margin-bottom: 6px; }
+
+    h2 { font-size: 18px; font-weight: 700; margin-bottom: 20px; color: #111827; }
+    .divider { height: 1px; background: #E5E7EB; margin: 28px 0; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>🖥️ OnDol 와이어프레임</h1>
+    <span>Figma SVG Import Kit — Web 10개 · Mobile 5개 · 총 15 screens</span>
+  </div>
+</header>
+
+<div class="tabs">
+  <div class="tab active" onclick="showPanel('web', this)">웹 (Web)</div>
+  <div class="tab" onclick="showPanel('mobile', this)">모바일 (Mobile)</div>
+  <div class="tab" onclick="showPanel('guide', this)">Figma 가이드</div>
+</div>
+
+<!-- WEB PANEL -->
+<div id="panel-web" class="panel active">
+  <div class="figma-note">
+    <strong>📥 Figma 임포트 방법</strong>
+    SVG 파일을 Figma에 드래그&드롭하거나, File → Place Image로 가져오세요. 각 SVG는 1440×900px 웹 프레임입니다.
+  </div>
+  <h2>웹 와이어프레임 — 11개 스크린 타입 커버</h2>
+  <div class="grid grid-web">
+
+    <div class="wireframe-card">
+      <a href="web/01-login.svg" target="_blank">
+        <div class="card-thumb web"><img src="web/01-login.svg" alt="Login"></div>
+        <div class="card-info">
+          <div class="card-id">A-01 · 1440×900</div>
+          <div class="card-name">로그인</div>
+          <div class="card-meta">분할 레이아웃 · 역할 선택 · 이메일/소셜</div>
+          <span class="st-badge">ST-09 Auth</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="wireframe-card">
+      <a href="web/02-guardian-dashboard.svg" target="_blank">
+        <div class="card-thumb web"><img src="web/02-guardian-dashboard.svg" alt="Dashboard"></div>
+        <div class="card-info">
+          <div class="card-id">G-01 · 1440×900</div>
+          <div class="card-name">보호자 대시보드</div>
+          <div class="card-meta">당사자 카드 · 분야별 현황 · 최근 활동</div>
+          <span class="st-badge">ST-01 Hub</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="wireframe-card">
+      <a href="web/03-timeline.svg" target="_blank">
+        <div class="card-thumb web"><img src="web/03-timeline.svg" alt="Timeline"></div>
+        <div class="card-info">
+          <div class="card-id">G-10 · 1440×900</div>
+          <div class="card-name">생애 타임라인</div>
+          <div class="card-meta">생애주기 띠 · 분야 필터 · 이정표 마커</div>
+          <span class="st-badge">ST-06 Timeline</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="wireframe-card">
+      <a href="web/04-record-list.svg" target="_blank">
+        <div class="card-thumb web"><img src="web/04-record-list.svg" alt="Record List"></div>
+        <div class="card-info">
+          <div class="card-id">G-20 · 1440×900</div>
+          <div class="card-name">기록 목록</div>
+          <div class="card-meta">도메인 탭 · 필터/검색 · 카드 리스트 · 페이징</div>
+          <span class="st-badge">ST-02 List</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="wireframe-card">
+      <a href="web/05-record-detail.svg" target="_blank">
+        <div class="card-thumb web"><img src="web/05-record-detail.svg" alt="Record Detail"></div>
+        <div class="card-info">
+          <div class="card-id">G-25 · 1440×900</div>
+          <div class="card-name">기록 상세 (Split Pane)</div>
+          <div class="card-meta">좌: 목록 / 우: 상세 — 1024px+ 분할</div>
+          <span class="st-badge">ST-03 Detail</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="wireframe-card">
+      <a href="web/06-record-form.svg" target="_blank">
+        <div class="card-thumb web"><img src="web/06-record-form.svg" alt="Record Form"></div>
+        <div class="card-info">
+          <div class="card-id">G-30 · 1440×900</div>
+          <div class="card-name">기록 작성 (Step 2/5)</div>
+          <div class="card-meta">5단계 위자드 · 스텝 인디케이터 · Sticky 푸터</div>
+          <span class="st-badge">ST-05 Form-Multi</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="wireframe-card">
+      <a href="web/07-permission-matrix.svg" target="_blank">
+        <div class="card-thumb web"><img src="web/07-permission-matrix.svg" alt="Permission Matrix"></div>
+        <div class="card-info">
+          <div class="card-id">G-40 · 1440×900</div>
+          <div class="card-name">권한 매트릭스</div>
+          <div class="card-meta">역할 × 도메인 매트릭스 · 권한 부여 모달</div>
+          <span class="st-badge">ST-07 Matrix</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="wireframe-card">
+      <a href="web/08-person-home.svg" target="_blank">
+        <div class="card-thumb web"><img src="web/08-person-home.svg" alt="Person Home"></div>
+        <div class="card-info">
+          <div class="card-id">P-01 · 1440×900</div>
+          <div class="card-name">당사자 홈 (접근성 모드)</div>
+          <div class="card-meta">아이콘 전용 사이드바 · 큰 버튼 · 고대비</div>
+          <span class="st-badge">ST-01 Hub (Accessible)</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="wireframe-card">
+      <a href="web/09-self-expression.svg" target="_blank">
+        <div class="card-thumb web"><img src="web/09-self-expression.svg" alt="Self Expression"></div>
+        <div class="card-info">
+          <div class="card-id">P-10 · 1440×900</div>
+          <div class="card-name">자기표현 위자드</div>
+          <div class="card-meta">4단계 · 감정 아이콘 셀렉터 · Flow-1</div>
+          <span class="st-badge">ST-08 Icon Selector</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="wireframe-card">
+      <a href="web/10-settings.svg" target="_blank">
+        <div class="card-thumb web"><img src="web/10-settings.svg" alt="Settings"></div>
+        <div class="card-info">
+          <div class="card-id">G-50 · 1440×900</div>
+          <div class="card-name">설정</div>
+          <div class="card-meta">서브 네비 · 프로필 · 보안 · 역할 정보</div>
+          <span class="st-badge">ST-11 Settings</span>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- MOBILE PANEL -->
+<div id="panel-mobile" class="panel">
+  <div class="figma-note">
+    <strong>📱 모바일 프레임 (390×844 · iPhone 14)</strong>
+    SVG를 Figma에 임포트 후 Frame으로 감싸거나, 390×844px 프레임에 직접 배치하세요.
+  </div>
+  <h2>모바일 와이어프레임 — 5개 핵심 스크린</h2>
+  <div class="grid grid-mobile">
+
+    <div class="wireframe-card">
+      <a href="mobile/01-m-login.svg" target="_blank">
+        <div class="card-thumb mobile"><img src="mobile/01-m-login.svg" alt="Mobile Login"></div>
+        <div class="card-info">
+          <div class="card-id">A-01 · 390×844</div>
+          <div class="card-name">로그인</div>
+          <div class="card-meta">역할 그리드 · 소셜 로그인</div>
+          <span class="st-badge">ST-09 Auth</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="wireframe-card">
+      <a href="mobile/02-m-guardian-home.svg" target="_blank">
+        <div class="card-thumb mobile"><img src="mobile/02-m-guardian-home.svg" alt="Mobile Home"></div>
+        <div class="card-info">
+          <div class="card-id">G-01 · 390×844</div>
+          <div class="card-name">보호자 홈</div>
+          <div class="card-meta">당사자 카드 · FAB · 하단 탭바</div>
+          <span class="st-badge">ST-01 Hub</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="wireframe-card">
+      <a href="mobile/03-m-timeline.svg" target="_blank">
+        <div class="card-thumb mobile"><img src="mobile/03-m-timeline.svg" alt="Mobile Timeline"></div>
+        <div class="card-info">
+          <div class="card-id">G-10 · 390×844</div>
+          <div class="card-name">타임라인</div>
+          <div class="card-meta">필터 칩 · 생애주기 구간 · 엔트리</div>
+          <span class="st-badge">ST-06 Timeline</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="wireframe-card">
+      <a href="mobile/04-m-person-home.svg" target="_blank">
+        <div class="card-thumb mobile"><img src="mobile/04-m-person-home.svg" alt="Person Home Mobile"></div>
+        <div class="card-info">
+          <div class="card-id">P-01 · 390×844</div>
+          <div class="card-name">당사자 홈 (접근성)</div>
+          <div class="card-meta">80×80 아이콘 · 56px 탭바 · 고대비</div>
+          <span class="st-badge">ST-01 Accessible</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="wireframe-card">
+      <a href="mobile/05-m-self-expression.svg" target="_blank">
+        <div class="card-thumb mobile"><img src="mobile/05-m-self-expression.svg" alt="Self Expression Mobile"></div>
+        <div class="card-info">
+          <div class="card-id">P-10 · 390×844</div>
+          <div class="card-name">자기표현 위자드</div>
+          <div class="card-meta">풀스크린 플로우 · 아이콘 2×3 그리드</div>
+          <span class="st-badge">ST-08 Icon Selector</span>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- FIGMA GUIDE PANEL -->
+<div id="panel-guide" class="panel">
+  <h2>Figma 작업 가이드</h2>
+
+  <div style="background:white; border-radius:12px; border:1px solid #E5E7EB; padding:24px; margin-bottom:20px;">
+    <h3 style="font-size:16px; margin-bottom:12px; color:#3B7D8E;">📥 SVG 임포트 방법</h3>
+    <ol style="font-size:14px; line-height:2; color:#374151; padding-left:20px;">
+      <li>Figma에서 새 파일 생성 후 <strong>Page 1</strong> 이름을 "Wireframes"로 변경</li>
+      <li>웹 프레임용 Page와 모바일 프레임용 Page를 각각 생성</li>
+      <li>SVG 파일을 Figma 캔버스에 <strong>드래그&드롭</strong> (한 번에 여러 개 가능)</li>
+      <li>각 SVG 그룹을 선택 후 <code>Ctrl/Cmd + G</code>로 Frame으로 변환 (Ungroup 후 재그룹)</li>
+      <li>또는 Menu → File → Import 로 직접 불러오기</li>
+    </ol>
+  </div>
+
+  <div style="background:white; border-radius:12px; border:1px solid #E5E7EB; padding:24px; margin-bottom:20px;">
+    <h3 style="font-size:16px; margin-bottom:12px; color:#3B7D8E;">🎨 디자인 토큰 적용</h3>
+    <p style="font-size:14px; line-height:1.8; color:#374151; margin-bottom:12px;">
+      와이어프레임 완성 후 <code>docs/07-design-system.md</code>의 컬러 토큰을 Figma Variables로 등록하세요.
+    </p>
+    <table style="width:100%; font-size:13px; border-collapse:collapse;">
+      <thead><tr style="background:#F3F4F6;"><th style="padding:8px; text-align:left;">토큰</th><th style="padding:8px; text-align:left;">Hex</th><th style="padding:8px; text-align:left;">용도</th></tr></thead>
+      <tbody>
+        <tr><td style="padding:8px;"><span style="display:inline-block;width:12px;height:12px;background:#3B7D8E;border-radius:2px;"></span> primary-500</td><td style="padding:8px; font-family:monospace;">#3B7D8E</td><td style="padding:8px;">버튼, 링크, 포커스</td></tr>
+        <tr><td style="padding:8px; background:#F9FAFB;"><span style="display:inline-block;width:12px;height:12px;background:#E8724A;border-radius:2px;"></span> warm-500</td><td style="padding:8px; background:#F9FAFB; font-family:monospace;">#E8724A</td><td style="padding:8px; background:#F9FAFB;">당사자 CTA, 이정표</td></tr>
+        <tr><td style="padding:8px;"><span style="display:inline-block;width:12px;height:12px;background:#E04545;border-radius:2px;"></span> domain.medical</td><td style="padding:8px; font-family:monospace;">#E04545</td><td style="padding:8px;">의료 분야 색상</td></tr>
+        <tr><td style="padding:8px; background:#F9FAFB;"><span style="display:inline-block;width:12px;height:12px;background:#4377C0;border-radius:2px;"></span> domain.education</td><td style="padding:8px; background:#F9FAFB; font-family:monospace;">#4377C0</td><td style="padding:8px; background:#F9FAFB;">교육 분야 색상</td></tr>
+        <tr><td style="padding:8px;"><span style="display:inline-block;width:12px;height:12px;background:#3EA673;border-radius:2px;"></span> domain.welfare</td><td style="padding:8px; font-family:monospace;">#3EA673</td><td style="padding:8px;">복지 분야 색상</td></tr>
+        <tr><td style="padding:8px; background:#F9FAFB;"><span style="display:inline-block;width:12px;height:12px;background:#E8991E;border-radius:2px;"></span> domain.daily</td><td style="padding:8px; background:#F9FAFB; font-family:monospace;">#E8991E</td><td style="padding:8px; background:#F9FAFB;">일상 분야 색상</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="background:white; border-radius:12px; border:1px solid #E5E7EB; padding:24px; margin-bottom:20px;">
+    <h3 style="font-size:16px; margin-bottom:12px; color:#3B7D8E;">📐 컴포넌트 작업 순서</h3>
+    <ol style="font-size:14px; line-height:2; color:#374151; padding-left:20px;">
+      <li><strong>Primitives 먼저</strong>: Button, Input, Badge, Avatar를 컴포넌트로 만들기</li>
+      <li><strong>레이아웃 쉘</strong>: Sidebar, Header, BottomTabBar를 공통 컴포넌트화</li>
+      <li><strong>도메인 컬러</strong>: DomainBadge를 variant로 6가지 (medical/education/welfare/daily/transition/legal)</li>
+      <li><strong>카드 시스템</strong>: RecordCard, PersonCard, NotificationCard</li>
+      <li><strong>ST-08 전용</strong>: IconSelectorCard (당사자 자기표현 전용, 크기 162×140+ mobile)</li>
+    </ol>
+  </div>
+
+  <div style="background:white; border-radius:12px; border:1px solid #E5E7EB; padding:24px;">
+    <h3 style="font-size:16px; margin-bottom:12px; color:#3B7D8E;">📂 파일 구조</h3>
+    <pre style="font-size:13px; line-height:1.8; color:#374151; background:#F9FAFB; padding:16px; border-radius:8px; overflow-x:auto;">wireframes/
+├── index.html          ← 이 파일 (미리보기)
+├── web/
+│   ├── 01-login.svg            A-01 · ST-09
+│   ├── 02-guardian-dashboard.svg  G-01 · ST-01
+│   ├── 03-timeline.svg         G-10 · ST-06
+│   ├── 04-record-list.svg      G-20 · ST-02
+│   ├── 05-record-detail.svg    G-25 · ST-03
+│   ├── 06-record-form.svg      G-30 · ST-05
+│   ├── 07-permission-matrix.svg G-40 · ST-07
+│   ├── 08-person-home.svg      P-01 · ST-01 Accessible
+│   ├── 09-self-expression.svg  P-10 · ST-08
+│   └── 10-settings.svg         G-50 · ST-11
+└── mobile/
+    ├── 01-m-login.svg          A-01 모바일
+    ├── 02-m-guardian-home.svg  G-01 모바일
+    ├── 03-m-timeline.svg       G-10 모바일
+    ├── 04-m-person-home.svg    P-01 모바일 (당사자)
+    └── 05-m-self-expression.svg P-10 모바일 (ST-08)</pre>
+  </div>
+</div>
+
+<script>
+function showPanel(name, tabEl) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('panel-' + name).classList.add('active');
+  tabEl.classList.add('active');
+}
+</script>
+</body>
+</html>

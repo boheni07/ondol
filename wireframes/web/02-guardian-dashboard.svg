@@ -1,0 +1,183 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- G-01 · ST-01 Hub/Dashboard · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">G-01 · ST-01 Hub/Dashboard · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- ═══ SIDEBAR 240px ═══ -->
+  <rect width="240" height="900" fill="#F5F5F5"/>
+  <rect width="240" height="64" fill="#FFFFFF"/>
+  <line x1="0" y1="64" x2="240" y2="64" stroke="#E5E7EB"/>
+  <text x="24" y="42" font-family="Arial" font-size="18" font-weight="bold" fill="#3B7D8E">온돌</text>
+  <!-- Home active -->
+  <rect y="64" width="240" height="44" fill="#EEF4FD"/>
+  <rect y="64" width="3" height="44" fill="#3B7D8E"/>
+  <circle cx="32" cy="86" r="7" fill="#4377C0"/>
+  <text x="52" y="91" font-family="Arial" font-size="13" font-weight="bold" fill="#2E5FA8">홈</text>
+  <!-- Timeline -->
+  <circle cx="32" cy="130" r="7" fill="#D1D5DB"/>
+  <text x="52" y="135" font-family="Arial" font-size="13" fill="#374151">타임라인</text>
+  <!-- Records -->
+  <circle cx="32" cy="174" r="7" fill="#D1D5DB"/>
+  <text x="52" y="179" font-family="Arial" font-size="13" fill="#374151">기록 관리</text>
+  <!-- Permissions -->
+  <circle cx="32" cy="218" r="7" fill="#D1D5DB"/>
+  <text x="52" y="223" font-family="Arial" font-size="13" fill="#374151">권한 관리</text>
+  <!-- Access Logs -->
+  <circle cx="32" cy="262" r="7" fill="#D1D5DB"/>
+  <text x="52" y="267" font-family="Arial" font-size="13" fill="#374151">접근 로그</text>
+  <!-- Notifications -->
+  <circle cx="32" cy="306" r="7" fill="#D1D5DB"/>
+  <text x="52" y="311" font-family="Arial" font-size="13" fill="#374151">알림</text>
+  <circle cx="210" cy="308" r="9" fill="#E04545"/>
+  <text x="210" y="313" text-anchor="middle" font-family="Arial" font-size="9" fill="white">3</text>
+  <!-- Divider -->
+  <line x1="16" y1="820" x2="224" y2="820" stroke="#E5E7EB"/>
+  <circle cx="32" cy="844" r="7" fill="#D1D5DB"/>
+  <text x="52" y="849" font-family="Arial" font-size="13" fill="#374151">설정</text>
+  <circle cx="32" cy="878" r="18" fill="#3B7D8E"/>
+  <text x="32" y="884" text-anchor="middle" font-family="Arial" font-size="12" fill="white">김</text>
+  <text x="58" y="874" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">김보호자</text>
+  <text x="58" y="888" font-family="Arial" font-size="11" fill="#6B7280">보호자</text>
+
+  <!-- ═══ HEADER 64px ═══ -->
+  <rect x="240" width="1200" height="64" fill="#FFFFFF"/>
+  <line x1="240" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="272" y="28" font-family="Arial" font-size="11" fill="#9CA3AF">관리 대상</text>
+  <text x="272" y="48" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">이온돌 ▾</text>
+  <rect x="680" y="16" width="300" height="32" rx="6" fill="#F3F4F6"/>
+  <text x="700" y="37" font-family="Arial" font-size="12" fill="#9CA3AF">🔍 기록 검색...</text>
+  <circle cx="1090" cy="32" r="18" fill="#F3F4F6"/>
+  <text x="1090" y="38" text-anchor="middle" font-family="Arial" font-size="15" fill="#374151">🔔</text>
+  <circle cx="1102" cy="20" r="7" fill="#E04545"/>
+  <text x="1102" y="25" text-anchor="middle" font-family="Arial" font-size="8" fill="white">3</text>
+  <circle cx="1146" cy="32" r="20" fill="#3B7D8E"/>
+  <text x="1146" y="38" text-anchor="middle" font-family="Arial" font-size="13" fill="white">김</text>
+  <text x="1174" y="27" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">김보호자</text>
+  <text x="1174" y="43" font-family="Arial" font-size="11" fill="#6B7280">보호자</text>
+
+  <!-- ═══ MAIN CONTENT x=272, y=80 ═══ -->
+  <!-- Section: 당사자 선택 -->
+  <text x="272" y="96" font-family="Arial" font-size="16" font-weight="bold" fill="#111827">관리 대상</text>
+  <text x="430" y="96" font-family="Arial" font-size="12" fill="#3B7D8E">+ 당사자 추가</text>
+
+  <!-- Person card 1 (selected) -->
+  <rect x="272" y="104" width="240" height="100" rx="12" fill="#FFFFFF" stroke="#3B7D8E" stroke-width="2"/>
+  <circle cx="308" cy="136" r="24" fill="#E8724A"/>
+  <text x="308" y="142" text-anchor="middle" font-family="Arial" font-size="14" fill="white">이</text>
+  <text x="344" y="128" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">이온돌 (20세)</text>
+  <rect x="344" y="134" width="52" height="18" rx="9" fill="#EEF4FD"/>
+  <text x="370" y="147" text-anchor="middle" font-family="Arial" font-size="10" fill="#2E5FA8">성인전환기</text>
+  <text x="344" y="168" font-family="Arial" font-size="11" fill="#6B7280">자폐성 장애 2급</text>
+  <text x="344" y="182" font-family="Arial" font-size="11" fill="#6B7280">최근 기록: 오늘</text>
+
+  <!-- Person card 2 -->
+  <rect x="528" y="104" width="240" height="100" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <circle cx="564" cy="136" r="24" fill="#4377C0"/>
+  <text x="564" y="142" text-anchor="middle" font-family="Arial" font-size="14" fill="white">박</text>
+  <text x="600" y="128" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">박성장 (14세)</text>
+  <rect x="600" y="134" width="40" height="18" rx="9" fill="#EDFAF3"/>
+  <text x="620" y="147" text-anchor="middle" font-family="Arial" font-size="10" fill="#276B4C">청소년기</text>
+  <text x="600" y="168" font-family="Arial" font-size="11" fill="#6B7280">지적 장애 1급</text>
+  <text x="600" y="182" font-family="Arial" font-size="11" fill="#6B7280">최근 기록: 3일 전</text>
+
+  <!-- Person card 3 -->
+  <rect x="784" y="104" width="240" height="100" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <circle cx="820" cy="136" r="24" fill="#3EA673"/>
+  <text x="820" y="142" text-anchor="middle" font-family="Arial" font-size="14" fill="white">최</text>
+  <text x="856" y="128" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">최희망 (8세)</text>
+  <rect x="856" y="134" width="40" height="18" rx="9" fill="#F0F4FE"/>
+  <text x="876" y="147" text-anchor="middle" font-family="Arial" font-size="10" fill="#2E5FA8">아동기</text>
+  <text x="856" y="168" font-family="Arial" font-size="11" fill="#6B7280">발달지연</text>
+  <text x="856" y="182" font-family="Arial" font-size="11" fill="#6B7280">최근 기록: 1주 전</text>
+
+  <!-- Section: 도메인 요약 -->
+  <text x="272" y="236" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">이온돌 — 분야별 현황</text>
+  <!-- Domain stat cards: 6 domains -->
+  <!-- Medical -->
+  <rect x="272" y="248" width="172" height="80" rx="12" fill="#FEF0F0"/>
+  <text x="288" y="272" font-family="Arial" font-size="12" font-weight="bold" fill="#BF3030">의료</text>
+  <text x="288" y="294" font-family="Arial" font-size="22" font-weight="bold" fill="#111827">24</text>
+  <text x="288" y="312" font-family="Arial" font-size="11" fill="#6B7280">총 기록수</text>
+  <text x="424" y="312" text-anchor="end" font-family="Arial" font-size="11" fill="#E04545">↑ 이번달 3건</text>
+  <!-- Education -->
+  <rect x="456" y="248" width="172" height="80" rx="12" fill="#EEF4FD"/>
+  <text x="472" y="272" font-family="Arial" font-size="12" font-weight="bold" fill="#2E5FA8">교육</text>
+  <text x="472" y="294" font-family="Arial" font-size="22" font-weight="bold" fill="#111827">18</text>
+  <text x="472" y="312" font-family="Arial" font-size="11" fill="#6B7280">총 기록수</text>
+  <text x="608" y="312" text-anchor="end" font-family="Arial" font-size="11" fill="#4377C0">↑ 이번달 2건</text>
+  <!-- Welfare -->
+  <rect x="640" y="248" width="172" height="80" rx="12" fill="#EDFAF3"/>
+  <text x="656" y="272" font-family="Arial" font-size="12" font-weight="bold" fill="#276B4C">복지</text>
+  <text x="656" y="294" font-family="Arial" font-size="22" font-weight="bold" fill="#111827">31</text>
+  <text x="656" y="312" font-family="Arial" font-size="11" fill="#6B7280">총 기록수</text>
+  <!-- Daily -->
+  <rect x="824" y="248" width="172" height="80" rx="12" fill="#FFF5E6"/>
+  <text x="840" y="272" font-family="Arial" font-size="12" font-weight="bold" fill="#B56F10">일상</text>
+  <text x="840" y="294" font-family="Arial" font-size="22" font-weight="bold" fill="#111827">45</text>
+  <text x="840" y="312" font-family="Arial" font-size="11" fill="#6B7280">총 기록수</text>
+  <!-- Transition -->
+  <rect x="1008" y="248" width="172" height="80" rx="12" fill="#F4EFFB"/>
+  <text x="1024" y="272" font-family="Arial" font-size="12" font-weight="bold" fill="#6A43A8">전환</text>
+  <text x="1024" y="294" font-family="Arial" font-size="22" font-weight="bold" fill="#111827">12</text>
+  <text x="1024" y="312" font-family="Arial" font-size="11" fill="#6B7280">총 기록수</text>
+  <!-- Legal -->
+  <rect x="1192" y="248" width="172" height="80" rx="12" fill="#EEF2F7"/>
+  <text x="1208" y="272" font-family="Arial" font-size="12" font-weight="bold" fill="#3E5E7A">법적</text>
+  <text x="1208" y="294" font-family="Arial" font-size="22" font-weight="bold" fill="#111827">8</text>
+  <text x="1208" y="312" font-family="Arial" font-size="11" fill="#6B7280">총 기록수</text>
+
+  <!-- Section: Recent activity + Quick actions -->
+  <text x="272" y="372" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">최근 활동</text>
+  <text x="900" y="372" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">빠른 메뉴</text>
+
+  <!-- Recent activity list -->
+  <!-- Activity 1 -->
+  <rect x="272" y="382" width="600" height="64" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="280" y="400" width="56" height="20" rx="10" fill="#FEF0F0"/>
+  <text x="308" y="414" text-anchor="middle" font-family="Arial" font-size="10" fill="#BF3030">의료</text>
+  <text x="348" y="404" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">정기 진료 기록 — 소아청소년과</text>
+  <text x="348" y="420" font-family="Arial" font-size="12" fill="#6B7280">이온돌 · 김치료사 · 오늘 14:30</text>
+  <text x="860" y="420" text-anchor="end" font-family="Arial" font-size="12" fill="#3B7D8E">보기 →</text>
+  <!-- Activity 2 -->
+  <rect x="272" y="454" width="600" height="64" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="280" y="472" width="56" height="20" rx="10" fill="#EEF4FD"/>
+  <text x="308" y="486" text-anchor="middle" font-family="Arial" font-size="10" fill="#2E5FA8">교육</text>
+  <text x="348" y="476" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">IEP 목표 업데이트 — 언어치료</text>
+  <text x="348" y="492" font-family="Arial" font-size="12" fill="#6B7280">이온돌 · 이특수교사 · 어제 10:00</text>
+  <text x="860" y="492" text-anchor="end" font-family="Arial" font-size="12" fill="#3B7D8E">보기 →</text>
+  <!-- Activity 3 -->
+  <rect x="272" y="526" width="600" height="64" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="280" y="544" width="56" height="20" rx="10" fill="#FFF5E6"/>
+  <text x="308" y="558" text-anchor="middle" font-family="Arial" font-size="10" fill="#B56F10">일상</text>
+  <text x="348" y="548" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">활동지원 일지 — 2026.06.11</text>
+  <text x="348" y="564" font-family="Arial" font-size="12" fill="#6B7280">이온돌 · 박활동지원사 · 어제 19:00</text>
+  <text x="860" y="564" text-anchor="end" font-family="Arial" font-size="12" fill="#3B7D8E">보기 →</text>
+  <!-- Activity 4 -->
+  <rect x="272" y="598" width="600" height="64" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="280" y="616" width="72" height="20" rx="10" fill="#F0F8FF"/>
+  <text x="316" y="630" text-anchor="middle" font-family="Arial" font-size="10" fill="#E8724A">자기표현</text>
+  <text x="364" y="620" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">오늘 기분: 😊 좋아요</text>
+  <text x="364" y="636" font-family="Arial" font-size="12" fill="#6B7280">이온돌 · 오늘 09:12 · 당사자 직접 입력</text>
+  <text x="860" y="636" text-anchor="end" font-family="Arial" font-size="12" fill="#3B7D8E">보기 →</text>
+  <!-- Show all link -->
+  <text x="272" y="680" font-family="Arial" font-size="13" fill="#3B7D8E">전체 활동 보기 →</text>
+
+  <!-- Quick actions -->
+  <rect x="900" y="382" width="250" height="64" rx="12" fill="#3B7D8E"/>
+  <text x="1025" y="420" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="white">+ 새 기록 작성</text>
+  <rect x="900" y="458" width="250" height="64" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="1025" y="496" text-anchor="middle" font-family="Arial" font-size="14" fill="#374151">권한 관리 →</text>
+  <rect x="900" y="534" width="250" height="64" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="1025" y="572" text-anchor="middle" font-family="Arial" font-size="14" fill="#374151">인수인계 생성 →</text>
+  <rect x="900" y="610" width="250" height="64" rx="12" fill="#FFF8F4" stroke="#FACDB8"/>
+  <text x="1025" y="648" text-anchor="middle" font-family="Arial" font-size="14" fill="#E8724A">이정표 등록 →</text>
+
+  <!-- Notifications widget -->
+  <text x="1176" y="372" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">알림</text>
+  <rect x="1176" y="382" width="228" height="52" rx="8" fill="#FEF0F0" stroke="#FACDB8"/>
+  <text x="1188" y="406" font-family="Arial" font-size="12" font-weight="bold" fill="#BF3030">새 기록 알림</text>
+  <text x="1188" y="422" font-family="Arial" font-size="11" fill="#6B7280">진료 기록이 등록되었습니다.</text>
+  <rect x="1176" y="442" width="228" height="52" rx="8" fill="#EEF4FD" stroke="#A8C4E4"/>
+  <text x="1188" y="466" font-family="Arial" font-size="12" font-weight="bold" fill="#2E5FA8">권한 승인 요청</text>
+  <text x="1188" y="482" font-family="Arial" font-size="11" fill="#6B7280">이특수교사님이 교육 권한을 요청했습니다.</text>
+</svg>

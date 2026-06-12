@@ -1,0 +1,124 @@
+<svg viewBox="0 0 390 844" xmlns="http://www.w3.org/2000/svg">
+  <!-- G-01 · ST-01 Hub · Mobile 390×844 -->
+  <text x="8" y="12" font-family="Arial" font-size="9" fill="#9CA3AF">G-01 · ST-01 Hub · Mobile 390×844 · 보호자 홈</text>
+  <rect width="390" height="844" fill="#F9FAFB"/>
+
+  <!-- Status bar -->
+  <rect width="390" height="44" fill="#FFFFFF"/>
+  <text x="20" y="30" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">9:41</text>
+  <text x="340" y="30" font-family="Arial" font-size="12" fill="#111827">● ●● ■■■</text>
+
+  <!-- Nav Header (56px) -->
+  <rect y="44" width="390" height="56" fill="#FFFFFF"/>
+  <line x1="0" y1="100" x2="390" y2="100" stroke="#E5E7EB"/>
+  <text x="20" y="78" font-family="Arial" font-size="18" font-weight="bold" fill="#3B7D8E">온돌</text>
+  <!-- Notification button -->
+  <circle cx="330" cy="72" r="20" fill="#F3F4F6"/>
+  <text x="330" y="78" text-anchor="middle" font-family="Arial" font-size="16" fill="#374151">🔔</text>
+  <circle cx="344" cy="57" r="8" fill="#E04545"/>
+  <text x="344" y="62" text-anchor="middle" font-family="Arial" font-size="8" fill="white">3</text>
+  <!-- Avatar -->
+  <circle cx="370" cy="72" r="18" fill="#3B7D8E"/>
+  <text x="370" y="78" text-anchor="middle" font-family="Arial" font-size="12" fill="white">김</text>
+
+  <!-- SCROLLABLE CONTENT (y=100) -->
+  <!-- Section: 관리 대상 -->
+  <text x="20" y="126" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">관리 대상</text>
+  <text x="340" y="126" text-anchor="end" font-family="Arial" font-size="13" fill="#3B7D8E">+ 추가</text>
+
+  <!-- Person cards (horizontal scroll) -->
+  <!-- Scroll indicator -->
+  <text x="20" y="145" font-family="Arial" font-size="10" fill="#9CA3AF">← 좌우로 스크롤 →</text>
+  <!-- Card 1 selected -->
+  <rect x="20" y="152" width="150" height="96" rx="12" fill="#FFFFFF" stroke="#3B7D8E" stroke-width="2"/>
+  <circle cx="46" cy="178" r="18" fill="#E8724A"/>
+  <text x="46" y="184" text-anchor="middle" font-family="Arial" font-size="11" fill="white">이</text>
+  <text x="72" y="174" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">이온돌</text>
+  <rect x="72" y="180" width="48" height="16" rx="8" fill="#F4EFFB"/>
+  <text x="96" y="191" text-anchor="middle" font-family="Arial" font-size="9" fill="#6A43A8">성인전환기</text>
+  <text x="72" y="210" font-family="Arial" font-size="11" fill="#6B7280">오늘 활동</text>
+  <rect x="150" y="157" width="16" height="16" rx="8" fill="#3B7D8E"/>
+  <text x="158" y="169" text-anchor="middle" font-family="Arial" font-size="9" fill="white">✓</text>
+
+  <!-- Card 2 -->
+  <rect x="180" y="152" width="130" height="96" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <circle cx="200" cy="178" r="18" fill="#4377C0"/>
+  <text x="200" y="184" text-anchor="middle" font-family="Arial" font-size="11" fill="white">박</text>
+  <text x="224" y="174" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">박성장</text>
+  <rect x="224" y="180" width="40" height="16" rx="8" fill="#EDFAF3"/>
+  <text x="244" y="191" text-anchor="middle" font-family="Arial" font-size="9" fill="#276B4C">청소년기</text>
+  <text x="224" y="210" font-family="Arial" font-size="11" fill="#6B7280">3일 전</text>
+
+  <!-- Section: 도메인 현황 -->
+  <text x="20" y="280" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">이온돌 — 분야별</text>
+  <!-- 2×3 domain tiles -->
+  <rect x="20" y="292" width="108" height="64" rx="10" fill="#FEF0F0"/>
+  <text x="36" y="314" font-family="Arial" font-size="11" font-weight="bold" fill="#BF3030">의료</text>
+  <text x="36" y="338" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">24</text>
+  <rect x="140" y="292" width="108" height="64" rx="10" fill="#EEF4FD"/>
+  <text x="156" y="314" font-family="Arial" font-size="11" font-weight="bold" fill="#2E5FA8">교육</text>
+  <text x="156" y="338" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">18</text>
+  <rect x="260" y="292" width="110" height="64" rx="10" fill="#EDFAF3"/>
+  <text x="276" y="314" font-family="Arial" font-size="11" font-weight="bold" fill="#276B4C">복지</text>
+  <text x="276" y="338" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">31</text>
+  <rect x="20" y="366" width="108" height="64" rx="10" fill="#FFF5E6"/>
+  <text x="36" y="388" font-family="Arial" font-size="11" font-weight="bold" fill="#B56F10">일상</text>
+  <text x="36" y="412" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">45</text>
+  <rect x="140" y="366" width="108" height="64" rx="10" fill="#F4EFFB"/>
+  <text x="156" y="388" font-family="Arial" font-size="11" font-weight="bold" fill="#6A43A8">전환</text>
+  <text x="156" y="412" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">12</text>
+  <rect x="260" y="366" width="110" height="64" rx="10" fill="#EEF2F7"/>
+  <text x="276" y="388" font-family="Arial" font-size="11" font-weight="bold" fill="#3E5E7A">법적</text>
+  <text x="276" y="412" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">8</text>
+
+  <!-- Section: 최근 활동 -->
+  <text x="20" y="460" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">최근 활동</text>
+  <text x="340" y="460" text-anchor="end" font-family="Arial" font-size="13" fill="#3B7D8E">전체</text>
+
+  <!-- Activity item 1 -->
+  <rect x="20" y="472" width="350" height="72" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="28" y="488" width="44" height="18" rx="9" fill="#FEF0F0"/>
+  <text x="50" y="501" text-anchor="middle" font-family="Arial" font-size="9" fill="#BF3030">의료</text>
+  <text x="80" y="498" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">정기 진료 기록</text>
+  <text x="340" y="498" text-anchor="end" font-family="Arial" font-size="11" fill="#9CA3AF">오늘</text>
+  <text x="28" y="526" font-family="Arial" font-size="11" fill="#6B7280">김치료사 · 서울대병원</text>
+  <text x="358" y="526" text-anchor="end" font-family="Arial" font-size="11" fill="#3B7D8E">→</text>
+
+  <!-- Activity item 2 -->
+  <rect x="20" y="554" width="350" height="72" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="28" y="570" width="44" height="18" rx="9" fill="#EEF4FD"/>
+  <text x="50" y="583" text-anchor="middle" font-family="Arial" font-size="9" fill="#2E5FA8">교육</text>
+  <text x="80" y="580" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">IEP 업데이트</text>
+  <text x="340" y="580" text-anchor="end" font-family="Arial" font-size="11" fill="#9CA3AF">어제</text>
+  <text x="28" y="608" font-family="Arial" font-size="11" fill="#6B7280">이특수교사 · 언어치료 목표</text>
+
+  <!-- Activity item 3 - self expression -->
+  <rect x="20" y="636" width="350" height="64" rx="10" fill="#FFF8F4" stroke="#FACDB8"/>
+  <text x="28" y="660" font-family="Arial" font-size="13" font-weight="bold" fill="#E8724A">😊 이온돌 자기표현</text>
+  <text x="340" y="660" text-anchor="end" font-family="Arial" font-size="11" fill="#9CA3AF">오늘</text>
+  <text x="28" y="682" font-family="Arial" font-size="12" fill="#6B7280">기분: 좋아요 · 식사: 잘먹었어요</text>
+
+  <!-- BOTTOM TAB BAR (56px) -->
+  <rect y="744" width="390" height="56" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+  <!-- Tab items: 홈, 타임라인, [+], 권한, 설정 -->
+  <!-- Home active -->
+  <text x="39" y="762" text-anchor="middle" font-family="Arial" font-size="18" fill="#3B7D8E">🏠</text>
+  <text x="39" y="790" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#3B7D8E">홈</text>
+  <rect x="20" y="744" width="38" height="3" rx="1.5" fill="#3B7D8E"/>
+  <!-- Timeline -->
+  <text x="117" y="762" text-anchor="middle" font-family="Arial" font-size="18" fill="#9CA3AF">📅</text>
+  <text x="117" y="790" text-anchor="middle" font-family="Arial" font-size="10" fill="#9CA3AF">타임라인</text>
+  <!-- FAB center -->
+  <circle cx="195" cy="772" r="26" fill="#3B7D8E"/>
+  <text x="195" y="780" text-anchor="middle" font-family="Arial" font-size="22" fill="white">+</text>
+  <!-- Permissions -->
+  <text x="273" y="762" text-anchor="middle" font-family="Arial" font-size="18" fill="#9CA3AF">🔑</text>
+  <text x="273" y="790" text-anchor="middle" font-family="Arial" font-size="10" fill="#9CA3AF">권한</text>
+  <!-- Settings -->
+  <text x="351" y="762" text-anchor="middle" font-family="Arial" font-size="18" fill="#9CA3AF">⚙️</text>
+  <text x="351" y="790" text-anchor="middle" font-family="Arial" font-size="10" fill="#9CA3AF">설정</text>
+
+  <!-- Home indicator -->
+  <rect y="800" width="390" height="44" fill="#FFFFFF"/>
+  <rect x="155" y="820" width="80" height="5" rx="2.5" fill="#D1D5DB"/>
+</svg>

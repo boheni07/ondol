@@ -1,0 +1,90 @@
+<svg viewBox="0 0 390 844" xmlns="http://www.w3.org/2000/svg">
+  <!-- P-10 · ST-08 Icon Selector / Flow-1 자기표현 (Step 1) · Mobile 390×844 -->
+  <text x="8" y="12" font-family="Arial" font-size="9" fill="#9CA3AF">P-10 · ST-08 Icon Selector · Mobile · Flow-1 Step 1: 감정</text>
+  <rect width="390" height="844" fill="#FFFBF8"/>
+
+  <!-- Status bar (44px) - warm bg -->
+  <rect width="390" height="44" fill="#E8724A"/>
+  <text x="20" y="30" font-family="Arial" font-size="13" font-weight="bold" fill="white">9:41</text>
+  <text x="340" y="30" font-family="Arial" font-size="12" fill="white">● ●● ■■■</text>
+
+  <!-- Wizard Nav Header (56px) - full-screen flow, no tab bar -->
+  <rect y="44" width="390" height="56" fill="#E8724A"/>
+  <text x="24" y="78" font-family="Arial" font-size="20" font-weight="bold" fill="white">오늘 기분 기록</text>
+  <!-- Close button -->
+  <rect x="344" y="56" width="32" height="32" rx="16" fill="rgba(255,255,255,0.3)"/>
+  <text x="360" y="76" text-anchor="middle" font-family="Arial" font-size="16" fill="white">✕</text>
+
+  <!-- STEP PROGRESS DOTS (4 dots) -->
+  <circle cx="159" cy="120" r="10" fill="#FFFFFF"/>
+  <text x="159" y="125" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#E8724A">1</text>
+  <line x1="169" y1="120" x2="207" y2="120" stroke="#FACDB8" stroke-width="2"/>
+  <circle cx="217" cy="120" r="8" fill="#FACDB8"/>
+  <text x="217" y="125" text-anchor="middle" font-family="Arial" font-size="10" fill="#9CA3AF">2</text>
+  <line x1="225" y1="120" x2="263" y2="120" stroke="#FACDB8" stroke-width="2"/>
+  <circle cx="273" cy="120" r="8" fill="#FACDB8"/>
+  <text x="273" y="125" text-anchor="middle" font-family="Arial" font-size="10" fill="#9CA3AF">3</text>
+  <line x1="281" y1="120" x2="319" y2="120" stroke="#FACDB8" stroke-width="2"/>
+  <circle cx="329" cy="120" r="8" fill="#FACDB8"/>
+  <text x="329" y="125" text-anchor="middle" font-family="Arial" font-size="10" fill="#9CA3AF">4</text>
+  <!-- Labels -->
+  <text x="159" y="142" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#E8724A">감정</text>
+  <text x="217" y="142" text-anchor="middle" font-family="Arial" font-size="11" fill="#9CA3AF">식사</text>
+  <text x="273" y="142" text-anchor="middle" font-family="Arial" font-size="11" fill="#9CA3AF">활동</text>
+  <text x="329" y="142" text-anchor="middle" font-family="Arial" font-size="11" fill="#9CA3AF">몸</text>
+
+  <!-- STEP TITLE -->
+  <text x="195" y="186" text-anchor="middle" font-family="Arial" font-size="24" font-weight="bold" fill="#111827">기분이 어때요?</text>
+  <text x="195" y="212" text-anchor="middle" font-family="Arial" font-size="16" fill="#6B7280">하나만 골라봐요! 😊</text>
+
+  <!-- ICON SELECTOR GRID (2×3 mobile, larger touch targets) -->
+  <!-- Row 1: 좋아요 (selected), 보통이에요 -->
+  <!-- Emotion 1: 좋아요 selected -->
+  <rect x="20" y="228" width="162" height="140" rx="20" fill="#FFF8F4" stroke="#E8724A" stroke-width="3"/>
+  <!-- Selected checkmark -->
+  <circle cx="168" cy="232" r="14" fill="#E8724A"/>
+  <text x="168" y="238" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="white">✓</text>
+  <!-- Icon -->
+  <text x="101" y="318" text-anchor="middle" font-family="Arial" font-size="72">😊</text>
+  <text x="101" y="356" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#111827">좋아요</text>
+
+  <!-- Emotion 2: 보통 -->
+  <rect x="208" y="228" width="162" height="140" rx="20" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+  <text x="289" y="318" text-anchor="middle" font-family="Arial" font-size="72">😐</text>
+  <text x="289" y="356" text-anchor="middle" font-family="Arial" font-size="18" fill="#374151">보통이에요</text>
+
+  <!-- Row 2: 슬퍼요, 화났어요 -->
+  <rect x="20" y="380" width="162" height="140" rx="20" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+  <text x="101" y="470" text-anchor="middle" font-family="Arial" font-size="72">😢</text>
+  <text x="101" y="508" text-anchor="middle" font-family="Arial" font-size="18" fill="#374151">슬퍼요</text>
+
+  <rect x="208" y="380" width="162" height="140" rx="20" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+  <text x="289" y="470" text-anchor="middle" font-family="Arial" font-size="72">😡</text>
+  <text x="289" y="508" text-anchor="middle" font-family="Arial" font-size="18" fill="#374151">화났어요</text>
+
+  <!-- Row 3: 불안해요, (scroll more) -->
+  <rect x="20" y="532" width="162" height="140" rx="20" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+  <text x="101" y="622" text-anchor="middle" font-family="Arial" font-size="72">😰</text>
+  <text x="101" y="660" text-anchor="middle" font-family="Arial" font-size="18" fill="#374151">불안해요</text>
+
+  <!-- Scroll hint for 6th -->
+  <rect x="208" y="532" width="162" height="140" rx="20" fill="#F9FAFB" stroke="#E5E7EB" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="289" y="610" text-anchor="middle" font-family="Arial" font-size="36" fill="#D1D5DB">+</text>
+  <text x="289" y="640" text-anchor="middle" font-family="Arial" font-size="14" fill="#9CA3AF">더 보기</text>
+
+  <!-- BOTTOM CTA (fixed) -->
+  <rect y="688" width="390" height="100" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+  <!-- Confirm button (large, accessible) -->
+  <rect x="20" y="700" width="350" height="56" rx="16" fill="#E8724A"/>
+  <text x="195" y="734" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="white">다음 →</text>
+  <!-- Back link -->
+  <text x="195" y="762" text-anchor="middle" font-family="Arial" font-size="14" fill="#9CA3AF">← 이전 단계로</text>
+
+  <!-- Safe area -->
+  <rect y="788" width="390" height="56" fill="#FFFFFF"/>
+  <rect x="155" y="808" width="80" height="5" rx="2.5" fill="#D1D5DB"/>
+
+  <!-- Annotation notes -->
+  <text x="10" y="260" font-family="Arial" font-size="9" fill="#9CA3AF">↑ 162×140px</text>
+  <text x="10" y="271" font-family="Arial" font-size="9" fill="#9CA3AF">  min touch</text>
+</svg>

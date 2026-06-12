@@ -1,0 +1,86 @@
+<svg viewBox="0 0 390 844" xmlns="http://www.w3.org/2000/svg">
+  <!-- P-01 · ST-01 Hub (당사자 접근성 모드) · Mobile 390×844 -->
+  <text x="8" y="12" font-family="Arial" font-size="9" fill="#9CA3AF">P-01 · ST-01 Hub (당사자 ui_mode=icon) · Mobile 390×844</text>
+  <rect width="390" height="844" fill="#FFFBF8"/>
+
+  <!-- Status bar -->
+  <rect width="390" height="44" fill="#E8724A"/>
+  <text x="20" y="30" font-family="Arial" font-size="13" font-weight="bold" fill="white">9:41</text>
+  <text x="340" y="30" font-family="Arial" font-size="12" fill="white">● ●● ■■■</text>
+
+  <!-- Header (warm, accessible) -->
+  <rect y="44" width="390" height="80" fill="#E8724A"/>
+  <text x="24" y="84" font-family="Arial" font-size="22" font-weight="bold" fill="white">안녕하세요!</text>
+  <text x="24" y="108" font-family="Arial" font-size="16" fill="rgba(255,255,255,0.8)">이온돌님 👋</text>
+  <!-- Notifications -->
+  <circle cx="354" cy="84" r="22" fill="rgba(255,255,255,0.2)"/>
+  <text x="354" y="91" text-anchor="middle" font-family="Arial" font-size="18" fill="white">🔔</text>
+  <circle cx="369" cy="68" r="9" fill="#FEE500"/>
+  <text x="369" y="74" text-anchor="middle" font-family="Arial" font-size="8" fill="#3C1E1E">2</text>
+
+  <!-- Today badge -->
+  <rect y="124" width="390" height="40" fill="#FFFFFF"/>
+  <text x="20" y="150" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">오늘: 2026년 6월 12일 금요일</text>
+
+  <!-- TODAY SELF EXPRESSION - Large card -->
+  <rect x="16" y="172" width="358" height="120" rx="20" fill="#FFFFFF" stroke="#FACDB8" stroke-width="2"/>
+  <!-- Already logged today -->
+  <text x="36" y="204" font-family="Arial" font-size="16" font-weight="bold" fill="#111827">오늘 기분</text>
+  <rect x="240" y="188" width="112" height="40" rx="12" fill="#E8724A"/>
+  <text x="296" y="213" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="white">다시 기록</text>
+  <!-- Expression summary -->
+  <text x="36" y="238" font-family="Arial" font-size="52">😊</text>
+  <text x="110" y="232" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">좋아요!</text>
+  <text x="110" y="256" font-family="Arial" font-size="14" fill="#6B7280">아침 09:12에 기록했어요</text>
+  <text x="352" y="256" text-anchor="end" font-family="Arial" font-size="22">🍚✅</text>
+
+  <!-- BIG ACTION BUTTONS (2×2 grid, 80×80 minimum touch) -->
+  <text x="20" y="322" font-family="Arial" font-size="18" font-weight="bold" fill="#111827">뭘 할까요?</text>
+
+  <!-- Button 1: 기분 기록 (large) -->
+  <rect x="16" y="336" width="172" height="148" rx="20" fill="#FFFFFF" stroke="#FACDB8" stroke-width="2"/>
+  <text x="102" y="408" text-anchor="middle" font-family="Arial" font-size="56">😊</text>
+  <text x="102" y="446" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#111827">기분 기록</text>
+  <text x="102" y="468" text-anchor="middle" font-family="Arial" font-size="13" fill="#6B7280">오늘 기분</text>
+
+  <!-- Button 2: 나의 기록 -->
+  <rect x="202" y="336" width="172" height="148" rx="20" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="288" y="408" text-anchor="middle" font-family="Arial" font-size="52">📋</text>
+  <text x="288" y="446" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#111827">나의 기록</text>
+  <text x="288" y="468" text-anchor="middle" font-family="Arial" font-size="13" fill="#6B7280">내 기록 보기</text>
+
+  <!-- Button 3: 타임라인 -->
+  <rect x="16" y="498" width="172" height="148" rx="20" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="102" y="570" text-anchor="middle" font-family="Arial" font-size="52">📅</text>
+  <text x="102" y="608" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#111827">타임라인</text>
+  <text x="102" y="630" text-anchor="middle" font-family="Arial" font-size="13" fill="#6B7280">나의 이야기</text>
+
+  <!-- Button 4: 알림 -->
+  <rect x="202" y="498" width="172" height="148" rx="20" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="288" y="570" text-anchor="middle" font-family="Arial" font-size="52">🔔</text>
+  <circle cx="326" cy="508" r="12" fill="#E04545"/>
+  <text x="326" y="514" text-anchor="middle" font-family="Arial" font-size="10" fill="white">2</text>
+  <text x="288" y="608" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#111827">알림</text>
+  <text x="288" y="630" text-anchor="middle" font-family="Arial" font-size="13" fill="#6B7280">새 소식</text>
+
+  <!-- BOTTOM TAB BAR (simplified 3 tabs for 당사자) -->
+  <rect y="660" width="390" height="56" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+  <!-- Home active -->
+  <text x="78" y="679" text-anchor="middle" font-family="Arial" font-size="22" fill="#E8724A">🏠</text>
+  <text x="78" y="706" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#E8724A">홈</text>
+  <rect x="60" y="660" width="36" height="3" rx="1.5" fill="#E8724A"/>
+  <!-- Self expression -->
+  <text x="195" y="679" text-anchor="middle" font-family="Arial" font-size="22" fill="#9CA3AF">😊</text>
+  <text x="195" y="706" text-anchor="middle" font-family="Arial" font-size="12" fill="#9CA3AF">기분 기록</text>
+  <!-- Settings -->
+  <text x="312" y="679" text-anchor="middle" font-family="Arial" font-size="22" fill="#9CA3AF">⚙️</text>
+  <text x="312" y="706" text-anchor="middle" font-family="Arial" font-size="12" fill="#9CA3AF">설정</text>
+
+  <!-- Safe area note -->
+  <rect y="716" width="390" height="128" fill="#FFFFFF"/>
+  <rect x="155" y="736" width="80" height="5" rx="2.5" fill="#D1D5DB"/>
+  <!-- Accessibility annotation -->
+  <rect x="16" y="760" width="358" height="48" rx="10" fill="#F0F8FA"/>
+  <text x="32" y="784" font-family="Arial" font-size="11" fill="#3B7D8E">♿ 탭 영역 최소 80×80px · 텍스트 20px 이상 · 고대비</text>
+  <text x="32" y="800" font-family="Arial" font-size="11" fill="#3B7D8E">버튼 56×56px 이상 · 음성 안내 지원 (TalkBack/VoiceOver)</text>
+</svg>

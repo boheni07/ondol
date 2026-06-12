@@ -141,7 +141,7 @@ flowchart TD
     A([보호자: 권한 회수 시작]) --> B{회수 트리거}
 
     B --> C1[직접 회수 요청\n보호자 의도적 회수]
-    B --> C2[기간 만료 자동 회수\nvaid_until 도래]
+    B --> C2[기간 만료 자동 회수\nvalid_until 도래]
     B --> C3[이해관계자 계정 비활성\nusers.is_active=false]
 
     %% 직접 회수

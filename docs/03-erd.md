@@ -120,10 +120,10 @@ erDiagram
     uuid    person_id           FK
     date    expression_date     "UNIQUE per person"
     text    emotion             "happy|neutral|sad|angry|anxious"
-    text    meal_status         "ate_well|ate_ok|did_not_eat"
+    text    meal_status         "ate_well|ate_ok|ate_poorly|did_not_eat"
     text    meal_photo_url
     text[]  activities          "exercise|study|art|friends|..."
-    text    body_condition      "healthy|cold|tired|pain"
+    text    body_condition      "healthy|cold|tired|pain|other"
     text    memo                "선택 메모"
     text    voice_memo_url
     timestamptz created_at
@@ -195,7 +195,8 @@ erDiagram
     uuid    recipient_id        FK
     uuid    person_id           FK
     uuid    record_id           FK "NULL 가능"
-    text    type                "new_record|permission_granted|handover|milestone"
+    uuid    self_expression_id  FK "NULL 가능"
+    text    type                "new_record|permission_granted|permission_revoked|handover|milestone"
     text    title
     text    body
     boolean is_read
@@ -237,6 +238,8 @@ erDiagram
 
   users           ||--o{ notifications       : "received by"
   persons         ||--o{ notifications       : "about"
+  records         ||--o{ notifications       : "linked to (optional)"
+  self_expressions||--o{ notifications       : "linked to (optional)"
 ```
 
 ---
@@ -331,7 +334,7 @@ graph LR
 | `access_logs` | `users`, `persons`, `records`(선택), `self_expressions`(선택) | | 접근 로그 |
 | `life_milestones` | `persons`, `users` | person_id, created_by | 이정표 |
 | `handovers` | `persons`, `users`(×2) | person_id, from_user_id, to_user_id | 인수인계 |
-| `notifications` | `users`, `persons`, `records`(선택) | recipient_id, person_id, record_id | 알림 |
+| `notifications` | `users`, `persons`, `records`(선택), `self_expressions`(선택) | recipient_id, person_id, record_id, self_expression_id | 알림 |
 
 ---
 

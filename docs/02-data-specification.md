@@ -195,7 +195,7 @@
 | `person_id` | UUID | ✅ | — | FK → persons.id | |
 | `expression_date` | DATE | ✅ | CURRENT_DATE | 기록 날짜 | |
 | `emotion` | TEXT | — | — | 감정 선택 | happy / neutral / sad / angry / anxious |
-| `meal_status` | TEXT | — | — | 식사 상태 | ate_well / ate_ok / did_not_eat / not_applicable |
+| `meal_status` | TEXT | — | — | 식사 상태 | ate_well / ate_ok / ate_poorly / did_not_eat |
 | `meal_photo_url` | TEXT | — | — | 식사 사진 URL | |
 | `activities` | TEXT[] | — | `'{}'` | 활동 목록 | exercise / study / art / friends / hospital / shopping / home / game / therapy / work |
 | `body_condition` | TEXT | — | — | 몸 상태 | healthy / cold / tired / pain / other |
@@ -288,7 +288,8 @@
 | `id` | UUID | ✅ | PK |
 | `recipient_id` | UUID | ✅ | FK → users.id (수신자) |
 | `person_id` | UUID | ✅ | FK → persons.id |
-| `record_id` | UUID | — | FK → records.id (관련 기록) |
+| `record_id` | UUID | — | FK → records.id (관련 기록, NULL 가능) |
+| `self_expression_id` | UUID | — | FK → self_expressions.id (자기표현 알림 링크, NULL 가능) |
 | `type` | TEXT | ✅ | new_record / permission_granted / permission_revoked / handover / milestone |
 | `title` | TEXT | ✅ | 알림 제목 |
 | `body` | TEXT | — | 알림 내용 |
@@ -438,6 +439,50 @@
 }
 ```
 
+**MED-007 치료 평가 보고서**
+```typescript
+{
+  therapy_type: string
+  period: string                  // 평가 기간 (예: "2024년 상반기")
+  therapist_name: string
+  session_count: number           // 총 회기 수
+  attendance_rate: number         // 출석률 (%)
+  goal_evaluation: {
+    goal: string
+    initial_level: string
+    current_level: string
+    achievement: 'achieved' | 'in_progress' | 'not_achieved'
+    notes: string
+  }[]
+  overall_assessment: string
+  next_period_goals: string[]     // 다음 기간 목표
+  recommendations?: string
+  file_attached: boolean
+}
+```
+
+**MED-009 치료 종결 평가**
+```typescript
+{
+  therapy_type: string
+  termination_reason: 'goal_achieved' | 'transfer' | 'personal' | 'financial' | 'other'
+  termination_reason_detail?: string
+  therapist_name: string
+  period_start: string
+  period_end: string
+  total_sessions: number
+  final_goal_status: {
+    goal: string
+    achievement_level: string
+    notes: string
+  }[]
+  summary: string
+  recommendations?: string        // 이후 권고사항
+  referral?: string               // 다른 서비스 의뢰
+  file_attached: boolean
+}
+```
+
 **MED-010 만성질환 관리 기록**
 ```typescript
 {
@@ -531,6 +576,55 @@
 }
 ```
 
+**EDU-002 유아 특수교육 관찰**
+```typescript
+{
+  observation_month: string       // 예: "2024-03"
+  teacher_name: string
+  institution_name: string        // 유치원/어린이집명
+  developmental_domains: {
+    domain: '인지' | '언어' | '사회성' | '감각운동' | '자조기술'
+    observation: string
+    progress: 'improving' | 'maintaining' | 'needs_support'
+  }[]
+  play_behavior: string           // 놀이 행동 관찰
+  peer_interaction: string        // 또래 관계
+  parent_feedback?: string        // 보호자 전달 사항
+}
+```
+
+**EDU-005 통합교육 참여 기록**
+```typescript
+{
+  activity_date: string
+  activity_name: string
+  inclusion_type: '완전통합' | '부분통합' | '교류학습'
+  general_class: string           // 통합 학급명
+  participants: number            // 참여 학생 수
+  support_provided: string[]      // 제공된 지원
+  participation_level: 'full' | 'partial' | 'minimal'
+  observations: string
+  challenges?: string
+  successes?: string
+  next_activities?: string
+}
+```
+
+**EDU-006 학교 치료지원 기록**
+```typescript
+{
+  support_date: string
+  therapist_name: string
+  therapy_type: string            // OT/ST/PT/기타
+  location: '특수학급' | '통합학급' | '치료실' | '기타'
+  session_duration: number        // 분
+  activities: string[]
+  student_response: string
+  teacher_collaboration: boolean  // 담임교사 협력 여부
+  notes?: string
+}
+```
+
 **EDU-007 전환교육 계획**
 ```typescript
 {
@@ -547,6 +641,36 @@
   }[]
   agency_linkages: string[]       // 연계 기관
   family_involvement: string
+}
+```
+
+**EDU-008 직업교육 참여 기록**
+```typescript
+{
+  activity_date: string
+  activity_type: string           // 직업탐색/직업훈련/현장실습 등
+  activity_name: string
+  duration_hours: number
+  skills_practiced: string[]
+  participation_level: 'excellent' | 'good' | 'fair' | 'poor'
+  strengths_observed: string[]
+  areas_for_support: string[]
+  employer_feedback?: string      // 현장실습 시
+  notes?: string
+}
+```
+
+**EDU-009 졸업/수료 기록**
+```typescript
+{
+  institution_name: string
+  graduation_date: string
+  program_type: '특수학교' | '특수학급' | '일반학교' | '직업훈련기관' | '기타'
+  credential: string              // 학위/수료증 종류
+  final_grade?: string
+  achievements: string[]          // 주요 성취
+  next_placement?: string         // 이후 진로 계획
+  file_attached: boolean
 }
 ```
 
@@ -585,6 +709,24 @@
 }
 ```
 
+**WEL-002 초기 복지 연계 기록**
+```typescript
+{
+  connection_date: string
+  social_worker: string
+  agency_name: string             // 복지관/기관명
+  services_connected: {
+    service_name: string
+    start_date: string
+    provider: string
+    contact?: string
+  }[]
+  unmet_needs: string[]           // 미해결 욕구
+  follow_up_date?: string
+  notes?: string
+}
+```
+
 **WEL-004 개인지원계획 (ISP)**
 ```typescript
 {
@@ -610,9 +752,92 @@
 }
 ```
 
+**WEL-005 ISP 중간 점검**
+```typescript
+{
+  review_date: string
+  reviewer: string
+  review_period: string           // 예: "2024년 상반기"
+  domain_progress: {
+    domain: string
+    goal: string
+    action_status: 'completed' | 'in_progress' | 'not_started' | 'discontinued'
+    achievement_notes: string
+    adjustment_needed: boolean
+    adjustment_plan?: string
+  }[]
+  overall_assessment: string
+  service_satisfaction?: 'satisfied' | 'neutral' | 'dissatisfied'  // 당사자 의견
+  next_review_date?: string
+}
+```
+
+**WEL-006 서비스 이용 현황**
+```typescript
+{
+  report_month: string            // 예: "2024-03"
+  services: {
+    service_name: string
+    provider: string
+    allocated_hours: number
+    used_hours: number
+    utilization_rate: number      // %
+    notes?: string
+  }[]
+  total_cost?: number             // 월 총 비용 (원)
+  issues?: string[]               // 발생 문제
+  changes_needed?: string         // 서비스 변경 필요 사항
+}
+```
+
+**WEL-007 노인복지 연계 기록**
+```typescript
+{
+  connection_date: string
+  social_worker: string
+  reason: string                  // 연계 사유
+  senior_services: {
+    service_name: string
+    agency: string
+    start_date: string
+    support_type: string
+  }[]
+  disability_service_overlap: string  // 장애+노인복지 중복 영역 조율
+  care_plan_updated: boolean
+  notes?: string
+}
+```
+
 ---
 
 ### D. 일상/돌봄
+
+**DAI-001 영유아 돌봄 기록**
+```typescript
+{
+  care_date: string
+  caregiver: string
+  daily_routine: {
+    time: string
+    activity: string
+    notes?: string
+  }[]
+  meals: {
+    meal_type: '수유' | '이유식' | '식사'
+    amount?: string
+    time: string
+    notes?: string
+  }[]
+  sleep: {
+    sleep_time: string
+    wake_time: string
+    quality: 'good' | 'fair' | 'poor'
+  }[]
+  development_observations?: string  // 발달 관찰 사항
+  therapy_sessions?: string[]         // 당일 치료 내용
+  concerns?: string
+}
+```
 
 **DAI-002 활동지원 일지**
 ```typescript
@@ -658,6 +883,40 @@
   intensity?: 'low' | 'medium' | 'high'
   strategies_used?: string[]      // 사용한 전략
   outcome?: string                // 결과
+  notes?: string
+}
+```
+
+**DAI-004 식이 기록**
+```typescript
+{
+  record_date: string
+  meals: {
+    meal_type: '아침' | '점심' | '저녁' | '간식'
+    menu: string
+    amount: '다먹음' | '절반' | '조금' | '안먹음'
+    appetite: 'good' | 'fair' | 'poor'
+    texture_modified: boolean     // 질감 수정식 여부
+    notes?: string
+  }[]
+  water_intake?: string           // 수분 섭취
+  special_diet?: string           // 특이식이 적용 내용
+  concerns?: string
+}
+```
+
+**DAI-005 수면 기록**
+```typescript
+{
+  record_date: string
+  sleep_time: string              // "22:00"
+  wake_time: string               // "07:00"
+  total_hours: number
+  sleep_quality: 'good' | 'fair' | 'poor'
+  night_waking: number            // 야간 각성 횟수
+  waking_reasons?: string[]       // 각성 원인
+  sleep_aids?: string[]           // 수면 보조 (약물 등)
+  behavior_before_sleep?: string
   notes?: string
 }
 ```
@@ -716,9 +975,141 @@
 }
 ```
 
+**TRA-003 직업훈련/취업 기록**
+```typescript
+{
+  record_type: '직업훈련' | '취업' | '직업유지'
+  employer_or_institution: string
+  position_or_program: string
+  start_date: string
+  end_date?: string               // 진행중이면 NULL
+  work_hours_per_week?: number
+  job_coach_support: boolean      // 잡코치 지원 여부
+  skills_developed: string[]
+  performance_notes: string
+  challenges?: string[]
+  supports_needed?: string[]
+  status: 'ongoing' | 'completed' | 'terminated'
+  termination_reason?: string
+}
+```
+
+**TRA-004 자립생활 계획서**
+```typescript
+{
+  plan_date: string
+  social_worker: string
+  target_independence_level: string
+  living_arrangement: '가족과 동거' | '지원주거' | '독립주거' | '공동생활가정' | '시설'
+  independence_domains: {
+    domain: '주거' | '재정' | '건강관리' | '이동' | '사회활동' | '일상생활'
+    current_level: string
+    goal: string
+    support_needed: string[]
+    timeline: string
+  }[]
+  support_network: {
+    role: string
+    name: string
+    contact?: string
+  }[]
+  review_schedule: string
+}
+```
+
+**TRA-005 자립생활 경과 기록**
+```typescript
+{
+  review_date: string
+  reviewer: string
+  review_period: string
+  domain_progress: {
+    domain: string
+    goal: string
+    current_status: string
+    progress: 'improved' | 'maintained' | 'declined'
+    notes: string
+  }[]
+  incidents?: string[]            // 특이 사건
+  support_adjustments?: string    // 지원 조정 사항
+  person_satisfaction?: string    // 당사자 의견
+  next_review_date?: string
+}
+```
+
+**TRA-006 의사결정 지원 기록**
+```typescript
+{
+  decision_date: string
+  supported_by: string            // 지원자 이름/역할
+  decision_topic: string
+  decision_type: '일상' | '재정' | '의료' | '법적' | '거주' | '사회활동' | '기타'
+  person_preference: string       // 당사자 선호/의견
+  options_presented: string[]     // 제시된 선택지
+  final_decision: string
+  person_agreement: boolean       // 당사자 동의 여부
+  support_method: string          // 지원 방법 (AAC, 그림 등)
+  notes?: string
+}
+```
+
+**TRA-007 돌봄 전환 계획**
+```typescript
+{
+  plan_date: string
+  current_caregiver: string
+  transition_reason: string       // 예: 보호자 고령화, 주거 이전
+  target_transition_date?: string
+  current_support_summary: string
+  transition_options: {
+    option_type: string           // 공동생활가정/지원주거/시설 등
+    pros: string[]
+    cons: string[]
+    feasibility: 'high' | 'medium' | 'low'
+  }[]
+  selected_option?: string
+  preparation_steps: {
+    step: string
+    responsible: string
+    timeline: string
+    status?: 'pending' | 'in_progress' | 'done'
+  }[]
+  stakeholders: string[]
+  notes?: string
+}
+```
+
 ---
 
 ### F. 법적/행정
+
+**LEG-001 장애인 증명서 보관**
+```typescript
+{
+  document_type: '장애인등록증' | '장애인증명서' | '복지카드' | '기타'
+  issued_date: string
+  issued_by: string               // 발급 기관 (주민센터 등)
+  expiry_date?: string
+  document_number?: string        // 문서 번호 (마스킹 처리)
+  file_attached: boolean
+  notes?: string
+}
+```
+
+**LEG-002 수급 관련 기록**
+```typescript
+{
+  benefit_type: '장애인연금' | '장애수당' | '활동지원급여' | '기초생활수급' | '기타급여'
+  benefit_detail?: string
+  application_date?: string
+  approval_date?: string
+  status: 'approved' | 'pending' | 'rejected' | 'terminated'
+  monthly_amount?: number         // 월 수급액 (원)
+  review_date?: string            // 다음 갱신 예정일
+  file_attached: boolean
+  notes?: string
+}
+```
 
 **LEG-003 후견 관련 문서**
 ```typescript
@@ -733,6 +1124,44 @@
   review_date?: string
   file_attached: boolean
   notes?: string
+}
+```
+
+**LEG-004 의사결정 지원 계약**
+```typescript
+{
+  contract_type: '의사결정지원신탁' | '지원계약' | '기타'
+  supporter_name: string
+  supporter_relation: string
+  contract_date: string
+  effective_date: string
+  expiry_date?: string
+  scope: string[]                 // 지원 범위 (재정/의료/일상 등)
+  limitations?: string[]          // 제한 사항
+  review_schedule?: string
+  file_attached: boolean
+  notes?: string
+}
+```
+
+**LEG-005 노후 돌봄 계획 문서**
+```typescript
+{
+  document_date: string
+  prepared_by: string
+  current_caregivers: {
+    name: string
+    relation: string
+    age?: number
+    health_status?: string
+  }[]
+  future_care_preferences?: string  // 당사자 선호 (있을 경우)
+  identified_risks: string[]         // 위험 요인 (고령화 등)
+  long_term_plan: string             // 장기 돌봄 계획
+  financial_provisions?: string      // 재정 대비 사항
+  legal_documents?: string[]         // 준비된 법적 문서
+  review_date?: string
+  file_attached: boolean
 }
 ```
 
@@ -836,5 +1265,6 @@ CREATE INDEX idx_notifications_recipient ON notifications(recipient_id, is_read,
 | `self_expressions` | UNIQUE(person_id, expression_date) | 하루 1건 |
 | `record_files` | record_id XOR self_expression_id NOT NULL | 하나에만 연결 |
 | `records` | domain IN Enum값 | 유효 분야만 |
+| `notifications` | record_id XOR self_expression_id (둘 중 최대 하나만 NOT NULL) | 알림 원본 참조 무결성 |
 | `access_logs` | INSERT 전용 (UPDATE/DELETE 불가) | 감사 로그 불변성 |
 | `permission_logs` | INSERT 전용 | 권한 이력 불변성 |

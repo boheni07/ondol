@@ -300,6 +300,8 @@
 
 ## 3. JSONB content 스키마
 
+> 본 절은 `records.content`(JSONB)에 저장되는 6개 분야 기록유형(MED/EDU/WEL/DAI/TRA/LEG)의 스키마를 정의한다. `01-record-matrix.md` 코드 목록의 **SELF-001(자기표현)** 은 `records`가 아닌 별도 `self_expressions` 테이블(§2.8)의 정형 컬럼으로 관리하므로 여기에 content 스키마가 없다.
+
 ### A. 의료/건강
 
 **MED-001 초기 진단 요약**

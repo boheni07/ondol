@@ -9,29 +9,33 @@
 
 ## 작업량 요약
 
-| 분류 | 작업 수 | 합계 공수 (대략) |
+> 공수(일)는 XS=0.5·S=1·M=2.5·L=5·XL=7 환산 합계이며, 엑셀(08-wbs.xlsx)·Gantt와 동일 기준이다.
+
+| 분류 | 작업 수 | 합계 공수 (person-day) |
 |------|--------|---------------|
-| 0. 프로젝트 셋업 | 12 | 8d |
-| 1. DB 스키마 + RLS | 18 | 14d |
-| 2. 인증 (Auth) | 11 | 11d |
-| 3. 사용자·당사자·매핑 | 22 | 22d |
-| 4. 권한 관리 | 18 | 18d |
-| 5. 기록 (Records) | 80+ | 60d |
-| 6. 자기표현 (Self-Expression) | 8 | 7d |
-| 7. 파일 첨부 (Files) | 9 | 7d |
-| 8. 이정표·타임라인 | 14 | 12d |
-| 9. 인수인계 (Handover) | 12 | 11d |
-| 10. 알림 (Notification) | 14 | 10d |
-| 11. 접근 로그 (Audit) | 8 | 6d |
-| 12. 디자인 시스템 | 16 | 14d |
-| 13. 웹 UI — 보호자 | 24 | 24d |
-| 14. 웹 UI — 당사자 (접근성) | 10 | 10d |
-| 15. 웹 UI — 전문가 4역할 | 36 | 34d |
-| 16. 모바일 앱 (RN) | 30 | 30d |
-| 17. SEO·보안·접근성 | 14 | 10d |
-| 18. QA·테스트 | 20 | 16d |
-| 19. CI/CD·배포 | 14 | 10d |
-| **합계** | **~390 작업** | **~334d (≈ 16주, 5명 팀)** |
+| 0. 프로젝트 셋업 | 12 | 10.5d |
+| 1. DB 스키마 + RLS | 18 | 13d |
+| 2. 인증 (Auth) | 11 | 15d |
+| 3. 사용자·당사자·매핑 | 24 | 23d |
+| 4. 권한 관리 | 18 | 25d |
+| 5. 기록 (Records) | 56 | 95.5d |
+| 6. 자기표현 (Self-Expression) | 8 | 9.5d |
+| 7. 파일 첨부 (Files) | 9 | 10.5d |
+| 8. 이정표·타임라인 | 14 | 13.5d |
+| 9. 인수인계 (Handover) | 12 | 16d |
+| 10. 알림 (Notification) | 14 | 16d |
+| 11. 접근 로그 (Audit) | 8 | 12.5d |
+| 12. 디자인 시스템 | 21 | 22d |
+| 13. 웹 UI — 보호자 | 26 | 53d |
+| 14. 웹 UI — 당사자 (접근성) | 10 | 19d |
+| 15. 웹 UI — 전문가 4역할 | 41 | 100d |
+| 16. 모바일 앱 (RN) | 33 | 83.5d |
+| 17. SEO·보안·접근성 | 15 | 23d |
+| 18. QA·테스트 | 17 | 48.5d |
+| 19. CI/CD·배포 | 14 | 23d |
+| **합계** | **381 작업** | **632 person-day** |
+
+> 632 person-day는 전체(P0~P2) 합계다. 7인 병렬·Gantt 기준 캘린더 약 16주. MVP(P0)만 추리면 부록 B 참조(약 280d). 담당자별 부하는 09-wbs-github.md 참조.
 
 ---
 
@@ -80,7 +84,7 @@
 | 1.1.6 | `permission_logs` 테이블 | 🟦 | migration | XS | P0 | permission_logs — 권한 부여/수정/회수 이력(감사 추적). 참고: docs/02 §2(permission_logs), docs/05-workflows-feature.md §2·§3 | PL |
 | 1.1.7 | `records` 테이블 (JSONB content) | 🟦 | migration | S | P0 | records — 6도메인 기록 공통 테이블. domain·record_type·content(JSONB)·is_draft·is_milestone. 참고: docs/02 §2(records), §3 JSONB content 스키마 | PL |
 | 1.1.8 | `self_expressions` 테이블 | 🟦 | migration | XS | P0 | self_expressions — 당사자 자기표현(날짜별 UNIQUE). mood·activities·content(JSONB). 참고: docs/02 §2(self_expressions), §3 JSONB | PL |
-| 1.1.9 | `record_files` 테이블 | 🟦 | migration | XS | P0 | record_files — 기록·자기표현 첨부 파일 메타. storage_path·sensitivity·mime. 참고: docs/02 §2(record_files), docs/05 §5 파일 첨부 | PL |
+| 1.1.9 | `record_files` 테이블 | 🟦 | migration | XS | P0 | record_files — 기록·자기표현 첨부 파일 메타. storage_path·is_sensitive·mime. 참고: docs/02 §2(record_files), docs/05 §5 파일 첨부 | PL |
 | 1.1.10 | `life_milestones` 테이블 | 🟦 | migration | XS | P0 | life_milestones — 생애주기 이정표(진단·입학·졸업 등). category·event_date. 참고: docs/02 §2(life_milestones), docs/05 §6 타임라인 | PL |
 | 1.1.11 | `handovers` 테이블 | 🟦 | migration | XS | P0 | handovers — 전문가 인수인계. domain·summary·linked_record_ids·is_confirmed. 참고: docs/02 §2(handovers), docs/05 §7 인수인계 | PL |
 | 1.1.12 | `access_logs` 테이블 (INSERT-only) | 🟦 | migration | XS | P0 | access_logs — INSERT-only 접근 로그(불변). actor·action·target. 참고: docs/02 §2(access_logs), docs/03 §RLS 정책 요약 | PL |
@@ -325,7 +329,7 @@
 | 7.3 | 파일 단건 조회 (다운로드 URL) | 🟩 | GET /files/:id | S | P0 | 파일 단건 조회 + 다운로드 URL(CDN/presigned). 참고: bkit:bkend-storage 스킬 | 개발자 B |
 | 7.4 | 기록별 파일 목록 | 🟨 | GET /records/:id/files | XS | P0 | 특정 기록의 첨부 파일 목록. | 개발자 B |
 | 7.5 | 자기표현별 파일 목록 | 🟨 | GET /self-expressions/:id/files | XS | P0 | 특정 자기표현의 첨부 파일 목록. | 개발자 B |
-| 7.6 | 파일 메타 수정 (제목/민감도) | 🟧 | PATCH /files/:id | XS | P0 | 파일 메타 수정(제목·민감도 sensitivity). 참고: docs/02 §4 Enum(sensitivity) | 개발자 B |
+| 7.6 | 파일 메타 수정 (제목/민감도) | 🟧 | PATCH /files/:id | XS | P0 | 파일 메타 수정(제목·민감 여부 is_sensitive BOOLEAN). 참고: docs/02 §2(record_files) | 개발자 B |
 | 7.7 | 파일 삭제 (storage + meta) | 🟥 | DELETE /files/:id | S | P0 | 파일 삭제(스토리지 객체 + 메타 동시). | 개발자 B |
 | 7.8 | 민감 파일 추가 인증 (응급 정보) | 🔐 | middleware | M | P0 | 민감 파일(응급정보 등) 다운로드 시 추가 인증 미들웨어. 참고: docs/05 §11 보안 흐름, docs/08-wbs.md §17.2.5 | 개발자 B |
 | 7.9 | 파일 바이러스 스캔 (옵션) | 🔐 | edge function | M | P2 | 업로드 파일 바이러스 스캔 edge function(P2). | 개발자 B |

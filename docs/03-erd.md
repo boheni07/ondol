@@ -327,7 +327,7 @@ graph LR
 | `guardian_persons` | `users`, `persons` | guardian_id, person_id | 보호자-당사자 연결 |
 | `person_accounts` | `persons`, `users` | person_id, user_id | 당사자 계정 연결 |
 | `permissions` | `persons`, `users`(×2) | person_id, user_id, granted_by | 권한 매트릭스 |
-| `permission_logs` | `permissions`, `users`(×2) | permission_id, user_id, changed_by | 권한 변경 이력 |
+| `permission_logs` | `permissions`, `persons`, `users` | permission_id, person_id, changed_by | 권한 변경 이력 (user_id는 권한 대상자 ID로 저장, 형식 FK 아님) |
 | `records` | `persons`, `users` | person_id, author_id | 기록 |
 | `self_expressions` | `persons` | person_id | 당사자 자기표현 |
 | `record_files` | `records` OR `self_expressions`, `users` | record_id XOR self_expression_id | 첨부 파일 |

@@ -31,7 +31,7 @@
 - [ ] **1.1.6** `permission_logs` 테이블 `XS` `P0` — permission_logs — 권한 부여/수정/회수 이력(감사 추적). 참고: docs/02 §2(permission_logs), docs/05-workflows-feature.md §2·§3
 - [ ] **1.1.7** `records` 테이블 (JSONB content) `S` `P0` — records — 6도메인 기록 공통 테이블. domain·record_type·content(JSONB)·is_draft·is_milestone. 참고: docs/02 §2(records), §3 JSONB content 스키마
 - [ ] **1.1.8** `self_expressions` 테이블 `XS` `P0` — self_expressions — 당사자 자기표현(날짜별 UNIQUE). mood·activities·content(JSONB). 참고: docs/02 §2(self_expressions), §3 JSONB
-- [ ] **1.1.9** `record_files` 테이블 `XS` `P0` — record_files — 기록·자기표현 첨부 파일 메타. storage_path·sensitivity·mime. 참고: docs/02 §2(record_files), docs/05 §5 파일 첨부
+- [ ] **1.1.9** `record_files` 테이블 `XS` `P0` — record_files — 기록·자기표현 첨부 파일 메타. storage_path·is_sensitive·mime. 참고: docs/02 §2(record_files), docs/05 §5 파일 첨부
 - [ ] **1.1.10** `life_milestones` 테이블 `XS` `P0` — life_milestones — 생애주기 이정표(진단·입학·졸업 등). category·event_date. 참고: docs/02 §2(life_milestones), docs/05 §6 타임라인
 - [ ] **1.1.11** `handovers` 테이블 `XS` `P0` — handovers — 전문가 인수인계. domain·summary·linked_record_ids·is_confirmed. 참고: docs/02 §2(handovers), docs/05 §7 인수인계
 - [ ] **1.1.12** `access_logs` 테이블 (INSERT-only) `XS` `P0` — access_logs — INSERT-only 접근 로그(불변). actor·action·target. 참고: docs/02 §2(access_logs), docs/03 §RLS 정책 요약
@@ -296,7 +296,7 @@
 - [ ] **7.3** 파일 단건 조회 (다운로드 URL) `S` `P0` — 파일 단건 조회 + 다운로드 URL(CDN/presigned). 참고: bkit:bkend-storage 스킬
 - [ ] **7.4** 기록별 파일 목록 `XS` `P0` — 특정 기록의 첨부 파일 목록.
 - [ ] **7.5** 자기표현별 파일 목록 `XS` `P0` — 특정 자기표현의 첨부 파일 목록.
-- [ ] **7.6** 파일 메타 수정 (제목/민감도) `XS` `P0` — 파일 메타 수정(제목·민감도 sensitivity). 참고: docs/02 §4 Enum(sensitivity)
+- [ ] **7.6** 파일 메타 수정 (제목/민감도) `XS` `P0` — 파일 메타 수정(제목·민감 여부 is_sensitive BOOLEAN). 참고: docs/02 §2(record_files)
 - [ ] **7.7** 파일 삭제 (storage + meta) `S` `P0` — 파일 삭제(스토리지 객체 + 메타 동시).
 - [ ] **7.8** 민감 파일 추가 인증 (응급 정보) `M` `P0` — 민감 파일(응급정보 등) 다운로드 시 추가 인증 미들웨어. 참고: docs/05 §11 보안 흐름, docs/08-wbs.md §17.2.5
 - [ ] **7.9** 파일 바이러스 스캔 (옵션) `M` `P2` — 업로드 파일 바이러스 스캔 edge function(P2).

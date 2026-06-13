@@ -62,8 +62,9 @@
 
 - **웹:** Next.js (App Router) · TypeScript · Tailwind CSS · Pretendard
 - **모바일:** React Native (Expo) · EAS
-- **백엔드·DB:** Supabase 또는 bkend.ai BaaS — PostgreSQL + **RLS**(행 수준 보안) · Prisma
-- **알림:** FCM(푸시) · SendGrid/Resend(이메일)
+- **백엔드·DB:** Supabase — PostgreSQL + **RLS**(행 수준 보안) · Prisma
+- **상태·폼:** TanStack Query · React Hook Form + Zod
+- **알림:** FCM(푸시) · Resend(이메일)
 - **인프라:** pnpm 모노레포 · Vercel(웹) · GitHub Actions · Sentry
 
 자세한 내용과 선정 근거는 [docs/10-tech-stack.md](docs/10-tech-stack.md) 참조.

@@ -1,8 +1,8 @@
 # WBS → GitHub 등록 가이드 (Issues · Milestones · Projects)
 
-> 생성: gen_github_assets.py · 원본 docs/08-wbs.md
+> 생성: project-planning 스킬 · 원본 docs/08-wbs.md
 
-이 문서는 WBS를 GitHub에 등록하기 위한 매핑·정책·실행 방법을 정의한다. **작업패키지(WBS 하위 섹션) 1개 = Issue 1개**, **Phase 1개 = Milestone 1개**, 전체를 **Projects 보드 1개**로 관리한다.
+작업패키지(WBS 하위 섹션) 1개 = Issue 1개, Phase 1개 = Milestone 1개, 전체를 Projects 보드 1개로 관리한다.
 
 ---
 
@@ -11,14 +11,14 @@
 | 담당자 | 담당 영역 | Phase | 작업패키지 | 작업 | 예상 공수 |
 |--------|-----------|-------|:----:|:---:|:------:|
 | PM (PM) | QA·테스트(품질/인수 시나리오) | 18 | 3 | 17 | 48.5d |
-| PL (PL) | 셋업·스키마/RLS·보안접근성·배포 | 0,1,17,19 | 9 | 59 | 69.5d |
-| 개발자 A (Dev-A) | 백엔드(인증·사용자·권한·감사) | 2,3,4,11 | 10 | 61 | 75.5d |
-| 개발자 B (Dev-B) | 백엔드(기록·자기표현·파일·타임라인·인계·알림) | 5,6,7,8,9,10 | 15 | 113 | 161d |
+| PL (PL) | 셋업·아키텍처·감사·보안접근성·배포 | 0,1,11,17,19 | 10 | 67 | 82d |
+| 개발자 A (Dev-A) | 백엔드(인증·사용자·권한·타임라인·인계·알림) | 2,3,4,8,9,10 | 15 | 93 | 108.5d |
+| 개발자 B (Dev-B) | 백엔드(기록·자기표현·파일) | 5,6,7 | 9 | 73 | 115.5d |
 | 개발자 C (Dev-C) | 프론트 웹(디자인시스템·보호자·당사자) | 12,13,14 | 8 | 57 | 94d |
 | 개발자 D (Dev-D) | 프론트 웹(전문가 4역할) | 15 | 4 | 41 | 100d |
 | 개발자 E (Dev-E) | 모바일(RN) | 16 | 6 | 33 | 83.5d |
 
-> 배정 근거: docs/08-wbs.md 부록 C 역할별 작업 비중(백엔드 ~120d, 프론트 ~80d, 모바일 ~50d 등). GitHub 실제 할당은 스크립트 상단의 role→username 매핑에 깃허브 아이디를 채워 사용.
+> 배정 근거: docs/08-wbs.md 부록 C. 백엔드 과부하 완화를 위해 타임라인·인계·알림(8~10)은 Dev-A, 감사(11)는 PL이 담당. GitHub 실제 할당은 스크립트 상단 role→username 매핑 사용.
 
 ---
 
@@ -34,10 +34,10 @@
 | Phase 5 · 기록 (Records) | W7–W12 | 7 | 56 | 95.5d | 개발자 B |
 | Phase 6 · 자기표현 | W9–W10 | 1 | 8 | 9.5d | 개발자 B |
 | Phase 7 · 파일 첨부 | W9–W10 | 1 | 9 | 10.5d | 개발자 B |
-| Phase 8 · 이정표·타임라인 | W10–W12 | 2 | 14 | 13.5d | 개발자 B |
-| Phase 9 · 인수인계 | W11–W13 | 2 | 12 | 16d | 개발자 B |
-| Phase 10 · 알림 | W11–W13 | 2 | 14 | 16d | 개발자 B |
-| Phase 11 · 접근 로그 | W12–W13 | 1 | 8 | 12.5d | 개발자 A |
+| Phase 8 · 이정표·타임라인 | W10–W12 | 2 | 14 | 13.5d | 개발자 A |
+| Phase 9 · 인수인계 | W11–W13 | 2 | 12 | 16d | 개발자 A |
+| Phase 10 · 알림 | W11–W13 | 2 | 14 | 16d | 개발자 A |
+| Phase 11 · 접근 로그 | W12–W13 | 1 | 8 | 12.5d | PL |
 | Phase 12 · 디자인 시스템 | W4–W6 | 4 | 21 | 22d | 개발자 C |
 | Phase 13 · 웹 UI — 보호자 | W7–W11 | 3 | 26 | 53d | 개발자 C |
 | Phase 14 · 웹 UI — 당사자(접근성) | W10–W12 | 1 | 10 | 19d | 개발자 C |
@@ -51,10 +51,10 @@
 
 ## 3. Labels
 
-- `phase:0` ~ `phase:19` — Phase 분류
-- `priority:P0` (MVP필수) · `priority:P1` (권장) · `priority:P2` (차기)
+- `phase:0` ~ `phase:19`
+- `priority:P0` · `priority:P1` · `priority:P2`
 - `type:infra|db|backend|frontend|mobile|design|security|qa`
-- `role:PM|PL|Dev-A|Dev-B|Dev-C|Dev-D|Dev-E` — 담당자(실제 할당 전에도 보드 필터 가능)
+- `role:PM|PL|Dev-A|Dev-B|Dev-C|Dev-D|Dev-E`
 
 ---
 
@@ -83,13 +83,13 @@
 | 19 | [5.F] 법적/행정 기록 (LEG-001 ~ LEG-005) | Phase 5 | 개발자 B | P0 | 8d | 5 |
 | 20 | [6] 자기표현 (Self-Expression) | Phase 6 | 개발자 B | P0 | 9.5d | 8 |
 | 21 | [7] 파일 첨부 (Record Files) | Phase 7 | 개발자 B | P0 | 10.5d | 9 |
-| 22 | [8.1] 이정표 CRUD | Phase 8 | 개발자 B | P0 | 4d | 6 |
-| 23 | [8.2] 타임라인 (records + milestones + self_expressions 통합) | Phase 8 | 개발자 B | P0 | 9.5d | 8 |
-| 24 | [9.1] 인수인계 CRUD | Phase 9 | 개발자 B | P0 | 7d | 6 |
-| 25 | [9.2] 인계 플로우 | Phase 9 | 개발자 B | P0 | 9d | 6 |
-| 26 | [10.1] 알림 인프라 | Phase 10 | 개발자 B | P0 | 5.5d | 6 |
-| 27 | [10.2] 알림 채널 | Phase 10 | 개발자 B | P0 | 10.5d | 8 |
-| 28 | [11] 접근 로그 (Audit) | Phase 11 | 개발자 A | P0 | 12.5d | 8 |
+| 22 | [8.1] 이정표 CRUD | Phase 8 | 개발자 A | P0 | 4d | 6 |
+| 23 | [8.2] 타임라인 (records + milestones + self_expressions 통합) | Phase 8 | 개발자 A | P0 | 9.5d | 8 |
+| 24 | [9.1] 인수인계 CRUD | Phase 9 | 개발자 A | P0 | 7d | 6 |
+| 25 | [9.2] 인계 플로우 | Phase 9 | 개발자 A | P0 | 9d | 6 |
+| 26 | [10.1] 알림 인프라 | Phase 10 | 개발자 A | P0 | 5.5d | 6 |
+| 27 | [10.2] 알림 채널 | Phase 10 | 개발자 A | P0 | 10.5d | 8 |
+| 28 | [11] 접근 로그 (Audit) | Phase 11 | PL | P0 | 12.5d | 8 |
 | 29 | [12.1] 토큰 (07-design-system.md 기반) | Phase 12 | 개발자 C | P0 | 3d | 4 |
 | 30 | [12.2] Primitives | Phase 12 | 개발자 C | P0 | 5.5d | 8 |
 | 31 | [12.3] Composite Components | Phase 12 | 개발자 C | P0 | 6.5d | 5 |
@@ -125,19 +125,18 @@
 ### 방법 A — 자동 스크립트 (권장)
 
 ```bash
-# 1) gh 로그인 + (프로젝트 사용 시) 권한 추가
 gh auth login
-gh auth refresh -s project,repo   # Projects 보드 생성 시 필요
-# 2) 스크립트 상단 role→username 매핑 편집 후 실행
+gh auth refresh -s project,repo
+# scripts/import-wbs-github.sh 상단 role→username 매핑 편집 후
 bash scripts/import-wbs-github.sh
 ```
 
-스크립트는 ① 라벨 생성 ② 마일스톤 생성 ③ 이슈 55개 생성(마일스톤·라벨·담당자 부여) ④ (옵션) Projects 보드 생성 후 이슈 일괄 추가 순으로 동작한다. 멱등적으로 재실행 가능.
+스크립트는 라벨→마일스톤→이슈 55개→(옵션)Projects 순으로 동작, 멱등 재실행 가능.
 
 ### 방법 B — CSV 임포트
 
-`docs/wbs-github-issues.csv` 를 GitHub CSV 임포트 도구(예: github-csv-tools)로 업로드. Title·Body·Milestone·Labels·Assignee 컬럼 매핑.
+docs/wbs-github-issues.csv 를 GitHub CSV 임포트 도구로 업로드.
 
 ### 방법 C — Projects 커스텀 필드
 
-보드 생성 후 커스텀 필드 권장: `Status`(Todo/Doing/Review/Done), `담당자`(single-select: PM/PL/Dev-A~E), `우선순위`(P0/P1/P2), `공수(일)`(number), `Phase`(number), `주차`(text). 라벨로도 필터되므로 필드는 선택. 
+Status·담당자·우선순위·공수(일)·Phase 필드 권장. 라벨로도 필터 가능.

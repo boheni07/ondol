@@ -338,25 +338,25 @@
 
 | ID | 작업 | CRUD | 산출물 | 공수 | P | 세부사항 | 담당자 |
 |----|------|:---:|------|:---:|:-:| :-------- | :----: |
-| 8.1.1 | 이정표 추가 | 🟦 | POST /milestones | S | P0 | 이정표 추가(진단·입학·졸업·취업 등). category·event_date. 참고: docs/02 §2(life_milestones), docs/01-record-matrix.md | 개발자 B |
-| 8.1.2 | 이정표 단건 조회 | 🟩 | GET /milestones/:id | XS | P0 | 이정표 단건 조회. | 개발자 B |
-| 8.1.3 | 당사자별 이정표 목록 | 🟨 | GET /persons/:id/milestones | S | P0 | 당사자별 이정표 목록. | 개발자 B |
-| 8.1.4 | 이정표 수정 | 🟧 | PATCH /milestones/:id | XS | P0 | 이정표 수정. | 개발자 B |
-| 8.1.5 | 이정표 삭제 | 🟥 | DELETE /milestones/:id | XS | P0 | 이정표 삭제. | 개발자 B |
-| 8.1.6 | 카테고리별 이정표 필터 | 🟨 | GET /milestones?category= | XS | P0 | 카테고리별 이정표 필터. | 개발자 B |
+| 8.1.1 | 이정표 추가 | 🟦 | POST /milestones | S | P0 | 이정표 추가(진단·입학·졸업·취업 등). category·event_date. 참고: docs/02 §2(life_milestones), docs/01-record-matrix.md | 개발자 A |
+| 8.1.2 | 이정표 단건 조회 | 🟩 | GET /milestones/:id | XS | P0 | 이정표 단건 조회. | 개발자 A |
+| 8.1.3 | 당사자별 이정표 목록 | 🟨 | GET /persons/:id/milestones | S | P0 | 당사자별 이정표 목록. | 개발자 A |
+| 8.1.4 | 이정표 수정 | 🟧 | PATCH /milestones/:id | XS | P0 | 이정표 수정. | 개발자 A |
+| 8.1.5 | 이정표 삭제 | 🟥 | DELETE /milestones/:id | XS | P0 | 이정표 삭제. | 개발자 A |
+| 8.1.6 | 카테고리별 이정표 필터 | 🟨 | GET /milestones?category= | XS | P0 | 카테고리별 이정표 필터. | 개발자 A |
 
 ## 8.2 타임라인 (records + milestones + self_expressions 통합)
 
 | ID | 작업 | CRUD | 산출물 | 공수 | P | 세부사항 | 담당자 |
 |----|------|:---:|------|:---:|:-:| :-------- | :----: |
-| 8.2.1 | 통합 타임라인 조회 (시간 역순) | 🟨 | GET /persons/:id/timeline | M | P0 | records+milestones+self_expressions 통합 타임라인(시간 역순). 참고: docs/05 §6 생애주기 타임라인 조회, wireframes/web/03-timeline.svg | 개발자 B |
-| 8.2.2 | 분야별 필터 | 🟨 | ?domain= | S | P0 | 타임라인 도메인 필터. 참고: docs/07 §1 도메인 컬러 | 개발자 B |
-| 8.2.3 | 생애주기별 필터 | 🟨 | ?life_stage= | S | P0 | 생애주기(life_stage)별 필터. 참고: docs/02 §4 Enum(life_stage) | 개발자 B |
-| 8.2.4 | 날짜 범위 필터 | 🟨 | ?from=&to= | XS | P0 | 날짜 범위 필터. | 개발자 B |
-| 8.2.5 | 이정표만 보기 | 🟨 | ?milestones_only=true | XS | P0 | 이정표만 필터링. | 개발자 B |
-| 8.2.6 | 작성자별 필터 | 🟨 | ?author= | XS | P1 | 작성자별 필터(P1). | 개발자 B |
-| 8.2.7 | 타임라인 PDF 내보내기 | 🔀 | POST /timeline/export | M | P1 | 타임라인 PDF 내보내기(P1). 참고: docs/05 §6 | 개발자 B |
-| 8.2.8 | 생애주기 자동 마커 (트리거) | 🟧 | DB trigger | S | P0 | 생애주기 전환 시 자동 마커 삽입 트리거. 참고: docs/05 §10 당사자 전환기 처리 | 개발자 B |
+| 8.2.1 | 통합 타임라인 조회 (시간 역순) | 🟨 | GET /persons/:id/timeline | M | P0 | records+milestones+self_expressions 통합 타임라인(시간 역순). 참고: docs/05 §6 생애주기 타임라인 조회, wireframes/web/03-timeline.svg | 개발자 A |
+| 8.2.2 | 분야별 필터 | 🟨 | ?domain= | S | P0 | 타임라인 도메인 필터. 참고: docs/07 §1 도메인 컬러 | 개발자 A |
+| 8.2.3 | 생애주기별 필터 | 🟨 | ?life_stage= | S | P0 | 생애주기(life_stage)별 필터. 참고: docs/02 §4 Enum(life_stage) | 개발자 A |
+| 8.2.4 | 날짜 범위 필터 | 🟨 | ?from=&to= | XS | P0 | 날짜 범위 필터. | 개발자 A |
+| 8.2.5 | 이정표만 보기 | 🟨 | ?milestones_only=true | XS | P0 | 이정표만 필터링. | 개발자 A |
+| 8.2.6 | 작성자별 필터 | 🟨 | ?author= | XS | P1 | 작성자별 필터(P1). | 개발자 A |
+| 8.2.7 | 타임라인 PDF 내보내기 | 🔀 | POST /timeline/export | M | P1 | 타임라인 PDF 내보내기(P1). 참고: docs/05 §6 | 개발자 A |
+| 8.2.8 | 생애주기 자동 마커 (트리거) | 🟧 | DB trigger | S | P0 | 생애주기 전환 시 자동 마커 삽입 트리거. 참고: docs/05 §10 당사자 전환기 처리 | 개발자 A |
 
 ---
 
@@ -366,23 +366,23 @@
 
 | ID | 작업 | CRUD | 산출물 | 공수 | P | 세부사항 | 담당자 |
 |----|------|:---:|------|:---:|:-:| :-------- | :----: |
-| 9.1.1 | 인수인계 생성 (Flow-6 4스텝) | 🟦 | POST /handovers | M | P0 | 인수인계 생성 4스텝(분야·기간·요약·연계 기록). 참고: docs/06 §6 Flow-6 인수인계, docs/05 §7 인수인계, docs/02 §2(handovers), wireframes/web/56-worker-handover-create.svg | 개발자 B |
-| 9.1.2 | 인수인계 단건 조회 | 🟩 | GET /handovers/:id | S | P0 | 인수인계 상세 조회(연계 기록 포함). 참고: wireframes/web/40-supporter-handover-detail.svg | 개발자 B |
-| 9.1.3 | 받은 인계 목록 | 🟨 | GET /handovers/received | S | P0 | 받은 인계 목록. 참고: wireframes/web/39-supporter-handover-list.svg | 개발자 B |
-| 9.1.4 | 전달한 인계 목록 | 🟨 | GET /handovers/sent | S | P0 | 전달한 인계 목록. | 개발자 B |
-| 9.1.5 | 인계 수정 (미확인 상태에서만) | 🟧 | PATCH /handovers/:id | S | P0 | 인계 수정(미확인 상태에서만). 참고: docs/03 §RLS | 개발자 B |
-| 9.1.6 | 인계 삭제 (취소) | 🟥 | DELETE /handovers/:id | XS | P1 | 인계 삭제/취소(P1). | 개발자 B |
+| 9.1.1 | 인수인계 생성 (Flow-6 4스텝) | 🟦 | POST /handovers | M | P0 | 인수인계 생성 4스텝(분야·기간·요약·연계 기록). 참고: docs/06 §6 Flow-6 인수인계, docs/05 §7 인수인계, docs/02 §2(handovers), wireframes/web/56-worker-handover-create.svg | 개발자 A |
+| 9.1.2 | 인수인계 단건 조회 | 🟩 | GET /handovers/:id | S | P0 | 인수인계 상세 조회(연계 기록 포함). 참고: wireframes/web/40-supporter-handover-detail.svg | 개발자 A |
+| 9.1.3 | 받은 인계 목록 | 🟨 | GET /handovers/received | S | P0 | 받은 인계 목록. 참고: wireframes/web/39-supporter-handover-list.svg | 개발자 A |
+| 9.1.4 | 전달한 인계 목록 | 🟨 | GET /handovers/sent | S | P0 | 전달한 인계 목록. | 개발자 A |
+| 9.1.5 | 인계 수정 (미확인 상태에서만) | 🟧 | PATCH /handovers/:id | S | P0 | 인계 수정(미확인 상태에서만). 참고: docs/03 §RLS | 개발자 A |
+| 9.1.6 | 인계 삭제 (취소) | 🟥 | DELETE /handovers/:id | XS | P1 | 인계 삭제/취소(P1). | 개발자 A |
 
 ## 9.2 인계 플로우
 
 | ID | 작업 | CRUD | 산출물 | 공수 | P | 세부사항 | 담당자 |
 |----|------|:---:|------|:---:|:-:| :-------- | :----: |
-| 9.2.1 | Step1 — 기본 설정 (분야·기간·후임자) | 🟦 | UI step | S | P0 | Step1 — 분야·인계 기간·후임자 지정. 참고: docs/06 §6 Flow-6, wireframes/web/56-worker-handover-create.svg | 개발자 B |
-| 9.2.2 | Step2 — 핵심 요약·특이사항 태그 | 🟦 | UI step | S | P0 | Step2 — 핵심 요약·특이사항 태그 작성. | 개발자 B |
-| 9.2.3 | Step3 — 중요 기록 다중 선택 | 🟦 | UI step | M | P0 | Step3 — 중요 기록 다중 선택(linked_record_ids). | 개발자 B |
-| 9.2.4 | Step4 — 미리보기·발송·알림 | 🟦 | UI step + notification | S | P0 | Step4 — 미리보기·발송 + 후임자 알림. 참고: docs/05 §8 알림 | 개발자 B |
-| 9.2.5 | 인계 확인 처리 (is_confirmed) | 🟧 | PATCH /handovers/:id/confirm | S | P0 | 후임자 인계 확인 처리(is_confirmed). 참고: docs/04 §3 활동지원사 | 개발자 B |
-| 9.2.6 | 인계 확인 시 권한 자동 이양 (옵션) | 🟧 | trigger | M | P1 | 인계 확인 시 권한 자동 이양 트리거(옵션, P1). 참고: docs/05 §7·§2 | 개발자 B |
+| 9.2.1 | Step1 — 기본 설정 (분야·기간·후임자) | 🟦 | UI step | S | P0 | Step1 — 분야·인계 기간·후임자 지정. 참고: docs/06 §6 Flow-6, wireframes/web/56-worker-handover-create.svg | 개발자 A |
+| 9.2.2 | Step2 — 핵심 요약·특이사항 태그 | 🟦 | UI step | S | P0 | Step2 — 핵심 요약·특이사항 태그 작성. | 개발자 A |
+| 9.2.3 | Step3 — 중요 기록 다중 선택 | 🟦 | UI step | M | P0 | Step3 — 중요 기록 다중 선택(linked_record_ids). | 개발자 A |
+| 9.2.4 | Step4 — 미리보기·발송·알림 | 🟦 | UI step + notification | S | P0 | Step4 — 미리보기·발송 + 후임자 알림. 참고: docs/05 §8 알림 | 개발자 A |
+| 9.2.5 | 인계 확인 처리 (is_confirmed) | 🟧 | PATCH /handovers/:id/confirm | S | P0 | 후임자 인계 확인 처리(is_confirmed). 참고: docs/04 §3 활동지원사 | 개발자 A |
+| 9.2.6 | 인계 확인 시 권한 자동 이양 (옵션) | 🟧 | trigger | M | P1 | 인계 확인 시 권한 자동 이양 트리거(옵션, P1). 참고: docs/05 §7·§2 | 개발자 A |
 
 ---
 
@@ -392,25 +392,25 @@
 
 | ID | 작업 | CRUD | 산출물 | 공수 | P | 세부사항 | 담당자 |
 |----|------|:---:|------|:---:|:-:| :-------- | :----: |
-| 10.1.1 | 알림 생성 (이벤트별 자동) | 🟦 | trigger fn | M | P0 | 이벤트별 알림 자동 생성 트리거(기록 작성·권한 변경·인계 등). 참고: docs/05 §8 알림 발송/수신, docs/02 §3 JSONB(notification payload) | 개발자 B |
-| 10.1.2 | 알림 단건 조회 | 🟩 | GET /notifications/:id | XS | P0 | 알림 단건 조회. | 개발자 B |
-| 10.1.3 | 사용자별 알림 목록 (페이징) | 🟨 | GET /notifications | S | P0 | 사용자별 알림 목록(페이징). 참고: wireframes/web/23-guardian-notifications.svg | 개발자 B |
-| 10.1.4 | 알림 읽음 처리 | 🟧 | PATCH /notifications/:id/read | XS | P0 | 알림 읽음 처리. | 개발자 B |
-| 10.1.5 | 알림 일괄 읽음 처리 | 🔀 | PATCH /notifications/read-all | XS | P0 | 알림 일괄 읽음 처리. | 개발자 B |
-| 10.1.6 | 알림 삭제 | 🟥 | DELETE /notifications/:id | XS | P1 | 알림 삭제(P1). | 개발자 B |
+| 10.1.1 | 알림 생성 (이벤트별 자동) | 🟦 | trigger fn | M | P0 | 이벤트별 알림 자동 생성 트리거(기록 작성·권한 변경·인계 등). 참고: docs/05 §8 알림 발송/수신, docs/02 §3 JSONB(notification payload) | 개발자 A |
+| 10.1.2 | 알림 단건 조회 | 🟩 | GET /notifications/:id | XS | P0 | 알림 단건 조회. | 개발자 A |
+| 10.1.3 | 사용자별 알림 목록 (페이징) | 🟨 | GET /notifications | S | P0 | 사용자별 알림 목록(페이징). 참고: wireframes/web/23-guardian-notifications.svg | 개발자 A |
+| 10.1.4 | 알림 읽음 처리 | 🟧 | PATCH /notifications/:id/read | XS | P0 | 알림 읽음 처리. | 개발자 A |
+| 10.1.5 | 알림 일괄 읽음 처리 | 🔀 | PATCH /notifications/read-all | XS | P0 | 알림 일괄 읽음 처리. | 개발자 A |
+| 10.1.6 | 알림 삭제 | 🟥 | DELETE /notifications/:id | XS | P1 | 알림 삭제(P1). | 개발자 A |
 
 ## 10.2 알림 채널
 
 | ID | 작업 | CRUD | 산출물 | 공수 | P | 세부사항 | 담당자 |
 |----|------|:---:|------|:---:|:-:| :-------- | :----: |
-| 10.2.1 | FCM (앱 푸시) 발송 | 🟦 | edge function | M | P0 | FCM 앱 푸시 발송 edge function. 참고: docs/05 §8, docs/08-wbs.md §16.6.1 | 개발자 B |
-| 10.2.2 | 이메일 발송 (SendGrid/Resend) | 🟦 | edge function | S | P0 | 이메일 발송(SendGrid/Resend) edge function. 참고: docs/05 §8 | 개발자 B |
-| 10.2.3 | SMS 발송 (응급용) | 🟦 | edge function | M | P1 | SMS 발송(응급용, P1). | 개발자 B |
-| 10.2.4 | 사용자별 채널 설정 조회 | 🟩 | GET /notification-settings | XS | P0 | 사용자별 알림 채널 설정 조회. 참고: wireframes/web/27-guardian-notification-settings.svg | 개발자 B |
-| 10.2.5 | 사용자별 채널 설정 수정 | 🟧 | PATCH /notification-settings | S | P0 | 알림 채널 설정 수정. | 개발자 B |
-| 10.2.6 | 알림 유형별 토글 (매트릭스) | 🟧 | PATCH /notification-settings/types | S | P0 | 알림 유형별 on/off 토글 매트릭스. 참고: wireframes/web/27-guardian-notification-settings.svg | 개발자 B |
-| 10.2.7 | 방해 금지 시간대 설정 | 🟧 | PATCH /notification-settings/quiet-hours | S | P1 | 방해 금지 시간대 설정(P1). | 개발자 B |
-| 10.2.8 | 푸시 토큰 등록 (앱 설치) | 🟦 | POST /push-tokens | S | P0 | 앱 설치 시 푸시 토큰 등록. 참고: docs/08-wbs.md §16.6.1 | 개발자 B |
+| 10.2.1 | FCM (앱 푸시) 발송 | 🟦 | edge function | M | P0 | FCM 앱 푸시 발송 edge function. 참고: docs/05 §8, docs/08-wbs.md §16.6.1 | 개발자 A |
+| 10.2.2 | 이메일 발송 (SendGrid/Resend) | 🟦 | edge function | S | P0 | 이메일 발송(SendGrid/Resend) edge function. 참고: docs/05 §8 | 개발자 A |
+| 10.2.3 | SMS 발송 (응급용) | 🟦 | edge function | M | P1 | SMS 발송(응급용, P1). | 개발자 A |
+| 10.2.4 | 사용자별 채널 설정 조회 | 🟩 | GET /notification-settings | XS | P0 | 사용자별 알림 채널 설정 조회. 참고: wireframes/web/27-guardian-notification-settings.svg | 개발자 A |
+| 10.2.5 | 사용자별 채널 설정 수정 | 🟧 | PATCH /notification-settings | S | P0 | 알림 채널 설정 수정. | 개발자 A |
+| 10.2.6 | 알림 유형별 토글 (매트릭스) | 🟧 | PATCH /notification-settings/types | S | P0 | 알림 유형별 on/off 토글 매트릭스. 참고: wireframes/web/27-guardian-notification-settings.svg | 개발자 A |
+| 10.2.7 | 방해 금지 시간대 설정 | 🟧 | PATCH /notification-settings/quiet-hours | S | P1 | 방해 금지 시간대 설정(P1). | 개발자 A |
+| 10.2.8 | 푸시 토큰 등록 (앱 설치) | 🟦 | POST /push-tokens | S | P0 | 앱 설치 시 푸시 토큰 등록. 참고: docs/08-wbs.md §16.6.1 | 개발자 A |
 
 ---
 
@@ -418,14 +418,14 @@
 
 | ID | 작업 | CRUD | 산출물 | 공수 | P | 세부사항 | 담당자 |
 |----|------|:---:|------|:---:|:-:| :-------- | :----: |
-| 11.1 | 모든 read 자동 로깅 (트리거) | 🟦 | DB trigger | M | P0 | 모든 read 자동 로깅 트리거(누가 무엇을 열람). 참고: docs/02 §2(access_logs), docs/05 §9 접근 로그 조회 | 개발자 A |
-| 11.2 | 모든 write 자동 로깅 (트리거) | 🟦 | DB trigger | S | P0 | 모든 write 자동 로깅 트리거. 참고: docs/03 §RLS | 개발자 A |
-| 11.3 | 권한 외 시도 별도 로깅 | 🟦 | trigger | S | P0 | 권한 외 접근 시도 별도 로깅. 참고: docs/05 §11 보안 흐름 | 개발자 A |
-| 11.4 | 당사자별 접근 로그 조회 | 🟨 | GET /persons/:id/access-logs | M | P0 | 당사자별 접근 로그 조회(보호자 투명성). 참고: docs/05 §9, wireframes/web/22-guardian-access-log.svg | 개발자 A |
-| 11.5 | 접근 로그 필터 (날짜·접근자·동작) | 🟨 | ?filter= | S | P0 | 접근 로그 필터(날짜·접근자·동작). | 개발자 A |
-| 11.6 | 이상 활동 자동 감지 (rule engine) | 🔐 | edge function | M | P1 | 이상 활동 자동 감지 rule engine(P1). 참고: docs/05 §11 | 개발자 A |
-| 11.7 | 로그 CSV 내보내기 | 🔀 | POST /access-logs/export | S | P0 | 접근 로그 CSV 내보내기. | 개발자 A |
-| 11.8 | 월간 보고서 자동 발송 (cron) | 🔀 | scheduled fn | S | P1 | 월간 접근 보고서 자동 발송 cron(P1). | 개발자 A |
+| 11.1 | 모든 read 자동 로깅 (트리거) | 🟦 | DB trigger | M | P0 | 모든 read 자동 로깅 트리거(누가 무엇을 열람). 참고: docs/02 §2(access_logs), docs/05 §9 접근 로그 조회 | PL |
+| 11.2 | 모든 write 자동 로깅 (트리거) | 🟦 | DB trigger | S | P0 | 모든 write 자동 로깅 트리거. 참고: docs/03 §RLS | PL |
+| 11.3 | 권한 외 시도 별도 로깅 | 🟦 | trigger | S | P0 | 권한 외 접근 시도 별도 로깅. 참고: docs/05 §11 보안 흐름 | PL |
+| 11.4 | 당사자별 접근 로그 조회 | 🟨 | GET /persons/:id/access-logs | M | P0 | 당사자별 접근 로그 조회(보호자 투명성). 참고: docs/05 §9, wireframes/web/22-guardian-access-log.svg | PL |
+| 11.5 | 접근 로그 필터 (날짜·접근자·동작) | 🟨 | ?filter= | S | P0 | 접근 로그 필터(날짜·접근자·동작). | PL |
+| 11.6 | 이상 활동 자동 감지 (rule engine) | 🔐 | edge function | M | P1 | 이상 활동 자동 감지 rule engine(P1). 참고: docs/05 §11 | PL |
+| 11.7 | 로그 CSV 내보내기 | 🔀 | POST /access-logs/export | S | P0 | 접근 로그 CSV 내보내기. | PL |
+| 11.8 | 월간 보고서 자동 발송 (cron) | 🔀 | scheduled fn | S | P1 | 월간 접근 보고서 자동 발송 cron(P1). | PL |
 
 ---
 

@@ -1,14 +1,13 @@
 #!/usr/bin/env bash
 # OnDol WBS -> GitHub 자동 등록 (라벨/마일스톤/이슈/프로젝트)
-# 생성: docs/gen_github_assets.py · 멱등 재실행 가능
+# 생성: project-planning 스킬 · 멱등 재실행 가능
 set -uo pipefail
 REPO="boheni07/ondol"
 OWNER="boheni07"
-START_DATE="${START_DATE:-2026-06-16}"   # 프로젝트 1주차 시작일(월). 마일스톤 마감일 계산 기준
-CREATE_PROJECT="${CREATE_PROJECT:-false}" # true 로 두면 Projects 보드 생성/이슈 추가 (gh auth refresh -s project 필요)
+START_DATE="${START_DATE:-2026-06-16}"
+CREATE_PROJECT="${CREATE_PROJECT:-false}"
 PROJECT_TITLE="OnDol 개발 (WBS)"
 
-# ===== role -> GitHub username 매핑 (빈 값이면 미할당으로 생성, role 라벨은 유지) =====
 GH_PM=""
 GH_PL=""
 GH_DEV_A=""
@@ -21,7 +20,7 @@ role_user() { case "$1" in
   PM) echo "$GH_PM";; PL) echo "$GH_PL";; Dev-A) echo "$GH_DEV_A";; Dev-B) echo "$GH_DEV_B";;
   Dev-C) echo "$GH_DEV_C";; Dev-D) echo "$GH_DEV_D";; Dev-E) echo "$GH_DEV_E";; *) echo "";; esac; }
 
-echo "== 1) 라벨 생성 =="
+echo "== 1) 라벨 =="
 gh label create "phase:0" --color C5DEF5 --description "Phase 0" -R "$REPO" --force >/dev/null 2>&1 || true
 gh label create "phase:1" --color C5DEF5 --description "Phase 1" -R "$REPO" --force >/dev/null 2>&1 || true
 gh label create "phase:2" --color C5DEF5 --description "Phase 2" -R "$REPO" --force >/dev/null 2>&1 || true
@@ -61,50 +60,50 @@ gh label create "role:Dev-C" --color B60205 --description "개발자 C" -R "$REP
 gh label create "role:Dev-D" --color D93F0B --description "개발자 D" -R "$REPO" --force >/dev/null 2>&1 || true
 gh label create "role:Dev-E" --color 6F42C1 --description "개발자 E" -R "$REPO" --force >/dev/null 2>&1 || true
 
-echo "== 2) 마일스톤 생성 =="
+echo "== 2) 마일스톤 =="
 mk_due() { date -d "$START_DATE +$(( $1 * 7 )) days" +%Y-%m-%dT00:00:00Z 2>/dev/null || echo ""; }
 DUE=$(mk_due 2)
-gh api -X POST "repos/$REPO/milestones" -f title="Phase 0 · 프로젝트 셋업" -f state="open" -f description="프로젝트 셋업 (W1-W2)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || gh api "repos/$REPO/milestones?state=all" >/dev/null 2>&1 || true
+gh api -X POST "repos/$REPO/milestones" -f title="Phase 0 · 프로젝트 셋업" -f state="open" -f description="프로젝트 셋업 (W1-W2)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
 DUE=$(mk_due 4)
-gh api -X POST "repos/$REPO/milestones" -f title="Phase 1 · DB 스키마 + RLS" -f state="open" -f description="DB 스키마 + RLS (W2-W4)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || gh api "repos/$REPO/milestones?state=all" >/dev/null 2>&1 || true
+gh api -X POST "repos/$REPO/milestones" -f title="Phase 1 · DB 스키마 + RLS" -f state="open" -f description="DB 스키마 + RLS (W2-W4)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
 DUE=$(mk_due 6)
-gh api -X POST "repos/$REPO/milestones" -f title="Phase 2 · 인증 (Auth)" -f state="open" -f description="인증 (Auth) (W4-W6)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || gh api "repos/$REPO/milestones?state=all" >/dev/null 2>&1 || true
+gh api -X POST "repos/$REPO/milestones" -f title="Phase 2 · 인증 (Auth)" -f state="open" -f description="인증 (Auth) (W4-W6)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
 DUE=$(mk_due 7)
-gh api -X POST "repos/$REPO/milestones" -f title="Phase 3 · 사용자·당사자·매핑" -f state="open" -f description="사용자·당사자·매핑 (W5-W7)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || gh api "repos/$REPO/milestones?state=all" >/dev/null 2>&1 || true
+gh api -X POST "repos/$REPO/milestones" -f title="Phase 3 · 사용자·당사자·매핑" -f state="open" -f description="사용자·당사자·매핑 (W5-W7)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
 DUE=$(mk_due 8)
-gh api -X POST "repos/$REPO/milestones" -f title="Phase 4 · 권한 관리" -f state="open" -f description="권한 관리 (W6-W8)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || gh api "repos/$REPO/milestones?state=all" >/dev/null 2>&1 || true
+gh api -X POST "repos/$REPO/milestones" -f title="Phase 4 · 권한 관리" -f state="open" -f description="권한 관리 (W6-W8)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
 DUE=$(mk_due 12)
-gh api -X POST "repos/$REPO/milestones" -f title="Phase 5 · 기록 (Records)" -f state="open" -f description="기록 (Records) (W7-W12)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || gh api "repos/$REPO/milestones?state=all" >/dev/null 2>&1 || true
+gh api -X POST "repos/$REPO/milestones" -f title="Phase 5 · 기록 (Records)" -f state="open" -f description="기록 (Records) (W7-W12)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
 DUE=$(mk_due 10)
-gh api -X POST "repos/$REPO/milestones" -f title="Phase 6 · 자기표현" -f state="open" -f description="자기표현 (W9-W10)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || gh api "repos/$REPO/milestones?state=all" >/dev/null 2>&1 || true
+gh api -X POST "repos/$REPO/milestones" -f title="Phase 6 · 자기표현" -f state="open" -f description="자기표현 (W9-W10)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
 DUE=$(mk_due 10)
-gh api -X POST "repos/$REPO/milestones" -f title="Phase 7 · 파일 첨부" -f state="open" -f description="파일 첨부 (W9-W10)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || gh api "repos/$REPO/milestones?state=all" >/dev/null 2>&1 || true
+gh api -X POST "repos/$REPO/milestones" -f title="Phase 7 · 파일 첨부" -f state="open" -f description="파일 첨부 (W9-W10)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
 DUE=$(mk_due 12)
-gh api -X POST "repos/$REPO/milestones" -f title="Phase 8 · 이정표·타임라인" -f state="open" -f description="이정표·타임라인 (W10-W12)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || gh api "repos/$REPO/milestones?state=all" >/dev/null 2>&1 || true
+gh api -X POST "repos/$REPO/milestones" -f title="Phase 8 · 이정표·타임라인" -f state="open" -f description="이정표·타임라인 (W10-W12)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
 DUE=$(mk_due 13)
-gh api -X POST "repos/$REPO/milestones" -f title="Phase 9 · 인수인계" -f state="open" -f description="인수인계 (W11-W13)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || gh api "repos/$REPO/milestones?state=all" >/dev/null 2>&1 || true
+gh api -X POST "repos/$REPO/milestones" -f title="Phase 9 · 인수인계" -f state="open" -f description="인수인계 (W11-W13)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
 DUE=$(mk_due 13)
-gh api -X POST "repos/$REPO/milestones" -f title="Phase 10 · 알림" -f state="open" -f description="알림 (W11-W13)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || gh api "repos/$REPO/milestones?state=all" >/dev/null 2>&1 || true
+gh api -X POST "repos/$REPO/milestones" -f title="Phase 10 · 알림" -f state="open" -f description="알림 (W11-W13)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
 DUE=$(mk_due 13)
-gh api -X POST "repos/$REPO/milestones" -f title="Phase 11 · 접근 로그" -f state="open" -f description="접근 로그 (W12-W13)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || gh api "repos/$REPO/milestones?state=all" >/dev/null 2>&1 || true
+gh api -X POST "repos/$REPO/milestones" -f title="Phase 11 · 접근 로그" -f state="open" -f description="접근 로그 (W12-W13)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
 DUE=$(mk_due 6)
-gh api -X POST "repos/$REPO/milestones" -f title="Phase 12 · 디자인 시스템" -f state="open" -f description="디자인 시스템 (W4-W6)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || gh api "repos/$REPO/milestones?state=all" >/dev/null 2>&1 || true
+gh api -X POST "repos/$REPO/milestones" -f title="Phase 12 · 디자인 시스템" -f state="open" -f description="디자인 시스템 (W4-W6)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
 DUE=$(mk_due 11)
-gh api -X POST "repos/$REPO/milestones" -f title="Phase 13 · 웹 UI — 보호자" -f state="open" -f description="웹 UI — 보호자 (W7-W11)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || gh api "repos/$REPO/milestones?state=all" >/dev/null 2>&1 || true
+gh api -X POST "repos/$REPO/milestones" -f title="Phase 13 · 웹 UI — 보호자" -f state="open" -f description="웹 UI — 보호자 (W7-W11)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
 DUE=$(mk_due 12)
-gh api -X POST "repos/$REPO/milestones" -f title="Phase 14 · 웹 UI — 당사자(접근성)" -f state="open" -f description="웹 UI — 당사자(접근성) (W10-W12)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || gh api "repos/$REPO/milestones?state=all" >/dev/null 2>&1 || true
+gh api -X POST "repos/$REPO/milestones" -f title="Phase 14 · 웹 UI — 당사자(접근성)" -f state="open" -f description="웹 UI — 당사자(접근성) (W10-W12)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
 DUE=$(mk_due 14)
-gh api -X POST "repos/$REPO/milestones" -f title="Phase 15 · 웹 UI — 전문가(4역할)" -f state="open" -f description="웹 UI — 전문가(4역할) (W9-W14)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || gh api "repos/$REPO/milestones?state=all" >/dev/null 2>&1 || true
+gh api -X POST "repos/$REPO/milestones" -f title="Phase 15 · 웹 UI — 전문가(4역할)" -f state="open" -f description="웹 UI — 전문가(4역할) (W9-W14)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
 DUE=$(mk_due 15)
-gh api -X POST "repos/$REPO/milestones" -f title="Phase 16 · 모바일 앱(RN)" -f state="open" -f description="모바일 앱(RN) (W11-W15)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || gh api "repos/$REPO/milestones?state=all" >/dev/null 2>&1 || true
+gh api -X POST "repos/$REPO/milestones" -f title="Phase 16 · 모바일 앱(RN)" -f state="open" -f description="모바일 앱(RN) (W11-W15)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
 DUE=$(mk_due 15)
-gh api -X POST "repos/$REPO/milestones" -f title="Phase 17 · SEO·보안·접근성" -f state="open" -f description="SEO·보안·접근성 (W13-W15)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || gh api "repos/$REPO/milestones?state=all" >/dev/null 2>&1 || true
+gh api -X POST "repos/$REPO/milestones" -f title="Phase 17 · SEO·보안·접근성" -f state="open" -f description="SEO·보안·접근성 (W13-W15)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
 DUE=$(mk_due 16)
-gh api -X POST "repos/$REPO/milestones" -f title="Phase 18 · QA·테스트" -f state="open" -f description="QA·테스트 (W14-W16)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || gh api "repos/$REPO/milestones?state=all" >/dev/null 2>&1 || true
+gh api -X POST "repos/$REPO/milestones" -f title="Phase 18 · QA·테스트" -f state="open" -f description="QA·테스트 (W14-W16)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
 DUE=$(mk_due 16)
-gh api -X POST "repos/$REPO/milestones" -f title="Phase 19 · CI/CD·배포" -f state="open" -f description="CI/CD·배포 (W15-W16)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || gh api "repos/$REPO/milestones?state=all" >/dev/null 2>&1 || true
+gh api -X POST "repos/$REPO/milestones" -f title="Phase 19 · CI/CD·배포" -f state="open" -f description="CI/CD·배포 (W15-W16)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
 
-echo "== 3) 이슈 생성 =="
+echo "== 3) 이슈 =="
 declare -a CREATED_URLS=()
 
 # --- [0] 프로젝트 셋업 (Phase 0) ---
@@ -602,7 +601,7 @@ echo "  created: ${URL:-(실패: [7] 파일 첨부 (Record Files))}"
 # --- [8.1] 이정표 CRUD ---
 BODY=$(cat <<'WBSEOF'
 **Phase:** 8 · 이정표·타임라인  
-**담당자:** 개발자 B (Dev-B)  
+**담당자:** 개발자 A (Dev-A)  
 **우선순위:** P0  ·  **예상 공수:** 4d  ·  **작업 수:** 6  ·  **일정:** W10–W12
 
 ### 작업 목록
@@ -616,15 +615,15 @@ BODY=$(cat <<'WBSEOF'
 > 원본: docs/08-wbs.md · 8.1 이정표 CRUD
 WBSEOF
 )
-ASSIGNEE=$(role_user "Dev-B")
-URL=$(gh issue create -R "$REPO" --title "[8.1] 이정표 CRUD" --body "$BODY" --milestone "Phase 8 · 이정표·타임라인" --label "phase:8,priority:P0,type:backend,role:Dev-B" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
+ASSIGNEE=$(role_user "Dev-A")
+URL=$(gh issue create -R "$REPO" --title "[8.1] 이정표 CRUD" --body "$BODY" --milestone "Phase 8 · 이정표·타임라인" --label "phase:8,priority:P0,type:backend,role:Dev-A" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [8.1] 이정표 CRUD)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
 # --- [8.2] 타임라인 (records + milestones + self_expressions 통합) ---
 BODY=$(cat <<'WBSEOF'
 **Phase:** 8 · 이정표·타임라인  
-**담당자:** 개발자 B (Dev-B)  
+**담당자:** 개발자 A (Dev-A)  
 **우선순위:** P0  ·  **예상 공수:** 9.5d  ·  **작업 수:** 8  ·  **일정:** W10–W12
 
 ### 작업 목록
@@ -640,15 +639,15 @@ BODY=$(cat <<'WBSEOF'
 > 원본: docs/08-wbs.md · 8.2 타임라인 (records + milestones + self_expressions 통합)
 WBSEOF
 )
-ASSIGNEE=$(role_user "Dev-B")
-URL=$(gh issue create -R "$REPO" --title "[8.2] 타임라인 (records + milestones + self_expressions 통합)" --body "$BODY" --milestone "Phase 8 · 이정표·타임라인" --label "phase:8,priority:P0,type:backend,role:Dev-B" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
+ASSIGNEE=$(role_user "Dev-A")
+URL=$(gh issue create -R "$REPO" --title "[8.2] 타임라인 (records + milestones + self_expressions 통합)" --body "$BODY" --milestone "Phase 8 · 이정표·타임라인" --label "phase:8,priority:P0,type:backend,role:Dev-A" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [8.2] 타임라인 (records + milestones + self_expressions 통합))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
 # --- [9.1] 인수인계 CRUD ---
 BODY=$(cat <<'WBSEOF'
 **Phase:** 9 · 인수인계  
-**담당자:** 개발자 B (Dev-B)  
+**담당자:** 개발자 A (Dev-A)  
 **우선순위:** P0  ·  **예상 공수:** 7d  ·  **작업 수:** 6  ·  **일정:** W11–W13
 
 ### 작업 목록
@@ -662,15 +661,15 @@ BODY=$(cat <<'WBSEOF'
 > 원본: docs/08-wbs.md · 9.1 인수인계 CRUD
 WBSEOF
 )
-ASSIGNEE=$(role_user "Dev-B")
-URL=$(gh issue create -R "$REPO" --title "[9.1] 인수인계 CRUD" --body "$BODY" --milestone "Phase 9 · 인수인계" --label "phase:9,priority:P0,type:backend,role:Dev-B" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
+ASSIGNEE=$(role_user "Dev-A")
+URL=$(gh issue create -R "$REPO" --title "[9.1] 인수인계 CRUD" --body "$BODY" --milestone "Phase 9 · 인수인계" --label "phase:9,priority:P0,type:backend,role:Dev-A" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [9.1] 인수인계 CRUD)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
 # --- [9.2] 인계 플로우 ---
 BODY=$(cat <<'WBSEOF'
 **Phase:** 9 · 인수인계  
-**담당자:** 개발자 B (Dev-B)  
+**담당자:** 개발자 A (Dev-A)  
 **우선순위:** P0  ·  **예상 공수:** 9d  ·  **작업 수:** 6  ·  **일정:** W11–W13
 
 ### 작업 목록
@@ -684,15 +683,15 @@ BODY=$(cat <<'WBSEOF'
 > 원본: docs/08-wbs.md · 9.2 인계 플로우
 WBSEOF
 )
-ASSIGNEE=$(role_user "Dev-B")
-URL=$(gh issue create -R "$REPO" --title "[9.2] 인계 플로우" --body "$BODY" --milestone "Phase 9 · 인수인계" --label "phase:9,priority:P0,type:backend,role:Dev-B" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
+ASSIGNEE=$(role_user "Dev-A")
+URL=$(gh issue create -R "$REPO" --title "[9.2] 인계 플로우" --body "$BODY" --milestone "Phase 9 · 인수인계" --label "phase:9,priority:P0,type:backend,role:Dev-A" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [9.2] 인계 플로우)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
 # --- [10.1] 알림 인프라 ---
 BODY=$(cat <<'WBSEOF'
 **Phase:** 10 · 알림  
-**담당자:** 개발자 B (Dev-B)  
+**담당자:** 개발자 A (Dev-A)  
 **우선순위:** P0  ·  **예상 공수:** 5.5d  ·  **작업 수:** 6  ·  **일정:** W11–W13
 
 ### 작업 목록
@@ -706,15 +705,15 @@ BODY=$(cat <<'WBSEOF'
 > 원본: docs/08-wbs.md · 10.1 알림 인프라
 WBSEOF
 )
-ASSIGNEE=$(role_user "Dev-B")
-URL=$(gh issue create -R "$REPO" --title "[10.1] 알림 인프라" --body "$BODY" --milestone "Phase 10 · 알림" --label "phase:10,priority:P0,type:backend,role:Dev-B" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
+ASSIGNEE=$(role_user "Dev-A")
+URL=$(gh issue create -R "$REPO" --title "[10.1] 알림 인프라" --body "$BODY" --milestone "Phase 10 · 알림" --label "phase:10,priority:P0,type:backend,role:Dev-A" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [10.1] 알림 인프라)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
 # --- [10.2] 알림 채널 ---
 BODY=$(cat <<'WBSEOF'
 **Phase:** 10 · 알림  
-**담당자:** 개발자 B (Dev-B)  
+**담당자:** 개발자 A (Dev-A)  
 **우선순위:** P0  ·  **예상 공수:** 10.5d  ·  **작업 수:** 8  ·  **일정:** W11–W13
 
 ### 작업 목록
@@ -730,15 +729,15 @@ BODY=$(cat <<'WBSEOF'
 > 원본: docs/08-wbs.md · 10.2 알림 채널
 WBSEOF
 )
-ASSIGNEE=$(role_user "Dev-B")
-URL=$(gh issue create -R "$REPO" --title "[10.2] 알림 채널" --body "$BODY" --milestone "Phase 10 · 알림" --label "phase:10,priority:P0,type:backend,role:Dev-B" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
+ASSIGNEE=$(role_user "Dev-A")
+URL=$(gh issue create -R "$REPO" --title "[10.2] 알림 채널" --body "$BODY" --milestone "Phase 10 · 알림" --label "phase:10,priority:P0,type:backend,role:Dev-A" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [10.2] 알림 채널)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
 # --- [11] 접근 로그 (Audit) ---
 BODY=$(cat <<'WBSEOF'
 **Phase:** 11 · 접근 로그  
-**담당자:** 개발자 A (Dev-A)  
+**담당자:** PL (PL)  
 **우선순위:** P0  ·  **예상 공수:** 12.5d  ·  **작업 수:** 8  ·  **일정:** W12–W13
 
 ### 작업 목록
@@ -754,8 +753,8 @@ BODY=$(cat <<'WBSEOF'
 > 원본: docs/08-wbs.md · 11. 접근 로그 (Audit)
 WBSEOF
 )
-ASSIGNEE=$(role_user "Dev-A")
-URL=$(gh issue create -R "$REPO" --title "[11] 접근 로그 (Audit)" --body "$BODY" --milestone "Phase 11 · 접근 로그" --label "phase:11,priority:P0,type:backend,role:Dev-A" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
+ASSIGNEE=$(role_user "PL")
+URL=$(gh issue create -R "$REPO" --title "[11] 접근 로그 (Audit)" --body "$BODY" --milestone "Phase 11 · 접근 로그" --label "phase:11,priority:P0,type:backend,role:PL" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [11] 접근 로그 (Audit))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
@@ -1369,12 +1368,11 @@ echo "  created: ${URL:-(실패: [19.3] 운영)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
 if [ "$CREATE_PROJECT" = "true" ]; then
-  echo "== 4) Projects 보드 생성 + 이슈 추가 =="
+  echo "== 4) Projects =="
   PNUM=$(gh project create --owner "$OWNER" --title "$PROJECT_TITLE" --format json -q .number 2>/dev/null)
   if [ -n "${PNUM:-}" ]; then
-    echo "  project #$PNUM"
     for u in "${CREATED_URLS[@]}"; do gh project item-add "$PNUM" --owner "$OWNER" --url "$u" >/dev/null 2>&1 || true; done
-    echo "  added ${#CREATED_URLS[@]} issues to project"
-  else echo "  프로젝트 생성 실패 — gh auth refresh -s project 후 재시도"; fi
+    echo "  added ${#CREATED_URLS[@]} issues"
+  else echo "  프로젝트 생성 실패 — gh auth refresh -s project"; fi
 fi
-echo "== 완료: ${#CREATED_URLS[@]} 이슈 생성됨 =="
+echo "== 완료: ${#CREATED_URLS[@]} 이슈 =="

@@ -303,7 +303,7 @@
 
 > 원본: docs/08-wbs.md · 7. 파일 첨부 (Record Files)",Phase 7 · 파일 첨부,"phase:7,priority:P0,type:backend,role:Dev-B",개발자 B,P0,10.5,7,7. 파일 첨부 (Record Files)
 [8.1] 이정표 CRUD,"**Phase:** 8 · 이정표·타임라인  
-**담당자:** 개발자 B (Dev-B)  
+**담당자:** 개발자 A (Dev-A)  
 **우선순위:** P0  ·  **예상 공수:** 4d  ·  **작업 수:** 6  ·  **일정:** W10–W12
 
 ### 작업 목록
@@ -314,9 +314,9 @@
 - [ ] **8.1.5** 이정표 삭제 `XS` `P0` — 이정표 삭제.
 - [ ] **8.1.6** 카테고리별 이정표 필터 `XS` `P0` — 카테고리별 이정표 필터.
 
-> 원본: docs/08-wbs.md · 8.1 이정표 CRUD",Phase 8 · 이정표·타임라인,"phase:8,priority:P0,type:backend,role:Dev-B",개발자 B,P0,4,8,8.1 이정표 CRUD
+> 원본: docs/08-wbs.md · 8.1 이정표 CRUD",Phase 8 · 이정표·타임라인,"phase:8,priority:P0,type:backend,role:Dev-A",개발자 A,P0,4,8,8.1 이정표 CRUD
 [8.2] 타임라인 (records + milestones + self_expressions 통합),"**Phase:** 8 · 이정표·타임라인  
-**담당자:** 개발자 B (Dev-B)  
+**담당자:** 개발자 A (Dev-A)  
 **우선순위:** P0  ·  **예상 공수:** 9.5d  ·  **작업 수:** 8  ·  **일정:** W10–W12
 
 ### 작업 목록
@@ -329,9 +329,9 @@
 - [ ] **8.2.7** 타임라인 PDF 내보내기 `M` `P1` — 타임라인 PDF 내보내기(P1). 참고: docs/05 §6
 - [ ] **8.2.8** 생애주기 자동 마커 (트리거) `S` `P0` — 생애주기 전환 시 자동 마커 삽입 트리거. 참고: docs/05 §10 당사자 전환기 처리
 
-> 원본: docs/08-wbs.md · 8.2 타임라인 (records + milestones + self_expressions 통합)",Phase 8 · 이정표·타임라인,"phase:8,priority:P0,type:backend,role:Dev-B",개발자 B,P0,9.5,8,8.2 타임라인 (records + milestones + self_expressions 통합)
+> 원본: docs/08-wbs.md · 8.2 타임라인 (records + milestones + self_expressions 통합)",Phase 8 · 이정표·타임라인,"phase:8,priority:P0,type:backend,role:Dev-A",개발자 A,P0,9.5,8,8.2 타임라인 (records + milestones + self_expressions 통합)
 [9.1] 인수인계 CRUD,"**Phase:** 9 · 인수인계  
-**담당자:** 개발자 B (Dev-B)  
+**담당자:** 개발자 A (Dev-A)  
 **우선순위:** P0  ·  **예상 공수:** 7d  ·  **작업 수:** 6  ·  **일정:** W11–W13
 
 ### 작업 목록
@@ -342,9 +342,9 @@
 - [ ] **9.1.5** 인계 수정 (미확인 상태에서만) `S` `P0` — 인계 수정(미확인 상태에서만). 참고: docs/03 §RLS
 - [ ] **9.1.6** 인계 삭제 (취소) `XS` `P1` — 인계 삭제/취소(P1).
 
-> 원본: docs/08-wbs.md · 9.1 인수인계 CRUD",Phase 9 · 인수인계,"phase:9,priority:P0,type:backend,role:Dev-B",개발자 B,P0,7,9,9.1 인수인계 CRUD
+> 원본: docs/08-wbs.md · 9.1 인수인계 CRUD",Phase 9 · 인수인계,"phase:9,priority:P0,type:backend,role:Dev-A",개발자 A,P0,7,9,9.1 인수인계 CRUD
 [9.2] 인계 플로우,"**Phase:** 9 · 인수인계  
-**담당자:** 개발자 B (Dev-B)  
+**담당자:** 개발자 A (Dev-A)  
 **우선순위:** P0  ·  **예상 공수:** 9d  ·  **작업 수:** 6  ·  **일정:** W11–W13
 
 ### 작업 목록
@@ -355,9 +355,9 @@
 - [ ] **9.2.5** 인계 확인 처리 (is_confirmed) `S` `P0` — 후임자 인계 확인 처리(is_confirmed). 참고: docs/04 §3 활동지원사
 - [ ] **9.2.6** 인계 확인 시 권한 자동 이양 (옵션) `M` `P1` — 인계 확인 시 권한 자동 이양 트리거(옵션, P1). 참고: docs/05 §7·§2
 
-> 원본: docs/08-wbs.md · 9.2 인계 플로우",Phase 9 · 인수인계,"phase:9,priority:P0,type:backend,role:Dev-B",개발자 B,P0,9,9,9.2 인계 플로우
+> 원본: docs/08-wbs.md · 9.2 인계 플로우",Phase 9 · 인수인계,"phase:9,priority:P0,type:backend,role:Dev-A",개발자 A,P0,9,9,9.2 인계 플로우
 [10.1] 알림 인프라,"**Phase:** 10 · 알림  
-**담당자:** 개발자 B (Dev-B)  
+**담당자:** 개발자 A (Dev-A)  
 **우선순위:** P0  ·  **예상 공수:** 5.5d  ·  **작업 수:** 6  ·  **일정:** W11–W13
 
 ### 작업 목록
@@ -368,9 +368,9 @@
 - [ ] **10.1.5** 알림 일괄 읽음 처리 `XS` `P0` — 알림 일괄 읽음 처리.
 - [ ] **10.1.6** 알림 삭제 `XS` `P1` — 알림 삭제(P1).
 
-> 원본: docs/08-wbs.md · 10.1 알림 인프라",Phase 10 · 알림,"phase:10,priority:P0,type:backend,role:Dev-B",개발자 B,P0,5.5,10,10.1 알림 인프라
+> 원본: docs/08-wbs.md · 10.1 알림 인프라",Phase 10 · 알림,"phase:10,priority:P0,type:backend,role:Dev-A",개발자 A,P0,5.5,10,10.1 알림 인프라
 [10.2] 알림 채널,"**Phase:** 10 · 알림  
-**담당자:** 개발자 B (Dev-B)  
+**담당자:** 개발자 A (Dev-A)  
 **우선순위:** P0  ·  **예상 공수:** 10.5d  ·  **작업 수:** 8  ·  **일정:** W11–W13
 
 ### 작업 목록
@@ -383,9 +383,9 @@
 - [ ] **10.2.7** 방해 금지 시간대 설정 `S` `P1` — 방해 금지 시간대 설정(P1).
 - [ ] **10.2.8** 푸시 토큰 등록 (앱 설치) `S` `P0` — 앱 설치 시 푸시 토큰 등록. 참고: docs/08-wbs.md §16.6.1
 
-> 원본: docs/08-wbs.md · 10.2 알림 채널",Phase 10 · 알림,"phase:10,priority:P0,type:backend,role:Dev-B",개발자 B,P0,10.5,10,10.2 알림 채널
+> 원본: docs/08-wbs.md · 10.2 알림 채널",Phase 10 · 알림,"phase:10,priority:P0,type:backend,role:Dev-A",개발자 A,P0,10.5,10,10.2 알림 채널
 [11] 접근 로그 (Audit),"**Phase:** 11 · 접근 로그  
-**담당자:** 개발자 A (Dev-A)  
+**담당자:** PL (PL)  
 **우선순위:** P0  ·  **예상 공수:** 12.5d  ·  **작업 수:** 8  ·  **일정:** W12–W13
 
 ### 작업 목록
@@ -398,7 +398,7 @@
 - [ ] **11.7** 로그 CSV 내보내기 `S` `P0` — 접근 로그 CSV 내보내기.
 - [ ] **11.8** 월간 보고서 자동 발송 (cron) `S` `P1` — 월간 접근 보고서 자동 발송 cron(P1).
 
-> 원본: docs/08-wbs.md · 11. 접근 로그 (Audit)",Phase 11 · 접근 로그,"phase:11,priority:P0,type:backend,role:Dev-A",개발자 A,P0,12.5,11,11. 접근 로그 (Audit)
+> 원본: docs/08-wbs.md · 11. 접근 로그 (Audit)",Phase 11 · 접근 로그,"phase:11,priority:P0,type:backend,role:PL",PL,P0,12.5,11,11. 접근 로그 (Audit)
 [12.1] 토큰 (07-design-system.md 기반),"**Phase:** 12 · 디자인 시스템  
 **담당자:** 개발자 C (Dev-C)  
 **우선순위:** P0  ·  **예상 공수:** 3d  ·  **작업 수:** 4  ·  **일정:** W4–W6

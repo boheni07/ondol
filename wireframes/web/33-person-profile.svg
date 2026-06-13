@@ -1,0 +1,89 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- P-22 · ST-04 Person Profile · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">P-22 · ST-04 Person Profile · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#FFFFFF"/>
+
+  <!-- Sidebar -->
+  <rect width="280" height="900" fill="#FFF8F4"/>
+  <text x="32" y="52" font-family="Arial" font-size="24" font-weight="bold" fill="#E8724A">온돌</text>
+  <rect x="0" y="80" width="280" height="80" fill="#FFE8DA"/>
+  <text x="32" y="120" font-family="Arial" font-size="14" fill="#E8724A">← 설정으로</text>
+  <text x="32" y="146" font-family="Arial" font-size="22" font-weight="bold" fill="#E8724A">👤 내 정보</text>
+
+  <!-- Main -->
+  <text x="312" y="74" font-family="Arial" font-size="36" font-weight="bold" fill="#111827">내 정보</text>
+
+  <!-- Profile photo -->
+  <rect x="312" y="116" width="1096" height="200" rx="20" fill="#FFF8F4" stroke="#FACDB8" stroke-width="2"/>
+  <circle cx="412" cy="216" r="64" fill="#E8724A"/>
+  <text x="412" y="232" text-anchor="middle" font-family="Arial" font-size="48" fill="white">이</text>
+  <text x="500" y="190" font-family="Arial" font-size="32" font-weight="bold" fill="#111827">이온돌</text>
+  <text x="500" y="220" font-family="Arial" font-size="18" fill="#6B7280">친구들은 "온돌이"라고 불러요</text>
+  <text x="500" y="252" font-family="Arial" font-size="18" fill="#374151">생일: 2006년 3월 15일 (20살)</text>
+  <rect x="1240" y="200" width="148" height="56" rx="14" fill="#3B7D8E"/>
+  <text x="1314" y="234" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="white">사진 바꾸기</text>
+
+  <!-- My favorites -->
+  <text x="312" y="358" font-family="Arial" font-size="24" font-weight="bold" fill="#111827">💛 내가 좋아하는 것</text>
+  <rect x="312" y="376" width="1096" height="140" rx="20" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+  <g>
+    <rect x="332" y="400" width="160" height="48" rx="24" fill="#FFE8DA"/>
+    <text x="412" y="430" text-anchor="middle" font-family="Arial" font-size="18" fill="#E8724A">🎵 음악 듣기</text>
+    <rect x="508" y="400" width="160" height="48" rx="24" fill="#FFE8DA"/>
+    <text x="588" y="430" text-anchor="middle" font-family="Arial" font-size="18" fill="#E8724A">🚶 산책</text>
+    <rect x="684" y="400" width="160" height="48" rx="24" fill="#FFE8DA"/>
+    <text x="764" y="430" text-anchor="middle" font-family="Arial" font-size="18" fill="#E8724A">🚗 자동차</text>
+    <rect x="860" y="400" width="160" height="48" rx="24" fill="#FFE8DA"/>
+    <text x="940" y="430" text-anchor="middle" font-family="Arial" font-size="18" fill="#E8724A">🧱 레고</text>
+    <rect x="1036" y="400" width="160" height="48" rx="24" fill="#FFE8DA"/>
+    <text x="1116" y="430" text-anchor="middle" font-family="Arial" font-size="18" fill="#E8724A">🐕 강아지</text>
+    <rect x="1212" y="400" width="160" height="48" rx="24" fill="#F9FAFB" stroke="#D1D5DB" stroke-dasharray="4 3"/>
+    <text x="1292" y="430" text-anchor="middle" font-family="Arial" font-size="18" fill="#9CA3AF">+ 더 추가</text>
+  </g>
+  <rect x="332" y="464" width="180" height="36" rx="18" fill="#FFFFFF" stroke="#3B7D8E" stroke-width="2"/>
+  <text x="422" y="486" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#3B7D8E">바꾸기 →</text>
+
+  <!-- How I talk -->
+  <text x="312" y="558" font-family="Arial" font-size="24" font-weight="bold" fill="#111827">💬 나의 말하기 방법</text>
+  <rect x="312" y="576" width="540" height="120" rx="20" fill="#EEF4FD" stroke="#A8C4E4" stroke-width="2"/>
+  <text x="338" y="612" font-family="Arial" font-size="20" font-weight="bold" fill="#2E5FA8">단어로 말해요</text>
+  <text x="338" y="640" font-family="Arial" font-size="16" fill="#374151">짧은 단어로 표현하는 게 편해요</text>
+  <text x="338" y="666" font-family="Arial" font-size="16" fill="#374151">그림카드도 함께 써요</text>
+
+  <rect x="868" y="576" width="540" height="120" rx="20" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="894" y="612" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">⚠ 어려운 것들</text>
+  <text x="894" y="640" font-family="Arial" font-size="16" fill="#374151">큰 소리 (천둥, 사이렌)</text>
+  <text x="894" y="666" font-family="Arial" font-size="16" fill="#374151">갑자기 약속이 바뀔 때</text>
+
+  <!-- People who help me -->
+  <text x="312" y="736" font-family="Arial" font-size="24" font-weight="bold" fill="#111827">🤝 나를 도와주는 사람</text>
+  <g>
+    <rect x="312" y="754" width="260" height="120" rx="20" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <circle cx="370" cy="800" r="24" fill="#3B7D8E"/>
+    <text x="370" y="808" text-anchor="middle" font-family="Arial" font-size="14" fill="white">김</text>
+    <text x="406" y="794" font-family="Arial" font-size="16" font-weight="bold" fill="#111827">엄마</text>
+    <text x="406" y="816" font-family="Arial" font-size="13" fill="#6B7280">김보호자</text>
+    <text x="332" y="852" font-family="Arial" font-size="13" fill="#3B7D8E">📞 전화하기</text>
+
+    <rect x="588" y="754" width="260" height="120" rx="20" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <circle cx="646" cy="800" r="24" fill="#B56F10"/>
+    <text x="646" y="808" text-anchor="middle" font-family="Arial" font-size="14" fill="white">박</text>
+    <text x="682" y="794" font-family="Arial" font-size="16" font-weight="bold" fill="#111827">활동지원사</text>
+    <text x="682" y="816" font-family="Arial" font-size="13" fill="#6B7280">박지원</text>
+    <text x="608" y="852" font-family="Arial" font-size="13" fill="#3B7D8E">📞 전화하기</text>
+
+    <rect x="864" y="754" width="260" height="120" rx="20" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <circle cx="922" cy="800" r="24" fill="#2E5FA8"/>
+    <text x="922" y="808" text-anchor="middle" font-family="Arial" font-size="14" fill="white">이</text>
+    <text x="958" y="794" font-family="Arial" font-size="16" font-weight="bold" fill="#111827">선생님</text>
+    <text x="958" y="816" font-family="Arial" font-size="13" fill="#6B7280">이특수교사</text>
+    <text x="884" y="852" font-family="Arial" font-size="13" fill="#3B7D8E">📞 전화하기</text>
+
+    <rect x="1140" y="754" width="268" height="120" rx="20" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <circle cx="1198" cy="800" r="24" fill="#BF3030"/>
+    <text x="1198" y="808" text-anchor="middle" font-family="Arial" font-size="14" fill="white">김</text>
+    <text x="1234" y="794" font-family="Arial" font-size="16" font-weight="bold" fill="#111827">의사 선생님</text>
+    <text x="1234" y="816" font-family="Arial" font-size="13" fill="#6B7280">김의사</text>
+    <text x="1160" y="852" font-family="Arial" font-size="13" fill="#3B7D8E">📞 전화하기</text>
+  </g>
+</svg>

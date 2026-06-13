@@ -1,0 +1,191 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- W-17 + W-20 · 서비스 이용 현황 (좌, ST-07 Matrix) + 타임라인 (우, ST-06) · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">W-17 서비스 이용 현황 (좌) + W-20 복지+전환 타임라인 (우) · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Sidebar -->
+  <rect width="240" height="900" fill="#F5F5F5"/>
+  <rect width="240" height="64" fill="#FFFFFF"/>
+  <text x="24" y="42" font-family="Arial" font-size="18" font-weight="bold" fill="#276B4C">온돌</text>
+  <text x="68" y="42" font-family="Arial" font-size="11" fill="#6B7280">복지사</text>
+  <rect y="108" width="240" height="44" fill="#EDFAF3"/>
+  <text x="52" y="135" font-family="Arial" font-size="13" font-weight="bold" fill="#276B4C">복지 기록</text>
+  <rect x="44" y="200" width="180" height="32" fill="#EDFAF3"/>
+  <text x="68" y="220" font-family="Arial" font-size="12" font-weight="bold" fill="#276B4C">서비스 현황</text>
+
+  <!-- Header -->
+  <rect x="240" width="1200" height="64" fill="#FFFFFF"/><line x1="240" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="272" y="40" font-family="Arial" font-size="13" fill="#6B7280">복지 기록 / <tspan fill="#111827" font-weight="bold">서비스 이용 현황 — 이온돌</tspan></text>
+
+  <!-- Left: Service Matrix -->
+  <text x="272" y="112" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">서비스 이용 현황 (WEL-006)</text>
+  <text x="272" y="134" font-family="Arial" font-size="12" font-weight="bold" fill="#6B7280">이온돌 · 2026년 1~6월</text>
+
+  <!-- KPI -->
+  <rect x="272" y="156" width="180" height="64" rx="10" fill="#EDFAF3"/>
+  <text x="288" y="180" font-family="Arial" font-size="11" fill="#276B4C">월평균 이용</text>
+  <text x="288" y="206" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">186h</text>
+
+  <rect x="464" y="156" width="180" height="64" rx="10" fill="#EEF4FD"/>
+  <text x="480" y="180" font-family="Arial" font-size="11" fill="#2E5FA8">이용 기관</text>
+  <text x="480" y="206" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">5곳</text>
+
+  <rect x="656" y="156" width="172" height="64" rx="10" fill="#FFF5E6"/>
+  <text x="672" y="180" font-family="Arial" font-size="11" fill="#B56F10">이용 서비스</text>
+  <text x="672" y="206" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">8개</text>
+
+  <!-- Matrix -->
+  <rect x="272" y="240" width="556" height="556" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="272" y="240" width="556" height="40" fill="#F9FAFB"/>
+  <text x="296" y="266" font-family="Arial" font-size="11" font-weight="bold" fill="#6B7280">서비스 / 기관</text>
+  <text x="540" y="266" font-family="Arial" font-size="11" font-weight="bold" fill="#6B7280">1월</text>
+  <text x="580" y="266" font-family="Arial" font-size="11" font-weight="bold" fill="#6B7280">2월</text>
+  <text x="620" y="266" font-family="Arial" font-size="11" font-weight="bold" fill="#6B7280">3월</text>
+  <text x="660" y="266" font-family="Arial" font-size="11" font-weight="bold" fill="#6B7280">4월</text>
+  <text x="700" y="266" font-family="Arial" font-size="11" font-weight="bold" fill="#6B7280">5월</text>
+  <text x="740" y="266" font-family="Arial" font-size="11" font-weight="bold" fill="#6B7280">6월</text>
+  <text x="800" y="266" font-family="Arial" font-size="11" font-weight="bold" fill="#6B7280">계</text>
+
+  <g font-family="Arial" font-size="11" fill="#111827">
+    <text x="296" y="310">활동지원 (○○센터)</text>
+    <rect x="528" y="296" width="24" height="20" fill="#A9DCC4"/><text x="540" y="310" text-anchor="middle" fill="#0D4929">80</text>
+    <rect x="568" y="296" width="24" height="20" fill="#A9DCC4"/><text x="580" y="310" text-anchor="middle" fill="#0D4929">80</text>
+    <rect x="608" y="296" width="24" height="20" fill="#A9DCC4"/><text x="620" y="310" text-anchor="middle" fill="#0D4929">88</text>
+    <rect x="648" y="296" width="24" height="20" fill="#A9DCC4"/><text x="660" y="310" text-anchor="middle" fill="#0D4929">80</text>
+    <rect x="688" y="296" width="24" height="20" fill="#A9DCC4"/><text x="700" y="310" text-anchor="middle" fill="#0D4929">88</text>
+    <rect x="728" y="296" width="24" height="20" fill="#A9DCC4"/><text x="740" y="310" text-anchor="middle" fill="#0D4929">80</text>
+    <text x="800" y="310" font-weight="bold">496h</text>
+
+    <text x="296" y="350">언어치료 (△△발달센터)</text>
+    <rect x="528" y="336" width="24" height="20" fill="#FDD1D1"/><text x="540" y="350" text-anchor="middle" fill="#651616">8</text>
+    <rect x="568" y="336" width="24" height="20" fill="#FDD1D1"/><text x="580" y="350" text-anchor="middle" fill="#651616">8</text>
+    <rect x="608" y="336" width="24" height="20" fill="#FDD1D1"/><text x="620" y="350" text-anchor="middle" fill="#651616">8</text>
+    <rect x="648" y="336" width="24" height="20" fill="#FDD1D1"/><text x="660" y="350" text-anchor="middle" fill="#651616">8</text>
+    <rect x="688" y="336" width="24" height="20" fill="#FDD1D1"/><text x="700" y="350" text-anchor="middle" fill="#651616">8</text>
+    <rect x="728" y="336" width="24" height="20" fill="#FDD1D1"/><text x="740" y="350" text-anchor="middle" fill="#651616">8</text>
+    <text x="800" y="350" font-weight="bold">48h</text>
+
+    <text x="296" y="390">작업치료 (△△발달센터)</text>
+    <rect x="528" y="376" width="24" height="20" fill="#FDD1D1"/><text x="540" y="390" text-anchor="middle" fill="#651616">4</text>
+    <rect x="568" y="376" width="24" height="20" fill="#FDD1D1"/><text x="580" y="390" text-anchor="middle" fill="#651616">4</text>
+    <rect x="608" y="376" width="24" height="20" fill="#FDD1D1"/><text x="620" y="390" text-anchor="middle" fill="#651616">4</text>
+    <rect x="648" y="376" width="24" height="20" fill="#FDD1D1"/><text x="660" y="390" text-anchor="middle" fill="#651616">4</text>
+    <rect x="688" y="376" width="24" height="20" fill="#FDD1D1"/><text x="700" y="390" text-anchor="middle" fill="#651616">4</text>
+    <rect x="728" y="376" width="24" height="20" fill="#FDD1D1"/><text x="740" y="390" text-anchor="middle" fill="#651616">4</text>
+    <text x="800" y="390" font-weight="bold">24h</text>
+
+    <text x="296" y="430">교육 (○○특수학교)</text>
+    <rect x="528" y="416" width="24" height="20" fill="#C7D9F0"/><text x="540" y="430" text-anchor="middle" fill="#16345F">28</text>
+    <rect x="568" y="416" width="24" height="20" fill="#C7D9F0"/><text x="580" y="430" text-anchor="middle" fill="#16345F">28</text>
+    <rect x="608" y="416" width="24" height="20" fill="#C7D9F0"/><text x="620" y="430" text-anchor="middle" fill="#16345F">28</text>
+    <rect x="648" y="416" width="24" height="20" fill="#C7D9F0"/><text x="660" y="430" text-anchor="middle" fill="#16345F">28</text>
+    <rect x="688" y="416" width="24" height="20" fill="#C7D9F0"/><text x="700" y="430" text-anchor="middle" fill="#16345F">28</text>
+    <rect x="728" y="416" width="24" height="20" fill="#9CA3AF"/><text x="740" y="430" text-anchor="middle" fill="white">졸업</text>
+    <text x="800" y="430" font-weight="bold">140h</text>
+
+    <text x="296" y="470">직업재활시설</text>
+    <rect x="528" y="456" width="24" height="20" fill="#F3F4F6"/><text x="540" y="470" text-anchor="middle" fill="#9CA3AF">-</text>
+    <rect x="568" y="456" width="24" height="20" fill="#F3F4F6"/><text x="580" y="470" text-anchor="middle" fill="#9CA3AF">-</text>
+    <rect x="608" y="456" width="24" height="20" fill="#FFE2C7"/><text x="620" y="470" text-anchor="middle" fill="#92520D">60</text>
+    <rect x="648" y="456" width="24" height="20" fill="#FFE2C7"/><text x="660" y="470" text-anchor="middle" fill="#92520D">60</text>
+    <rect x="688" y="456" width="24" height="20" fill="#FFE2C7"/><text x="700" y="470" text-anchor="middle" fill="#92520D">66</text>
+    <rect x="728" y="456" width="24" height="20" fill="#FFE2C7"/><text x="740" y="470" text-anchor="middle" fill="#92520D">60</text>
+    <text x="800" y="470" font-weight="bold">246h</text>
+
+    <text x="296" y="510">사례관리 (본인)</text>
+    <rect x="528" y="496" width="24" height="20" fill="#E5DAFB"/><text x="540" y="510" text-anchor="middle" fill="#3F2865">2</text>
+    <rect x="568" y="496" width="24" height="20" fill="#E5DAFB"/><text x="580" y="510" text-anchor="middle" fill="#3F2865">2</text>
+    <rect x="608" y="496" width="24" height="20" fill="#E5DAFB"/><text x="620" y="510" text-anchor="middle" fill="#3F2865">3</text>
+    <rect x="648" y="496" width="24" height="20" fill="#E5DAFB"/><text x="660" y="510" text-anchor="middle" fill="#3F2865">2</text>
+    <rect x="688" y="496" width="24" height="20" fill="#E5DAFB"/><text x="700" y="510" text-anchor="middle" fill="#3F2865">2</text>
+    <rect x="728" y="496" width="24" height="20" fill="#E5DAFB"/><text x="740" y="510" text-anchor="middle" fill="#3F2865">3</text>
+    <text x="800" y="510" font-weight="bold">14h</text>
+  </g>
+
+  <!-- Legend -->
+  <rect x="288" y="556" width="524" height="56" rx="8" fill="#F9FAFB"/>
+  <text x="304" y="578" font-family="Arial" font-size="11" font-weight="bold" fill="#374151">색상 범례 (서비스 분류)</text>
+  <rect x="304" y="588" width="14" height="14" fill="#A9DCC4"/>
+  <text x="322" y="600" font-family="Arial" font-size="10" fill="#374151">활동지원</text>
+  <rect x="380" y="588" width="14" height="14" fill="#FDD1D1"/>
+  <text x="398" y="600" font-family="Arial" font-size="10" fill="#374151">의료</text>
+  <rect x="440" y="588" width="14" height="14" fill="#C7D9F0"/>
+  <text x="458" y="600" font-family="Arial" font-size="10" fill="#374151">교육</text>
+  <rect x="500" y="588" width="14" height="14" fill="#FFE2C7"/>
+  <text x="518" y="600" font-family="Arial" font-size="10" fill="#374151">전환/직업</text>
+  <rect x="580" y="588" width="14" height="14" fill="#E5DAFB"/>
+  <text x="598" y="600" font-family="Arial" font-size="10" fill="#374151">사례관리</text>
+
+  <!-- Summary -->
+  <text x="296" y="650" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">📊 분석 요약 (2026 상반기)</text>
+  <text x="296" y="674" font-family="Arial" font-size="11" fill="#6B7280">- 활동지원 일관성 유지 (월 80h 안정)</text>
+  <text x="296" y="690" font-family="Arial" font-size="11" fill="#6B7280">- 6월 학교 교육 종료 → 직업재활시설 시간 점진 증가</text>
+  <text x="296" y="706" font-family="Arial" font-size="11" fill="#92670D">- ⚠ 7월 이후 교육 공백 → 시설 시간 확대 필요</text>
+  <text x="296" y="722" font-family="Arial" font-size="11" fill="#6B7280">- 치료 회기 일관성 양호 (주 3회 유지)</text>
+
+  <rect x="288" y="744" width="524" height="40" rx="8" fill="#EDFAF3"/>
+  <text x="304" y="768" font-family="Arial" font-size="11" font-weight="bold" fill="#276B4C">💡 추천 액션: 7월부터 직업재활시설 시간 80h/월로 확대 협의</text>
+
+  <!-- Right: Timeline -->
+  <rect x="852" y="96" width="556" height="780" rx="16" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="876" y="124" font-family="Arial" font-size="11" fill="#9CA3AF">W-20 · 복지+전환 타임라인</text>
+  <text x="876" y="156" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">생애 이정표</text>
+  <text x="876" y="180" font-family="Arial" font-size="12" fill="#6B7280">이온돌 · 복지/전환 분야 중심</text>
+
+  <!-- Vertical timeline -->
+  <line x1="912" y1="220" x2="912" y2="850" stroke="#E5E7EB" stroke-width="2"/>
+
+  <!-- Future -->
+  <circle cx="912" cy="234" r="10" fill="#6A43A8"/>
+  <rect x="936" y="220" width="448" height="60" rx="10" fill="#F4EFFB" stroke="#C9B6E6" stroke-dasharray="4 3"/>
+  <text x="952" y="244" font-family="Arial" font-size="11" font-weight="bold" fill="#6A43A8">예정 · 2027.06</text>
+  <text x="952" y="266" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">직업재활시설 정식 입소</text>
+
+  <circle cx="912" cy="306" r="10" fill="#E8724A"/>
+  <rect x="936" y="292" width="448" height="60" rx="10" fill="#FFF8F4" stroke="#FACDB8"/>
+  <text x="952" y="316" font-family="Arial" font-size="11" font-weight="bold" fill="#E8724A">⭐ 진행 · 2026.06</text>
+  <text x="952" y="338" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">학교 졸업 → 직업재활시설 적응 단계</text>
+
+  <circle cx="912" cy="378" r="7" fill="#276B4C"/>
+  <rect x="936" y="368" width="448" height="48" rx="8" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="952" y="386" font-family="Arial" font-size="11" fill="#9CA3AF">2026.03</text>
+  <text x="952" y="404" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">2026 ISP 작성 및 시작</text>
+
+  <circle cx="912" cy="434" r="10" fill="#E8724A"/>
+  <rect x="936" y="424" width="448" height="48" rx="8" fill="#FFF8F4"/>
+  <text x="952" y="442" font-family="Arial" font-size="11" font-weight="bold" fill="#E8724A">⭐ 2025.12</text>
+  <text x="952" y="460" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">고등학교 졸업 (○○특수학교)</text>
+
+  <circle cx="912" cy="490" r="7" fill="#276B4C"/>
+  <rect x="936" y="480" width="448" height="48" rx="8" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="952" y="498" font-family="Arial" font-size="11" fill="#9CA3AF">2025.09</text>
+  <text x="952" y="516" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">직업체험 1회 (직업재활시설)</text>
+
+  <circle cx="912" cy="546" r="7" fill="#276B4C"/>
+  <rect x="936" y="536" width="448" height="48" rx="8" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="952" y="554" font-family="Arial" font-size="11" fill="#9CA3AF">2024.03</text>
+  <text x="952" y="572" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">전환계획 작성 시작 (TRA-001)</text>
+
+  <circle cx="912" cy="602" r="10" fill="#E8724A"/>
+  <rect x="936" y="592" width="448" height="48" rx="8" fill="#FFF8F4"/>
+  <text x="952" y="610" font-family="Arial" font-size="11" font-weight="bold" fill="#E8724A">⭐ 2024.03</text>
+  <text x="952" y="628" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">청소년기 → 성인전환기 진입 (만 18세)</text>
+
+  <circle cx="912" cy="658" r="7" fill="#276B4C"/>
+  <rect x="936" y="648" width="448" height="48" rx="8" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="952" y="666" font-family="Arial" font-size="11" fill="#9CA3AF">2018.05</text>
+  <text x="952" y="684" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">최초 ISP 작성 (보호자 사례관리 시작)</text>
+
+  <circle cx="912" cy="714" r="10" fill="#E8724A"/>
+  <rect x="936" y="704" width="448" height="48" rx="8" fill="#FFF8F4"/>
+  <text x="952" y="722" font-family="Arial" font-size="11" font-weight="bold" fill="#E8724A">⭐ 2014.03</text>
+  <text x="952" y="740" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">○○특수학교 입학</text>
+
+  <circle cx="912" cy="770" r="7" fill="#9CA3AF"/>
+  <text x="936" y="776" font-family="Arial" font-size="11" fill="#9CA3AF">2010-2013 (8건) 펼치기</text>
+
+  <circle cx="912" cy="820" r="10" fill="#E8724A"/>
+  <rect x="936" y="810" width="448" height="48" rx="8" fill="#FFF8F4"/>
+  <text x="952" y="828" font-family="Arial" font-size="11" font-weight="bold" fill="#E8724A">⭐ 2008.04</text>
+  <text x="952" y="846" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">자폐성 장애 진단 (만 2세)</text>
+</svg>

@@ -1,0 +1,67 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- P-30 · ST-02 Person Notifications · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">P-30 · ST-02 Person Notifications · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#FFFFFF"/>
+
+  <!-- Sidebar -->
+  <rect width="280" height="900" fill="#FFF8F4"/>
+  <text x="32" y="52" font-family="Arial" font-size="24" font-weight="bold" fill="#E8724A">온돌</text>
+  <text x="32" y="146" font-family="Arial" font-size="22" fill="#374151">🌟 오늘 기록</text>
+  <text x="32" y="218" font-family="Arial" font-size="22" fill="#374151">📖 내 기록</text>
+  <rect x="0" y="242" width="280" height="80" fill="#FFE8DA"/>
+  <rect x="0" y="242" width="6" height="80" fill="#E8724A"/>
+  <text x="32" y="290" font-family="Arial" font-size="22" font-weight="bold" fill="#E8724A">🔔 알림</text>
+  <rect x="222" y="270" width="40" height="32" rx="16" fill="#E04545"/>
+  <text x="242" y="292" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="white">2</text>
+  <text x="32" y="362" font-family="Arial" font-size="22" fill="#374151">⚙️ 설정</text>
+
+  <!-- Main -->
+  <text x="312" y="74" font-family="Arial" font-size="36" font-weight="bold" fill="#111827">알림</text>
+  <text x="312" y="104" font-family="Arial" font-size="18" fill="#6B7280">새로 온 알림이 있어요</text>
+
+  <!-- Today section -->
+  <text x="312" y="160" font-family="Arial" font-size="20" font-weight="bold" fill="#374151">오늘</text>
+
+  <!-- New notification 1 -->
+  <rect x="312" y="180" width="1096" height="120" rx="20" fill="#FFE8DA" stroke="#E8724A" stroke-width="3"/>
+  <circle cx="372" cy="240" r="32" fill="#E8724A"/>
+  <text x="372" y="252" text-anchor="middle" font-family="Arial" font-size="26" fill="white">💛</text>
+  <text x="424" y="220" font-family="Arial" font-size="22" font-weight="bold" fill="#111827">엄마가 봤어요!</text>
+  <text x="424" y="252" font-family="Arial" font-size="18" fill="#374151">엄마가 오늘 내 기분 기록을 봤어요 😊</text>
+  <text x="424" y="280" font-family="Arial" font-size="14" fill="#6B7280">⏰ 30분 전</text>
+
+  <!-- New notification 2 -->
+  <rect x="312" y="316" width="1096" height="120" rx="20" fill="#EEF4FD" stroke="#3B7D8E" stroke-width="3"/>
+  <circle cx="372" cy="376" r="32" fill="#2E5FA8"/>
+  <text x="372" y="388" text-anchor="middle" font-family="Arial" font-size="26" fill="white">📚</text>
+  <text x="424" y="356" font-family="Arial" font-size="22" font-weight="bold" fill="#111827">선생님이 칭찬했어요!</text>
+  <text x="424" y="388" font-family="Arial" font-size="18" fill="#374151">"오늘 수업 시간에 잘 집중했어요! 👏"</text>
+  <text x="424" y="416" font-family="Arial" font-size="14" fill="#6B7280">⏰ 오후 3시 · 이특수교사 선생님</text>
+
+  <!-- Yesterday -->
+  <text x="312" y="476" font-family="Arial" font-size="20" font-weight="bold" fill="#374151">어제</text>
+
+  <rect x="312" y="496" width="1096" height="100" rx="20" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <circle cx="372" cy="546" r="28" fill="#FFF5E6"/>
+  <text x="372" y="556" text-anchor="middle" font-family="Arial" font-size="22" fill="#B56F10">🏠</text>
+  <text x="424" y="538" font-family="Arial" font-size="18" font-weight="bold" fill="#374151">박지원 선생님이 일지를 적었어요</text>
+  <text x="424" y="560" font-family="Arial" font-size="14" fill="#6B7280">우리 산책 잘 했다고 적었어요 🌳</text>
+  <text x="424" y="582" font-family="Arial" font-size="13" fill="#9CA3AF">어제 저녁 7시</text>
+
+  <rect x="312" y="612" width="1096" height="100" rx="20" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <circle cx="372" cy="662" r="28" fill="#FEF0F0"/>
+  <text x="372" y="672" text-anchor="middle" font-family="Arial" font-size="22" fill="#BF3030">🏥</text>
+  <text x="424" y="654" font-family="Arial" font-size="18" font-weight="bold" fill="#374151">내일 병원 약속이 있어요</text>
+  <text x="424" y="676" font-family="Arial" font-size="14" fill="#6B7280">📅 6월 12일 (오늘) 오후 2시 30분</text>
+  <text x="424" y="698" font-family="Arial" font-size="13" fill="#9CA3AF">어제 알림</text>
+
+  <!-- This week -->
+  <text x="312" y="752" font-family="Arial" font-size="20" font-weight="bold" fill="#374151">이번 주</text>
+
+  <rect x="312" y="772" width="1096" height="100" rx="20" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <circle cx="372" cy="822" r="28" fill="#F4EFFB"/>
+  <text x="372" y="832" text-anchor="middle" font-family="Arial" font-size="22" fill="#6A43A8">🎉</text>
+  <text x="424" y="814" font-family="Arial" font-size="18" font-weight="bold" fill="#374151">연속 5일째 기분 기록을 했어요!</text>
+  <text x="424" y="836" font-family="Arial" font-size="14" fill="#6B7280">잘 하고 있어요. 계속해봐요 ✨</text>
+  <text x="424" y="858" font-family="Arial" font-size="13" fill="#9CA3AF">6월 9일 (월요일)</text>
+</svg>

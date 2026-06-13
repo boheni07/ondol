@@ -1,0 +1,164 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- TH-13 치료계획서 작성 (좌, Step 4/5) + TH-15 회기 일지 작성 (우) · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">TH-13 치료계획서 작성 (좌, Step 4/5) + TH-15 회기 일지 작성 (우) · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Sidebar -->
+  <rect width="64" height="900" fill="#F5F5F5"/>
+  <text x="32" y="42" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#6A43A8">온</text>
+
+  <!-- Header -->
+  <rect x="64" width="1376" height="64" fill="#FFFFFF"/><line x1="64" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="96" y="40" font-family="Arial" font-size="13" fill="#6B7280">치료 기록 / <tspan fill="#111827" font-weight="bold">두 가지 작성 화면</tspan></text>
+
+  <!-- LEFT: TH-13 Plan Wizard Step 4/5 -->
+  <rect x="96" y="96" width="668" height="780" rx="16" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="120" y="124" font-family="Arial" font-size="11" fill="#9CA3AF">TH-13 · 치료계획서 작성 (Step 4/5 — 회기 스케줄)</text>
+  <text x="120" y="156" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">회기 스케줄 설계</text>
+  <text x="120" y="180" font-family="Arial" font-size="12" fill="#6B7280">한가람(고2) — 작업치료 신규 계획 · 1학기 분량</text>
+
+  <!-- Step bar -->
+  <g>
+    <circle cx="148" cy="216" r="10" fill="#6A43A8"/><text x="148" y="220" text-anchor="middle" font-family="Arial" font-size="9" fill="white">✓</text>
+    <text x="148" y="240" text-anchor="middle" font-family="Arial" font-size="10" fill="#374151">진단</text>
+    <line x1="158" y1="216" x2="252" y2="216" stroke="#6A43A8" stroke-width="2"/>
+    <circle cx="262" cy="216" r="10" fill="#6A43A8"/><text x="262" y="220" text-anchor="middle" font-family="Arial" font-size="9" fill="white">✓</text>
+    <text x="262" y="240" text-anchor="middle" font-family="Arial" font-size="10" fill="#374151">목표</text>
+    <line x1="272" y1="216" x2="366" y2="216" stroke="#6A43A8" stroke-width="2"/>
+    <circle cx="376" cy="216" r="10" fill="#6A43A8"/><text x="376" y="220" text-anchor="middle" font-family="Arial" font-size="9" fill="white">✓</text>
+    <text x="376" y="240" text-anchor="middle" font-family="Arial" font-size="10" fill="#374151">방법</text>
+    <line x1="386" y1="216" x2="480" y2="216" stroke="#6A43A8" stroke-width="2"/>
+    <circle cx="490" cy="216" r="10" fill="#6A43A8"/><text x="490" y="220" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="white">4</text>
+    <text x="490" y="240" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#6A43A8">스케줄</text>
+    <line x1="500" y1="216" x2="594" y2="216" stroke="#E5E7EB" stroke-width="2"/>
+    <circle cx="604" cy="216" r="10" fill="#E5E7EB"/><text x="604" y="220" text-anchor="middle" font-family="Arial" font-size="9" fill="#6B7280">5</text>
+    <text x="604" y="240" text-anchor="middle" font-family="Arial" font-size="10" fill="#6B7280">확인</text>
+  </g>
+
+  <!-- Frequency -->
+  <text x="120" y="278" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">회기 빈도 <tspan fill="#E04545">*</tspan></text>
+  <g>
+    <rect x="120" y="288" width="140" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+    <text x="190" y="316" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">주 1회</text>
+    <rect x="272" y="288" width="140" height="44" rx="8" fill="#F4EFFB" stroke="#6A43A8" stroke-width="2"/>
+    <text x="342" y="316" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#6A43A8">주 2회 ✓</text>
+    <rect x="424" y="288" width="140" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+    <text x="494" y="316" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">주 3회</text>
+    <rect x="576" y="288" width="140" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+    <text x="646" y="316" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">기타</text>
+  </g>
+
+  <!-- Per session -->
+  <text x="120" y="362" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">회기당 시간</text>
+  <rect x="120" y="372" width="260" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="136" y="399" font-family="Arial" font-size="13" fill="#111827">50분</text>
+  <text x="400" y="362" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">총 회기 수</text>
+  <rect x="400" y="372" width="260" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="416" y="399" font-family="Arial" font-size="13" font-weight="bold" fill="#6A43A8">20회 (자동 계산: 주 2회 × 10주)</text>
+
+  <!-- Period -->
+  <text x="120" y="446" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">기간</text>
+  <rect x="120" y="456" width="260" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="136" y="483" font-family="Arial" font-size="13" fill="#111827">📅 2026-06-20</text>
+  <text x="396" y="483" font-family="Arial" font-size="13" fill="#6B7280">~</text>
+  <rect x="412" y="456" width="248" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="428" y="483" font-family="Arial" font-size="13" fill="#111827">📅 2026-08-29 (10주)</text>
+
+  <!-- Schedule pattern -->
+  <text x="120" y="530" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">요일 · 시간</text>
+  <rect x="120" y="540" width="540" height="80" rx="8" fill="#F9FAFB" stroke="#E5E7EB"/>
+  <g>
+    <rect x="136" y="556" width="60" height="48" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+    <text x="166" y="586" text-anchor="middle" font-family="Arial" font-size="13" fill="#374151">월</text>
+    <rect x="204" y="556" width="60" height="48" rx="8" fill="#F4EFFB" stroke="#6A43A8" stroke-width="2"/>
+    <text x="234" y="586" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#6A43A8">화 ✓</text>
+    <rect x="272" y="556" width="60" height="48" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+    <text x="302" y="586" text-anchor="middle" font-family="Arial" font-size="13" fill="#374151">수</text>
+    <rect x="340" y="556" width="60" height="48" rx="8" fill="#F4EFFB" stroke="#6A43A8" stroke-width="2"/>
+    <text x="370" y="586" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#6A43A8">목 ✓</text>
+    <rect x="408" y="556" width="60" height="48" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+    <text x="438" y="586" text-anchor="middle" font-family="Arial" font-size="13" fill="#374151">금</text>
+    <text x="488" y="586" font-family="Arial" font-size="12" fill="#374151">시간: 14:00 - 14:50</text>
+  </g>
+
+  <!-- Conflicts -->
+  <rect x="120" y="640" width="540" height="60" rx="10" fill="#EDFAF3"/>
+  <text x="136" y="664" font-family="Arial" font-size="12" font-weight="bold" fill="#276B4C">✓ 일정 충돌 검사 완료</text>
+  <text x="136" y="684" font-family="Arial" font-size="11" fill="#6B7280">한가람의 다른 일정과 충돌 없음 (학교 종료 후 시간대)</text>
+
+  <!-- Save button -->
+  <rect x="120" y="720" width="540" height="48" rx="10" fill="#F9FAFB" stroke="#D1D5DB" stroke-dasharray="4 4"/>
+  <text x="390" y="750" text-anchor="middle" font-family="Arial" font-size="13" fill="#9CA3AF">📅 캘린더에 미리보기</text>
+
+  <rect x="120" y="784" width="180" height="48" rx="10" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="210" y="814" text-anchor="middle" font-family="Arial" font-size="13" fill="#374151">← 이전</text>
+  <rect x="312" y="784" width="180" height="48" rx="10" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="402" y="814" text-anchor="middle" font-family="Arial" font-size="13" fill="#374151">임시저장</text>
+  <rect x="504" y="784" width="156" height="48" rx="10" fill="#6A43A8"/>
+  <text x="582" y="814" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">다음 →</text>
+
+  <!-- RIGHT: TH-15 Session Journal Form -->
+  <rect x="788" y="96" width="620" height="780" rx="16" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="812" y="124" font-family="Arial" font-size="11" fill="#9CA3AF">TH-15 · 회기 일지 작성 (ST-04 단일 폼)</text>
+  <text x="812" y="156" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">회기 일지 — 이온돌 4회기</text>
+  <text x="812" y="180" font-family="Arial" font-size="12" fill="#6B7280">치료계획서 자동 연결: MED-005-21 · 2026 1학기 언어치료</text>
+
+  <!-- Date / duration -->
+  <rect x="812" y="208" width="580" height="60" rx="10" fill="#F4EFFB"/>
+  <text x="828" y="232" font-family="Arial" font-size="11" font-weight="bold" fill="#6A43A8">📅 회기 정보</text>
+  <text x="828" y="252" font-family="Arial" font-size="12" fill="#111827">2026-06-13 (금) 10:00 - 10:50 (50분 완료)</text>
+  <text x="1376" y="252" text-anchor="end" font-family="Arial" font-size="11" font-weight="bold" fill="#6A43A8">4/12</text>
+
+  <!-- Activities -->
+  <text x="812" y="296" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">활동 내용 <tspan fill="#E04545">*</tspan></text>
+  <rect x="812" y="306" width="580" height="120" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="828" y="330" font-family="Arial" font-size="12" fill="#111827">- PECS 2단계 카드 거리 두기 훈련 (1m)</text>
+  <text x="828" y="348" font-family="Arial" font-size="12" fill="#111827">- 의사 표현 5문장 발음 명료도 평가</text>
+  <text x="828" y="366" font-family="Arial" font-size="12" fill="#111827">- 그림카드 활용 자기결정 표현 게임</text>
+  <text x="828" y="384" font-family="Arial" font-size="12" fill="#111827">- 마무리: 다음 회기 예고, 보호자 인사</text>
+
+  <!-- Achievement -->
+  <text x="812" y="450" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">목표 달성도</text>
+  <g>
+    <rect x="812" y="460" width="110" height="40" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+    <text x="867" y="485" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">미달</text>
+    <rect x="930" y="460" width="110" height="40" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+    <text x="985" y="485" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">부분</text>
+    <rect x="1048" y="460" width="110" height="40" rx="8" fill="#F4EFFB" stroke="#6A43A8" stroke-width="2"/>
+    <text x="1103" y="485" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#6A43A8">달성 ✓</text>
+    <rect x="1166" y="460" width="110" height="40" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+    <text x="1221" y="485" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">초과</text>
+    <rect x="1284" y="460" width="110" height="40" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+    <text x="1339" y="485" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">평가불가</text>
+  </g>
+
+  <!-- Observation -->
+  <text x="812" y="528" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">관찰 메모</text>
+  <rect x="812" y="538" width="580" height="100" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="828" y="562" font-family="Arial" font-size="12" fill="#111827">카드 거리 1m 시도 5회 중 4회 성공.</text>
+  <text x="828" y="580" font-family="Arial" font-size="12" fill="#111827">5회차에서 손을 뻗었으나 카드 떨어뜨림 → 재시도 시 성공.</text>
+  <text x="828" y="598" font-family="Arial" font-size="12" fill="#111827">발음 명료도: "물" "밥" "엄마" 명료 / "어디" "왜" 부분 명료.</text>
+  <text x="828" y="616" font-family="Arial" font-size="12" fill="#111827">정서 안정 · 회기 동안 자해 행동 0회.</text>
+
+  <!-- Homework -->
+  <text x="812" y="662" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">다음 회기까지 과제 (보호자·활동지원사 공유)</text>
+  <rect x="812" y="672" width="580" height="60" rx="8" fill="#FFF8F4"/>
+  <text x="828" y="696" font-family="Arial" font-size="12" fill="#374151">- 일상에서 PECS 카드 거리 1m 시도 매일 3회</text>
+  <text x="828" y="714" font-family="Arial" font-size="12" fill="#374151">- "어디" "왜" 발음 모델링 들려주기 (반복 노출)</text>
+
+  <!-- Share -->
+  <text x="812" y="756" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">공유 대상</text>
+  <g>
+    <rect x="812" y="766" width="120" height="32" rx="16" fill="#FFE8DA" stroke="#E8724A"/>
+    <text x="872" y="786" text-anchor="middle" font-family="Arial" font-size="11" fill="#E8724A">보호자 ✓</text>
+    <rect x="940" y="766" width="120" height="32" rx="16" fill="#EEF4FD" stroke="#2E5FA8"/>
+    <text x="1000" y="786" text-anchor="middle" font-family="Arial" font-size="11" fill="#2E5FA8">특수교사 ✓</text>
+    <rect x="1068" y="766" width="120" height="32" rx="16" fill="#FFF5E6" stroke="#B56F10"/>
+    <text x="1128" y="786" text-anchor="middle" font-family="Arial" font-size="11" fill="#B56F10">활동지원사 ✓</text>
+  </g>
+
+  <rect x="812" y="820" width="240" height="40" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="932" y="844" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">임시저장</text>
+  <rect x="1064" y="820" width="240" height="40" rx="8" fill="#6A43A8"/>
+  <text x="1184" y="844" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">저장 및 공유 발송</text>
+</svg>

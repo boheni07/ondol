@@ -1,0 +1,80 @@
+<svg viewBox="0 0 390 844" xmlns="http://www.w3.org/2000/svg">
+  <!-- G-32 · ST-05 Grant Permission Wizard · Mobile 390×844 -->
+  <text x="8" y="12" font-family="Arial" font-size="9" fill="#9CA3AF">G-32 · ST-05 Grant Permission (Step 3/4) · Mobile 390×844</text>
+  <rect width="390" height="844" fill="#F9FAFB"/>
+  <rect width="390" height="844" rx="0" fill="none" stroke="#E5E7EB"/>
+
+  <!-- Status bar -->
+  <rect width="390" height="44" fill="#FFFFFF"/>
+  <text x="20" y="30" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">9:41</text>
+
+  <!-- Nav bar -->
+  <rect y="44" width="390" height="56" fill="#FFFFFF"/>
+  <line y1="100" x1="0" y2="100" x2="390" stroke="#E5E7EB"/>
+  <text x="20" y="78" font-family="Arial" font-size="14" fill="#3B7D8E">✕ 취소</text>
+  <text x="195" y="80" text-anchor="middle" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">권한 부여</text>
+
+  <!-- Step bar -->
+  <rect x="20" y="116" width="350" height="8" rx="4" fill="#E5E7EB"/>
+  <rect x="20" y="116" width="263" height="8" rx="4" fill="#3B7D8E"/>
+  <text x="20" y="142" font-family="Arial" font-size="11" fill="#6B7280">STEP 3 / 4 · 수준 · 기간</text>
+
+  <!-- Target info -->
+  <rect x="16" y="156" width="358" height="56" rx="12" fill="#FFF8F4" stroke="#FACDB8"/>
+  <circle cx="40" cy="184" r="14" fill="#E8724A"/>
+  <text x="40" y="190" text-anchor="middle" font-family="Arial" font-size="11" fill="white">한</text>
+  <text x="64" y="180" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">한치료사 · 의료 분야</text>
+  <text x="64" y="198" font-family="Arial" font-size="10" fill="#6B7280">선택 완료 (Step 1-2)</text>
+
+  <!-- Level selector -->
+  <text x="16" y="240" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">권한 수준 *</text>
+
+  <rect x="16" y="252" width="358" height="76" rx="12" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <rect x="32" y="268" width="20" height="20" rx="10" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="60" y="280" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">열람</text>
+  <text x="60" y="298" font-family="Arial" font-size="11" fill="#6B7280">기록을 읽을 수만 있음</text>
+  <text x="60" y="314" font-family="Arial" font-size="10" fill="#9CA3AF">예: 진료 기록 보기, 첨부파일 다운</text>
+
+  <rect x="16" y="340" width="358" height="76" rx="12" fill="#EEF4FD" stroke="#3B7D8E" stroke-width="2"/>
+  <rect x="32" y="356" width="20" height="20" rx="10" fill="#3B7D8E"/>
+  <text x="42" y="370" text-anchor="middle" font-family="Arial" font-size="11" fill="white">●</text>
+  <text x="60" y="368" font-family="Arial" font-size="13" font-weight="bold" fill="#2E5FA8">작성 ✓ (추천)</text>
+  <text x="60" y="386" font-family="Arial" font-size="11" fill="#6B7280">새 기록 추가 가능, 본인 작성만 수정</text>
+  <text x="60" y="402" font-family="Arial" font-size="10" fill="#9CA3AF">예: 치료 회기 일지 작성</text>
+
+  <rect x="16" y="428" width="358" height="76" rx="12" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <rect x="32" y="444" width="20" height="20" rx="10" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="60" y="456" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">편집</text>
+  <text x="60" y="474" font-family="Arial" font-size="11" fill="#6B7280">다른 사람 작성 기록도 편집 가능</text>
+  <text x="60" y="490" font-family="Arial" font-size="10" fill="#9CA3AF">예: 협력 진료 시 의사간 공동 편집</text>
+
+  <!-- Period -->
+  <text x="16" y="538" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">기간</text>
+
+  <rect x="16" y="550" width="174" height="48" rx="10" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="32" y="578" font-family="Arial" font-size="12" fill="#111827">📅 2026-06-13</text>
+  <rect x="200" y="550" width="174" height="48" rx="10" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="216" y="578" font-family="Arial" font-size="12" fill="#111827">📅 2026-12-31</text>
+
+  <rect x="16" y="608" width="20" height="20" rx="4" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="44" y="624" font-family="Arial" font-size="12" fill="#374151">무기한 (회수 전까지)</text>
+
+  <!-- Notice -->
+  <rect x="16" y="652" width="358" height="80" rx="10" fill="#FEF7E0" stroke="#F2C94C"/>
+  <text x="32" y="676" font-family="Arial" font-size="12" font-weight="bold" fill="#92670D">📌 알아두세요</text>
+  <text x="32" y="694" font-family="Arial" font-size="11" fill="#6B7280">- 권한 부여 즉시 본인에게 알림 발송</text>
+  <text x="32" y="710" font-family="Arial" font-size="11" fill="#6B7280">- 기간 만료 7일 전 자동 갱신 알림</text>
+  <text x="32" y="724" font-family="Arial" font-size="11" fill="#6B7280">- 언제든 회수 가능 (감사 로그 보존)</text>
+
+  <!-- Sticky footer -->
+  <rect y="744" width="390" height="56" fill="#FFFFFF"/>
+  <line y1="744" x1="0" y2="744" x2="390" stroke="#E5E7EB"/>
+  <rect x="20" y="754" width="100" height="40" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="70" y="778" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">← 이전</text>
+  <rect x="132" y="754" width="238" height="40" rx="8" fill="#3B7D8E"/>
+  <text x="251" y="778" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">다음 → 미리보기</text>
+
+  <!-- Bottom safe -->
+  <rect y="800" width="390" height="44" fill="#FFFFFF"/>
+  <rect x="155" y="820" width="80" height="5" rx="2.5" fill="#D1D5DB"/>
+</svg>

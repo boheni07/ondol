@@ -1,0 +1,69 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- A-04 · ST-09 Signup Profile · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">A-04 · ST-09 Signup · Basic Info · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Top brand bar -->
+  <rect width="1440" height="64" fill="#FFFFFF"/>
+  <line x1="0" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="40" y="42" font-family="Arial" font-size="20" font-weight="bold" fill="#3B7D8E">온돌</text>
+  <text x="86" y="42" font-family="Arial" font-size="13" fill="#6B7280">OnDol</text>
+  <text x="1400" y="42" text-anchor="end" font-family="Arial" font-size="13" fill="#3B7D8E">로그인</text>
+
+  <!-- Step indicator -->
+  <text x="720" y="120" text-anchor="middle" font-family="Arial" font-size="12" fill="#6B7280">STEP 2 / 3 · 기본 정보</text>
+  <line x1="540" y1="138" x2="900" y2="138" stroke="#E5E7EB" stroke-width="3"/>
+  <line x1="540" y1="138" x2="780" y2="138" stroke="#3B7D8E" stroke-width="3"/>
+  <circle cx="540" cy="138" r="8" fill="#3B7D8E"/>
+  <circle cx="720" cy="138" r="8" fill="#3B7D8E"/>
+  <circle cx="900" cy="138" r="8" fill="#E5E7EB"/>
+
+  <!-- Title -->
+  <text x="720" y="186" text-anchor="middle" font-family="Arial" font-size="26" font-weight="bold" fill="#111827">기본 정보를 입력해주세요</text>
+  <text x="720" y="212" text-anchor="middle" font-family="Arial" font-size="13" fill="#6B7280">보호자 역할로 가입 중 · 이 정보는 프로필에 표시됩니다</text>
+
+  <!-- Form card -->
+  <rect x="420" y="248" width="600" height="528" rx="16" fill="#FFFFFF" stroke="#E5E7EB"/>
+
+  <!-- Profile avatar -->
+  <text x="720" y="282" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">프로필 사진 (선택)</text>
+  <circle cx="720" cy="334" r="36" fill="#F3F4F6" stroke="#E5E7EB" stroke-dasharray="4 4"/>
+  <text x="720" y="340" text-anchor="middle" font-family="Arial" font-size="24" fill="#9CA3AF">+</text>
+
+  <!-- Name -->
+  <text x="450" y="404" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">이름 <tspan fill="#E04545">*</tspan></text>
+  <rect x="450" y="414" width="540" height="44" rx="8" fill="#FFFFFF" stroke="#3B7D8E" stroke-width="2"/>
+  <text x="466" y="441" font-family="Arial" font-size="14" fill="#111827">김보호자</text>
+
+  <!-- Email -->
+  <text x="450" y="486" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">이메일 <tspan fill="#E04545">*</tspan></text>
+  <rect x="450" y="496" width="396" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="466" y="523" font-family="Arial" font-size="14" fill="#111827">guardian@example.com</text>
+  <rect x="858" y="496" width="132" height="44" rx="8" fill="#3B7D8E"/>
+  <text x="924" y="523" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">인증 메일 발송</text>
+
+  <!-- Phone -->
+  <text x="450" y="568" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">전화번호 <tspan fill="#E04545">*</tspan></text>
+  <rect x="450" y="578" width="540" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="466" y="605" font-family="Arial" font-size="14" fill="#111827">010-1234-5678</text>
+
+  <!-- Password -->
+  <text x="450" y="650" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">비밀번호 <tspan fill="#E04545">*</tspan></text>
+  <rect x="450" y="660" width="264" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="466" y="687" font-family="Arial" font-size="13" fill="#9CA3AF">8자 이상, 영문+숫자</text>
+  <rect x="726" y="660" width="264" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="742" y="687" font-family="Arial" font-size="13" fill="#9CA3AF">비밀번호 확인</text>
+
+  <!-- Password strength -->
+  <rect x="450" y="716" width="135" height="4" rx="2" fill="#22A06B"/>
+  <rect x="590" y="716" width="135" height="4" rx="2" fill="#22A06B"/>
+  <rect x="730" y="716" width="135" height="4" rx="2" fill="#22A06B"/>
+  <rect x="870" y="716" width="120" height="4" rx="2" fill="#E5E7EB"/>
+  <text x="450" y="736" font-family="Arial" font-size="11" fill="#22A06B">강함 ✓</text>
+
+  <!-- Buttons -->
+  <rect x="420" y="816" width="200" height="52" rx="10" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="520" y="848" text-anchor="middle" font-family="Arial" font-size="14" fill="#374151">← 뒤로</text>
+  <rect x="820" y="816" width="200" height="52" rx="10" fill="#3B7D8E"/>
+  <text x="920" y="848" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="white">다음 →</text>
+</svg>

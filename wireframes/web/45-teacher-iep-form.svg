@@ -1,0 +1,125 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- T-13 · ST-05 IEP Wizard (Step 3/6) · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">T-13 · ST-05 IEP Wizard (Step 3/6 연간 목표) · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Sidebar -->
+  <rect width="64" height="900" fill="#F5F5F5"/>
+  <rect width="64" height="64" fill="#FFFFFF"/>
+  <text x="32" y="42" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#2E5FA8">온</text>
+
+  <!-- Header -->
+  <rect x="64" width="1376" height="64" fill="#FFFFFF"/><line x1="64" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="96" y="40" font-family="Arial" font-size="13" fill="#6B7280">IEP / <tspan fill="#111827" font-weight="bold">새 IEP — 정도전 (2026 1학기)</tspan></text>
+  <text x="1280" y="40" font-family="Arial" font-size="11" fill="#92670D">자동저장 1분 전</text>
+
+  <!-- Step indicator -->
+  <rect x="64" y="64" width="1376" height="80" fill="#FFFFFF"/>
+  <line x1="64" y1="144" x2="1440" y2="144" stroke="#E5E7EB"/>
+  <g>
+    <circle cx="232" cy="104" r="12" fill="#2E5FA8"/><text x="232" y="109" text-anchor="middle" font-family="Arial" font-size="10" fill="white">✓</text>
+    <text x="232" y="132" text-anchor="middle" font-family="Arial" font-size="10" fill="#374151">기본 정보</text>
+    <line x1="248" y1="104" x2="368" y2="104" stroke="#2E5FA8" stroke-width="2"/>
+
+    <circle cx="384" cy="104" r="12" fill="#2E5FA8"/><text x="384" y="109" text-anchor="middle" font-family="Arial" font-size="10" fill="white">✓</text>
+    <text x="384" y="132" text-anchor="middle" font-family="Arial" font-size="10" fill="#374151">현재 수준</text>
+    <line x1="400" y1="104" x2="520" y2="104" stroke="#2E5FA8" stroke-width="2"/>
+
+    <circle cx="536" cy="104" r="12" fill="#2E5FA8"/><text x="536" y="109" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="white">3</text>
+    <text x="536" y="132" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#2E5FA8">연간 목표</text>
+    <line x1="552" y1="104" x2="672" y2="104" stroke="#E5E7EB" stroke-width="2"/>
+
+    <circle cx="688" cy="104" r="12" fill="#E5E7EB"/><text x="688" y="109" text-anchor="middle" font-family="Arial" font-size="10" fill="#6B7280">4</text>
+    <text x="688" y="132" text-anchor="middle" font-family="Arial" font-size="10" fill="#6B7280">지원 서비스</text>
+    <line x1="704" y1="104" x2="824" y2="104" stroke="#E5E7EB" stroke-width="2"/>
+
+    <circle cx="840" cy="104" r="12" fill="#E5E7EB"/><text x="840" y="109" text-anchor="middle" font-family="Arial" font-size="10" fill="#6B7280">5</text>
+    <text x="840" y="132" text-anchor="middle" font-family="Arial" font-size="10" fill="#6B7280">전환 계획</text>
+    <line x1="856" y1="104" x2="976" y2="104" stroke="#E5E7EB" stroke-width="2"/>
+
+    <circle cx="992" cy="104" r="12" fill="#E5E7EB"/><text x="992" y="109" text-anchor="middle" font-family="Arial" font-size="10" fill="#6B7280">6</text>
+    <text x="992" y="132" text-anchor="middle" font-family="Arial" font-size="10" fill="#6B7280">확인·저장</text>
+  </g>
+
+  <!-- Two columns: area list (left) + area edit (right) -->
+  <!-- Area list -->
+  <rect x="96" y="172" width="280" height="640" rx="16" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="120" y="200" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">목표 영역</text>
+  <text x="356" y="200" text-anchor="end" font-family="Arial" font-size="11" fill="#2E5FA8">+ 영역 추가</text>
+
+  <rect x="112" y="220" width="248" height="56" rx="10" fill="#EEF4FD" stroke="#2E5FA8" stroke-width="2"/>
+  <text x="128" y="244" font-family="Arial" font-size="13" font-weight="bold" fill="#2E5FA8">의사소통</text>
+  <text x="128" y="262" font-family="Arial" font-size="10" fill="#6B7280">3개 단기 목표 · 편집 중</text>
+
+  <rect x="112" y="284" width="248" height="56" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="128" y="308" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">사회성</text>
+  <text x="128" y="326" font-family="Arial" font-size="10" fill="#6B7280">2개 단기 목표</text>
+
+  <rect x="112" y="348" width="248" height="56" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="128" y="372" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">정서 안정</text>
+  <text x="128" y="390" font-family="Arial" font-size="10" fill="#6B7280">2개 단기 목표</text>
+
+  <rect x="112" y="412" width="248" height="56" rx="10" fill="#FFFFFF" stroke="#E5E7EB" stroke-dasharray="4 4"/>
+  <text x="236" y="442" text-anchor="middle" font-family="Arial" font-size="12" fill="#9CA3AF">+ 영역 추가</text>
+
+  <text x="120" y="500" font-family="Arial" font-size="11" font-weight="bold" fill="#6B7280">💡 영역 가이드</text>
+  <text x="120" y="520" font-family="Arial" font-size="10" fill="#6B7280">- 학생 현재 수준 기반</text>
+  <text x="120" y="536" font-family="Arial" font-size="10" fill="#6B7280">- SMART 목표 (구체·측정)</text>
+  <text x="120" y="552" font-family="Arial" font-size="10" fill="#6B7280">- 분기별 단기 목표 권장</text>
+  <text x="120" y="568" font-family="Arial" font-size="10" fill="#6B7280">- 평가 방법 명시 필수</text>
+
+  <!-- Area edit -->
+  <rect x="396" y="172" width="1012" height="640" rx="16" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="420" y="208" font-family="Arial" font-size="18" font-weight="bold" fill="#111827">의사소통 — 연간 목표 편집</text>
+  <text x="420" y="232" font-family="Arial" font-size="13" fill="#6B7280">정도전(초3, 자폐 1급)의 의사소통 영역 목표를 설정하세요</text>
+
+  <!-- Annual goal -->
+  <text x="420" y="270" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">연간 목표 <tspan fill="#E04545">*</tspan></text>
+  <rect x="420" y="280" width="964" height="80" rx="8" fill="#FFFFFF" stroke="#2E5FA8" stroke-width="2"/>
+  <text x="436" y="306" font-family="Arial" font-size="13" fill="#111827">2026학년도 1학기 동안 친숙한 일상 상황(5가지)에서 PECS</text>
+  <text x="436" y="324" font-family="Arial" font-size="13" fill="#111827">그림카드를 활용해 의사를 표현할 수 있다.</text>
+  <text x="436" y="342" font-family="Arial" font-size="11" fill="#9CA3AF">평가 기준: 매주 관찰 기록에서 5가지 상황 중 4가지 이상 달성</text>
+
+  <!-- Short term goals -->
+  <text x="420" y="396" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">단기 목표 (분기별)</text>
+
+  <!-- ST 1 -->
+  <rect x="420" y="408" width="964" height="100" rx="10" fill="#F9FAFB" stroke="#E5E7EB"/>
+  <rect x="436" y="424" width="60" height="22" rx="11" fill="#EEF4FD"/>
+  <text x="466" y="438" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#2E5FA8">Q1</text>
+  <text x="508" y="438" font-family="Arial" font-size="11" fill="#6B7280">2026.03 - 2026.05</text>
+  <text x="436" y="464" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">PECS 1단계: 1장 카드 교환으로 원하는 것 요청 (매일 5회)</text>
+  <text x="436" y="484" font-family="Arial" font-size="11" fill="#6B7280">평가 방법: 일일 관찰 기록 · 가족·교사 일관성 점검</text>
+  <text x="1368" y="464" text-anchor="end" font-family="Arial" font-size="11" fill="#9CA3AF">편집</text>
+  <text x="1368" y="484" text-anchor="end" font-family="Arial" font-size="11" fill="#BF3030">삭제</text>
+
+  <!-- ST 2 (editing) -->
+  <rect x="420" y="520" width="964" height="100" rx="10" fill="#FFFFFF" stroke="#2E5FA8" stroke-width="2"/>
+  <rect x="436" y="536" width="60" height="22" rx="11" fill="#EEF4FD"/>
+  <text x="466" y="550" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#2E5FA8">Q2</text>
+  <text x="508" y="550" font-family="Arial" font-size="11" fill="#6B7280">2026.06 - 2026.08</text>
+  <rect x="436" y="568" width="932" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="452" y="595" font-family="Arial" font-size="13" fill="#111827">PECS 2단계: 카드 거리 두기 (1m), 다른 사람에게 전달</text>
+
+  <!-- ST 3 -->
+  <rect x="420" y="632" width="964" height="100" rx="10" fill="#F9FAFB" stroke="#E5E7EB"/>
+  <rect x="436" y="648" width="60" height="22" rx="11" fill="#EEF4FD"/>
+  <text x="466" y="662" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#2E5FA8">Q3</text>
+  <text x="508" y="662" font-family="Arial" font-size="11" fill="#6B7280">2026.09 - 2026.11</text>
+  <text x="436" y="688" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">PECS 3단계: 카드 변별 (2개 중 선택)</text>
+  <text x="436" y="708" font-family="Arial" font-size="11" fill="#6B7280">평가 방법: 주 3회 변별 시도 기록</text>
+
+  <!-- Add short term -->
+  <rect x="420" y="744" width="964" height="48" rx="10" fill="#F9FAFB" stroke="#D1D5DB" stroke-dasharray="6 4"/>
+  <text x="902" y="773" text-anchor="middle" font-family="Arial" font-size="13" fill="#2E5FA8">+ 단기 목표 추가</text>
+
+  <!-- Footer -->
+  <rect x="64" y="828" width="1376" height="72" fill="#FFFFFF"/>
+  <line x1="64" y1="828" x2="1440" y2="828" stroke="#E5E7EB"/>
+  <rect x="96" y="846" width="120" height="48" rx="10" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="156" y="876" text-anchor="middle" font-family="Arial" font-size="14" fill="#374151">← 이전</text>
+  <rect x="224" y="846" width="120" height="48" rx="10" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="284" y="876" text-anchor="middle" font-family="Arial" font-size="14" fill="#374151">임시저장</text>
+  <rect x="1288" y="846" width="120" height="48" rx="10" fill="#2E5FA8"/>
+  <text x="1348" y="876" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="white">다음 →</text>
+</svg>

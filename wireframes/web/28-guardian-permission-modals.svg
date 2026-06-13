@@ -1,0 +1,106 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- G-33 & G-34 · ST-10 Permission Modals · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">G-33/34 · ST-10 Permission Edit/Revoke Modals · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Background (dimmed) -->
+  <rect width="1440" height="900" fill="rgba(17,24,39,0.4)"/>
+  <text x="40" y="40" font-family="Arial" font-size="13" fill="rgba(255,255,255,0.6)">권한 관리 화면 (배경 흐림 처리)</text>
+
+  <!-- ═══ Modal 1: Permission Edit (Left) ═══ -->
+  <rect x="100" y="160" width="540" height="580" rx="16" fill="#FFFFFF"/>
+  <text x="118" y="190" font-family="Arial" font-size="11" fill="#9CA3AF">G-33 · ST-10 권한 수정 (Modal)</text>
+
+  <text x="124" y="226" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">권한 수정</text>
+  <text x="624" y="220" text-anchor="end" font-family="Arial" font-size="20" fill="#6B7280">×</text>
+
+  <!-- User info -->
+  <rect x="124" y="246" width="492" height="64" rx="10" fill="#F9FAFB"/>
+  <circle cx="156" cy="278" r="20" fill="#2E5FA8"/>
+  <text x="156" y="284" text-anchor="middle" font-family="Arial" font-size="13" fill="white">이</text>
+  <text x="188" y="272" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">이특수교사</text>
+  <text x="188" y="290" font-family="Arial" font-size="11" fill="#6B7280">교육 분야 · 편집 권한</text>
+  <text x="600" y="280" text-anchor="end" font-family="Arial" font-size="11" fill="#9CA3AF">현재 권한</text>
+
+  <!-- Level -->
+  <text x="124" y="346" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">권한 수준</text>
+  <g>
+    <rect x="124" y="356" width="156" height="60" rx="10" fill="#FFFFFF" stroke="#D1D5DB"/>
+    <text x="202" y="382" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">열람</text>
+    <text x="202" y="402" text-anchor="middle" font-family="Arial" font-size="10" fill="#6B7280">읽기만 가능</text>
+
+    <rect x="290" y="356" width="156" height="60" rx="10" fill="#EEF4FD" stroke="#3B7D8E" stroke-width="2"/>
+    <text x="368" y="382" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#2E5FA8">편집 ✓</text>
+    <text x="368" y="402" text-anchor="middle" font-family="Arial" font-size="10" fill="#2E5FA8">작성·수정 가능</text>
+
+    <rect x="456" y="356" width="160" height="60" rx="10" fill="#FFFFFF" stroke="#D1D5DB"/>
+    <text x="536" y="382" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">관리</text>
+    <text x="536" y="402" text-anchor="middle" font-family="Arial" font-size="10" fill="#6B7280">권한 부여 가능</text>
+  </g>
+
+  <!-- Period -->
+  <text x="124" y="452" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">기간</text>
+  <rect x="124" y="462" width="240" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="140" y="489" font-family="Arial" font-size="13" fill="#111827">📅 2026-03-01</text>
+  <text x="380" y="489" font-family="Arial" font-size="13" fill="#6B7280">~</text>
+  <rect x="396" y="462" width="220" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="412" y="489" font-family="Arial" font-size="13" fill="#111827">📅 2027-02-28</text>
+
+  <rect x="124" y="518" width="20" height="20" rx="4" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="152" y="534" font-family="Arial" font-size="12" fill="#374151">무기한 (보호자가 회수 전까지)</text>
+
+  <!-- Sub-types -->
+  <text x="124" y="572" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">하위 기록 유형</text>
+  <g>
+    <rect x="124" y="582" width="100" height="32" rx="16" fill="#EEF4FD" stroke="#3B7D8E"/>
+    <text x="174" y="602" text-anchor="middle" font-family="Arial" font-size="11" fill="#2E5FA8">IEP ✓</text>
+    <rect x="232" y="582" width="100" height="32" rx="16" fill="#EEF4FD" stroke="#3B7D8E"/>
+    <text x="282" y="602" text-anchor="middle" font-family="Arial" font-size="11" fill="#2E5FA8">관찰 기록 ✓</text>
+    <rect x="340" y="582" width="100" height="32" rx="16" fill="#EEF4FD" stroke="#3B7D8E"/>
+    <text x="390" y="602" text-anchor="middle" font-family="Arial" font-size="11" fill="#2E5FA8">평가 ✓</text>
+    <rect x="448" y="582" width="120" height="32" rx="16" fill="#F9FAFB" stroke="#D1D5DB"/>
+    <text x="508" y="602" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7280">전환교육 계획</text>
+  </g>
+
+  <!-- Memo -->
+  <text x="124" y="642" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">메모 (선택)</text>
+  <rect x="124" y="652" width="492" height="40" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="140" y="676" font-family="Arial" font-size="12" fill="#9CA3AF">변경 사유, 인계 메모 등</text>
+
+  <!-- Buttons -->
+  <rect x="124" y="708" width="240" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="244" y="735" text-anchor="middle" font-family="Arial" font-size="13" fill="#374151">취소</text>
+  <rect x="380" y="708" width="240" height="44" rx="8" fill="#3B7D8E"/>
+  <text x="500" y="735" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">변경 저장</text>
+
+  <!-- ═══ Modal 2: Revoke Confirmation (Right) ═══ -->
+  <rect x="780" y="220" width="560" height="460" rx="16" fill="#FFFFFF"/>
+  <text x="798" y="250" font-family="Arial" font-size="11" fill="#9CA3AF">G-34 · ST-10 권한 회수 확인 (Modal)</text>
+
+  <!-- Warning icon -->
+  <circle cx="1060" cy="320" r="40" fill="#FEF0F0"/>
+  <text x="1060" y="335" text-anchor="middle" font-family="Arial" font-size="36" fill="#BF3030">⚠</text>
+
+  <text x="1060" y="402" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">권한을 회수하시겠습니까?</text>
+
+  <rect x="816" y="436" width="488" height="92" rx="10" fill="#FEF0F0" stroke="#FACDB8"/>
+  <circle cx="844" cy="464" r="14" fill="#2E5FA8"/>
+  <text x="844" y="470" text-anchor="middle" font-family="Arial" font-size="11" fill="white">이</text>
+  <text x="868" y="464" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">이특수교사</text>
+  <text x="868" y="480" font-family="Arial" font-size="11" fill="#6B7280">B. 교육 · 편집 권한</text>
+  <line x1="836" y1="494" x2="1284" y2="494" stroke="#FACDB8"/>
+  <text x="836" y="516" font-family="Arial" font-size="11" fill="#6B7280">회수 후 작성된 기록 18건은 보존되며 열람도 차단됩니다</text>
+
+  <!-- Effects -->
+  <text x="816" y="558" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">회수 시 영향</text>
+  <text x="816" y="580" font-family="Arial" font-size="12" fill="#BF3030">• 즉시 모든 교육 기록 접근 차단</text>
+  <text x="816" y="600" font-family="Arial" font-size="12" fill="#BF3030">• 진행 중인 IEP 작성 1건 임시저장됨</text>
+  <text x="816" y="620" font-family="Arial" font-size="12" fill="#374151">• 회수 사실이 본인에게 알림 (이메일+푸시)</text>
+  <text x="816" y="640" font-family="Arial" font-size="12" fill="#374151">• 접근 로그에 영구 기록됨</text>
+
+  <!-- Buttons -->
+  <rect x="816" y="660" width="232" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="932" y="687" text-anchor="middle" font-family="Arial" font-size="13" fill="#374151">취소</text>
+  <rect x="1064" y="660" width="240" height="44" rx="8" fill="#BF3030"/>
+  <text x="1184" y="687" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">회수 (확인)</text>
+</svg>

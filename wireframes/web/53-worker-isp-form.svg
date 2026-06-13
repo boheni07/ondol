@@ -1,0 +1,116 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- W-13/W-14 · ST-05 ISP Form + ST-04 ISP Review · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">W-13 ISP 작성 (좌, Step 3/5) + W-14 점검 요약 (우) · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Sidebar -->
+  <rect width="64" height="900" fill="#F5F5F5"/>
+  <text x="32" y="42" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#276B4C">온</text>
+
+  <!-- Header -->
+  <rect x="64" width="1376" height="64" fill="#FFFFFF"/><line x1="64" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="96" y="40" font-family="Arial" font-size="13" fill="#6B7280">ISP / <tspan fill="#111827" font-weight="bold">한가람 — 2026 신규 ISP (Step 3/5)</tspan></text>
+
+  <!-- Step bar -->
+  <rect x="64" y="64" width="1376" height="80" fill="#FFFFFF"/>
+  <line x1="64" y1="144" x2="1440" y2="144" stroke="#E5E7EB"/>
+  <g>
+    <circle cx="312" cy="104" r="12" fill="#276B4C"/><text x="312" y="109" text-anchor="middle" font-family="Arial" font-size="10" fill="white">✓</text>
+    <text x="312" y="132" text-anchor="middle" font-family="Arial" font-size="10" fill="#374151">기본 정보</text>
+    <line x1="324" y1="104" x2="468" y2="104" stroke="#276B4C" stroke-width="2"/>
+    <circle cx="480" cy="104" r="12" fill="#276B4C"/><text x="480" y="109" text-anchor="middle" font-family="Arial" font-size="10" fill="white">✓</text>
+    <text x="480" y="132" text-anchor="middle" font-family="Arial" font-size="10" fill="#374151">강점·욕구</text>
+    <line x1="492" y1="104" x2="636" y2="104" stroke="#276B4C" stroke-width="2"/>
+    <circle cx="648" cy="104" r="12" fill="#276B4C"/><text x="648" y="109" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="white">3</text>
+    <text x="648" y="132" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#276B4C">목표 설정</text>
+    <line x1="660" y1="104" x2="804" y2="104" stroke="#E5E7EB" stroke-width="2"/>
+    <circle cx="816" cy="104" r="12" fill="#E5E7EB"/><text x="816" y="109" text-anchor="middle" font-family="Arial" font-size="10" fill="#6B7280">4</text>
+    <text x="816" y="132" text-anchor="middle" font-family="Arial" font-size="10" fill="#6B7280">서비스 연계</text>
+    <line x1="828" y1="104" x2="972" y2="104" stroke="#E5E7EB" stroke-width="2"/>
+    <circle cx="984" cy="104" r="12" fill="#E5E7EB"/><text x="984" y="109" text-anchor="middle" font-family="Arial" font-size="10" fill="#6B7280">5</text>
+    <text x="984" y="132" text-anchor="middle" font-family="Arial" font-size="10" fill="#6B7280">확인·승인</text>
+  </g>
+
+  <!-- Left: Form -->
+  <rect x="96" y="172" width="844" height="640" rx="16" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="120" y="208" font-family="Arial" font-size="18" font-weight="bold" fill="#111827">생애 영역별 목표 설정</text>
+  <text x="120" y="232" font-family="Arial" font-size="12" fill="#6B7280">강점·욕구 기반으로 영역별 1년 목표를 설정하세요 (사례관리 표준)</text>
+
+  <!-- Areas -->
+  <rect x="120" y="262" width="796" height="120" rx="10" fill="#EDFAF3" stroke="#276B4C" stroke-width="2"/>
+  <text x="140" y="290" font-family="Arial" font-size="13" font-weight="bold" fill="#276B4C">신변/자조</text>
+  <rect x="140" y="300" width="776" height="40" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="156" y="324" font-family="Arial" font-size="12" fill="#111827">옷 갈아입기 자율 수행 (1일 1회 → 매일 가능)</text>
+  <text x="140" y="356" font-family="Arial" font-size="11" fill="#6B7280">평가 방법: 활동지원사 일지 기록 분석 / 측정: 주간 자율 수행률</text>
+
+  <rect x="120" y="396" width="796" height="120" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="140" y="424" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">사회 참여</text>
+  <rect x="140" y="434" width="776" height="40" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="156" y="458" font-family="Arial" font-size="12" fill="#111827">지역 복지관 동아리(음악) 월 2회 참여</text>
+  <text x="140" y="490" font-family="Arial" font-size="11" fill="#6B7280">평가 방법: 출석부 · 동아리 강사 의견</text>
+
+  <rect x="120" y="530" width="796" height="120" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="140" y="558" font-family="Arial" font-size="13" font-weight="bold" fill="#6A43A8">취업/전환</text>
+  <rect x="160" y="546" width="50" height="20" rx="10" fill="#F4EFFB"/>
+  <text x="185" y="560" text-anchor="middle" font-family="Arial" font-size="10" fill="#6A43A8">청소년+</text>
+  <rect x="140" y="568" width="776" height="40" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="156" y="592" font-family="Arial" font-size="12" fill="#111827">직업 체험 (방학 중) 2회 참여</text>
+  <text x="140" y="624" font-family="Arial" font-size="11" fill="#6B7280">평가 방법: 직업체험 보고서 / 협력: 특수교사 (전환교육 연계)</text>
+
+  <rect x="120" y="664" width="796" height="80" rx="10" fill="#F9FAFB" stroke="#D1D5DB" stroke-dasharray="4 4"/>
+  <text x="518" y="704" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#276B4C">+ 영역 추가</text>
+  <text x="518" y="724" text-anchor="middle" font-family="Arial" font-size="11" fill="#9CA3AF">건강·정서·가족·여가·법적·재정 등</text>
+
+  <!-- Right: Sidebar with review (W-14) -->
+  <rect x="960" y="172" width="448" height="640" rx="16" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="984" y="200" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">📊 W-14 · 점검 미리보기</text>
+  <text x="984" y="218" font-family="Arial" font-size="11" fill="#6B7280">Step 3 진행률 기반 시뮬레이션</text>
+
+  <line x1="984" y1="234" x2="1384" y2="234" stroke="#F3F4F6"/>
+
+  <!-- Donut -->
+  <circle cx="1184" cy="312" r="62" fill="none" stroke="#E5E7EB" stroke-width="12"/>
+  <circle cx="1184" cy="312" r="62" fill="none" stroke="#276B4C" stroke-width="12" stroke-dasharray="234 390" transform="rotate(-90 1184 312)"/>
+  <text x="1184" y="312" text-anchor="middle" font-family="Arial" font-size="22" font-weight="bold" fill="#276B4C">60%</text>
+  <text x="1184" y="332" text-anchor="middle" font-family="Arial" font-size="10" fill="#6B7280">작성 진행</text>
+  <text x="1184" y="394" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#276B4C">Step 3/5 진행 중</text>
+
+  <line x1="984" y1="416" x2="1384" y2="416" stroke="#F3F4F6"/>
+
+  <!-- Check list -->
+  <text x="984" y="442" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">📋 점검 체크리스트</text>
+  <text x="984" y="466" font-family="Arial" font-size="11" fill="#22A06B">✓ 기본 정보 입력</text>
+  <text x="984" y="486" font-family="Arial" font-size="11" fill="#22A06B">✓ 강점·욕구 분석 (5건)</text>
+  <text x="984" y="506" font-family="Arial" font-size="11" fill="#22A06B">✓ 목표 3개 설정 (Step 3)</text>
+  <text x="984" y="526" font-family="Arial" font-size="11" fill="#9CA3AF">⚪ 서비스 연계 매핑 (Step 4)</text>
+  <text x="984" y="546" font-family="Arial" font-size="11" fill="#9CA3AF">⚪ 보호자/당사자 의견 수렴 (Step 5)</text>
+  <text x="984" y="566" font-family="Arial" font-size="11" fill="#9CA3AF">⚪ 사례회의 결과 첨부 (Step 5)</text>
+
+  <line x1="984" y1="592" x2="1384" y2="592" stroke="#F3F4F6"/>
+
+  <!-- Collaboration -->
+  <text x="984" y="618" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">🤝 협업 권장</text>
+  <rect x="984" y="630" width="400" height="48" rx="8" fill="#EEF4FD"/>
+  <circle cx="1004" cy="654" r="14" fill="#2E5FA8"/>
+  <text x="1004" y="660" text-anchor="middle" font-family="Arial" font-size="10" fill="white">이</text>
+  <text x="1028" y="650" font-family="Arial" font-size="11" font-weight="bold" fill="#111827">이특수교사</text>
+  <text x="1028" y="668" font-family="Arial" font-size="10" fill="#6B7280">전환교육 계획 연계 권장 (TRA-001)</text>
+  <text x="1370" y="660" text-anchor="end" font-family="Arial" font-size="10" fill="#3B7D8E">초대 →</text>
+
+  <rect x="984" y="690" width="400" height="48" rx="8" fill="#FEF0F0"/>
+  <circle cx="1004" cy="714" r="14" fill="#BF3030"/>
+  <text x="1004" y="720" text-anchor="middle" font-family="Arial" font-size="10" fill="white">한</text>
+  <text x="1028" y="710" font-family="Arial" font-size="11" font-weight="bold" fill="#111827">한치료사</text>
+  <text x="1028" y="728" font-family="Arial" font-size="10" fill="#6B7280">언어 발달 의견 요청 권장</text>
+  <text x="1370" y="720" text-anchor="end" font-family="Arial" font-size="10" fill="#3B7D8E">초대 →</text>
+
+  <!-- Save sticky -->
+  <rect x="64" y="828" width="1376" height="72" fill="#FFFFFF"/>
+  <line x1="64" y1="828" x2="1440" y2="828" stroke="#E5E7EB"/>
+  <rect x="96" y="846" width="120" height="48" rx="10" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="156" y="876" text-anchor="middle" font-family="Arial" font-size="14" fill="#374151">← 이전</text>
+  <rect x="224" y="846" width="120" height="48" rx="10" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="284" y="876" text-anchor="middle" font-family="Arial" font-size="14" fill="#374151">임시저장</text>
+  <rect x="1288" y="846" width="120" height="48" rx="10" fill="#276B4C"/>
+  <text x="1348" y="876" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="white">다음 →</text>
+</svg>

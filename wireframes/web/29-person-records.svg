@@ -1,0 +1,95 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- P-10 · ST-02 Person Records (Accessibility) · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">P-10 · ST-02 Person Records (Accessibility UI) · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#FFFFFF"/>
+
+  <!-- Sidebar (simplified for person UI - larger) -->
+  <rect width="280" height="900" fill="#FFF8F4"/>
+  <rect width="280" height="80" fill="#FFFFFF"/>
+  <line x1="0" y1="80" x2="280" y2="80" stroke="#FACDB8" stroke-width="2"/>
+  <text x="32" y="52" font-family="Arial" font-size="24" font-weight="bold" fill="#E8724A">온돌</text>
+  <text x="92" y="52" font-family="Arial" font-size="14" fill="#6B7280">내 공간</text>
+
+  <!-- Big menu items -->
+  <text x="32" y="146" font-family="Arial" font-size="22" fill="#374151">🌟 오늘 기록</text>
+  <rect x="0" y="170" width="280" height="80" fill="#FFE8DA"/>
+  <rect x="0" y="170" width="6" height="80" fill="#E8724A"/>
+  <text x="32" y="218" font-family="Arial" font-size="22" font-weight="bold" fill="#E8724A">📖 내 기록 보기</text>
+  <text x="32" y="290" font-family="Arial" font-size="22" fill="#374151">🔔 알림</text>
+  <rect x="230" y="276" width="32" height="28" rx="14" fill="#E04545"/>
+  <text x="246" y="295" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="white">2</text>
+  <text x="32" y="362" font-family="Arial" font-size="22" fill="#374151">⚙️ 설정</text>
+
+  <!-- Profile area -->
+  <line x1="16" y1="780" x2="264" y2="780" stroke="#FACDB8"/>
+  <circle cx="56" cy="828" r="28" fill="#E8724A"/>
+  <text x="56" y="836" text-anchor="middle" font-family="Arial" font-size="18" fill="white">이</text>
+  <text x="100" y="822" font-family="Arial" font-size="18" font-weight="bold" fill="#111827">이온돌</text>
+  <text x="100" y="846" font-family="Arial" font-size="14" fill="#6B7280">당사자</text>
+
+  <!-- Main -->
+  <text x="312" y="74" font-family="Arial" font-size="36" font-weight="bold" fill="#111827">내 기록을 봐요</text>
+  <text x="312" y="104" font-family="Arial" font-size="18" fill="#6B7280">분야를 골라서 확인하세요</text>
+
+  <!-- Domain grid (large, accessible) -->
+  <!-- Row 1 -->
+  <rect x="312" y="148" width="360" height="200" rx="20" fill="#FEF0F0" stroke="#BF3030" stroke-width="2"/>
+  <circle cx="392" cy="220" r="36" fill="#BF3030"/>
+  <text x="392" y="232" text-anchor="middle" font-family="Arial" font-size="30" fill="white">🏥</text>
+  <text x="312" y="290" font-family="Arial" font-size="26" font-weight="bold" fill="#BF3030" dx="32">병원·치료</text>
+  <text x="344" y="320" font-family="Arial" font-size="16" fill="#374151">기록 24건</text>
+
+  <rect x="696" y="148" width="360" height="200" rx="20" fill="#EEF4FD" stroke="#2E5FA8" stroke-width="2"/>
+  <circle cx="776" cy="220" r="36" fill="#2E5FA8"/>
+  <text x="776" y="232" text-anchor="middle" font-family="Arial" font-size="30" fill="white">🎓</text>
+  <text x="696" y="290" font-family="Arial" font-size="26" font-weight="bold" fill="#2E5FA8" dx="32">학교·공부</text>
+  <text x="728" y="320" font-family="Arial" font-size="16" fill="#374151">기록 18건</text>
+
+  <rect x="1080" y="148" width="328" height="200" rx="20" fill="#EDFAF3" stroke="#276B4C" stroke-width="2"/>
+  <circle cx="1160" cy="220" r="36" fill="#276B4C"/>
+  <text x="1160" y="232" text-anchor="middle" font-family="Arial" font-size="30" fill="white">🤝</text>
+  <text x="1080" y="290" font-family="Arial" font-size="26" font-weight="bold" fill="#276B4C" dx="32">복지·도움</text>
+  <text x="1112" y="320" font-family="Arial" font-size="16" fill="#374151">기록 31건</text>
+
+  <!-- Row 2 -->
+  <rect x="312" y="372" width="360" height="200" rx="20" fill="#FFF5E6" stroke="#B56F10" stroke-width="2"/>
+  <circle cx="392" cy="444" r="36" fill="#B56F10"/>
+  <text x="392" y="456" text-anchor="middle" font-family="Arial" font-size="30" fill="white">🏠</text>
+  <text x="312" y="514" font-family="Arial" font-size="26" font-weight="bold" fill="#B56F10" dx="32">일상생활</text>
+  <text x="344" y="544" font-family="Arial" font-size="16" fill="#374151">기록 45건</text>
+
+  <rect x="696" y="372" width="360" height="200" rx="20" fill="#F4EFFB" stroke="#6A43A8" stroke-width="2"/>
+  <circle cx="776" cy="444" r="36" fill="#6A43A8"/>
+  <text x="776" y="456" text-anchor="middle" font-family="Arial" font-size="30" fill="white">🌱</text>
+  <text x="696" y="514" font-family="Arial" font-size="26" font-weight="bold" fill="#6A43A8" dx="32">미래·자립</text>
+  <text x="728" y="544" font-family="Arial" font-size="16" fill="#374151">기록 12건</text>
+
+  <rect x="1080" y="372" width="328" height="200" rx="20" fill="#FFF8F4" stroke="#E8724A" stroke-width="2"/>
+  <circle cx="1160" cy="444" r="36" fill="#E8724A"/>
+  <text x="1160" y="456" text-anchor="middle" font-family="Arial" font-size="30" fill="white">💛</text>
+  <text x="1080" y="514" font-family="Arial" font-size="26" font-weight="bold" fill="#E8724A" dx="32">내 마음</text>
+  <text x="1112" y="544" font-family="Arial" font-size="16" fill="#374151">자기표현 47번</text>
+
+  <!-- Recent -->
+  <text x="312" y="620" font-family="Arial" font-size="28" font-weight="bold" fill="#111827">최근 기록</text>
+
+  <rect x="312" y="640" width="1096" height="80" rx="14" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <circle cx="356" cy="680" r="24" fill="#FFF8F4"/>
+  <text x="356" y="688" text-anchor="middle" font-family="Arial" font-size="20" fill="#E8724A">💛</text>
+  <text x="400" y="676" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">오늘 기분: 좋아요 😊</text>
+  <text x="400" y="702" font-family="Arial" font-size="14" fill="#6B7280">오늘 09:12 · 내가 직접 기록</text>
+  <text x="1390" y="688" text-anchor="end" font-family="Arial" font-size="16" fill="#E8724A" font-weight="bold">자세히 →</text>
+
+  <rect x="312" y="732" width="1096" height="80" rx="14" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <circle cx="356" cy="772" r="24" fill="#FEF0F0"/>
+  <text x="356" y="780" text-anchor="middle" font-family="Arial" font-size="20" fill="#BF3030">🏥</text>
+  <text x="400" y="768" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">병원에 갔어요 — 정기 진료</text>
+  <text x="400" y="794" font-family="Arial" font-size="14" fill="#6B7280">오늘 오후 2시 30분 · 김의사 선생님</text>
+  <text x="1390" y="780" text-anchor="end" font-family="Arial" font-size="16" fill="#3B7D8E" font-weight="bold">자세히 →</text>
+
+  <rect x="312" y="824" width="1096" height="60" rx="14" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <circle cx="356" cy="854" r="20" fill="#FFF5E6"/>
+  <text x="356" y="860" text-anchor="middle" font-family="Arial" font-size="16" fill="#B56F10">🏠</text>
+  <text x="400" y="852" font-family="Arial" font-size="18" font-weight="bold" fill="#111827">어제 활동지원 일지</text>
+  <text x="400" y="872" font-family="Arial" font-size="14" fill="#6B7280">박활동지원사 선생님</text>
+</svg>

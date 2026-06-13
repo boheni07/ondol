@@ -8,22 +8,26 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif; background: #F9FAFB; color: #111827; }
 
-    header { background: #3B7D8E; color: white; padding: 20px 32px; display: flex; align-items: center; gap: 16px; }
+    header { background: #3B7D8E; color: white; padding: 20px 32px; }
     header h1 { font-size: 22px; font-weight: 700; }
-    header span { font-size: 13px; opacity: 0.75; }
+    header span { font-size: 13px; opacity: 0.85; }
 
-    .tabs { display: flex; gap: 0; border-bottom: 1px solid #E5E7EB; background: white; padding: 0 32px; }
+    .tabs { display: flex; gap: 0; border-bottom: 1px solid #E5E7EB; background: white; padding: 0 32px; position: sticky; top: 0; z-index: 10; }
     .tab { padding: 14px 20px; font-size: 14px; font-weight: 500; cursor: pointer; color: #6B7280; border-bottom: 3px solid transparent; }
     .tab.active { color: #3B7D8E; border-bottom-color: #3B7D8E; font-weight: 700; }
 
     .panel { display: none; padding: 32px; }
     .panel.active { display: block; }
 
-    .section-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #9CA3AF; margin-bottom: 16px; }
+    .role-section { margin-bottom: 36px; }
+    .role-title { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #E5E7EB; }
+    .role-icon { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 16px; }
+    .role-name { font-size: 18px; font-weight: 700; color: #111827; }
+    .role-count { font-size: 12px; color: #6B7280; margin-left: auto; }
 
-    .grid { display: grid; gap: 24px; }
-    .grid-web { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
-    .grid-mobile { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+    .grid { display: grid; gap: 20px; }
+    .grid-web { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+    .grid-mobile { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
 
     .wireframe-card { background: white; border-radius: 12px; border: 1px solid #E5E7EB; overflow: hidden; transition: box-shadow 0.2s, transform 0.2s; cursor: pointer; }
     .wireframe-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.10); transform: translateY(-2px); }
@@ -31,35 +35,35 @@
 
     .card-thumb { width: 100%; background: #F3F4F6; display: flex; align-items: center; justify-content: center; overflow: hidden; }
     .card-thumb img { width: 100%; height: 100%; object-fit: contain; }
-    .card-thumb.web { height: 180px; }
-    .card-thumb.mobile { height: 280px; }
+    .card-thumb.web { height: 160px; }
+    .card-thumb.mobile { height: 240px; }
 
-    .card-info { padding: 12px 16px; }
-    .card-id { font-size: 11px; color: #9CA3AF; font-weight: 500; margin-bottom: 4px; }
-    .card-name { font-size: 14px; font-weight: 700; color: #111827; margin-bottom: 4px; }
-    .card-meta { font-size: 12px; color: #6B7280; }
+    .card-info { padding: 12px 14px; }
+    .card-id { font-size: 11px; color: #9CA3AF; font-weight: 500; margin-bottom: 3px; font-family: 'SF Mono', monospace; }
+    .card-name { font-size: 13px; font-weight: 700; color: #111827; margin-bottom: 3px; }
+    .card-meta { font-size: 11px; color: #6B7280; line-height: 1.5; }
 
     .st-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; background: #EEF4FD; color: #2E5FA8; margin-top: 4px; }
 
     .figma-note { background: #EEF4FD; border: 1px solid #A8C4E4; border-radius: 10px; padding: 16px 20px; margin-bottom: 24px; font-size: 13px; color: #2E5FA8; }
     .figma-note strong { display: block; font-size: 14px; margin-bottom: 6px; }
 
-    h2 { font-size: 18px; font-weight: 700; margin-bottom: 20px; color: #111827; }
-    .divider { height: 1px; background: #E5E7EB; margin: 28px 0; }
+    .stats { display: flex; gap: 16px; margin-bottom: 24px; }
+    .stat-card { background: white; border: 1px solid #E5E7EB; border-radius: 10px; padding: 14px 20px; flex: 1; }
+    .stat-num { font-size: 24px; font-weight: 700; color: #3B7D8E; }
+    .stat-label { font-size: 12px; color: #6B7280; }
   </style>
 </head>
 <body>
 
 <header>
-  <div>
-    <h1>🖥️ OnDol 와이어프레임</h1>
-    <span>Figma SVG Import Kit — Web 10개 · Mobile 5개 · 총 15 screens</span>
-  </div>
+  <h1>🖥️ OnDol 와이어프레임</h1>
+  <span>Figma SVG Import Kit — Web 62개 · Mobile 24개 · 총 86 screens · 7개 역할 커버</span>
 </header>
 
 <div class="tabs">
-  <div class="tab active" onclick="showPanel('web', this)">웹 (Web)</div>
-  <div class="tab" onclick="showPanel('mobile', this)">모바일 (Mobile)</div>
+  <div class="tab active" onclick="showPanel('web', this)">웹 (Web 62)</div>
+  <div class="tab" onclick="showPanel('mobile', this)">모바일 (Mobile 24)</div>
   <div class="tab" onclick="showPanel('guide', this)">Figma 가이드</div>
 </div>
 
@@ -69,269 +73,282 @@
     <strong>📥 Figma 임포트 방법</strong>
     SVG 파일을 Figma에 드래그&드롭하거나, File → Place Image로 가져오세요. 각 SVG는 1440×900px 웹 프레임입니다.
   </div>
-  <h2>웹 와이어프레임 — 11개 스크린 타입 커버</h2>
-  <div class="grid grid-web">
 
-    <div class="wireframe-card">
-      <a href="web/01-login.svg" target="_blank">
-        <div class="card-thumb web"><img src="web/01-login.svg" alt="Login"></div>
-        <div class="card-info">
-          <div class="card-id">A-01 · 1440×900</div>
-          <div class="card-name">로그인</div>
-          <div class="card-meta">분할 레이아웃 · 역할 선택 · 이메일/소셜</div>
-          <span class="st-badge">ST-09 Auth</span>
-        </div>
-      </a>
-    </div>
-
-    <div class="wireframe-card">
-      <a href="web/02-guardian-dashboard.svg" target="_blank">
-        <div class="card-thumb web"><img src="web/02-guardian-dashboard.svg" alt="Dashboard"></div>
-        <div class="card-info">
-          <div class="card-id">G-01 · 1440×900</div>
-          <div class="card-name">보호자 대시보드</div>
-          <div class="card-meta">당사자 카드 · 분야별 현황 · 최근 활동</div>
-          <span class="st-badge">ST-01 Hub</span>
-        </div>
-      </a>
-    </div>
-
-    <div class="wireframe-card">
-      <a href="web/03-timeline.svg" target="_blank">
-        <div class="card-thumb web"><img src="web/03-timeline.svg" alt="Timeline"></div>
-        <div class="card-info">
-          <div class="card-id">G-10 · 1440×900</div>
-          <div class="card-name">생애 타임라인</div>
-          <div class="card-meta">생애주기 띠 · 분야 필터 · 이정표 마커</div>
-          <span class="st-badge">ST-06 Timeline</span>
-        </div>
-      </a>
-    </div>
-
-    <div class="wireframe-card">
-      <a href="web/04-record-list.svg" target="_blank">
-        <div class="card-thumb web"><img src="web/04-record-list.svg" alt="Record List"></div>
-        <div class="card-info">
-          <div class="card-id">G-20 · 1440×900</div>
-          <div class="card-name">기록 목록</div>
-          <div class="card-meta">도메인 탭 · 필터/검색 · 카드 리스트 · 페이징</div>
-          <span class="st-badge">ST-02 List</span>
-        </div>
-      </a>
-    </div>
-
-    <div class="wireframe-card">
-      <a href="web/05-record-detail.svg" target="_blank">
-        <div class="card-thumb web"><img src="web/05-record-detail.svg" alt="Record Detail"></div>
-        <div class="card-info">
-          <div class="card-id">G-25 · 1440×900</div>
-          <div class="card-name">기록 상세 (Split Pane)</div>
-          <div class="card-meta">좌: 목록 / 우: 상세 — 1024px+ 분할</div>
-          <span class="st-badge">ST-03 Detail</span>
-        </div>
-      </a>
-    </div>
-
-    <div class="wireframe-card">
-      <a href="web/06-record-form.svg" target="_blank">
-        <div class="card-thumb web"><img src="web/06-record-form.svg" alt="Record Form"></div>
-        <div class="card-info">
-          <div class="card-id">G-30 · 1440×900</div>
-          <div class="card-name">기록 작성 (Step 2/5)</div>
-          <div class="card-meta">5단계 위자드 · 스텝 인디케이터 · Sticky 푸터</div>
-          <span class="st-badge">ST-05 Form-Multi</span>
-        </div>
-      </a>
-    </div>
-
-    <div class="wireframe-card">
-      <a href="web/07-permission-matrix.svg" target="_blank">
-        <div class="card-thumb web"><img src="web/07-permission-matrix.svg" alt="Permission Matrix"></div>
-        <div class="card-info">
-          <div class="card-id">G-40 · 1440×900</div>
-          <div class="card-name">권한 매트릭스</div>
-          <div class="card-meta">역할 × 도메인 매트릭스 · 권한 부여 모달</div>
-          <span class="st-badge">ST-07 Matrix</span>
-        </div>
-      </a>
-    </div>
-
-    <div class="wireframe-card">
-      <a href="web/08-person-home.svg" target="_blank">
-        <div class="card-thumb web"><img src="web/08-person-home.svg" alt="Person Home"></div>
-        <div class="card-info">
-          <div class="card-id">P-01 · 1440×900</div>
-          <div class="card-name">당사자 홈 (접근성 모드)</div>
-          <div class="card-meta">아이콘 전용 사이드바 · 큰 버튼 · 고대비</div>
-          <span class="st-badge">ST-01 Hub (Accessible)</span>
-        </div>
-      </a>
-    </div>
-
-    <div class="wireframe-card">
-      <a href="web/09-self-expression.svg" target="_blank">
-        <div class="card-thumb web"><img src="web/09-self-expression.svg" alt="Self Expression"></div>
-        <div class="card-info">
-          <div class="card-id">P-10 · 1440×900</div>
-          <div class="card-name">자기표현 위자드</div>
-          <div class="card-meta">4단계 · 감정 아이콘 셀렉터 · Flow-1</div>
-          <span class="st-badge">ST-08 Icon Selector</span>
-        </div>
-      </a>
-    </div>
-
-    <div class="wireframe-card">
-      <a href="web/10-settings.svg" target="_blank">
-        <div class="card-thumb web"><img src="web/10-settings.svg" alt="Settings"></div>
-        <div class="card-info">
-          <div class="card-id">G-50 · 1440×900</div>
-          <div class="card-name">설정</div>
-          <div class="card-meta">서브 네비 · 프로필 · 보안 · 역할 정보</div>
-          <span class="st-badge">ST-11 Settings</span>
-        </div>
-      </a>
-    </div>
-
+  <div class="stats">
+    <div class="stat-card"><div class="stat-num">62</div><div class="stat-label">웹 화면</div></div>
+    <div class="stat-card"><div class="stat-num">7</div><div class="stat-label">역할</div></div>
+    <div class="stat-card"><div class="stat-num">11</div><div class="stat-label">스크린 타입 (ST-01~11)</div></div>
+    <div class="stat-card"><div class="stat-num">100%</div><div class="stat-label">IA 화면 커버리지</div></div>
   </div>
+
+  <!-- 공통(인증) -->
+  <div class="role-section">
+    <div class="role-title">
+      <div class="role-icon" style="background:#3B7D8E">A</div>
+      <div class="role-name">인증 · 공통 (A)</div>
+      <div class="role-count">7 screens</div>
+    </div>
+    <div class="grid grid-web">
+      <div class="wireframe-card"><a href="web/01-login.svg" target="_blank"><div class="card-thumb web"><img src="web/01-login.svg"></div><div class="card-info"><div class="card-id">A-01 · 1440×900</div><div class="card-name">로그인</div><div class="card-meta">분할 레이아웃 · 역할 선택 · 소셜</div><span class="st-badge">ST-09</span></div></a></div>
+      <div class="wireframe-card"><a href="web/11-signup-role.svg" target="_blank"><div class="card-thumb web"><img src="web/11-signup-role.svg"></div><div class="card-info"><div class="card-id">A-03 · 1440×900</div><div class="card-name">회원가입 · 역할 선택</div><div class="card-meta">6역할 카드 · 진행 단계</div><span class="st-badge">ST-09</span></div></a></div>
+      <div class="wireframe-card"><a href="web/12-signup-profile.svg" target="_blank"><div class="card-thumb web"><img src="web/12-signup-profile.svg"></div><div class="card-info"><div class="card-id">A-04 · 1440×900</div><div class="card-name">회원가입 · 기본 정보</div><div class="card-meta">이름·이메일·전화·비밀번호</div><span class="st-badge">ST-09</span></div></a></div>
+      <div class="wireframe-card"><a href="web/13-signup-verify.svg" target="_blank"><div class="card-thumb web"><img src="web/13-signup-verify.svg"></div><div class="card-info"><div class="card-id">A-05 · 1440×900</div><div class="card-name">이메일 인증</div><div class="card-meta">6자리 OTP · 재발송 타이머</div><span class="st-badge">ST-09</span></div></a></div>
+      <div class="wireframe-card"><a href="web/14-invite-accept.svg" target="_blank"><div class="card-thumb web"><img src="web/14-invite-accept.svg"></div><div class="card-info"><div class="card-id">A-06 · 1440×900</div><div class="card-name">초대 링크 수락</div><div class="card-meta">초대자·당사자·권한 미리보기</div><span class="st-badge">ST-09</span></div></a></div>
+      <div class="wireframe-card"><a href="web/15-reset-password.svg" target="_blank"><div class="card-thumb web"><img src="web/15-reset-password.svg"></div><div class="card-info"><div class="card-id">A-07 · 1440×900</div><div class="card-name">비밀번호 재설정</div><div class="card-meta">이메일 입력 → 링크 발송</div><span class="st-badge">ST-09</span></div></a></div>
+    </div>
+  </div>
+
+  <!-- 보호자 -->
+  <div class="role-section">
+    <div class="role-title">
+      <div class="role-icon" style="background:#3B7D8E">G</div>
+      <div class="role-name">보호자 (Guardian)</div>
+      <div class="role-count">13 screens</div>
+    </div>
+    <div class="grid grid-web">
+      <div class="wireframe-card"><a href="web/02-guardian-dashboard.svg" target="_blank"><div class="card-thumb web"><img src="web/02-guardian-dashboard.svg"></div><div class="card-info"><div class="card-id">G-01 · 대시보드</div><div class="card-name">대시보드</div><div class="card-meta">당사자 카드 · 분야 현황 · 최근활동</div><span class="st-badge">ST-01 Hub</span></div></a></div>
+      <div class="wireframe-card"><a href="web/16-guardian-person-profile.svg" target="_blank"><div class="card-thumb web"><img src="web/16-guardian-person-profile.svg"></div><div class="card-info"><div class="card-id">G-02 · 당사자 프로필</div><div class="card-name">당사자 프로필</div><div class="card-meta">기본·응급 정보 · 이해관계자 6명</div><span class="st-badge">ST-03</span></div></a></div>
+      <div class="wireframe-card"><a href="web/17-guardian-person-register.svg" target="_blank"><div class="card-thumb web"><img src="web/17-guardian-person-register.svg"></div><div class="card-info"><div class="card-id">G-03 · 당사자 등록</div><div class="card-name">당사자 등록 위자드 (3/5)</div><div class="card-meta">응급 정보 입력 단계</div><span class="st-badge">ST-05</span></div></a></div>
+      <div class="wireframe-card"><a href="web/03-timeline.svg" target="_blank"><div class="card-thumb web"><img src="web/03-timeline.svg"></div><div class="card-info"><div class="card-id">G-10 · 타임라인</div><div class="card-name">생애 타임라인</div><div class="card-meta">생애주기 띠 · 분야 필터</div><span class="st-badge">ST-06</span></div></a></div>
+      <div class="wireframe-card"><a href="web/04-record-list.svg" target="_blank"><div class="card-thumb web"><img src="web/04-record-list.svg"></div><div class="card-info"><div class="card-id">G-20 · 기록 관리</div><div class="card-name">기록 목록 (전체)</div><div class="card-meta">도메인 탭 · 필터 · 페이징</div><span class="st-badge">ST-02</span></div></a></div>
+      <div class="wireframe-card"><a href="web/18-guardian-records-domain.svg" target="_blank"><div class="card-thumb web"><img src="web/18-guardian-records-domain.svg"></div><div class="card-info"><div class="card-id">G-21 · 분야별 기록</div><div class="card-name">분야 기록 목록 (의료)</div><div class="card-meta">의료 24건 · 하위 유형 탭</div><span class="st-badge">ST-02</span></div></a></div>
+      <div class="wireframe-card"><a href="web/05-record-detail.svg" target="_blank"><div class="card-thumb web"><img src="web/05-record-detail.svg"></div><div class="card-info"><div class="card-id">G-22 · 기록 상세</div><div class="card-name">기록 상세 (Split)</div><div class="card-meta">좌: 목록 / 우: 상세</div><span class="st-badge">ST-03</span></div></a></div>
+      <div class="wireframe-card"><a href="web/06-record-form.svg" target="_blank"><div class="card-thumb web"><img src="web/06-record-form.svg"></div><div class="card-info"><div class="card-id">G-23 · 기록 작성</div><div class="card-name">기록 작성 (Step 2/5)</div><div class="card-meta">5단계 위자드 · Sticky 푸터</div><span class="st-badge">ST-05</span></div></a></div>
+      <div class="wireframe-card"><a href="web/19-guardian-record-edit.svg" target="_blank"><div class="card-thumb web"><img src="web/19-guardian-record-edit.svg"></div><div class="card-info"><div class="card-id">G-24 · 기록 수정</div><div class="card-name">기록 편집 (2 컬럼)</div><div class="card-meta">폼 + 미리보기·변경 이력</div><span class="st-badge">ST-05</span></div></a></div>
+      <div class="wireframe-card"><a href="web/07-permission-matrix.svg" target="_blank"><div class="card-thumb web"><img src="web/07-permission-matrix.svg"></div><div class="card-info"><div class="card-id">G-30 · 권한 매트릭스</div><div class="card-name">권한 매트릭스</div><div class="card-meta">역할 × 도메인 매트릭스</div><span class="st-badge">ST-07</span></div></a></div>
+      <div class="wireframe-card"><a href="web/20-guardian-stakeholder-detail.svg" target="_blank"><div class="card-thumb web"><img src="web/20-guardian-stakeholder-detail.svg"></div><div class="card-info"><div class="card-id">G-31 · 이해관계자</div><div class="card-name">이해관계자 상세</div><div class="card-meta">분야별 권한 + 활동 로그</div><span class="st-badge">ST-03</span></div></a></div>
+      <div class="wireframe-card"><a href="web/21-guardian-grant-wizard.svg" target="_blank"><div class="card-thumb web"><img src="web/21-guardian-grant-wizard.svg"></div><div class="card-info"><div class="card-id">G-32 · 권한 부여</div><div class="card-name">권한 부여 위자드 (2/4)</div><div class="card-meta">분야 선택 단계</div><span class="st-badge">ST-05</span></div></a></div>
+      <div class="wireframe-card"><a href="web/28-guardian-permission-modals.svg" target="_blank"><div class="card-thumb web"><img src="web/28-guardian-permission-modals.svg"></div><div class="card-info"><div class="card-id">G-33/34 · 모달</div><div class="card-name">권한 수정 + 회수 모달</div><div class="card-meta">수정 폼 + 회수 확인</div><span class="st-badge">ST-10</span></div></a></div>
+      <div class="wireframe-card"><a href="web/22-guardian-access-log.svg" target="_blank"><div class="card-thumb web"><img src="web/22-guardian-access-log.svg"></div><div class="card-info"><div class="card-id">G-40 · 접근 로그</div><div class="card-name">접근 로그 매트릭스</div><div class="card-meta">감사 로그 · 이상 활동</div><span class="st-badge">ST-07</span></div></a></div>
+      <div class="wireframe-card"><a href="web/23-guardian-notifications.svg" target="_blank"><div class="card-thumb web"><img src="web/23-guardian-notifications.svg"></div><div class="card-info"><div class="card-id">G-50 · 알림</div><div class="card-name">알림</div><div class="card-meta">시간별 그룹 · 인라인 액션</div><span class="st-badge">ST-02</span></div></a></div>
+      <div class="wireframe-card"><a href="web/10-settings.svg" target="_blank"><div class="card-thumb web"><img src="web/10-settings.svg"></div><div class="card-info"><div class="card-id">G-60 · 설정</div><div class="card-name">설정 허브</div><div class="card-meta">서브 네비 · 프로필 · 보안</div><span class="st-badge">ST-11</span></div></a></div>
+      <div class="wireframe-card"><a href="web/24-guardian-profile-edit.svg" target="_blank"><div class="card-thumb web"><img src="web/24-guardian-profile-edit.svg"></div><div class="card-info"><div class="card-id">G-61 · 프로필 편집</div><div class="card-name">내 프로필 편집</div><div class="card-meta">기본정보 + 계정 요약</div><span class="st-badge">ST-04</span></div></a></div>
+      <div class="wireframe-card"><a href="web/25-guardian-person-edit.svg" target="_blank"><div class="card-thumb web"><img src="web/25-guardian-person-edit.svg"></div><div class="card-info"><div class="card-id">G-62 · 당사자 편집</div><div class="card-name">당사자 정보 편집</div><div class="card-meta">탭 구조: 기본·장애·응급</div><span class="st-badge">ST-04</span></div></a></div>
+      <div class="wireframe-card"><a href="web/26-guardian-emergency-edit.svg" target="_blank"><div class="card-thumb web"><img src="web/26-guardian-emergency-edit.svg"></div><div class="card-info"><div class="card-id">G-63 · 응급 정보</div><div class="card-name">응급 정보 편집</div><div class="card-meta">알레르기·연락처·의료</div><span class="st-badge">ST-04</span></div></a></div>
+      <div class="wireframe-card"><a href="web/27-guardian-notification-settings.svg" target="_blank"><div class="card-thumb web"><img src="web/27-guardian-notification-settings.svg"></div><div class="card-info"><div class="card-id">G-64 · 알림 설정</div><div class="card-name">알림 채널 · 유형별</div><div class="card-meta">매트릭스 형 토글 · 방해 금지</div><span class="st-badge">ST-11</span></div></a></div>
+    </div>
+  </div>
+
+  <!-- 당사자 -->
+  <div class="role-section">
+    <div class="role-title">
+      <div class="role-icon" style="background:#E8724A">P</div>
+      <div class="role-name">당사자 (Person · 접근성 모드)</div>
+      <div class="role-count">8 screens</div>
+    </div>
+    <div class="grid grid-web">
+      <div class="wireframe-card"><a href="web/08-person-home.svg" target="_blank"><div class="card-thumb web"><img src="web/08-person-home.svg"></div><div class="card-info"><div class="card-id">P-01 · 홈</div><div class="card-name">오늘 기록 홈</div><div class="card-meta">대형 CTA · 이모지 달력</div><span class="st-badge">ST-01 Accessible</span></div></a></div>
+      <div class="wireframe-card"><a href="web/09-self-expression.svg" target="_blank"><div class="card-thumb web"><img src="web/09-self-expression.svg"></div><div class="card-info"><div class="card-id">P-02 · 자기표현</div><div class="card-name">자기표현 위자드</div><div class="card-meta">4단계 아이콘 셀렉터 (Flow-1)</div><span class="st-badge">ST-08</span></div></a></div>
+      <div class="wireframe-card"><a href="web/29-person-records.svg" target="_blank"><div class="card-thumb web"><img src="web/29-person-records.svg"></div><div class="card-info"><div class="card-id">P-10 · 기록 보기</div><div class="card-name">내 기록 (분야 그리드)</div><div class="card-meta">6개 분야 대형 카드</div><span class="st-badge">ST-02</span></div></a></div>
+      <div class="wireframe-card"><a href="web/30-person-record-detail.svg" target="_blank"><div class="card-thumb web"><img src="web/30-person-record-detail.svg"></div><div class="card-info"><div class="card-id">P-11 · 기록 상세</div><div class="card-name">기록 상세 (쉬운 요약)</div><div class="card-meta">큰 글씨 · 친근한 어조</div><span class="st-badge">ST-03</span></div></a></div>
+      <div class="wireframe-card"><a href="web/31-person-settings.svg" target="_blank"><div class="card-thumb web"><img src="web/31-person-settings.svg"></div><div class="card-info"><div class="card-id">P-20 · 설정</div><div class="card-name">설정 허브 (큰 카드)</div><div class="card-meta">4개 영역 대형 진입점</div><span class="st-badge">ST-11</span></div></a></div>
+      <div class="wireframe-card"><a href="web/32-person-accessibility.svg" target="_blank"><div class="card-thumb web"><img src="web/32-person-accessibility.svg"></div><div class="card-info"><div class="card-id">P-21 · 접근성 설정</div><div class="card-name">글자·색깔·아이콘 크기</div><div class="card-meta">시각적 프리뷰 · TTS · PECS</div><span class="st-badge">ST-11</span></div></a></div>
+      <div class="wireframe-card"><a href="web/33-person-profile.svg" target="_blank"><div class="card-thumb web"><img src="web/33-person-profile.svg"></div><div class="card-info"><div class="card-id">P-22 · 내 정보</div><div class="card-name">프로필 (좋아하는 것·도움주는 사람)</div><div class="card-meta">관심사 · 어려운 것 · 연락처</div><span class="st-badge">ST-04</span></div></a></div>
+      <div class="wireframe-card"><a href="web/34-person-notifications.svg" target="_blank"><div class="card-thumb web"><img src="web/34-person-notifications.svg"></div><div class="card-info"><div class="card-id">P-30 · 알림</div><div class="card-name">알림 (큰 카드)</div><div class="card-meta">친근한 어조 알림</div><span class="st-badge">ST-02</span></div></a></div>
+    </div>
+  </div>
+
+  <!-- 활동지원사 -->
+  <div class="role-section">
+    <div class="role-title">
+      <div class="role-icon" style="background:#B56F10">S</div>
+      <div class="role-name">활동지원사 (Supporter)</div>
+      <div class="role-count">7 screens</div>
+    </div>
+    <div class="grid grid-web">
+      <div class="wireframe-card"><a href="web/35-supporter-home.svg" target="_blank"><div class="card-thumb web"><img src="web/35-supporter-home.svg"></div><div class="card-info"><div class="card-id">S-01 · 홈</div><div class="card-name">홈 (오늘 일정 + 일지 CTA)</div><div class="card-meta">대형 일지 시작 버튼</div><span class="st-badge">ST-01</span></div></a></div>
+      <div class="wireframe-card"><a href="web/36-supporter-journal-list.svg" target="_blank"><div class="card-thumb web"><img src="web/36-supporter-journal-list.svg"></div><div class="card-info"><div class="card-id">S-10 · 일지 목록</div><div class="card-name">일지 목록 (날짜별)</div><div class="card-meta">상태별 카드 · 미작성/임시저장</div><span class="st-badge">ST-02</span></div></a></div>
+      <div class="wireframe-card"><a href="web/37-supporter-journal-detail.svg" target="_blank"><div class="card-thumb web"><img src="web/37-supporter-journal-detail.svg"></div><div class="card-info"><div class="card-id">S-11 · 일지 상세</div><div class="card-name">일지 상세</div><div class="card-meta">활동·식사·건강·특이사항</div><span class="st-badge">ST-03</span></div></a></div>
+      <div class="wireframe-card"><a href="web/38-supporter-journal-form.svg" target="_blank"><div class="card-thumb web"><img src="web/38-supporter-journal-form.svg"></div><div class="card-info"><div class="card-id">S-12 · 일지 작성</div><div class="card-name">일지 작성 위자드 (2/5)</div><div class="card-meta">활동 추가 + 미리보기 패널</div><span class="st-badge">ST-05</span></div></a></div>
+      <div class="wireframe-card"><a href="web/39-supporter-handover-list.svg" target="_blank"><div class="card-thumb web"><img src="web/39-supporter-handover-list.svg"></div><div class="card-info"><div class="card-id">S-20 · 인수인계</div><div class="card-name">인수인계 목록</div><div class="card-meta">받은·전달 인계 분리</div><span class="st-badge">ST-02</span></div></a></div>
+      <div class="wireframe-card"><a href="web/40-supporter-handover-detail.svg" target="_blank"><div class="card-thumb web"><img src="web/40-supporter-handover-detail.svg"></div><div class="card-info"><div class="card-id">S-21 · 인계 상세</div><div class="card-name">인계 상세</div><div class="card-meta">요약·특이사항·중요기록·확인</div><span class="st-badge">ST-03</span></div></a></div>
+      <div class="wireframe-card"><a href="web/41-supporter-notifications-settings.svg" target="_blank"><div class="card-thumb web"><img src="web/41-supporter-notifications-settings.svg"></div><div class="card-info"><div class="card-id">S-30/40 · 알림+설정</div><div class="card-name">알림 + 설정</div><div class="card-meta">한 화면 통합 뷰</div><span class="st-badge">ST-02 + ST-11</span></div></a></div>
+    </div>
+  </div>
+
+  <!-- 특수교사 -->
+  <div class="role-section">
+    <div class="role-title">
+      <div class="role-icon" style="background:#2E5FA8">T</div>
+      <div class="role-name">특수교사 (Teacher)</div>
+      <div class="role-count">9 screens</div>
+    </div>
+    <div class="grid grid-web">
+      <div class="wireframe-card"><a href="web/42-teacher-home.svg" target="_blank"><div class="card-thumb web"><img src="web/42-teacher-home.svg"></div><div class="card-info"><div class="card-id">T-01 · 홈</div><div class="card-name">홈 (담당 학생·학기 현황)</div><div class="card-meta">학생 카드 · KPI · 빠른 작업</div><span class="st-badge">ST-01</span></div></a></div>
+      <div class="wireframe-card"><a href="web/43-teacher-iep-list.svg" target="_blank"><div class="card-thumb web"><img src="web/43-teacher-iep-list.svg"></div><div class="card-info"><div class="card-id">T-11 · IEP 목록</div><div class="card-name">IEP 목록 (학생별)</div><div class="card-meta">테이블 + 진행률 바</div><span class="st-badge">ST-02</span></div></a></div>
+      <div class="wireframe-card"><a href="web/44-teacher-iep-detail.svg" target="_blank"><div class="card-thumb web"><img src="web/44-teacher-iep-detail.svg"></div><div class="card-info"><div class="card-id">T-12 · IEP 상세</div><div class="card-name">IEP 상세 (영역별)</div><div class="card-meta">목표 영역 4개 + 사이드바</div><span class="st-badge">ST-03</span></div></a></div>
+      <div class="wireframe-card"><a href="web/45-teacher-iep-form.svg" target="_blank"><div class="card-thumb web"><img src="web/45-teacher-iep-form.svg"></div><div class="card-info"><div class="card-id">T-13 · IEP 작성</div><div class="card-name">IEP 위자드 (3/6)</div><div class="card-meta">영역 패널 + 단기 목표 편집</div><span class="st-badge">ST-05</span></div></a></div>
+      <div class="wireframe-card"><a href="web/46-teacher-iep-review.svg" target="_blank"><div class="card-thumb web"><img src="web/46-teacher-iep-review.svg"></div><div class="card-info"><div class="card-id">T-14 · IEP 점검</div><div class="card-name">IEP 학기말 점검</div><div class="card-meta">달성률 도넛 + 강점·개선점</div><span class="st-badge">ST-04</span></div></a></div>
+      <div class="wireframe-card"><a href="web/47-teacher-observation.svg" target="_blank"><div class="card-thumb web"><img src="web/47-teacher-observation.svg"></div><div class="card-info"><div class="card-id">T-15/16 · 관찰</div><div class="card-name">관찰 목록 + 작성</div><div class="card-meta">시간별 그룹 + 단일 폼</div><span class="st-badge">ST-02 + ST-04</span></div></a></div>
+      <div class="wireframe-card"><a href="web/48-teacher-transition.svg" target="_blank"><div class="card-thumb web"><img src="web/48-teacher-transition.svg"></div><div class="card-info"><div class="card-id">T-17/18 · 전환교육</div><div class="card-name">전환교육 목록 + 작성</div><div class="card-meta">단계별 카드 + 4단계 위자드</div><span class="st-badge">ST-02 + ST-05</span></div></a></div>
+      <div class="wireframe-card"><a href="web/49-teacher-timeline.svg" target="_blank"><div class="card-thumb web"><img src="web/49-teacher-timeline.svg"></div><div class="card-info"><div class="card-id">T-20 · 타임라인</div><div class="card-name">교육 타임라인</div><div class="card-meta">생애 구간 띠 + 이정표</div><span class="st-badge">ST-06</span></div></a></div>
+      <div class="wireframe-card"><a href="web/50-teacher-notifications-settings.svg" target="_blank"><div class="card-thumb web"><img src="web/50-teacher-notifications-settings.svg"></div><div class="card-info"><div class="card-id">T-30/40 · 알림+설정</div><div class="card-name">알림 + 설정</div><div class="card-meta">학사·협업 설정 포함</div><span class="st-badge">ST-02 + ST-11</span></div></a></div>
+    </div>
+  </div>
+
+  <!-- 사회복지사 -->
+  <div class="role-section">
+    <div class="role-title">
+      <div class="role-icon" style="background:#276B4C">W</div>
+      <div class="role-name">사회복지사 (Social Worker)</div>
+      <div class="role-count">7 screens</div>
+    </div>
+    <div class="grid grid-web">
+      <div class="wireframe-card"><a href="web/51-worker-home.svg" target="_blank"><div class="card-thumb web"><img src="web/51-worker-home.svg"></div><div class="card-info"><div class="card-id">W-01 · 홈</div><div class="card-name">홈 (담당 ISP·전환계획)</div><div class="card-meta">KPI 4 + 처리 대기</div><span class="st-badge">ST-01</span></div></a></div>
+      <div class="wireframe-card"><a href="web/52-worker-isp.svg" target="_blank"><div class="card-thumb web"><img src="web/52-worker-isp.svg"></div><div class="card-info"><div class="card-id">W-11/12 · ISP</div><div class="card-name">ISP 목록 + 상세</div><div class="card-meta">진행률 도넛 + 영역별 목표</div><span class="st-badge">ST-02 + ST-03</span></div></a></div>
+      <div class="wireframe-card"><a href="web/53-worker-isp-form.svg" target="_blank"><div class="card-thumb web"><img src="web/53-worker-isp-form.svg"></div><div class="card-info"><div class="card-id">W-13/14 · ISP 작성</div><div class="card-name">ISP 위자드 (3/5) + 점검</div><div class="card-meta">영역 폼 + 점검 시뮬레이션</div><span class="st-badge">ST-05 + ST-04</span></div></a></div>
+      <div class="wireframe-card"><a href="web/54-worker-transition.svg" target="_blank"><div class="card-thumb web"><img src="web/54-worker-transition.svg"></div><div class="card-info"><div class="card-id">W-15/16 · 전환계획</div><div class="card-name">전환계획 목록 + 작성</div><div class="card-meta">단계별 자원 매핑</div><span class="st-badge">ST-02 + ST-05</span></div></a></div>
+      <div class="wireframe-card"><a href="web/55-worker-service-matrix.svg" target="_blank"><div class="card-thumb web"><img src="web/55-worker-service-matrix.svg"></div><div class="card-info"><div class="card-id">W-17/20 · 서비스+타임라인</div><div class="card-name">서비스 이용 매트릭스 + 타임라인</div><div class="card-meta">히트맵 표 + 생애 이정표</div><span class="st-badge">ST-07 + ST-06</span></div></a></div>
+      <div class="wireframe-card"><a href="web/56-worker-handover-create.svg" target="_blank"><div class="card-thumb web"><img src="web/56-worker-handover-create.svg"></div><div class="card-info"><div class="card-id">W-30/31 · 인계</div><div class="card-name">인계 목록 + 생성 (3/4)</div><div class="card-meta">중요 기록 선택 + 자동 알림</div><span class="st-badge">ST-02 + ST-05</span></div></a></div>
+      <div class="wireframe-card"><a href="web/57-worker-notifications-settings.svg" target="_blank"><div class="card-thumb web"><img src="web/57-worker-notifications-settings.svg"></div><div class="card-info"><div class="card-id">W-40/50 · 알림+설정</div><div class="card-name">알림 + 설정</div><div class="card-meta">협업·감사 설정 포함</div><span class="st-badge">ST-02 + ST-11</span></div></a></div>
+    </div>
+  </div>
+
+  <!-- 치료사 -->
+  <div class="role-section">
+    <div class="role-title">
+      <div class="role-icon" style="background:#6A43A8">TH</div>
+      <div class="role-name">치료사 (Therapist)</div>
+      <div class="role-count">5 screens</div>
+    </div>
+    <div class="grid grid-web">
+      <div class="wireframe-card"><a href="web/58-therapist-home.svg" target="_blank"><div class="card-thumb web"><img src="web/58-therapist-home.svg"></div><div class="card-info"><div class="card-id">TH-01 · 홈</div><div class="card-name">홈 (오늘 회기 4건)</div><div class="card-meta">진행 중 강조 · KPI</div><span class="st-badge">ST-01</span></div></a></div>
+      <div class="wireframe-card"><a href="web/59-therapist-plan.svg" target="_blank"><div class="card-thumb web"><img src="web/59-therapist-plan.svg"></div><div class="card-info"><div class="card-id">TH-11/12 · 치료계획서</div><div class="card-name">치료계획서 목록 + 상세</div><div class="card-meta">목표·스케줄·진척 추세</div><span class="st-badge">ST-02 + ST-03</span></div></a></div>
+      <div class="wireframe-card"><a href="web/60-therapist-session-form.svg" target="_blank"><div class="card-thumb web"><img src="web/60-therapist-session-form.svg"></div><div class="card-info"><div class="card-id">TH-13/15 · 계획서+회기</div><div class="card-name">계획서 위자드 + 회기 일지</div><div class="card-meta">스케줄 설계 + 단일 폼</div><span class="st-badge">ST-05 + ST-04</span></div></a></div>
+      <div class="wireframe-card"><a href="web/61-therapist-evaluation.svg" target="_blank"><div class="card-thumb web"><img src="web/61-therapist-evaluation.svg"></div><div class="card-info"><div class="card-id">TH-14/16/17 · 회기+평가</div><div class="card-name">회기 일지 목록 + 평가 보고서</div><div class="card-meta">권고사항 + 협업자 자동 공유</div><span class="st-badge">ST-02 + ST-05</span></div></a></div>
+      <div class="wireframe-card"><a href="web/62-therapist-timeline-settings.svg" target="_blank"><div class="card-thumb web"><img src="web/62-therapist-timeline-settings.svg"></div><div class="card-info"><div class="card-id">TH-20/30/40 · 타임라인+알림+설정</div><div class="card-name">의료 타임라인 + 알림 + 설정</div><div class="card-meta">3개 화면 통합 뷰</div><span class="st-badge">ST-06 + ST-02 + ST-11</span></div></a></div>
+    </div>
+  </div>
+
 </div>
 
 <!-- MOBILE PANEL -->
 <div id="panel-mobile" class="panel">
   <div class="figma-note">
     <strong>📱 모바일 프레임 (390×844 · iPhone 14)</strong>
-    SVG를 Figma에 임포트 후 Frame으로 감싸거나, 390×844px 프레임에 직접 배치하세요.
+    Bottom Tab Bar, Status Bar, Home Indicator를 모두 포함한 완전한 모바일 프레임입니다.
   </div>
-  <h2>모바일 와이어프레임 — 5개 핵심 스크린</h2>
-  <div class="grid grid-mobile">
 
-    <div class="wireframe-card">
-      <a href="mobile/01-m-login.svg" target="_blank">
-        <div class="card-thumb mobile"><img src="mobile/01-m-login.svg" alt="Mobile Login"></div>
-        <div class="card-info">
-          <div class="card-id">A-01 · 390×844</div>
-          <div class="card-name">로그인</div>
-          <div class="card-meta">역할 그리드 · 소셜 로그인</div>
-          <span class="st-badge">ST-09 Auth</span>
-        </div>
-      </a>
-    </div>
-
-    <div class="wireframe-card">
-      <a href="mobile/02-m-guardian-home.svg" target="_blank">
-        <div class="card-thumb mobile"><img src="mobile/02-m-guardian-home.svg" alt="Mobile Home"></div>
-        <div class="card-info">
-          <div class="card-id">G-01 · 390×844</div>
-          <div class="card-name">보호자 홈</div>
-          <div class="card-meta">당사자 카드 · FAB · 하단 탭바</div>
-          <span class="st-badge">ST-01 Hub</span>
-        </div>
-      </a>
-    </div>
-
-    <div class="wireframe-card">
-      <a href="mobile/03-m-timeline.svg" target="_blank">
-        <div class="card-thumb mobile"><img src="mobile/03-m-timeline.svg" alt="Mobile Timeline"></div>
-        <div class="card-info">
-          <div class="card-id">G-10 · 390×844</div>
-          <div class="card-name">타임라인</div>
-          <div class="card-meta">필터 칩 · 생애주기 구간 · 엔트리</div>
-          <span class="st-badge">ST-06 Timeline</span>
-        </div>
-      </a>
-    </div>
-
-    <div class="wireframe-card">
-      <a href="mobile/04-m-person-home.svg" target="_blank">
-        <div class="card-thumb mobile"><img src="mobile/04-m-person-home.svg" alt="Person Home Mobile"></div>
-        <div class="card-info">
-          <div class="card-id">P-01 · 390×844</div>
-          <div class="card-name">당사자 홈 (접근성)</div>
-          <div class="card-meta">80×80 아이콘 · 56px 탭바 · 고대비</div>
-          <span class="st-badge">ST-01 Accessible</span>
-        </div>
-      </a>
-    </div>
-
-    <div class="wireframe-card">
-      <a href="mobile/05-m-self-expression.svg" target="_blank">
-        <div class="card-thumb mobile"><img src="mobile/05-m-self-expression.svg" alt="Self Expression Mobile"></div>
-        <div class="card-info">
-          <div class="card-id">P-10 · 390×844</div>
-          <div class="card-name">자기표현 위자드</div>
-          <div class="card-meta">풀스크린 플로우 · 아이콘 2×3 그리드</div>
-          <span class="st-badge">ST-08 Icon Selector</span>
-        </div>
-      </a>
-    </div>
-
+  <div class="stats">
+    <div class="stat-card"><div class="stat-num">24</div><div class="stat-label">모바일 화면</div></div>
+    <div class="stat-card"><div class="stat-num">7</div><div class="stat-label">역할</div></div>
+    <div class="stat-card"><div class="stat-num">FAB</div><div class="stat-label">Bottom Sheet · 풀스크린 플로우</div></div>
   </div>
+
+  <!-- 공통+보호자 모바일 -->
+  <div class="role-section">
+    <div class="role-title">
+      <div class="role-icon" style="background:#3B7D8E">A·G</div>
+      <div class="role-name">인증 + 보호자 모바일</div>
+      <div class="role-count">9 screens</div>
+    </div>
+    <div class="grid grid-mobile">
+      <div class="wireframe-card"><a href="mobile/01-m-login.svg" target="_blank"><div class="card-thumb mobile"><img src="mobile/01-m-login.svg"></div><div class="card-info"><div class="card-id">A-01</div><div class="card-name">로그인</div><div class="card-meta">역할 2×3 그리드</div></div></a></div>
+      <div class="wireframe-card"><a href="mobile/06-m-signup-role.svg" target="_blank"><div class="card-thumb mobile"><img src="mobile/06-m-signup-role.svg"></div><div class="card-info"><div class="card-id">A-03</div><div class="card-name">회원가입 역할</div><div class="card-meta">6역할 카드 2열</div></div></a></div>
+      <div class="wireframe-card"><a href="mobile/02-m-guardian-home.svg" target="_blank"><div class="card-thumb mobile"><img src="mobile/02-m-guardian-home.svg"></div><div class="card-info"><div class="card-id">G-01</div><div class="card-name">보호자 홈</div><div class="card-meta">당사자 카드 + FAB</div></div></a></div>
+      <div class="wireframe-card"><a href="mobile/03-m-timeline.svg" target="_blank"><div class="card-thumb mobile"><img src="mobile/03-m-timeline.svg"></div><div class="card-info"><div class="card-id">G-10</div><div class="card-name">타임라인</div><div class="card-meta">필터 칩 · 생애주기</div></div></a></div>
+      <div class="wireframe-card"><a href="mobile/07-m-record-detail.svg" target="_blank"><div class="card-thumb mobile"><img src="mobile/07-m-record-detail.svg"></div><div class="card-info"><div class="card-id">G-22</div><div class="card-name">기록 상세</div><div class="card-meta">Hero + 본문 + 첨부</div></div></a></div>
+      <div class="wireframe-card"><a href="mobile/08-m-record-form.svg" target="_blank"><div class="card-thumb mobile"><img src="mobile/08-m-record-form.svg"></div><div class="card-info"><div class="card-id">G-23</div><div class="card-name">기록 작성</div><div class="card-meta">풀스크린 위자드</div></div></a></div>
+      <div class="wireframe-card"><a href="mobile/09-m-permissions.svg" target="_blank"><div class="card-thumb mobile"><img src="mobile/09-m-permissions.svg"></div><div class="card-info"><div class="card-id">G-30</div><div class="card-name">권한 카드 리스트</div><div class="card-meta">권한자별 카드</div></div></a></div>
+      <div class="wireframe-card"><a href="mobile/10-m-grant-wizard.svg" target="_blank"><div class="card-thumb mobile"><img src="mobile/10-m-grant-wizard.svg"></div><div class="card-info"><div class="card-id">G-32</div><div class="card-name">권한 부여 위자드</div><div class="card-meta">수준·기간 선택 (3/4)</div></div></a></div>
+      <div class="wireframe-card"><a href="mobile/11-m-notifications.svg" target="_blank"><div class="card-thumb mobile"><img src="mobile/11-m-notifications.svg"></div><div class="card-info"><div class="card-id">G-50</div><div class="card-name">알림 (탭 + 인라인 액션)</div><div class="card-meta">읽음/안읽음 분리</div></div></a></div>
+      <div class="wireframe-card"><a href="mobile/12-m-settings.svg" target="_blank"><div class="card-thumb mobile"><img src="mobile/12-m-settings.svg"></div><div class="card-info"><div class="card-id">G-60</div><div class="card-name">설정 (당사자별 진입)</div><div class="card-meta">관리 대상 + 앱 설정</div></div></a></div>
+    </div>
+  </div>
+
+  <!-- 당사자 모바일 -->
+  <div class="role-section">
+    <div class="role-title">
+      <div class="role-icon" style="background:#E8724A">P</div>
+      <div class="role-name">당사자 모바일 (접근성)</div>
+      <div class="role-count">5 screens</div>
+    </div>
+    <div class="grid grid-mobile">
+      <div class="wireframe-card"><a href="mobile/04-m-person-home.svg" target="_blank"><div class="card-thumb mobile"><img src="mobile/04-m-person-home.svg"></div><div class="card-info"><div class="card-id">P-01</div><div class="card-name">오늘 기록 홈</div><div class="card-meta">큰 CTA · 이모지 캘린더</div></div></a></div>
+      <div class="wireframe-card"><a href="mobile/05-m-self-expression.svg" target="_blank"><div class="card-thumb mobile"><img src="mobile/05-m-self-expression.svg"></div><div class="card-info"><div class="card-id">P-02</div><div class="card-name">자기표현 위자드</div><div class="card-meta">ST-08 · 풀스크린 플로우</div></div></a></div>
+      <div class="wireframe-card"><a href="mobile/13-m-person-records.svg" target="_blank"><div class="card-thumb mobile"><img src="mobile/13-m-person-records.svg"></div><div class="card-info"><div class="card-id">P-10</div><div class="card-name">내 기록 (6분야 그리드)</div><div class="card-meta">컬러 카드 2열</div></div></a></div>
+      <div class="wireframe-card"><a href="mobile/14-m-person-record-detail.svg" target="_blank"><div class="card-thumb mobile"><img src="mobile/14-m-person-record-detail.svg"></div><div class="card-info"><div class="card-id">P-11</div><div class="card-name">기록 상세 (쉬운 요약)</div><div class="card-meta">큰 글씨 · 친근한 어조</div></div></a></div>
+      <div class="wireframe-card"><a href="mobile/15-m-person-settings.svg" target="_blank"><div class="card-thumb mobile"><img src="mobile/15-m-person-settings.svg"></div><div class="card-info"><div class="card-id">P-20</div><div class="card-name">설정 (큰 카드)</div><div class="card-meta">4개 영역 진입점</div></div></a></div>
+    </div>
+  </div>
+
+  <!-- 활동지원사 모바일 -->
+  <div class="role-section">
+    <div class="role-title">
+      <div class="role-icon" style="background:#B56F10">S</div>
+      <div class="role-name">활동지원사 모바일</div>
+      <div class="role-count">3 screens</div>
+    </div>
+    <div class="grid grid-mobile">
+      <div class="wireframe-card"><a href="mobile/16-m-supporter-home.svg" target="_blank"><div class="card-thumb mobile"><img src="mobile/16-m-supporter-home.svg"></div><div class="card-info"><div class="card-id">S-01</div><div class="card-name">홈 (일지 CTA + FAB)</div><div class="card-meta">대형 일지 시작 버튼</div></div></a></div>
+      <div class="wireframe-card"><a href="mobile/17-m-supporter-journal-form.svg" target="_blank"><div class="card-thumb mobile"><img src="mobile/17-m-supporter-journal-form.svg"></div><div class="card-info"><div class="card-id">S-12</div><div class="card-name">일지 작성 위자드 (3/5)</div><div class="card-meta">식사·건강 아이콘 셀렉터</div></div></a></div>
+      <div class="wireframe-card"><a href="mobile/18-m-supporter-handover.svg" target="_blank"><div class="card-thumb mobile"><img src="mobile/18-m-supporter-handover.svg"></div><div class="card-info"><div class="card-id">S-20</div><div class="card-name">인계 목록</div><div class="card-meta">받은/전달 탭 + 확인 배지</div></div></a></div>
+    </div>
+  </div>
+
+  <!-- 교사/복지사/치료사 모바일 -->
+  <div class="role-section">
+    <div class="role-title">
+      <div class="role-icon" style="background:#2E5FA8">T</div>
+      <div class="role-name">교사 · 복지사 · 치료사 모바일</div>
+      <div class="role-count">6 screens</div>
+    </div>
+    <div class="grid grid-mobile">
+      <div class="wireframe-card"><a href="mobile/19-m-teacher-home.svg" target="_blank"><div class="card-thumb mobile"><img src="mobile/19-m-teacher-home.svg"></div><div class="card-info"><div class="card-id">T-01</div><div class="card-name">교사 홈</div><div class="card-meta">담당 학생 · IEP 진행률</div></div></a></div>
+      <div class="wireframe-card"><a href="mobile/20-m-teacher-iep-detail.svg" target="_blank"><div class="card-thumb mobile"><img src="mobile/20-m-teacher-iep-detail.svg"></div><div class="card-info"><div class="card-id">T-12</div><div class="card-name">IEP 상세</div><div class="card-meta">전체 진행률 도넛 + 영역</div></div></a></div>
+      <div class="wireframe-card"><a href="mobile/21-m-worker-home.svg" target="_blank"><div class="card-thumb mobile"><img src="mobile/21-m-worker-home.svg"></div><div class="card-info"><div class="card-id">W-01</div><div class="card-name">복지사 홈</div><div class="card-meta">ISP·전환·처리 대기</div></div></a></div>
+      <div class="wireframe-card"><a href="mobile/22-m-worker-isp-detail.svg" target="_blank"><div class="card-thumb mobile"><img src="mobile/22-m-worker-isp-detail.svg"></div><div class="card-info"><div class="card-id">W-12</div><div class="card-name">ISP 상세</div><div class="card-meta">진행률 도넛 + 영역별</div></div></a></div>
+      <div class="wireframe-card"><a href="mobile/23-m-therapist-home.svg" target="_blank"><div class="card-thumb mobile"><img src="mobile/23-m-therapist-home.svg"></div><div class="card-info"><div class="card-id">TH-01</div><div class="card-name">치료사 홈</div><div class="card-meta">오늘 4회기 + 빠른 작업</div></div></a></div>
+      <div class="wireframe-card"><a href="mobile/24-m-therapist-session.svg" target="_blank"><div class="card-thumb mobile"><img src="mobile/24-m-therapist-session.svg"></div><div class="card-info"><div class="card-id">TH-15</div><div class="card-name">회기 일지 작성</div><div class="card-meta">자동 연결 + 공유 대상 토글</div></div></a></div>
+    </div>
+  </div>
+
 </div>
 
 <!-- FIGMA GUIDE PANEL -->
 <div id="panel-guide" class="panel">
-  <h2>Figma 작업 가이드</h2>
+  <h2 style="font-size:22px; margin-bottom:20px;">Figma 작업 가이드</h2>
 
   <div style="background:white; border-radius:12px; border:1px solid #E5E7EB; padding:24px; margin-bottom:20px;">
     <h3 style="font-size:16px; margin-bottom:12px; color:#3B7D8E;">📥 SVG 임포트 방법</h3>
     <ol style="font-size:14px; line-height:2; color:#374151; padding-left:20px;">
-      <li>Figma에서 새 파일 생성 후 <strong>Page 1</strong> 이름을 "Wireframes"로 변경</li>
-      <li>웹 프레임용 Page와 모바일 프레임용 Page를 각각 생성</li>
-      <li>SVG 파일을 Figma 캔버스에 <strong>드래그&드롭</strong> (한 번에 여러 개 가능)</li>
-      <li>각 SVG 그룹을 선택 후 <code>Ctrl/Cmd + G</code>로 Frame으로 변환 (Ungroup 후 재그룹)</li>
-      <li>또는 Menu → File → Import 로 직접 불러오기</li>
+      <li>Figma에서 새 파일 생성 후 Page를 "Web"과 "Mobile"로 나눠 분리</li>
+      <li>SVG 파일을 드래그&드롭 (한 번에 여러 개 가능, 86개 모두 가능)</li>
+      <li>각 SVG 그룹을 선택 후 Frame으로 변환 (Ctrl+Alt+G)</li>
+      <li>1440×900 (Web) / 390×844 (Mobile, iPhone 14) 프레임에 정렬</li>
     </ol>
   </div>
 
   <div style="background:white; border-radius:12px; border:1px solid #E5E7EB; padding:24px; margin-bottom:20px;">
-    <h3 style="font-size:16px; margin-bottom:12px; color:#3B7D8E;">🎨 디자인 토큰 적용</h3>
-    <p style="font-size:14px; line-height:1.8; color:#374151; margin-bottom:12px;">
-      와이어프레임 완성 후 <code>docs/07-design-system.md</code>의 컬러 토큰을 Figma Variables로 등록하세요.
-    </p>
+    <h3 style="font-size:16px; margin-bottom:12px; color:#3B7D8E;">🎨 역할별 컬러 토큰</h3>
     <table style="width:100%; font-size:13px; border-collapse:collapse;">
-      <thead><tr style="background:#F3F4F6;"><th style="padding:8px; text-align:left;">토큰</th><th style="padding:8px; text-align:left;">Hex</th><th style="padding:8px; text-align:left;">용도</th></tr></thead>
+      <thead><tr style="background:#F3F4F6;"><th style="padding:8px; text-align:left;">역할</th><th style="padding:8px; text-align:left;">Hex</th><th style="padding:8px; text-align:left;">색상</th></tr></thead>
       <tbody>
-        <tr><td style="padding:8px;"><span style="display:inline-block;width:12px;height:12px;background:#3B7D8E;border-radius:2px;"></span> primary-500</td><td style="padding:8px; font-family:monospace;">#3B7D8E</td><td style="padding:8px;">버튼, 링크, 포커스</td></tr>
-        <tr><td style="padding:8px; background:#F9FAFB;"><span style="display:inline-block;width:12px;height:12px;background:#E8724A;border-radius:2px;"></span> warm-500</td><td style="padding:8px; background:#F9FAFB; font-family:monospace;">#E8724A</td><td style="padding:8px; background:#F9FAFB;">당사자 CTA, 이정표</td></tr>
-        <tr><td style="padding:8px;"><span style="display:inline-block;width:12px;height:12px;background:#E04545;border-radius:2px;"></span> domain.medical</td><td style="padding:8px; font-family:monospace;">#E04545</td><td style="padding:8px;">의료 분야 색상</td></tr>
-        <tr><td style="padding:8px; background:#F9FAFB;"><span style="display:inline-block;width:12px;height:12px;background:#4377C0;border-radius:2px;"></span> domain.education</td><td style="padding:8px; background:#F9FAFB; font-family:monospace;">#4377C0</td><td style="padding:8px; background:#F9FAFB;">교육 분야 색상</td></tr>
-        <tr><td style="padding:8px;"><span style="display:inline-block;width:12px;height:12px;background:#3EA673;border-radius:2px;"></span> domain.welfare</td><td style="padding:8px; font-family:monospace;">#3EA673</td><td style="padding:8px;">복지 분야 색상</td></tr>
-        <tr><td style="padding:8px; background:#F9FAFB;"><span style="display:inline-block;width:12px;height:12px;background:#E8991E;border-radius:2px;"></span> domain.daily</td><td style="padding:8px; background:#F9FAFB; font-family:monospace;">#E8991E</td><td style="padding:8px; background:#F9FAFB;">일상 분야 색상</td></tr>
+        <tr><td style="padding:8px;">Primary (Brand)</td><td style="padding:8px; font-family:monospace;">#3B7D8E</td><td style="padding:8px;"><span style="display:inline-block;width:20px;height:20px;background:#3B7D8E;border-radius:4px;"></span> Teal</td></tr>
+        <tr style="background:#F9FAFB;"><td style="padding:8px;">당사자 (Person)</td><td style="padding:8px; font-family:monospace;">#E8724A</td><td style="padding:8px;"><span style="display:inline-block;width:20px;height:20px;background:#E8724A;border-radius:4px;"></span> Warm Orange</td></tr>
+        <tr><td style="padding:8px;">의료 / 치료사</td><td style="padding:8px; font-family:monospace;">#BF3030 / #6A43A8</td><td style="padding:8px;"><span style="display:inline-block;width:20px;height:20px;background:#BF3030;border-radius:4px;"></span><span style="display:inline-block;width:20px;height:20px;background:#6A43A8;border-radius:4px;margin-left:4px;"></span></td></tr>
+        <tr style="background:#F9FAFB;"><td style="padding:8px;">교육 (Teacher)</td><td style="padding:8px; font-family:monospace;">#2E5FA8</td><td style="padding:8px;"><span style="display:inline-block;width:20px;height:20px;background:#2E5FA8;border-radius:4px;"></span> Blue</td></tr>
+        <tr><td style="padding:8px;">복지 (Worker)</td><td style="padding:8px; font-family:monospace;">#276B4C</td><td style="padding:8px;"><span style="display:inline-block;width:20px;height:20px;background:#276B4C;border-radius:4px;"></span> Forest Green</td></tr>
+        <tr style="background:#F9FAFB;"><td style="padding:8px;">일상 / 지원사 (Supporter)</td><td style="padding:8px; font-family:monospace;">#B56F10</td><td style="padding:8px;"><span style="display:inline-block;width:20px;height:20px;background:#B56F10;border-radius:4px;"></span> Earth Brown</td></tr>
       </tbody>
     </table>
   </div>
 
-  <div style="background:white; border-radius:12px; border:1px solid #E5E7EB; padding:24px; margin-bottom:20px;">
-    <h3 style="font-size:16px; margin-bottom:12px; color:#3B7D8E;">📐 컴포넌트 작업 순서</h3>
-    <ol style="font-size:14px; line-height:2; color:#374151; padding-left:20px;">
-      <li><strong>Primitives 먼저</strong>: Button, Input, Badge, Avatar를 컴포넌트로 만들기</li>
-      <li><strong>레이아웃 쉘</strong>: Sidebar, Header, BottomTabBar를 공통 컴포넌트화</li>
-      <li><strong>도메인 컬러</strong>: DomainBadge를 variant로 6가지 (medical/education/welfare/daily/transition/legal)</li>
-      <li><strong>카드 시스템</strong>: RecordCard, PersonCard, NotificationCard</li>
-      <li><strong>ST-08 전용</strong>: IconSelectorCard (당사자 자기표현 전용, 크기 162×140+ mobile)</li>
-    </ol>
-  </div>
-
   <div style="background:white; border-radius:12px; border:1px solid #E5E7EB; padding:24px;">
-    <h3 style="font-size:16px; margin-bottom:12px; color:#3B7D8E;">📂 파일 구조</h3>
-    <pre style="font-size:13px; line-height:1.8; color:#374151; background:#F9FAFB; padding:16px; border-radius:8px; overflow-x:auto;">wireframes/
-├── index.html          ← 이 파일 (미리보기)
-├── web/
-│   ├── 01-login.svg            A-01 · ST-09
-│   ├── 02-guardian-dashboard.svg  G-01 · ST-01
-│   ├── 03-timeline.svg         G-10 · ST-06
-│   ├── 04-record-list.svg      G-20 · ST-02
-│   ├── 05-record-detail.svg    G-25 · ST-03
-│   ├── 06-record-form.svg      G-30 · ST-05
-│   ├── 07-permission-matrix.svg G-40 · ST-07
-│   ├── 08-person-home.svg      P-01 · ST-01 Accessible
-│   ├── 09-self-expression.svg  P-10 · ST-08
-│   └── 10-settings.svg         G-50 · ST-11
-└── mobile/
-    ├── 01-m-login.svg          A-01 모바일
-    ├── 02-m-guardian-home.svg  G-01 모바일
-    ├── 03-m-timeline.svg       G-10 모바일
-    ├── 04-m-person-home.svg    P-01 모바일 (당사자)
-    └── 05-m-self-expression.svg P-10 모바일 (ST-08)</pre>
+    <h3 style="font-size:16px; margin-bottom:12px; color:#3B7D8E;">📊 화면 커버리지 요약</h3>
+    <table style="width:100%; font-size:13px; border-collapse:collapse;">
+      <thead><tr style="background:#F3F4F6;"><th style="padding:8px; text-align:left;">역할</th><th style="padding:8px;">웹</th><th style="padding:8px;">모바일</th><th style="padding:8px; text-align:left;">참고</th></tr></thead>
+      <tbody>
+        <tr><td style="padding:8px;">인증 (A)</td><td style="padding:8px; text-align:center;">7</td><td style="padding:8px; text-align:center;">2</td><td style="padding:8px;">로그인 + 회원가입 3단계 + 초대 + 비번재설정</td></tr>
+        <tr style="background:#F9FAFB;"><td style="padding:8px;">보호자 (G)</td><td style="padding:8px; text-align:center;">19</td><td style="padding:8px; text-align:center;">8</td><td style="padding:8px;">대시보드, 권한, 기록, 설정 등</td></tr>
+        <tr><td style="padding:8px;">당사자 (P)</td><td style="padding:8px; text-align:center;">8</td><td style="padding:8px; text-align:center;">5</td><td style="padding:8px;">접근성 우선 (큰 글씨·이미지·쉬운 어조)</td></tr>
+        <tr style="background:#F9FAFB;"><td style="padding:8px;">활동지원사 (S)</td><td style="padding:8px; text-align:center;">7</td><td style="padding:8px; text-align:center;">3</td><td style="padding:8px;">일지 · 인수인계 중심</td></tr>
+        <tr><td style="padding:8px;">특수교사 (T)</td><td style="padding:8px; text-align:center;">9</td><td style="padding:8px; text-align:center;">2</td><td style="padding:8px;">IEP · 관찰 · 전환교육 · 타임라인</td></tr>
+        <tr style="background:#F9FAFB;"><td style="padding:8px;">사회복지사 (W)</td><td style="padding:8px; text-align:center;">7</td><td style="padding:8px; text-align:center;">2</td><td style="padding:8px;">ISP · 전환계획 · 서비스 매트릭스 · 인계</td></tr>
+        <tr><td style="padding:8px;">치료사 (TH)</td><td style="padding:8px; text-align:center;">5</td><td style="padding:8px; text-align:center;">2</td><td style="padding:8px;">계획서 · 회기 일지 · 평가 보고서</td></tr>
+        <tr style="background:#EEF4FD; font-weight:700;"><td style="padding:8px;">합계</td><td style="padding:8px; text-align:center;">62</td><td style="padding:8px; text-align:center;">24</td><td style="padding:8px;">86 총 화면 · IA 완전 커버</td></tr>
+      </tbody>
+    </table>
   </div>
 </div>
 

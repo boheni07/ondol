@@ -1,0 +1,189 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- T-11 · ST-02 IEP List · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">T-11 · ST-02 IEP List · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Sidebar -->
+  <rect width="240" height="900" fill="#F5F5F5"/>
+  <rect width="240" height="64" fill="#FFFFFF"/>
+  <text x="24" y="42" font-family="Arial" font-size="18" font-weight="bold" fill="#2E5FA8">온돌</text>
+  <text x="68" y="42" font-family="Arial" font-size="11" fill="#6B7280">특수교사</text>
+  <text x="52" y="91" font-family="Arial" font-size="13" fill="#374151">홈</text>
+  <rect y="108" width="240" height="44" fill="#EEF4FD"/>
+  <rect y="108" width="3" height="44" fill="#2E5FA8"/>
+  <text x="52" y="135" font-family="Arial" font-size="13" font-weight="bold" fill="#2E5FA8">교육 기록</text>
+  <rect x="44" y="148" width="180" height="32" fill="#EEF4FD"/>
+  <text x="68" y="168" font-family="Arial" font-size="12" font-weight="bold" fill="#2E5FA8">IEP (5)</text>
+  <text x="68" y="196" font-family="Arial" font-size="12" fill="#6B7280">관찰 (24)</text>
+  <text x="68" y="220" font-family="Arial" font-size="12" fill="#6B7280">평가 (7)</text>
+  <text x="68" y="244" font-family="Arial" font-size="12" fill="#6B7280">전환교육 (3)</text>
+  <text x="52" y="288" font-family="Arial" font-size="13" fill="#374151">타임라인</text>
+
+  <!-- Header -->
+  <rect x="240" width="1200" height="64" fill="#FFFFFF"/><line x1="240" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="272" y="40" font-family="Arial" font-size="13" fill="#6B7280">교육 기록 / <tspan fill="#111827" font-weight="bold">IEP</tspan></text>
+  <rect x="1244" y="16" width="160" height="32" rx="6" fill="#2E5FA8"/>
+  <text x="1324" y="36" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">+ 새 IEP 작성</text>
+
+  <!-- Page header -->
+  <text x="272" y="112" font-family="Arial" font-size="22" font-weight="bold" fill="#111827">개별화교육계획 (IEP)</text>
+  <text x="272" y="136" font-family="Arial" font-size="13" fill="#6B7280">EDU-001 · 진행 중 5건 · 완료 12건</text>
+
+  <!-- Filter -->
+  <rect x="272" y="160" width="1136" height="56" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="288" y="172" width="180" height="32" rx="6" fill="#F3F4F6"/>
+  <text x="378" y="192" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">2026학년도 1학기 ▾</text>
+  <rect x="476" y="172" width="180" height="32" rx="6" fill="#F3F4F6"/>
+  <text x="566" y="192" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">학생 (전체) ▾</text>
+  <rect x="664" y="172" width="180" height="32" rx="6" fill="#F3F4F6"/>
+  <text x="754" y="192" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">상태 (전체) ▾</text>
+  <rect x="1212" y="172" width="180" height="32" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="1302" y="192" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">진행률 높은순 ▾</text>
+
+  <!-- IEP cards (table-style) -->
+  <rect x="272" y="232" width="1136" height="640" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+
+  <!-- Header row -->
+  <rect x="272" y="232" width="1136" height="44" fill="#F9FAFB"/>
+  <text x="296" y="258" font-family="Arial" font-size="12" font-weight="bold" fill="#6B7280">학생</text>
+  <text x="496" y="258" font-family="Arial" font-size="12" font-weight="bold" fill="#6B7280">학년도/학기</text>
+  <text x="704" y="258" font-family="Arial" font-size="12" font-weight="bold" fill="#6B7280">목표 영역</text>
+  <text x="976" y="258" font-family="Arial" font-size="12" font-weight="bold" fill="#6B7280">진행률</text>
+  <text x="1180" y="258" font-family="Arial" font-size="12" font-weight="bold" fill="#6B7280">상태</text>
+  <text x="1320" y="258" font-family="Arial" font-size="12" font-weight="bold" fill="#6B7280">최근 점검</text>
+
+  <!-- Rows -->
+  <g>
+    <!-- Row 1 -->
+    <circle cx="296" cy="312" r="18" fill="#E8724A"/>
+    <text x="296" y="318" text-anchor="middle" font-family="Arial" font-size="12" fill="white">이</text>
+    <text x="324" y="306" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">이온돌</text>
+    <text x="324" y="324" font-family="Arial" font-size="11" fill="#6B7280">고3 · 자폐 2급</text>
+
+    <text x="496" y="306" font-family="Arial" font-size="13" fill="#111827">2026 · 1학기</text>
+    <text x="496" y="324" font-family="Arial" font-size="11" fill="#6B7280">2026.03 ~ 2026.07</text>
+
+    <text x="704" y="306" font-family="Arial" font-size="12" fill="#111827">의사소통, 자기결정,</text>
+    <text x="704" y="324" font-family="Arial" font-size="12" fill="#111827">지역사회 참여, 진로</text>
+
+    <rect x="976" y="306" width="160" height="6" rx="3" fill="#E5E7EB"/>
+    <rect x="976" y="306" width="120" height="6" rx="3" fill="#2E5FA8"/>
+    <text x="976" y="328" font-family="Arial" font-size="12" font-weight="bold" fill="#2E5FA8">75%</text>
+
+    <rect x="1170" y="298" width="80" height="22" rx="11" fill="#FEF7E0"/>
+    <text x="1210" y="312" text-anchor="middle" font-family="Arial" font-size="10" fill="#92670D">점검 임박</text>
+
+    <text x="1320" y="306" font-family="Arial" font-size="12" fill="#111827">어제</text>
+    <text x="1320" y="324" font-family="Arial" font-size="11" fill="#3B7D8E">상세 →</text>
+    <line x1="272" y1="346" x2="1408" y2="346" stroke="#F3F4F6"/>
+
+    <!-- Row 2 -->
+    <circle cx="296" cy="382" r="18" fill="#4377C0"/>
+    <text x="296" y="388" text-anchor="middle" font-family="Arial" font-size="12" fill="white">박</text>
+    <text x="324" y="376" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">박성장</text>
+    <text x="324" y="394" font-family="Arial" font-size="11" fill="#6B7280">중2 · 지적 1급</text>
+
+    <text x="496" y="376" font-family="Arial" font-size="13" fill="#111827">2026 · 1학기</text>
+    <text x="496" y="394" font-family="Arial" font-size="11" fill="#6B7280">2026.03 ~ 2026.07</text>
+
+    <text x="704" y="376" font-family="Arial" font-size="12" fill="#111827">국어, 수학, 사회성,</text>
+    <text x="704" y="394" font-family="Arial" font-size="12" fill="#111827">자조기술</text>
+
+    <rect x="976" y="376" width="160" height="6" rx="3" fill="#E5E7EB"/>
+    <rect x="976" y="376" width="102" height="6" rx="3" fill="#2E5FA8"/>
+    <text x="976" y="398" font-family="Arial" font-size="12" font-weight="bold" fill="#2E5FA8">64%</text>
+
+    <rect x="1170" y="368" width="80" height="22" rx="11" fill="#EDFAF3"/>
+    <text x="1210" y="382" text-anchor="middle" font-family="Arial" font-size="10" fill="#276B4C">진행 중</text>
+
+    <text x="1320" y="376" font-family="Arial" font-size="12" fill="#111827">2일 전</text>
+    <text x="1320" y="394" font-family="Arial" font-size="11" fill="#3B7D8E">상세 →</text>
+    <line x1="272" y1="416" x2="1408" y2="416" stroke="#F3F4F6"/>
+
+    <!-- Row 3 -->
+    <circle cx="296" cy="452" r="18" fill="#3EA673"/>
+    <text x="296" y="458" text-anchor="middle" font-family="Arial" font-size="12" fill="white">최</text>
+    <text x="324" y="446" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">최희망</text>
+    <text x="324" y="464" font-family="Arial" font-size="11" fill="#6B7280">초3 · 발달지연</text>
+
+    <text x="496" y="446" font-family="Arial" font-size="13" fill="#111827">2026 · 1학기</text>
+    <text x="496" y="464" font-family="Arial" font-size="11" fill="#6B7280">2026.03 ~ 2026.07</text>
+
+    <text x="704" y="446" font-family="Arial" font-size="12" fill="#111827">기초학습, 의사소통,</text>
+    <text x="704" y="464" font-family="Arial" font-size="12" fill="#111827">소근육, 정서</text>
+
+    <rect x="976" y="446" width="160" height="6" rx="3" fill="#E5E7EB"/>
+    <rect x="976" y="446" width="141" height="6" rx="3" fill="#22A06B"/>
+    <text x="976" y="468" font-family="Arial" font-size="12" font-weight="bold" fill="#22A06B">88%</text>
+
+    <rect x="1170" y="438" width="80" height="22" rx="11" fill="#EDFAF3"/>
+    <text x="1210" y="452" text-anchor="middle" font-family="Arial" font-size="10" fill="#276B4C">모범 진행</text>
+
+    <text x="1320" y="446" font-family="Arial" font-size="12" fill="#111827">오늘</text>
+    <text x="1320" y="464" font-family="Arial" font-size="11" fill="#3B7D8E">상세 →</text>
+    <line x1="272" y1="486" x2="1408" y2="486" stroke="#F3F4F6"/>
+
+    <!-- Row 4 -->
+    <circle cx="296" cy="522" r="18" fill="#9C68D6"/>
+    <text x="296" y="528" text-anchor="middle" font-family="Arial" font-size="12" fill="white">정</text>
+    <text x="324" y="516" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">정도전</text>
+    <text x="324" y="534" font-family="Arial" font-size="11" fill="#6B7280">초3 · 자폐 1급</text>
+
+    <text x="496" y="516" font-family="Arial" font-size="13" fill="#111827">2026 · 1학기</text>
+    <text x="496" y="534" font-family="Arial" font-size="11" fill="#6B7280">2026.03 ~ 2026.07</text>
+
+    <text x="704" y="516" font-family="Arial" font-size="12" fill="#111827">의사소통, 사회성,</text>
+    <text x="704" y="534" font-family="Arial" font-size="12" fill="#111827">정서 안정</text>
+
+    <rect x="976" y="516" width="160" height="6" rx="3" fill="#E5E7EB"/>
+    <rect x="976" y="516" width="88" height="6" rx="3" fill="#B56F10"/>
+    <text x="976" y="538" font-family="Arial" font-size="12" font-weight="bold" fill="#B56F10">55%</text>
+
+    <rect x="1170" y="508" width="80" height="22" rx="11" fill="#FEF0F0"/>
+    <text x="1210" y="522" text-anchor="middle" font-family="Arial" font-size="10" fill="#BF3030">개선 필요</text>
+
+    <text x="1320" y="516" font-family="Arial" font-size="12" fill="#111827">1주 전</text>
+    <text x="1320" y="534" font-family="Arial" font-size="11" fill="#3B7D8E">상세 →</text>
+    <line x1="272" y1="556" x2="1408" y2="556" stroke="#F3F4F6"/>
+
+    <!-- Row 5 -->
+    <circle cx="296" cy="592" r="18" fill="#E04545"/>
+    <text x="296" y="598" text-anchor="middle" font-family="Arial" font-size="12" fill="white">한</text>
+    <text x="324" y="586" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">한가람</text>
+    <text x="324" y="604" font-family="Arial" font-size="11" fill="#6B7280">고2 · 지적 2급</text>
+
+    <text x="496" y="586" font-family="Arial" font-size="13" fill="#111827">2026 · 1학기</text>
+    <text x="496" y="604" font-family="Arial" font-size="11" fill="#6B7280">2026.03 ~ 2026.07</text>
+
+    <text x="704" y="586" font-family="Arial" font-size="12" fill="#111827">직업기초, 자기결정,</text>
+    <text x="704" y="604" font-family="Arial" font-size="12" fill="#111827">전환 준비</text>
+
+    <rect x="976" y="586" width="160" height="6" rx="3" fill="#E5E7EB"/>
+    <rect x="976" y="586" width="112" height="6" rx="3" fill="#2E5FA8"/>
+    <text x="976" y="608" font-family="Arial" font-size="12" font-weight="bold" fill="#2E5FA8">70%</text>
+
+    <rect x="1170" y="578" width="80" height="22" rx="11" fill="#FEF7E0"/>
+    <text x="1210" y="592" text-anchor="middle" font-family="Arial" font-size="10" fill="#92670D">점검 임박</text>
+
+    <text x="1320" y="586" font-family="Arial" font-size="12" fill="#111827">3일 전</text>
+    <text x="1320" y="604" font-family="Arial" font-size="11" fill="#3B7D8E">상세 →</text>
+    <line x1="272" y1="626" x2="1408" y2="626" stroke="#F3F4F6"/>
+  </g>
+
+  <!-- Completed section -->
+  <text x="296" y="666" font-family="Arial" font-size="13" font-weight="bold" fill="#6B7280">2025학년도 (완료)</text>
+
+  <g>
+    <text x="296" y="706" font-family="Arial" font-size="13" fill="#9CA3AF">이온돌 — 2025 · 2학기 (완료, 평가 보고서 첨부)</text>
+    <text x="1320" y="706" font-family="Arial" font-size="11" fill="#3B7D8E">보기 →</text>
+    <line x1="296" y1="724" x2="1392" y2="724" stroke="#F3F4F6"/>
+    <text x="296" y="752" font-family="Arial" font-size="13" fill="#9CA3AF">박성장 — 2025 · 2학기</text>
+    <text x="1320" y="752" font-family="Arial" font-size="11" fill="#3B7D8E">보기 →</text>
+    <line x1="296" y1="770" x2="1392" y2="770" stroke="#F3F4F6"/>
+    <text x="296" y="798" font-family="Arial" font-size="13" fill="#9CA3AF">최희망 — 2025 · 2학기 (이전 학년)</text>
+    <text x="1320" y="798" font-family="Arial" font-size="11" fill="#3B7D8E">보기 →</text>
+    <line x1="296" y1="816" x2="1392" y2="816" stroke="#F3F4F6"/>
+    <text x="296" y="844" font-family="Arial" font-size="13" fill="#9CA3AF">정도전 — 2025 · 2학기</text>
+    <text x="1320" y="844" font-family="Arial" font-size="11" fill="#3B7D8E">보기 →</text>
+  </g>
+</svg>

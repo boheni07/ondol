@@ -1,0 +1,75 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- P-20 · ST-11 Person Settings · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">P-20 · ST-11 Person Settings · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#FFFFFF"/>
+
+  <!-- Sidebar -->
+  <rect width="280" height="900" fill="#FFF8F4"/>
+  <rect width="280" height="80" fill="#FFFFFF"/>
+  <text x="32" y="52" font-family="Arial" font-size="24" font-weight="bold" fill="#E8724A">온돌</text>
+  <text x="32" y="146" font-family="Arial" font-size="22" fill="#374151">🌟 오늘 기록</text>
+  <text x="32" y="218" font-family="Arial" font-size="22" fill="#374151">📖 내 기록</text>
+  <text x="32" y="290" font-family="Arial" font-size="22" fill="#374151">🔔 알림</text>
+  <rect x="0" y="314" width="280" height="80" fill="#FFE8DA"/>
+  <rect x="0" y="314" width="6" height="80" fill="#E8724A"/>
+  <text x="32" y="362" font-family="Arial" font-size="22" font-weight="bold" fill="#E8724A">⚙️ 설정</text>
+
+  <!-- Main -->
+  <text x="312" y="74" font-family="Arial" font-size="36" font-weight="bold" fill="#111827">설정</text>
+  <text x="312" y="104" font-family="Arial" font-size="18" fill="#6B7280">앱을 내가 보기 편하게 바꿔요</text>
+
+  <!-- Big settings cards -->
+  <!-- Accessibility -->
+  <rect x="312" y="148" width="540" height="180" rx="20" fill="#FFF8F4" stroke="#FACDB8" stroke-width="2"/>
+  <circle cx="380" cy="220" r="36" fill="#E8724A"/>
+  <text x="380" y="232" text-anchor="middle" font-family="Arial" font-size="32" fill="white">👁</text>
+  <text x="440" y="200" font-family="Arial" font-size="24" font-weight="bold" fill="#111827">화면 보기 설정</text>
+  <text x="440" y="226" font-family="Arial" font-size="14" fill="#6B7280">글자 크기, 색깔, 화면 밝기를</text>
+  <text x="440" y="244" font-family="Arial" font-size="14" fill="#6B7280">내가 보기 편하게 바꿔요</text>
+  <rect x="316" y="280" width="532" height="44" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="582" y="308" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#E8724A">설정 바꾸기 →</text>
+
+  <!-- My profile -->
+  <rect x="868" y="148" width="540" height="180" rx="20" fill="#EEF4FD" stroke="#A8C4E4" stroke-width="2"/>
+  <circle cx="936" cy="220" r="36" fill="#3B7D8E"/>
+  <text x="936" y="232" text-anchor="middle" font-family="Arial" font-size="32" fill="white">👤</text>
+  <text x="996" y="200" font-family="Arial" font-size="24" font-weight="bold" fill="#111827">내 정보</text>
+  <text x="996" y="226" font-family="Arial" font-size="14" fill="#6B7280">이름, 사진, 좋아하는 것</text>
+  <text x="996" y="244" font-family="Arial" font-size="14" fill="#6B7280">관심사 등을 확인하고 바꿔요</text>
+  <rect x="872" y="280" width="532" height="44" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="1138" y="308" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#3B7D8E">내 정보 보기 →</text>
+
+  <!-- Notifications -->
+  <rect x="312" y="352" width="540" height="180" rx="20" fill="#F4EFFB" stroke="#C9B6E6" stroke-width="2"/>
+  <circle cx="380" cy="424" r="36" fill="#6A43A8"/>
+  <text x="380" y="436" text-anchor="middle" font-family="Arial" font-size="32" fill="white">🔔</text>
+  <text x="440" y="404" font-family="Arial" font-size="24" font-weight="bold" fill="#111827">알림 받기</text>
+  <text x="440" y="430" font-family="Arial" font-size="14" fill="#6B7280">언제 알림을 받을지 정해요</text>
+  <text x="440" y="448" font-family="Arial" font-size="14" fill="#6B7280">밤에는 알림을 끄고 싶다면?</text>
+  <rect x="316" y="484" width="532" height="44" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="582" y="512" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#6A43A8">알림 정하기 →</text>
+
+  <!-- Help -->
+  <rect x="868" y="352" width="540" height="180" rx="20" fill="#EDFAF3" stroke="#A9DCC4" stroke-width="2"/>
+  <circle cx="936" cy="424" r="36" fill="#276B4C"/>
+  <text x="936" y="436" text-anchor="middle" font-family="Arial" font-size="32" fill="white">❓</text>
+  <text x="996" y="404" font-family="Arial" font-size="24" font-weight="bold" fill="#111827">도움말</text>
+  <text x="996" y="430" font-family="Arial" font-size="14" fill="#6B7280">앱을 어떻게 쓰는지 알려줘요</text>
+  <text x="996" y="448" font-family="Arial" font-size="14" fill="#6B7280">엄마/아빠한테 도움 요청도 가능</text>
+  <rect x="872" y="484" width="532" height="44" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="1138" y="512" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#276B4C">도움 받기 →</text>
+
+  <!-- Logout -->
+  <rect x="312" y="560" width="1096" height="100" rx="20" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="340" y="600" font-family="Arial" font-size="22" font-weight="bold" fill="#111827">앱에서 나가기</text>
+  <text x="340" y="628" font-family="Arial" font-size="14" fill="#6B7280">다른 사람이 보지 못하게 잠깐 나가요. 다시 들어올 때 비밀번호가 필요해요.</text>
+  <rect x="1240" y="580" width="160" height="56" rx="14" fill="#FFFFFF" stroke="#BF3030" stroke-width="2"/>
+  <text x="1320" y="614" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#BF3030">나가기</text>
+
+  <!-- Info area -->
+  <rect x="312" y="700" width="1096" height="120" rx="20" fill="#F9FAFB"/>
+  <text x="340" y="732" font-family="Arial" font-size="18" font-weight="bold" fill="#6B7280">💡 도와주는 사람</text>
+  <text x="340" y="762" font-family="Arial" font-size="14" fill="#374151">엄마 (김보호자) · 010-1234-5678 · 어려운 게 있으면 언제든 도움을 요청해요!</text>
+  <rect x="340" y="780" width="200" height="32" rx="16" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="440" y="800" text-anchor="middle" font-family="Arial" font-size="13" fill="#3B7D8E">📞 엄마에게 전화하기</text>
+</svg>

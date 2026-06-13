@@ -1,0 +1,138 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- TH-01 · ST-01 Therapist Home · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">TH-01 · ST-01 Therapist Home · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Sidebar -->
+  <rect width="240" height="900" fill="#F5F5F5"/>
+  <rect width="240" height="64" fill="#FFFFFF"/><line x1="0" y1="64" x2="240" y2="64" stroke="#E5E7EB"/>
+  <text x="24" y="42" font-family="Arial" font-size="18" font-weight="bold" fill="#6A43A8">온돌</text>
+  <text x="68" y="42" font-family="Arial" font-size="11" fill="#6B7280">치료사</text>
+  <rect y="64" width="240" height="44" fill="#F4EFFB"/>
+  <rect y="64" width="3" height="44" fill="#6A43A8"/>
+  <circle cx="32" cy="86" r="7" fill="#6A43A8"/><text x="52" y="91" font-family="Arial" font-size="13" font-weight="bold" fill="#6A43A8">홈</text>
+  <circle cx="32" cy="130" r="7" fill="#D1D5DB"/><text x="52" y="135" font-family="Arial" font-size="13" fill="#374151">치료 기록</text>
+  <text x="68" y="156" font-family="Arial" font-size="11" fill="#6B7280">치료계획서</text>
+  <text x="68" y="178" font-family="Arial" font-size="11" fill="#6B7280">회기 일지</text>
+  <text x="68" y="200" font-family="Arial" font-size="11" fill="#6B7280">평가 보고서</text>
+  <circle cx="32" cy="232" r="7" fill="#D1D5DB"/><text x="52" y="237" font-family="Arial" font-size="13" fill="#374151">타임라인</text>
+  <circle cx="32" cy="276" r="7" fill="#D1D5DB"/><text x="52" y="281" font-family="Arial" font-size="13" fill="#374151">알림</text>
+  <circle cx="32" cy="320" r="7" fill="#D1D5DB"/><text x="52" y="325" font-family="Arial" font-size="13" fill="#374151">설정</text>
+
+  <line x1="16" y1="820" x2="224" y2="820" stroke="#E5E7EB"/>
+  <circle cx="32" cy="858" r="18" fill="#6A43A8"/>
+  <text x="32" y="864" text-anchor="middle" font-family="Arial" font-size="12" fill="white">한</text>
+  <text x="58" y="854" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">한치료사</text>
+  <text x="58" y="868" font-family="Arial" font-size="11" fill="#6B7280">언어/작업치료</text>
+
+  <!-- Header -->
+  <rect x="240" width="1200" height="64" fill="#FFFFFF"/><line x1="240" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="272" y="28" font-family="Arial" font-size="11" fill="#9CA3AF">전문 분야</text>
+  <text x="272" y="48" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">언어치료 · 작업치료 ▾</text>
+  <text x="1408" y="42" text-anchor="end" font-family="Arial" font-size="13" fill="#6A43A8">📅 2026.06.13 (금)</text>
+
+  <!-- Greeting -->
+  <text x="272" y="116" font-family="Arial" font-size="22" font-weight="bold" fill="#111827">한치료사 선생님, 안녕하세요</text>
+  <text x="272" y="140" font-family="Arial" font-size="13" font-weight="bold" fill="#6B7280">담당 당사자 8명 · 오늘 회기 4건 · 작성 대기 2건</text>
+
+  <!-- Today's sessions -->
+  <text x="272" y="180" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">오늘 회기 일정</text>
+
+  <!-- Session 1 - now -->
+  <rect x="272" y="194" width="556" height="100" rx="12" fill="#F4EFFB" stroke="#6A43A8" stroke-width="2"/>
+  <rect x="272" y="194" width="6" height="100" fill="#6A43A8"/>
+  <text x="294" y="220" font-family="Arial" font-size="11" font-weight="bold" fill="#6A43A8">⏰ 10:00 - 10:50 (지금 진행 중)</text>
+  <circle cx="296" cy="250" r="18" fill="#E8724A"/>
+  <text x="296" y="256" text-anchor="middle" font-family="Arial" font-size="12" fill="white">이</text>
+  <text x="324" y="246" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">이온돌 — 언어치료 (4회기/12)</text>
+  <text x="324" y="264" font-family="Arial" font-size="12" fill="#6B7280">PECS 2단계 · 발음 명료도 훈련</text>
+  <text x="324" y="282" font-family="Arial" font-size="11" fill="#6B7280">치료계획서: MED-005-21 · 2026 1학기</text>
+  <rect x="696" y="220" width="120" height="40" rx="8" fill="#6A43A8"/>
+  <text x="756" y="246" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">회기 일지 →</text>
+
+  <rect x="852" y="194" width="556" height="100" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="852" y="194" width="6" height="100" fill="#9CA3AF"/>
+  <text x="874" y="220" font-family="Arial" font-size="11" fill="#9CA3AF">14:00 - 14:50</text>
+  <circle cx="876" cy="250" r="18" fill="#4377C0"/>
+  <text x="876" y="256" text-anchor="middle" font-family="Arial" font-size="12" fill="white">박</text>
+  <text x="904" y="246" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">박성장 — 작업치료 (8회기/16)</text>
+  <text x="904" y="264" font-family="Arial" font-size="12" fill="#6B7280">소근육 발달 · 가위 사용</text>
+  <text x="904" y="282" font-family="Arial" font-size="11" fill="#6B7280">치료계획서: MED-005-15</text>
+
+  <rect x="272" y="306" width="556" height="100" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="272" y="306" width="6" height="100" fill="#9CA3AF"/>
+  <text x="294" y="332" font-family="Arial" font-size="11" fill="#9CA3AF">15:30 - 16:20</text>
+  <circle cx="296" cy="362" r="18" fill="#3EA673"/>
+  <text x="296" y="368" text-anchor="middle" font-family="Arial" font-size="12" fill="white">최</text>
+  <text x="324" y="358" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">최희망 — 언어치료 (6회기/10)</text>
+  <text x="324" y="376" font-family="Arial" font-size="12" fill="#6B7280">조음·어휘 확장</text>
+  <text x="324" y="394" font-family="Arial" font-size="11" fill="#92670D">⚠ 평가 보고서 작성 시점 (10회기 도달 임박)</text>
+
+  <rect x="852" y="306" width="556" height="100" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="852" y="306" width="6" height="100" fill="#9CA3AF"/>
+  <text x="874" y="332" font-family="Arial" font-size="11" fill="#9CA3AF">17:00 - 17:50</text>
+  <circle cx="876" cy="362" r="18" fill="#9C68D6"/>
+  <text x="876" y="368" text-anchor="middle" font-family="Arial" font-size="12" fill="white">정</text>
+  <text x="904" y="358" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">정도전 — 인지치료 (12회기/16)</text>
+  <text x="904" y="376" font-family="Arial" font-size="12" fill="#6B7280">정서 안정 · 인지행동 훈련</text>
+  <text x="904" y="394" font-family="Arial" font-size="11" fill="#BF3030">⚠ 자해 행동 관찰 후 → 보호자/교사 공유 필요</text>
+
+  <!-- KPI -->
+  <text x="272" y="442" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">이번 주 현황</text>
+
+  <rect x="272" y="458" width="272" height="100" rx="12" fill="#F4EFFB"/>
+  <text x="288" y="486" font-family="Arial" font-size="12" font-weight="bold" fill="#6A43A8">진행 중 치료계획서</text>
+  <text x="288" y="518" font-family="Arial" font-size="32" font-weight="bold" fill="#111827">8건</text>
+  <text x="288" y="540" font-family="Arial" font-size="11" fill="#6B7280">언어 5 · 작업 2 · 인지 1</text>
+
+  <rect x="560" y="458" width="272" height="100" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="576" y="486" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">이번 주 회기</text>
+  <text x="576" y="518" font-family="Arial" font-size="32" font-weight="bold" fill="#111827">18회</text>
+  <text x="576" y="540" font-family="Arial" font-size="11" fill="#6B7280">예정 22회 · 완료 18회</text>
+
+  <rect x="848" y="458" width="272" height="100" rx="12" fill="#FEF7E0" stroke="#F2C94C"/>
+  <text x="864" y="486" font-family="Arial" font-size="12" font-weight="bold" fill="#92670D">작성 대기 일지</text>
+  <text x="864" y="518" font-family="Arial" font-size="32" font-weight="bold" fill="#111827">2건</text>
+  <text x="864" y="540" font-family="Arial" font-size="11" fill="#6B7280">어제 회기 · 작성 권장</text>
+
+  <rect x="1136" y="458" width="272" height="100" rx="12" fill="#F4EFFB"/>
+  <text x="1152" y="486" font-family="Arial" font-size="12" font-weight="bold" fill="#6A43A8">평가 보고서 작성 시점</text>
+  <text x="1152" y="518" font-family="Arial" font-size="32" font-weight="bold" fill="#111827">3건</text>
+  <text x="1152" y="540" font-family="Arial" font-size="11" fill="#6B7280">학기 종료 / 10회기 도달</text>
+
+  <!-- Quick actions -->
+  <text x="272" y="600" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">빠른 작업</text>
+
+  <rect x="272" y="614" width="272" height="80" rx="12" fill="#6A43A8"/>
+  <text x="408" y="644" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="white">+ 회기 일지 작성</text>
+  <text x="408" y="666" text-anchor="middle" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.85)">MED-006 · 단일 폼</text>
+
+  <rect x="560" y="614" width="272" height="80" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="696" y="644" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#374151">+ 치료계획서</text>
+  <text x="696" y="666" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7280">MED-005 · 5단계</text>
+
+  <rect x="848" y="614" width="272" height="80" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="984" y="644" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#374151">+ 평가 보고서</text>
+  <text x="984" y="666" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7280">MED-007 · 4단계</text>
+
+  <rect x="1136" y="614" width="272" height="80" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="1272" y="644" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#374151">진척 추세 보기</text>
+  <text x="1272" y="666" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7280">담당 당사자 회기 통계</text>
+
+  <!-- Recent records -->
+  <text x="272" y="730" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">최근 기록</text>
+
+  <rect x="272" y="744" width="1136" height="56" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="288" y="760" width="48" height="20" rx="10" fill="#FEF0F0"/>
+  <text x="312" y="774" text-anchor="middle" font-family="Arial" font-size="10" fill="#BF3030">회기</text>
+  <text x="350" y="768" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">이온돌 — 언어치료 3회기 일지 (PECS 2단계 진척 양호)</text>
+  <text x="350" y="786" font-family="Arial" font-size="11" fill="#6B7280">어제 10:00</text>
+  <text x="1388" y="778" text-anchor="end" font-family="Arial" font-size="12" fill="#3B7D8E">보기 →</text>
+
+  <rect x="272" y="810" width="1136" height="56" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="288" y="826" width="48" height="20" rx="10" fill="#FEF0F0"/>
+  <text x="312" y="840" text-anchor="middle" font-family="Arial" font-size="10" fill="#BF3030">평가</text>
+  <text x="350" y="834" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">박성장 — 작업치료 8회기 평가 보고서</text>
+  <text x="350" y="852" font-family="Arial" font-size="11" fill="#6B7280">3일 전 · 보호자·교사 공유 완료</text>
+  <text x="1388" y="844" text-anchor="end" font-family="Arial" font-size="12" fill="#3B7D8E">보기 →</text>
+</svg>

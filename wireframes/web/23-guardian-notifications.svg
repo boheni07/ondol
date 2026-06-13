@@ -1,0 +1,110 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- G-50 · ST-02 Notifications · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">G-50 · ST-02 Notifications · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Sidebar -->
+  <rect width="240" height="900" fill="#F5F5F5"/>
+  <rect width="240" height="64" fill="#FFFFFF"/><line x1="0" y1="64" x2="240" y2="64" stroke="#E5E7EB"/>
+  <text x="24" y="42" font-family="Arial" font-size="18" font-weight="bold" fill="#3B7D8E">온돌</text>
+  <circle cx="32" cy="86" r="7" fill="#D1D5DB"/><text x="52" y="91" font-family="Arial" font-size="13" fill="#374151">홈</text>
+  <circle cx="32" cy="130" r="7" fill="#D1D5DB"/><text x="52" y="135" font-family="Arial" font-size="13" fill="#374151">타임라인</text>
+  <circle cx="32" cy="174" r="7" fill="#D1D5DB"/><text x="52" y="179" font-family="Arial" font-size="13" fill="#374151">기록 관리</text>
+  <circle cx="32" cy="218" r="7" fill="#D1D5DB"/><text x="52" y="223" font-family="Arial" font-size="13" fill="#374151">권한 관리</text>
+  <circle cx="32" cy="262" r="7" fill="#D1D5DB"/><text x="52" y="267" font-family="Arial" font-size="13" fill="#374151">접근 로그</text>
+  <rect y="284" width="240" height="44" fill="#EEF4FD"/><rect y="284" width="3" height="44" fill="#3B7D8E"/>
+  <circle cx="32" cy="306" r="7" fill="#4377C0"/><text x="52" y="311" font-family="Arial" font-size="13" font-weight="bold" fill="#2E5FA8">알림</text>
+  <circle cx="210" cy="308" r="9" fill="#E04545"/><text x="210" y="313" text-anchor="middle" font-family="Arial" font-size="9" fill="white">3</text>
+
+  <!-- Header -->
+  <rect x="240" width="1200" height="64" fill="#FFFFFF"/><line x1="240" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="272" y="40" font-family="Arial" font-size="13" fill="#6B7280">알림 / <tspan fill="#111827" font-weight="bold">전체</tspan></text>
+
+  <!-- Page header -->
+  <text x="272" y="116" font-family="Arial" font-size="22" font-weight="bold" fill="#111827">알림</text>
+  <text x="272" y="140" font-family="Arial" font-size="13" fill="#6B7280">읽지 않음 3건 · 전체 28건</text>
+  <text x="1408" y="140" text-anchor="end" font-family="Arial" font-size="13" fill="#3B7D8E">모두 읽음 처리</text>
+
+  <!-- Filter tabs -->
+  <line x1="272" y1="172" x2="1408" y2="172" stroke="#E5E7EB"/>
+  <rect x="282" y="168" width="60" height="3" fill="#3B7D8E"/>
+  <text x="312" y="162" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#3B7D8E">전체 (28)</text>
+  <text x="412" y="162" text-anchor="middle" font-family="Arial" font-size="13" fill="#6B7280">새 기록 (12)</text>
+  <text x="528" y="162" text-anchor="middle" font-family="Arial" font-size="13" fill="#6B7280">권한 (4)</text>
+  <text x="628" y="162" text-anchor="middle" font-family="Arial" font-size="13" fill="#6B7280">인수인계 (3)</text>
+  <text x="752" y="162" text-anchor="middle" font-family="Arial" font-size="13" fill="#6B7280">시스템 (9)</text>
+
+  <!-- Today section -->
+  <text x="272" y="208" font-family="Arial" font-size="13" font-weight="bold" fill="#6B7280">오늘</text>
+
+  <!-- Unread item 1 -->
+  <rect x="272" y="220" width="1136" height="72" rx="12" fill="#EEF4FD" stroke="#A8C4E4"/>
+  <circle cx="296" cy="256" r="4" fill="#3B7D8E"/>
+  <circle cx="328" cy="256" r="20" fill="#FEF0F0"/>
+  <text x="328" y="261" text-anchor="middle" font-family="Arial" font-size="15" fill="#BF3030">📄</text>
+  <text x="360" y="246" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">새 의료 기록이 작성되었습니다</text>
+  <text x="360" y="266" font-family="Arial" font-size="12" fill="#374151">김의사 · 이온돌 · 정기 진료 — 소아청소년과</text>
+  <text x="360" y="282" font-family="Arial" font-size="11" fill="#6B7280">14:32 · 1시간 전</text>
+  <text x="1392" y="266" text-anchor="end" font-family="Arial" font-size="12" fill="#3B7D8E">기록 보기 →</text>
+
+  <!-- Unread item 2 -->
+  <rect x="272" y="300" width="1136" height="72" rx="12" fill="#EEF4FD" stroke="#A8C4E4"/>
+  <circle cx="296" cy="336" r="4" fill="#3B7D8E"/>
+  <circle cx="328" cy="336" r="20" fill="#FFF8F4"/>
+  <text x="328" y="341" text-anchor="middle" font-family="Arial" font-size="15" fill="#E8724A">💛</text>
+  <text x="360" y="326" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">이온돌님이 오늘 자기표현을 기록했어요</text>
+  <text x="360" y="346" font-family="Arial" font-size="12" fill="#374151">😊 기분 좋아요 · 🍚 잘 먹었어요 · 🏃 운동 · 💪 건강</text>
+  <text x="360" y="362" font-family="Arial" font-size="11" fill="#6B7280">09:12 · 6시간 전</text>
+  <text x="1392" y="346" text-anchor="end" font-family="Arial" font-size="12" fill="#3B7D8E">상세 →</text>
+
+  <!-- Unread item 3 -->
+  <rect x="272" y="380" width="1136" height="72" rx="12" fill="#EEF4FD" stroke="#A8C4E4"/>
+  <circle cx="296" cy="416" r="4" fill="#3B7D8E"/>
+  <circle cx="328" cy="416" r="20" fill="#F4EFFB"/>
+  <text x="328" y="421" text-anchor="middle" font-family="Arial" font-size="15" fill="#6A43A8">🔑</text>
+  <text x="360" y="406" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">권한 승인 요청</text>
+  <text x="360" y="426" font-family="Arial" font-size="12" fill="#374151">한치료사님이 의료 분야 권한을 요청했습니다 (작성 수준)</text>
+  <text x="360" y="442" font-family="Arial" font-size="11" fill="#6B7280">08:15 · 7시간 전</text>
+  <rect x="1196" y="396" width="80" height="32" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="1236" y="416" text-anchor="middle" font-family="Arial" font-size="12" fill="#6B7280">거절</text>
+  <rect x="1284" y="396" width="100" height="32" rx="6" fill="#3B7D8E"/>
+  <text x="1334" y="416" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">승인</text>
+
+  <!-- Yesterday section -->
+  <text x="272" y="490" font-family="Arial" font-size="13" font-weight="bold" fill="#6B7280">어제</text>
+
+  <!-- Read items -->
+  <rect x="272" y="502" width="1136" height="72" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <circle cx="328" cy="538" r="20" fill="#EEF4FD"/>
+  <text x="328" y="543" text-anchor="middle" font-family="Arial" font-size="15" fill="#2E5FA8">📚</text>
+  <text x="360" y="528" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">IEP 1학기 점검이 완료되었습니다</text>
+  <text x="360" y="548" font-family="Arial" font-size="12" fill="#6B7280">이특수교사 · 이온돌 · 점검 결과 종합 양호</text>
+  <text x="360" y="564" font-family="Arial" font-size="11" fill="#9CA3AF">어제 10:00</text>
+  <text x="1392" y="548" text-anchor="end" font-family="Arial" font-size="12" fill="#3B7D8E">보기 →</text>
+
+  <rect x="272" y="582" width="1136" height="72" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <circle cx="328" cy="618" r="20" fill="#FFF5E6"/>
+  <text x="328" y="623" text-anchor="middle" font-family="Arial" font-size="15" fill="#B56F10">📋</text>
+  <text x="360" y="608" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">활동지원 일지가 등록되었습니다</text>
+  <text x="360" y="628" font-family="Arial" font-size="12" fill="#6B7280">박활동지원사 · 이온돌 · 2026-06-11 (수)</text>
+  <text x="360" y="644" font-family="Arial" font-size="11" fill="#9CA3AF">어제 19:00</text>
+  <text x="1392" y="628" text-anchor="end" font-family="Arial" font-size="12" fill="#3B7D8E">보기 →</text>
+
+  <!-- This week -->
+  <text x="272" y="692" font-family="Arial" font-size="13" font-weight="bold" fill="#6B7280">이번 주</text>
+
+  <rect x="272" y="704" width="1136" height="72" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <circle cx="328" cy="740" r="20" fill="#FEF0F0"/>
+  <text x="328" y="745" text-anchor="middle" font-family="Arial" font-size="15" fill="#BF3030">⚠</text>
+  <text x="360" y="730" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">권한 외 접근 시도</text>
+  <text x="360" y="750" font-family="Arial" font-size="12" fill="#6B7280">한치료사가 IEP 열람을 시도했습니다 (차단됨)</text>
+  <text x="360" y="766" font-family="Arial" font-size="11" fill="#9CA3AF">6월 11일 (수) 23:42</text>
+  <text x="1392" y="750" text-anchor="end" font-family="Arial" font-size="12" fill="#BF3030">로그 보기 →</text>
+
+  <rect x="272" y="784" width="1136" height="72" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <circle cx="328" cy="820" r="20" fill="#F4EFFB"/>
+  <text x="328" y="825" text-anchor="middle" font-family="Arial" font-size="15" fill="#6A43A8">🎯</text>
+  <text x="360" y="810" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">전환계획 점검 시기입니다 (분기)</text>
+  <text x="360" y="830" font-family="Arial" font-size="12" fill="#6B7280">이온돌 · 2026 Q2 점검 권장 · 직업재활시설 적응 평가</text>
+  <text x="360" y="846" font-family="Arial" font-size="11" fill="#9CA3AF">6월 9일 (월) 09:00</text>
+</svg>

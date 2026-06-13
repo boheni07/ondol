@@ -1,0 +1,139 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- T-17 + T-18 · ST-02 Transition Edu List + ST-05 Form Step 2/4 · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">T-17/T-18 · 전환교육 계획 목록(좌) + 작성(우) · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Sidebar -->
+  <rect width="240" height="900" fill="#F5F5F5"/>
+  <rect width="240" height="64" fill="#FFFFFF"/>
+  <text x="24" y="42" font-family="Arial" font-size="18" font-weight="bold" fill="#2E5FA8">온돌</text>
+  <text x="68" y="42" font-family="Arial" font-size="11" fill="#6B7280">특수교사</text>
+  <rect y="108" width="240" height="44" fill="#EEF4FD"/>
+  <text x="52" y="135" font-family="Arial" font-size="13" font-weight="bold" fill="#2E5FA8">교육 기록</text>
+  <text x="68" y="168" font-family="Arial" font-size="12" fill="#6B7280">IEP (5)</text>
+  <text x="68" y="190" font-family="Arial" font-size="12" fill="#6B7280">관찰 (24)</text>
+  <text x="68" y="212" font-family="Arial" font-size="12" fill="#6B7280">평가 (7)</text>
+  <rect x="44" y="224" width="180" height="32" fill="#EEF4FD"/>
+  <text x="68" y="244" font-family="Arial" font-size="12" font-weight="bold" fill="#6A43A8">전환교육 (3)</text>
+
+  <!-- Header -->
+  <rect x="240" width="1200" height="64" fill="#FFFFFF"/><line x1="240" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="272" y="40" font-family="Arial" font-size="13" fill="#6B7280">교육 기록 / <tspan fill="#111827" font-weight="bold">전환교육 계획</tspan></text>
+
+  <!-- Left: List -->
+  <text x="272" y="112" font-family="Arial" font-size="22" font-weight="bold" fill="#111827">전환교육 계획 (EDU-007)</text>
+  <text x="272" y="136" font-family="Arial" font-size="13" fill="#6B7280">청소년 이후 학생 대상 · 진행 중 2건 · 작성 대기 1건</text>
+
+  <!-- Alert -->
+  <rect x="272" y="160" width="556" height="56" rx="10" fill="#FEF7E0" stroke="#F2C94C"/>
+  <text x="288" y="184" font-family="Arial" font-size="13" font-weight="bold" fill="#92670D">⚠ 작성 대기 1건</text>
+  <text x="288" y="204" font-family="Arial" font-size="11" fill="#6B7280">이온돌 — 성인전환기 진입 시 작성 권장</text>
+  <rect x="708" y="172" width="100" height="32" rx="6" fill="#6A43A8"/>
+  <text x="758" y="192" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="white">+ 새 계획</text>
+
+  <!-- Plan cards -->
+  <text x="272" y="248" font-family="Arial" font-size="13" font-weight="bold" fill="#6B7280">진행 중</text>
+
+  <!-- Plan 1: editing -->
+  <rect x="272" y="262" width="556" height="160" rx="12" fill="#F4EFFB" stroke="#C9B6E6"/>
+  <rect x="272" y="262" width="6" height="160" fill="#6A43A8"/>
+  <circle cx="304" cy="296" r="18" fill="#E8724A"/>
+  <text x="304" y="302" text-anchor="middle" font-family="Arial" font-size="12" fill="white">이</text>
+  <text x="332" y="290" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">이온돌 — 성인전환 진로 계획</text>
+  <rect x="676" y="278" width="80" height="22" rx="11" fill="#FFFFFF"/>
+  <text x="716" y="292" text-anchor="middle" font-family="Arial" font-size="10" fill="#92670D">작성 중</text>
+  <text x="332" y="310" font-family="Arial" font-size="11" fill="#6B7280">고3 · 자폐 2급 · 2026.03 시작</text>
+  <line x1="288" y1="328" x2="812" y2="328" stroke="rgba(106,67,168,0.2)"/>
+  <text x="288" y="352" font-family="Arial" font-size="11" fill="#6B7280">진행률</text>
+  <rect x="288" y="358" width="400" height="6" rx="3" fill="#E5E7EB"/>
+  <rect x="288" y="358" width="200" height="6" rx="3" fill="#6A43A8"/>
+  <text x="700" y="366" font-family="Arial" font-size="11" font-weight="bold" fill="#6A43A8">Step 2/4 (50%)</text>
+  <text x="288" y="394" font-family="Arial" font-size="11" fill="#374151">현재: 직업재활시설 적응 단계 입력 중</text>
+  <text x="288" y="412" font-family="Arial" font-size="11" fill="#BF3030">⚠ 사회복지사 협업 필요 (W-15 연계)</text>
+
+  <!-- Plan 2 -->
+  <rect x="272" y="438" width="556" height="120" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="272" y="438" width="6" height="120" fill="#6A43A8"/>
+  <circle cx="304" cy="472" r="18" fill="#E04545"/>
+  <text x="304" y="478" text-anchor="middle" font-family="Arial" font-size="12" fill="white">한</text>
+  <text x="332" y="466" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">한가람 — 청소년 전환교육 계획</text>
+  <rect x="676" y="454" width="80" height="22" rx="11" fill="#EDFAF3"/>
+  <text x="716" y="468" text-anchor="middle" font-family="Arial" font-size="10" fill="#276B4C">진행 중</text>
+  <text x="332" y="486" font-family="Arial" font-size="11" fill="#6B7280">고2 · 지적 2급 · 2026.03 시작</text>
+  <line x1="288" y1="504" x2="812" y2="504" stroke="#F3F4F6"/>
+  <text x="288" y="528" font-family="Arial" font-size="11" fill="#6B7280">진행률</text>
+  <rect x="288" y="534" width="400" height="6" rx="3" fill="#E5E7EB"/>
+  <rect x="288" y="534" width="320" height="6" rx="3" fill="#22A06B"/>
+  <text x="700" y="542" font-family="Arial" font-size="11" font-weight="bold" fill="#22A06B">완료 (80%)</text>
+
+  <!-- Completed -->
+  <text x="272" y="592" font-family="Arial" font-size="13" font-weight="bold" fill="#6B7280">완료</text>
+  <rect x="272" y="606" width="556" height="76" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="294" y="634" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">박성장 (중2) — 진로 탐색 (2025)</text>
+  <text x="294" y="652" font-family="Arial" font-size="11" fill="#6B7280">완료 2025-12-15 · 보호자 확인 완료</text>
+  <text x="294" y="668" font-family="Arial" font-size="10" fill="#9CA3AF">관련 자료: 직업체험 보고서 3건 · 진로검사 1건</text>
+
+  <!-- Right: Form Step 2/4 -->
+  <rect x="852" y="96" width="556" height="780" rx="16" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="876" y="124" font-family="Arial" font-size="11" fill="#9CA3AF">T-18 · 전환교육 계획 작성 (Step 2/4)</text>
+  <text x="876" y="156" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">전환 영역 설정</text>
+  <text x="876" y="180" font-family="Arial" font-size="12" fill="#6B7280">이온돌 (고3) · 진로/취업·자립생활·여가·지역사회 영역</text>
+
+  <!-- Step bar -->
+  <g>
+    <circle cx="896" cy="216" r="12" fill="#6A43A8"/><text x="896" y="221" text-anchor="middle" font-family="Arial" font-size="10" fill="white">✓</text>
+    <text x="896" y="244" text-anchor="middle" font-family="Arial" font-size="10" fill="#374151">비전 설정</text>
+    <line x1="908" y1="216" x2="1020" y2="216" stroke="#6A43A8" stroke-width="2"/>
+    <circle cx="1032" cy="216" r="12" fill="#6A43A8"/><text x="1032" y="221" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="white">2</text>
+    <text x="1032" y="244" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#6A43A8">영역 설정</text>
+    <line x1="1044" y1="216" x2="1156" y2="216" stroke="#E5E7EB" stroke-width="2"/>
+    <circle cx="1168" cy="216" r="12" fill="#E5E7EB"/><text x="1168" y="221" text-anchor="middle" font-family="Arial" font-size="10" fill="#6B7280">3</text>
+    <text x="1168" y="244" text-anchor="middle" font-family="Arial" font-size="10" fill="#6B7280">서비스</text>
+    <line x1="1180" y1="216" x2="1292" y2="216" stroke="#E5E7EB" stroke-width="2"/>
+    <circle cx="1304" cy="216" r="12" fill="#E5E7EB"/><text x="1304" y="221" text-anchor="middle" font-family="Arial" font-size="10" fill="#6B7280">4</text>
+    <text x="1304" y="244" text-anchor="middle" font-family="Arial" font-size="10" fill="#6B7280">확인</text>
+  </g>
+
+  <!-- Vision summary -->
+  <rect x="876" y="272" width="508" height="68" rx="10" fill="#F4EFFB"/>
+  <text x="892" y="296" font-family="Arial" font-size="11" font-weight="bold" fill="#6A43A8">📌 졸업 후 비전 (Step 1 입력)</text>
+  <text x="892" y="316" font-family="Arial" font-size="12" fill="#374151">직업재활시설 안정적 취업, 가족·활동지원사 지원 하에</text>
+  <text x="892" y="332" font-family="Arial" font-size="12" fill="#374151">독립적 일상 영위 가능한 수준의 자립</text>
+
+  <!-- Area: Career -->
+  <rect x="876" y="356" width="508" height="120" rx="10" fill="#FFFFFF" stroke="#6A43A8" stroke-width="2"/>
+  <text x="892" y="384" font-family="Arial" font-size="13" font-weight="bold" fill="#6A43A8">💼 진로/취업</text>
+  <rect x="1340" y="370" width="40" height="22" rx="11" fill="#6A43A8"/>
+  <text x="1360" y="384" text-anchor="middle" font-family="Arial" font-size="10" fill="white">필수</text>
+  <text x="892" y="408" font-family="Arial" font-size="11" fill="#6B7280">졸업 후 목표 · 필요한 준비 · 책임자</text>
+  <rect x="892" y="418" width="476" height="48" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="908" y="437" font-family="Arial" font-size="12" fill="#111827">목표: ○○직업재활시설 정규 입소 (2026.03)</text>
+  <text x="908" y="455" font-family="Arial" font-size="11" fill="#6B7280">준비: 시설 적응 훈련 + 단순 작업 30분 집중력 목표</text>
+
+  <!-- Area: Independent Living -->
+  <rect x="876" y="492" width="508" height="120" rx="10" fill="#FFFFFF" stroke="#C9B6E6"/>
+  <text x="892" y="520" font-family="Arial" font-size="13" font-weight="bold" fill="#6A43A8">🏠 자립 생활</text>
+  <rect x="1340" y="506" width="40" height="22" rx="11" fill="#F4EFFB"/>
+  <text x="1360" y="520" text-anchor="middle" font-family="Arial" font-size="10" fill="#6A43A8">권장</text>
+  <text x="892" y="544" font-family="Arial" font-size="11" fill="#6B7280">목표 · 필요 지원</text>
+  <rect x="892" y="554" width="476" height="48" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="908" y="573" font-family="Arial" font-size="12" fill="#111827">목표: 주거 형태 가족 동거 유지 (활동지원사 4시간/일)</text>
+  <text x="908" y="591" font-family="Arial" font-size="11" fill="#6B7280">자조기술 단계적 확장 → 식사 준비, 옷 갈아입기 자율</text>
+
+  <!-- Area: Leisure -->
+  <rect x="876" y="628" width="508" height="92" rx="10" fill="#FFFFFF" stroke="#C9B6E6"/>
+  <text x="892" y="656" font-family="Arial" font-size="13" font-weight="bold" fill="#6A43A8">🎵 여가/관심사</text>
+  <text x="892" y="676" font-family="Arial" font-size="11" fill="#6B7280">선호 활동 활용 방안</text>
+  <text x="892" y="694" font-family="Arial" font-size="12" fill="#111827">음악·도서관·자동차 관련 동호회 연계 (월 2회)</text>
+
+  <!-- Area: Community -->
+  <rect x="876" y="736" width="508" height="80" rx="10" fill="#F9FAFB" stroke="#E5E7EB" stroke-dasharray="4 4"/>
+  <text x="892" y="762" font-family="Arial" font-size="13" font-weight="bold" fill="#9CA3AF">🌍 지역사회 참여 (미설정)</text>
+  <text x="892" y="780" font-family="Arial" font-size="11" fill="#6B7280">지역 봉사·종교·문화 참여 등 추가 가능</text>
+  <text x="1372" y="780" text-anchor="end" font-family="Arial" font-size="11" fill="#6A43A8">+ 설정</text>
+
+  <rect x="876" y="836" width="248" height="40" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="1000" y="861" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">← 이전</text>
+  <rect x="1136" y="836" width="248" height="40" rx="8" fill="#6A43A8"/>
+  <text x="1260" y="861" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">다음 →</text>
+</svg>

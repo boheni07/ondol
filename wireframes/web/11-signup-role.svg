@@ -1,0 +1,88 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- A-03 · ST-09 Signup Role · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">A-03 · ST-09 Signup · Role Select · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Top brand bar -->
+  <rect width="1440" height="64" fill="#FFFFFF"/>
+  <line x1="0" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="40" y="42" font-family="Arial" font-size="20" font-weight="bold" fill="#3B7D8E">온돌</text>
+  <text x="86" y="42" font-family="Arial" font-size="13" fill="#6B7280">OnDol</text>
+  <text x="1400" y="42" text-anchor="end" font-family="Arial" font-size="13" fill="#3B7D8E">로그인</text>
+
+  <!-- Step indicator -->
+  <text x="720" y="120" text-anchor="middle" font-family="Arial" font-size="12" fill="#6B7280">STEP 1 / 3 · 역할 선택</text>
+  <line x1="540" y1="138" x2="900" y2="138" stroke="#E5E7EB" stroke-width="3"/>
+  <line x1="540" y1="138" x2="660" y2="138" stroke="#3B7D8E" stroke-width="3"/>
+  <circle cx="540" cy="138" r="8" fill="#3B7D8E"/>
+  <circle cx="720" cy="138" r="8" fill="#E5E7EB"/>
+  <circle cx="900" cy="138" r="8" fill="#E5E7EB"/>
+
+  <!-- Title -->
+  <text x="720" y="186" text-anchor="middle" font-family="Arial" font-size="28" font-weight="bold" fill="#111827">어떤 역할로 가입하시나요?</text>
+  <text x="720" y="214" text-anchor="middle" font-family="Arial" font-size="14" fill="#6B7280">역할에 따라 사용할 기능과 권한이 달라집니다. 가입 후에도 변경 가능합니다.</text>
+
+  <!-- 2x3 role cards -->
+  <!-- Guardian (selected) -->
+  <rect x="380" y="260" width="220" height="200" rx="14" fill="#EEF4FD" stroke="#3B7D8E" stroke-width="2.5"/>
+  <circle cx="490" cy="310" r="32" fill="#3B7D8E"/>
+  <text x="490" y="318" text-anchor="middle" font-family="Arial" font-size="22" fill="white">👨‍👩‍👧</text>
+  <text x="490" y="362" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#111827">보호자</text>
+  <text x="490" y="384" text-anchor="middle" font-family="Arial" font-size="12" fill="#6B7280">당사자의 가족·후견인</text>
+  <text x="490" y="400" text-anchor="middle" font-family="Arial" font-size="12" fill="#6B7280">생애기록 통합 관리</text>
+  <circle cx="490" cy="434" r="10" fill="#3B7D8E"/>
+  <text x="490" y="439" text-anchor="middle" font-family="Arial" font-size="11" fill="white">✓</text>
+
+  <!-- Person -->
+  <rect x="620" y="260" width="220" height="200" rx="14" fill="#FFF8F4" stroke="#FACDB8"/>
+  <circle cx="730" cy="310" r="32" fill="#E8724A"/>
+  <text x="730" y="318" text-anchor="middle" font-family="Arial" font-size="22" fill="white">💛</text>
+  <text x="730" y="362" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#111827">당사자</text>
+  <text x="730" y="384" text-anchor="middle" font-family="Arial" font-size="12" fill="#6B7280">발달장애 본인</text>
+  <text x="730" y="400" text-anchor="middle" font-family="Arial" font-size="12" fill="#6B7280">자기표현 · 내 기록 보기</text>
+  <rect x="666" y="424" width="128" height="22" rx="11" fill="#FFE8DA"/>
+  <text x="730" y="439" text-anchor="middle" font-family="Arial" font-size="10" fill="#E8724A">접근성 모드 자동 적용</text>
+
+  <!-- Supporter -->
+  <rect x="860" y="260" width="220" height="200" rx="14" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <circle cx="970" cy="310" r="32" fill="#B56F10"/>
+  <text x="970" y="318" text-anchor="middle" font-family="Arial" font-size="22" fill="white">🤝</text>
+  <text x="970" y="362" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#111827">활동지원사</text>
+  <text x="970" y="384" text-anchor="middle" font-family="Arial" font-size="12" fill="#6B7280">활동지원 인력</text>
+  <text x="970" y="400" text-anchor="middle" font-family="Arial" font-size="12" fill="#6B7280">일지 · 인수인계</text>
+
+  <!-- Teacher -->
+  <rect x="380" y="480" width="220" height="200" rx="14" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <circle cx="490" cy="530" r="32" fill="#2E5FA8"/>
+  <text x="490" y="538" text-anchor="middle" font-family="Arial" font-size="22" fill="white">🎓</text>
+  <text x="490" y="582" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#111827">특수교사</text>
+  <text x="490" y="604" text-anchor="middle" font-family="Arial" font-size="12" fill="#6B7280">특수교육 교사</text>
+  <text x="490" y="620" text-anchor="middle" font-family="Arial" font-size="12" fill="#6B7280">IEP · 관찰 기록</text>
+
+  <!-- Social Worker -->
+  <rect x="620" y="480" width="220" height="200" rx="14" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <circle cx="730" cy="530" r="32" fill="#276B4C"/>
+  <text x="730" y="538" text-anchor="middle" font-family="Arial" font-size="22" fill="white">🏛️</text>
+  <text x="730" y="582" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#111827">사회복지사</text>
+  <text x="730" y="604" text-anchor="middle" font-family="Arial" font-size="12" fill="#6B7280">기관 사회복지사</text>
+  <text x="730" y="620" text-anchor="middle" font-family="Arial" font-size="12" fill="#6B7280">ISP · 전환 계획</text>
+
+  <!-- Therapist -->
+  <rect x="860" y="480" width="220" height="200" rx="14" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <circle cx="970" cy="530" r="32" fill="#6A43A8"/>
+  <text x="970" y="538" text-anchor="middle" font-family="Arial" font-size="22" fill="white">💆</text>
+  <text x="970" y="582" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#111827">치료사</text>
+  <text x="970" y="604" text-anchor="middle" font-family="Arial" font-size="12" fill="#6B7280">언어·인지·작업 치료사</text>
+  <text x="970" y="620" text-anchor="middle" font-family="Arial" font-size="12" fill="#6B7280">치료계획서 · 회기 일지</text>
+
+  <!-- Notice -->
+  <rect x="380" y="710" width="700" height="56" rx="10" fill="#FEF7E0" stroke="#F2C94C"/>
+  <text x="400" y="735" font-family="Arial" font-size="13" font-weight="bold" fill="#92670D">⚠ 권한은 보호자가 부여합니다</text>
+  <text x="400" y="755" font-family="Arial" font-size="12" fill="#6B7280">전문가 역할은 보호자가 권한을 부여한 당사자·분야에 한해 기록 가능</text>
+
+  <!-- Buttons -->
+  <rect x="380" y="800" width="200" height="52" rx="10" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="480" y="832" text-anchor="middle" font-family="Arial" font-size="14" fill="#374151">← 뒤로</text>
+  <rect x="880" y="800" width="200" height="52" rx="10" fill="#3B7D8E"/>
+  <text x="980" y="832" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="white">다음 →</text>
+</svg>

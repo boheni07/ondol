@@ -1,0 +1,110 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- S-30 + S-40 · ST-02/11 Supporter Notifications + Settings · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">S-30 알림 (좌) · S-40 설정 (우) · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Sidebar -->
+  <rect width="240" height="900" fill="#F5F5F5"/>
+  <rect width="240" height="64" fill="#FFFFFF"/>
+  <text x="24" y="42" font-family="Arial" font-size="18" font-weight="bold" fill="#B56F10">온돌</text>
+  <text x="68" y="42" font-family="Arial" font-size="11" fill="#6B7280">지원사</text>
+
+  <!-- Header -->
+  <rect x="240" width="1200" height="64" fill="#FFFFFF"/>
+
+  <!-- Left: notifications -->
+  <text x="272" y="112" font-family="Arial" font-size="22" font-weight="bold" fill="#111827">알림</text>
+  <text x="272" y="136" font-family="Arial" font-size="13" fill="#6B7280">미확인 2건</text>
+
+  <line x1="272" y1="168" x2="836" y2="168" stroke="#E5E7EB"/>
+  <rect x="282" y="164" width="60" height="3" fill="#B56F10"/>
+  <text x="312" y="158" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#B56F10">전체</text>
+  <text x="392" y="158" text-anchor="middle" font-family="Arial" font-size="13" fill="#6B7280">일정</text>
+  <text x="472" y="158" text-anchor="middle" font-family="Arial" font-size="13" fill="#6B7280">인계</text>
+
+  <!-- Unread 1 -->
+  <rect x="272" y="184" width="564" height="84" rx="12" fill="#EEF4FD" stroke="#A8C4E4"/>
+  <circle cx="296" cy="226" r="4" fill="#3B7D8E"/>
+  <circle cx="328" cy="226" r="20" fill="#FEF7E0"/>
+  <text x="328" y="232" text-anchor="middle" font-family="Arial" font-size="14" fill="#B56F10">⏰</text>
+  <text x="360" y="218" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">오늘 서비스 30분 전</text>
+  <text x="360" y="236" font-family="Arial" font-size="11" fill="#6B7280">이온돌 · 12:30 출발 권장 · 13:00 서비스 시작</text>
+  <text x="360" y="252" font-family="Arial" font-size="11" fill="#9CA3AF">방금</text>
+
+  <!-- Unread 2 -->
+  <rect x="272" y="276" width="564" height="84" rx="12" fill="#EEF4FD" stroke="#A8C4E4"/>
+  <circle cx="296" cy="318" r="4" fill="#3B7D8E"/>
+  <circle cx="328" cy="318" r="20" fill="#EEF4FD"/>
+  <text x="328" y="324" text-anchor="middle" font-family="Arial" font-size="14" fill="#2E5FA8">📥</text>
+  <text x="360" y="310" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">새 인수인계 도착</text>
+  <text x="360" y="328" font-family="Arial" font-size="11" fill="#6B7280">김지원사 → 박지원 · 이온돌 6월 인계</text>
+  <text x="360" y="344" font-family="Arial" font-size="11" fill="#9CA3AF">어제 16:20</text>
+
+  <!-- Read -->
+  <text x="272" y="392" font-family="Arial" font-size="13" font-weight="bold" fill="#6B7280">읽음</text>
+  <rect x="272" y="404" width="564" height="76" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <circle cx="328" cy="442" r="20" fill="#FFF5E6"/>
+  <text x="328" y="448" text-anchor="middle" font-family="Arial" font-size="14" fill="#B56F10">📋</text>
+  <text x="360" y="434" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">일지 확인 알림</text>
+  <text x="360" y="454" font-family="Arial" font-size="11" fill="#6B7280">김보호자가 어제 일지를 확인했습니다</text>
+  <text x="360" y="470" font-family="Arial" font-size="11" fill="#9CA3AF">어제 21:30</text>
+
+  <rect x="272" y="488" width="564" height="76" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <circle cx="328" cy="526" r="20" fill="#EDFAF3"/>
+  <text x="328" y="532" text-anchor="middle" font-family="Arial" font-size="14" fill="#276B4C">✓</text>
+  <text x="360" y="518" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">월간 서비스 시간 마감 안내</text>
+  <text x="360" y="538" font-family="Arial" font-size="11" fill="#6B7280">5월 서비스 시간 입력이 마감되었습니다</text>
+  <text x="360" y="554" font-family="Arial" font-size="11" fill="#9CA3AF">6월 1일</text>
+
+  <rect x="272" y="572" width="564" height="76" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <circle cx="328" cy="610" r="20" fill="#F4EFFB"/>
+  <text x="328" y="616" text-anchor="middle" font-family="Arial" font-size="14" fill="#6A43A8">🎯</text>
+  <text x="360" y="602" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">신규 사례 배정</text>
+  <text x="360" y="622" font-family="Arial" font-size="11" fill="#6B7280">최희망(8세) — 4월부터 담당 시작</text>
+  <text x="360" y="638" font-family="Arial" font-size="11" fill="#9CA3AF">4월 2일</text>
+
+  <!-- Right: settings -->
+  <text x="864" y="112" font-family="Arial" font-size="22" font-weight="bold" fill="#111827">설정</text>
+  <text x="864" y="136" font-family="Arial" font-size="13" fill="#6B7280">알림 · 보안 · 앱 환경</text>
+
+  <!-- Settings groups -->
+  <rect x="864" y="168" width="544" height="180" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="884" y="196" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">👤 계정</text>
+  <text x="884" y="226" font-family="Arial" font-size="13" fill="#374151">박지원 (활동지원사)</text>
+  <text x="884" y="246" font-family="Arial" font-size="11" fill="#6B7280">park.supporter@email.com · 010-3333-4444</text>
+  <rect x="884" y="262" width="100" height="32" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="934" y="282" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">프로필 편집</text>
+  <rect x="996" y="262" width="120" height="32" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="1056" y="282" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">비밀번호 변경</text>
+  <text x="884" y="320" font-family="Arial" font-size="11" fill="#9CA3AF">소속 기관: ○○활동지원센터</text>
+
+  <rect x="864" y="364" width="544" height="120" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="884" y="392" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">🔔 알림</text>
+  <text x="884" y="420" font-family="Arial" font-size="12" fill="#374151">서비스 30분 전 알림</text>
+  <rect x="1340" y="408" width="48" height="24" rx="12" fill="#B56F10"/>
+  <circle cx="1372" cy="420" r="9" fill="white"/>
+  <text x="884" y="450" font-family="Arial" font-size="12" fill="#374151">새 인수인계 도착</text>
+  <rect x="1340" y="438" width="48" height="24" rx="12" fill="#B56F10"/>
+  <circle cx="1372" cy="450" r="9" fill="white"/>
+  <text x="884" y="476" font-family="Arial" font-size="12" fill="#374151">방해 금지: 21:00 - 08:00</text>
+
+  <rect x="864" y="500" width="544" height="120" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="884" y="528" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">📱 앱 환경</text>
+  <text x="884" y="556" font-family="Arial" font-size="12" fill="#374151">일지 작성 시 위치 자동 기록</text>
+  <rect x="1340" y="544" width="48" height="24" rx="12" fill="#B56F10"/>
+  <circle cx="1372" cy="556" r="9" fill="white"/>
+  <text x="884" y="586" font-family="Arial" font-size="12" fill="#374151">오프라인 일지 작성 허용</text>
+  <rect x="1340" y="574" width="48" height="24" rx="12" fill="#B56F10"/>
+  <circle cx="1372" cy="586" r="9" fill="white"/>
+  <text x="884" y="612" font-family="Arial" font-size="12" fill="#374151">텍스트 크기: 보통 ▾</text>
+
+  <rect x="864" y="636" width="544" height="100" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="884" y="664" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">🛡 보안</text>
+  <text x="884" y="690" font-family="Arial" font-size="12" fill="#374151">생체 인증 (Face ID / 지문) 활성</text>
+  <rect x="1340" y="678" width="48" height="24" rx="12" fill="#B56F10"/>
+  <circle cx="1372" cy="690" r="9" fill="white"/>
+  <text x="884" y="716" font-family="Arial" font-size="12" fill="#374151">자동 로그아웃: 24시간</text>
+
+  <rect x="864" y="752" width="544" height="60" rx="12" fill="#FEF0F0" stroke="#FACDB8"/>
+  <text x="884" y="788" font-family="Arial" font-size="13" font-weight="bold" fill="#BF3030">로그아웃</text>
+</svg>

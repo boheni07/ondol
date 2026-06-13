@@ -1,0 +1,53 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- A-05 · ST-09 Email Verification · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">A-05 · ST-09 Email Verify · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Top bar -->
+  <rect width="1440" height="64" fill="#FFFFFF"/>
+  <line x1="0" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="40" y="42" font-family="Arial" font-size="20" font-weight="bold" fill="#3B7D8E">온돌</text>
+  <text x="86" y="42" font-family="Arial" font-size="13" fill="#6B7280">OnDol</text>
+
+  <!-- Step indicator -->
+  <text x="720" y="120" text-anchor="middle" font-family="Arial" font-size="12" fill="#6B7280">STEP 3 / 3 · 이메일 인증</text>
+  <line x1="540" y1="138" x2="900" y2="138" stroke="#3B7D8E" stroke-width="3"/>
+  <circle cx="540" cy="138" r="8" fill="#3B7D8E"/>
+  <circle cx="720" cy="138" r="8" fill="#3B7D8E"/>
+  <circle cx="900" cy="138" r="8" fill="#3B7D8E"/>
+
+  <!-- Verify card -->
+  <rect x="460" y="200" width="520" height="540" rx="20" fill="#FFFFFF" stroke="#E5E7EB"/>
+
+  <!-- Icon -->
+  <circle cx="720" cy="288" r="48" fill="#EEF4FD"/>
+  <text x="720" y="302" text-anchor="middle" font-family="Arial" font-size="40" fill="#3B7D8E">✉</text>
+
+  <!-- Title -->
+  <text x="720" y="380" text-anchor="middle" font-family="Arial" font-size="24" font-weight="bold" fill="#111827">이메일을 확인하세요</text>
+  <text x="720" y="412" text-anchor="middle" font-family="Arial" font-size="14" fill="#6B7280">아래 주소로 인증 메일을 보냈습니다</text>
+  <text x="720" y="438" text-anchor="middle" font-family="Arial" font-size="15" font-weight="bold" fill="#3B7D8E">guardian@example.com</text>
+
+  <!-- Code input -->
+  <text x="720" y="488" text-anchor="middle" font-family="Arial" font-size="13" fill="#374151">6자리 인증번호 입력</text>
+  <g>
+    <rect x="500" y="502" width="58" height="64" rx="10" fill="#FFFFFF" stroke="#3B7D8E" stroke-width="2"/>
+    <text x="529" y="546" text-anchor="middle" font-family="Arial" font-size="26" font-weight="bold" fill="#111827">7</text>
+    <rect x="568" y="502" width="58" height="64" rx="10" fill="#FFFFFF" stroke="#3B7D8E" stroke-width="2"/>
+    <text x="597" y="546" text-anchor="middle" font-family="Arial" font-size="26" font-weight="bold" fill="#111827">2</text>
+    <rect x="636" y="502" width="58" height="64" rx="10" fill="#FFFFFF" stroke="#3B7D8E" stroke-width="2"/>
+    <text x="665" y="546" text-anchor="middle" font-family="Arial" font-size="26" font-weight="bold" fill="#111827">8</text>
+    <rect x="714" y="502" width="58" height="64" rx="10" fill="#FFFFFF" stroke="#D1D5DB"/>
+    <text x="743" y="546" text-anchor="middle" font-family="Arial" font-size="26" font-weight="bold" fill="#9CA3AF">_</text>
+    <rect x="782" y="502" width="58" height="64" rx="10" fill="#FFFFFF" stroke="#D1D5DB"/>
+    <rect x="850" y="502" width="58" height="64" rx="10" fill="#FFFFFF" stroke="#D1D5DB"/>
+  </g>
+
+  <!-- Resend -->
+  <text x="720" y="600" text-anchor="middle" font-family="Arial" font-size="13" fill="#6B7280">메일을 받지 못하셨나요?</text>
+  <text x="720" y="622" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#3B7D8E">인증번호 재발송 (00:47)</text>
+
+  <!-- Verify button -->
+  <rect x="500" y="660" width="440" height="56" rx="12" fill="#3B7D8E"/>
+  <text x="720" y="694" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="white">인증하고 가입 완료</text>
+</svg>

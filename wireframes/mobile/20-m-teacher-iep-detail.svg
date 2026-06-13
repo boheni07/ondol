@@ -1,0 +1,80 @@
+<svg viewBox="0 0 390 844" xmlns="http://www.w3.org/2000/svg">
+  <!-- T-12 · ST-03 IEP Detail · Mobile 390×844 -->
+  <text x="8" y="12" font-family="Arial" font-size="9" fill="#9CA3AF">T-12 · ST-03 IEP Detail · Mobile 390×844</text>
+  <rect width="390" height="844" fill="#F9FAFB"/>
+  <rect width="390" height="844" rx="0" fill="none" stroke="#E5E7EB"/>
+
+  <!-- Status bar -->
+  <rect width="390" height="44" fill="#FFFFFF"/>
+  <text x="20" y="30" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">9:41</text>
+
+  <!-- Nav -->
+  <rect y="44" width="390" height="56" fill="#FFFFFF"/>
+  <line y1="100" x1="0" y2="100" x2="390" stroke="#E5E7EB"/>
+  <text x="20" y="78" font-family="Arial" font-size="22" fill="#374151">←</text>
+  <text x="195" y="80" text-anchor="middle" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">IEP 상세</text>
+  <text x="370" y="78" text-anchor="end" font-family="Arial" font-size="14" fill="#2E5FA8">수정</text>
+
+  <!-- Hero -->
+  <rect y="100" width="390" height="120" fill="#EEF4FD"/>
+  <text x="20" y="128" font-family="Arial" font-size="11" font-weight="bold" fill="#2E5FA8">📚 개별화교육계획 (EDU-001)</text>
+  <text x="20" y="156" font-family="Arial" font-size="17" font-weight="bold" fill="#111827">이온돌 — 2026 1학기</text>
+  <text x="20" y="178" font-family="Arial" font-size="12" fill="#374151">고3 · 자폐 2급 · 이특수교사 작성</text>
+  <text x="20" y="198" font-family="Arial" font-size="11" fill="#92670D">⚠ 다음 점검 2026-06-20 (D-7)</text>
+
+  <!-- Overall progress -->
+  <rect x="16" y="240" width="358" height="100" rx="14" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="32" y="266" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">전체 진행률</text>
+  <text x="32" y="306" font-family="Arial" font-size="34" font-weight="bold" fill="#2E5FA8">75%</text>
+  <text x="32" y="328" font-family="Arial" font-size="10" fill="#22A06B">↑ 지난 점검 대비 +12%p</text>
+  <circle cx="328" cy="290" r="32" fill="none" stroke="#E5E7EB" stroke-width="8"/>
+  <circle cx="328" cy="290" r="32" fill="none" stroke="#2E5FA8" stroke-width="8" stroke-dasharray="151 201" transform="rotate(-90 328 290)"/>
+
+  <!-- Areas -->
+  <text x="20" y="364" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">영역별 진행</text>
+
+  <rect x="16" y="376" width="358" height="60" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="32" y="400" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">의사소통</text>
+  <text x="356" y="400" text-anchor="end" font-family="Arial" font-size="14" font-weight="bold" fill="#22A06B">83%</text>
+  <rect x="32" y="412" width="324" height="8" rx="4" fill="#E5E7EB"/>
+  <rect x="32" y="412" width="269" height="8" rx="4" fill="#22A06B"/>
+
+  <rect x="16" y="446" width="358" height="60" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="32" y="470" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">자기결정</text>
+  <text x="356" y="470" text-anchor="end" font-family="Arial" font-size="14" font-weight="bold" fill="#2E5FA8">80%</text>
+  <rect x="32" y="482" width="324" height="8" rx="4" fill="#E5E7EB"/>
+  <rect x="32" y="482" width="259" height="8" rx="4" fill="#2E5FA8"/>
+
+  <rect x="16" y="516" width="358" height="60" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="32" y="540" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">지역사회 참여</text>
+  <text x="356" y="540" text-anchor="end" font-family="Arial" font-size="14" font-weight="bold" fill="#2E5FA8">75%</text>
+  <rect x="32" y="552" width="324" height="8" rx="4" fill="#E5E7EB"/>
+  <rect x="32" y="552" width="243" height="8" rx="4" fill="#2E5FA8"/>
+
+  <rect x="16" y="586" width="358" height="76" rx="12" fill="#FFFFFF" stroke="#FACDB8"/>
+  <text x="32" y="610" font-family="Arial" font-size="12" font-weight="bold" fill="#B56F10">진로/전환</text>
+  <text x="356" y="610" text-anchor="end" font-family="Arial" font-size="14" font-weight="bold" fill="#B56F10">65%</text>
+  <rect x="32" y="622" width="324" height="8" rx="4" fill="#E5E7EB"/>
+  <rect x="32" y="622" width="211" height="8" rx="4" fill="#B56F10"/>
+  <text x="32" y="650" font-family="Arial" font-size="10" fill="#BF3030">⚠ 전환교육 계획 작성 필요</text>
+
+  <!-- Linked -->
+  <text x="20" y="690" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">🔗 관련 기록</text>
+  <rect x="16" y="702" width="358" height="44" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="32" y="724" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">최근 관찰 · 어제 · 5월 평가</text>
+  <text x="356" y="728" text-anchor="end" font-family="Arial" font-size="14" fill="#9CA3AF">›</text>
+
+  <!-- Tab bar -->
+  <rect y="780" width="390" height="60" fill="#FFFFFF"/>
+  <line y1="780" x1="0" y2="780" x2="390" stroke="#E5E7EB"/>
+  <text x="39" y="808" text-anchor="middle" font-family="Arial" font-size="18" fill="#9CA3AF">🏠</text>
+  <text x="39" y="826" text-anchor="middle" font-family="Arial" font-size="9" fill="#9CA3AF">홈</text>
+  <text x="117" y="808" text-anchor="middle" font-family="Arial" font-size="18" fill="#2E5FA8">📚</text>
+  <text x="117" y="826" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#2E5FA8">IEP</text>
+  <text x="195" y="808" text-anchor="middle" font-family="Arial" font-size="18" fill="#9CA3AF">📝</text>
+  <text x="195" y="826" text-anchor="middle" font-family="Arial" font-size="9" fill="#9CA3AF">관찰</text>
+  <text x="273" y="808" text-anchor="middle" font-family="Arial" font-size="18" fill="#9CA3AF">📅</text>
+  <text x="273" y="826" text-anchor="middle" font-family="Arial" font-size="9" fill="#9CA3AF">타임라인</text>
+  <text x="351" y="808" text-anchor="middle" font-family="Arial" font-size="18" fill="#9CA3AF">⚙</text>
+  <text x="351" y="826" text-anchor="middle" font-family="Arial" font-size="9" fill="#9CA3AF">설정</text>
+</svg>

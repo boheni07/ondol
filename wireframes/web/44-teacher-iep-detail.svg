@@ -1,0 +1,142 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- T-12 · ST-03 IEP Detail · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">T-12 · ST-03 IEP Detail · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Sidebar collapsed -->
+  <rect width="64" height="900" fill="#F5F5F5"/>
+  <rect width="64" height="64" fill="#FFFFFF"/>
+  <text x="32" y="42" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#2E5FA8">온</text>
+
+  <!-- Header -->
+  <rect x="64" width="1376" height="64" fill="#FFFFFF"/><line x1="64" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="96" y="40" font-family="Arial" font-size="13" fill="#6B7280">IEP / <tspan fill="#111827" font-weight="bold">이온돌 — 2026 1학기</tspan></text>
+  <rect x="1144" y="16" width="84" height="32" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="1186" y="36" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">⬇ PDF</text>
+  <rect x="1236" y="16" width="84" height="32" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="1278" y="36" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">점검 →</text>
+  <rect x="1328" y="16" width="80" height="32" rx="6" fill="#2E5FA8"/>
+  <text x="1368" y="36" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">수정</text>
+
+  <!-- Hero -->
+  <rect x="96" y="96" width="1312" height="120" rx="16" fill="#EEF4FD"/>
+  <text x="120" y="124" font-family="Arial" font-size="12" font-weight="bold" fill="#2E5FA8">📚 개별화교육계획 (EDU-001)</text>
+  <text x="120" y="158" font-family="Arial" font-size="22" font-weight="bold" fill="#111827">이온돌 (고3, 자폐 2급) — 2026학년도 1학기 IEP</text>
+  <text x="120" y="182" font-family="Arial" font-size="13" fill="#374151">학교: ○○특수학교 · 작성: 이특수교사 · 회의일: 2026-02-26 · 참석자 5명</text>
+  <text x="120" y="202" font-family="Arial" font-size="11" fill="#6B7280">기간: 2026.03.01 ~ 2026.07.20 (1학기) · 점검: 6/13 임박</text>
+
+  <!-- Progress strip -->
+  <rect x="1184" y="120" width="200" height="80" rx="12" fill="#FFFFFF"/>
+  <text x="1284" y="146" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7280">전체 진행률</text>
+  <text x="1284" y="178" text-anchor="middle" font-family="Arial" font-size="28" font-weight="bold" fill="#2E5FA8">75%</text>
+  <text x="1284" y="194" text-anchor="middle" font-family="Arial" font-size="10" fill="#22A06B">↑ 지난 점검 +12%p</text>
+
+  <!-- Two columns: areas (left, larger) + sidebar (right) -->
+  <!-- Areas -->
+  <text x="96" y="248" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">목표 영역별 진행 상황</text>
+
+  <g>
+    <!-- Area 1 -->
+    <rect x="96" y="262" width="884" height="120" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <rect x="96" y="262" width="6" height="120" fill="#2E5FA8"/>
+    <text x="120" y="290" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">의사소통</text>
+    <text x="120" y="312" font-family="Arial" font-size="12" fill="#6B7280">목표: 일상 상황에서 그림카드와 단어를 결합해 5어절 의사 표현</text>
+    <text x="120" y="334" font-family="Arial" font-size="11" fill="#374151">현재: 3-4어절 의사 표현 가능 (단어+그림카드)</text>
+    <text x="120" y="354" font-family="Arial" font-size="11" fill="#276B4C">단기 목표 (Q1): 매주 5회 그림카드 활용 의사 표현 → 달성 ✓</text>
+    <text x="120" y="372" font-family="Arial" font-size="11" fill="#374151">단기 목표 (Q2): 5어절 문장 구성 → 진행 중 70%</text>
+    <rect x="836" y="296" width="120" height="6" rx="3" fill="#E5E7EB"/>
+    <rect x="836" y="296" width="100" height="6" rx="3" fill="#22A06B"/>
+    <text x="896" y="320" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#22A06B">83%</text>
+
+    <!-- Area 2 -->
+    <rect x="96" y="394" width="884" height="120" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <rect x="96" y="394" width="6" height="120" fill="#2E5FA8"/>
+    <text x="120" y="422" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">자기결정</text>
+    <text x="120" y="444" font-family="Arial" font-size="12" fill="#6B7280">목표: 일상 선택 상황에서 그림카드를 활용해 자기결정 의사 표현</text>
+    <text x="120" y="466" font-family="Arial" font-size="11" fill="#374151">현재: 선택지 2개 중 1개 선택 가능 (음식·활동)</text>
+    <text x="120" y="486" font-family="Arial" font-size="11" fill="#276B4C">단기 목표 (Q1): 5가지 선택 상황 정착 → 달성 ✓</text>
+    <text x="120" y="504" font-family="Arial" font-size="11" fill="#B56F10">단기 목표 (Q2): 3개 선택지 → 진행 중 60%</text>
+    <rect x="836" y="428" width="120" height="6" rx="3" fill="#E5E7EB"/>
+    <rect x="836" y="428" width="96" height="6" rx="3" fill="#2E5FA8"/>
+    <text x="896" y="452" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#2E5FA8">80%</text>
+
+    <!-- Area 3 -->
+    <rect x="96" y="526" width="884" height="120" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <rect x="96" y="526" width="6" height="120" fill="#2E5FA8"/>
+    <text x="120" y="554" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">지역사회 참여</text>
+    <text x="120" y="576" font-family="Arial" font-size="12" fill="#6B7280">목표: 지역 도서관·공원 등 지역사회 활동 안정적 참여</text>
+    <text x="120" y="598" font-family="Arial" font-size="11" fill="#374151">현재: 활동지원사 동반 외출 시 안정적</text>
+    <text x="120" y="618" font-family="Arial" font-size="11" fill="#276B4C">단기 목표 (Q1): 월 8회 지역사회 외출 → 달성 ✓</text>
+    <text x="120" y="636" font-family="Arial" font-size="11" fill="#374151">단기 목표 (Q2): 도서관 자기주도 이용 → 진행 중 65%</text>
+    <rect x="836" y="560" width="120" height="6" rx="3" fill="#E5E7EB"/>
+    <rect x="836" y="560" width="90" height="6" rx="3" fill="#2E5FA8"/>
+    <text x="896" y="584" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#2E5FA8">75%</text>
+
+    <!-- Area 4 -->
+    <rect x="96" y="658" width="884" height="120" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <rect x="96" y="658" width="6" height="120" fill="#6A43A8"/>
+    <text x="120" y="686" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">진로/전환</text>
+    <rect x="218" y="670" width="76" height="22" rx="11" fill="#F4EFFB"/>
+    <text x="256" y="684" text-anchor="middle" font-family="Arial" font-size="10" fill="#6A43A8">청소년+</text>
+    <text x="120" y="708" font-family="Arial" font-size="12" fill="#6B7280">목표: 졸업 후 직업재활시설 적응 및 자립 기반 마련</text>
+    <text x="120" y="730" font-family="Arial" font-size="11" fill="#374151">현재: 주 5회 직업재활시설 출퇴근 적응 중</text>
+    <text x="120" y="748" font-family="Arial" font-size="11" fill="#BF3030">⚠ 전환교육 계획서(EDU-007) 작성 필요</text>
+    <text x="120" y="766" font-family="Arial" font-size="11" fill="#374151">단기 목표 (Q2): 시설 내 단순 작업 30분 집중 → 진행 50%</text>
+    <rect x="836" y="692" width="120" height="6" rx="3" fill="#E5E7EB"/>
+    <rect x="836" y="692" width="78" height="6" rx="3" fill="#B56F10"/>
+    <text x="896" y="716" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#B56F10">65%</text>
+  </g>
+
+  <!-- Sidebar - meta + support services -->
+  <rect x="1000" y="262" width="408" height="240" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="1024" y="290" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">📋 기본 정보</text>
+  <line x1="1024" y1="302" x2="1384" y2="302" stroke="#F3F4F6"/>
+  <text x="1024" y="324" font-family="Arial" font-size="11" fill="#9CA3AF">학교/학년</text>
+  <text x="1240" y="324" font-family="Arial" font-size="11" fill="#111827">○○특수학교 고3</text>
+  <text x="1024" y="346" font-family="Arial" font-size="11" fill="#9CA3AF">교육 배치</text>
+  <text x="1240" y="346" font-family="Arial" font-size="11" fill="#111827">특수학급 + 통합</text>
+  <text x="1024" y="368" font-family="Arial" font-size="11" fill="#9CA3AF">담임</text>
+  <text x="1240" y="368" font-family="Arial" font-size="11" fill="#111827">이특수교사</text>
+  <text x="1024" y="390" font-family="Arial" font-size="11" fill="#9CA3AF">회의일</text>
+  <text x="1240" y="390" font-family="Arial" font-size="11" fill="#111827">2026-02-26</text>
+  <text x="1024" y="412" font-family="Arial" font-size="11" fill="#9CA3AF">참석자</text>
+  <text x="1240" y="412" font-family="Arial" font-size="11" fill="#111827">5명 (보호자, 교사, 치료사)</text>
+  <text x="1024" y="434" font-family="Arial" font-size="11" fill="#9CA3AF">다음 점검</text>
+  <text x="1240" y="434" font-family="Arial" font-size="11" font-weight="bold" fill="#92670D">2026-06-20 (D-7)</text>
+  <text x="1024" y="456" font-family="Arial" font-size="11" fill="#9CA3AF">학기 종료</text>
+  <text x="1240" y="456" font-family="Arial" font-size="11" fill="#111827">2026-07-20</text>
+  <text x="1024" y="478" font-family="Arial" font-size="11" fill="#9CA3AF">보호자 확인</text>
+  <text x="1240" y="478" font-family="Arial" font-size="11" fill="#22A06B">✓ 2026-03-02</text>
+
+  <!-- Support services -->
+  <rect x="1000" y="518" width="408" height="180" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="1024" y="546" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">🤝 지원 서비스</text>
+  <line x1="1024" y1="558" x2="1384" y2="558" stroke="#F3F4F6"/>
+
+  <rect x="1024" y="572" width="360" height="32" rx="6" fill="#F9FAFB"/>
+  <rect x="1036" y="580" width="48" height="16" rx="8" fill="#FEF0F0"/>
+  <text x="1060" y="592" text-anchor="middle" font-family="Arial" font-size="9" fill="#BF3030">의료</text>
+  <text x="1096" y="592" font-family="Arial" font-size="12" fill="#111827">언어치료 (주 2회)</text>
+
+  <rect x="1024" y="612" width="360" height="32" rx="6" fill="#F9FAFB"/>
+  <rect x="1036" y="620" width="48" height="16" rx="8" fill="#FEF0F0"/>
+  <text x="1060" y="632" text-anchor="middle" font-family="Arial" font-size="9" fill="#BF3030">의료</text>
+  <text x="1096" y="632" font-family="Arial" font-size="12" fill="#111827">작업치료 (주 1회)</text>
+
+  <rect x="1024" y="652" width="360" height="32" rx="6" fill="#F9FAFB"/>
+  <rect x="1036" y="660" width="48" height="16" rx="8" fill="#FFF5E6"/>
+  <text x="1060" y="672" text-anchor="middle" font-family="Arial" font-size="9" fill="#B56F10">일상</text>
+  <text x="1096" y="672" font-family="Arial" font-size="12" fill="#111827">활동지원사 (주 5일, 4시간)</text>
+
+  <!-- Linked records -->
+  <text x="1024" y="734" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">🔗 관련 기록</text>
+  <rect x="1000" y="748" width="408" height="120" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="1024" y="774" font-family="Arial" font-size="11" fill="#9CA3AF">관찰</text>
+  <text x="1064" y="774" font-family="Arial" font-size="12" fill="#111827">6월 둘째주 관찰 (어제)</text>
+  <text x="1024" y="796" font-family="Arial" font-size="11" fill="#9CA3AF">관찰</text>
+  <text x="1064" y="796" font-family="Arial" font-size="12" fill="#111827">5월 사회성 관찰</text>
+  <text x="1024" y="818" font-family="Arial" font-size="11" fill="#9CA3AF">평가</text>
+  <text x="1064" y="818" font-family="Arial" font-size="12" fill="#111827">2025 2학기 종합평가</text>
+  <text x="1024" y="840" font-family="Arial" font-size="11" fill="#9CA3AF">전환</text>
+  <text x="1064" y="840" font-family="Arial" font-size="12" fill="#BF3030">전환교육 계획 (미작성)</text>
+</svg>

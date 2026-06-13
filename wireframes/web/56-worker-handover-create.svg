@@ -1,0 +1,146 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- W-30 + W-31 · 인수인계 목록 (좌) + 생성 Step 3/4 (우) · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">W-30 인계 목록 (좌) + W-31 생성 Step 3/4 (우) · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Sidebar -->
+  <rect width="240" height="900" fill="#F5F5F5"/>
+  <rect width="240" height="64" fill="#FFFFFF"/>
+  <text x="24" y="42" font-family="Arial" font-size="18" font-weight="bold" fill="#276B4C">온돌</text>
+  <text x="68" y="42" font-family="Arial" font-size="11" fill="#6B7280">복지사</text>
+  <rect y="240" width="240" height="44" fill="#EDFAF3"/>
+  <rect y="240" width="3" height="44" fill="#276B4C"/>
+  <text x="52" y="267" font-family="Arial" font-size="13" font-weight="bold" fill="#276B4C">인수인계</text>
+
+  <!-- Header -->
+  <rect x="240" width="1200" height="64" fill="#FFFFFF"/><line x1="240" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="272" y="40" font-family="Arial" font-size="13" fill="#6B7280">인수인계</text>
+
+  <!-- Left: List -->
+  <text x="272" y="112" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">인수인계</text>
+  <text x="272" y="134" font-family="Arial" font-size="12" fill="#6B7280">받은 2건 · 전달 14건 (이번 해)</text>
+
+  <line x1="272" y1="172" x2="836" y2="172" stroke="#E5E7EB"/>
+  <rect x="282" y="168" width="80" height="3" fill="#276B4C"/>
+  <text x="322" y="162" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#276B4C">받은 인계 (2)</text>
+  <text x="442" y="162" text-anchor="middle" font-family="Arial" font-size="13" fill="#6B7280">전달한 인계 (14)</text>
+
+  <!-- Item 1 -->
+  <rect x="272" y="192" width="556" height="100" rx="12" fill="#EEF4FD" stroke="#A8C4E4"/>
+  <rect x="272" y="192" width="6" height="100" fill="#3B7D8E"/>
+  <rect x="294" y="208" width="74" height="22" rx="11" fill="#FEF0F0"/>
+  <text x="331" y="222" text-anchor="middle" font-family="Arial" font-size="11" fill="#BF3030">새 인계</text>
+  <text x="380" y="222" font-family="Arial" font-size="11" fill="#6B7280">2026-06-10 받음</text>
+  <text x="294" y="248" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">김민지 — 신규 사례 인계</text>
+  <text x="294" y="266" font-family="Arial" font-size="12" fill="#6B7280">전임: 강복지사 → 본인 · 9월 사례관리 인계</text>
+  <text x="294" y="284" font-family="Arial" font-size="11" fill="#374151">📋 가족력 + 기존 서비스 + 우려사항 4건</text>
+
+  <!-- Item 2 -->
+  <rect x="272" y="308" width="556" height="80" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="272" y="308" width="6" height="80" fill="#9CA3AF"/>
+  <text x="294" y="332" font-family="Arial" font-size="11" fill="#9CA3AF">2025-12-15 받음</text>
+  <text x="294" y="354" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">박지은 — 정착 후 사후관리 인계</text>
+  <text x="294" y="372" font-family="Arial" font-size="11" fill="#6B7280">정착 완료 후 6개월 모니터링 위임</text>
+
+  <text x="272" y="424" font-family="Arial" font-size="13" font-weight="bold" fill="#6B7280">최근 전달한 인계</text>
+
+  <rect x="272" y="438" width="556" height="80" rx="12" fill="#F9FAFB" stroke="#E5E7EB"/>
+  <text x="294" y="464" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">김다정 (활동지원사 교체) — 인계 작성 중</text>
+  <text x="294" y="482" font-family="Arial" font-size="11" fill="#6B7280">박지원 → 후임자에게 · Step 3/4 진행 중</text>
+  <text x="294" y="502" font-family="Arial" font-size="11" fill="#92670D">⏳ 임시저장 · 어제</text>
+
+  <rect x="272" y="534" width="556" height="64" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="294" y="558" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">한가람 — 활동지원 분기 인계</text>
+  <text x="294" y="576" font-family="Arial" font-size="11" fill="#6B7280">박지원 → 박지원 (자가) · 2026-04-01 발송</text>
+
+  <rect x="272" y="614" width="556" height="64" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="294" y="638" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">정수아 — 사례관리 인계</text>
+  <text x="294" y="656" font-family="Arial" font-size="11" fill="#6B7280">본인 → 양복지사 · 2026-03-15 발송</text>
+
+  <!-- Right: W-31 Create Wizard Step 3/4 -->
+  <rect x="852" y="96" width="556" height="780" rx="16" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="876" y="124" font-family="Arial" font-size="11" fill="#9CA3AF">W-31 · 인수인계 생성 (Step 3/4 — 중요 기록 선택)</text>
+  <text x="876" y="156" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">인계 자료 선택</text>
+  <text x="876" y="180" font-family="Arial" font-size="12" fill="#6B7280">김다정 — 신임 활동지원사가 꼭 봐야 할 기록을 선택하세요</text>
+
+  <!-- Step bar -->
+  <g>
+    <circle cx="896" cy="216" r="10" fill="#276B4C"/><text x="896" y="220" text-anchor="middle" font-family="Arial" font-size="9" fill="white">✓</text>
+    <text x="896" y="240" text-anchor="middle" font-family="Arial" font-size="10" fill="#374151">기본 설정</text>
+    <line x1="906" y1="216" x2="1056" y2="216" stroke="#276B4C" stroke-width="2"/>
+    <circle cx="1066" cy="216" r="10" fill="#276B4C"/><text x="1066" y="220" text-anchor="middle" font-family="Arial" font-size="9" fill="white">✓</text>
+    <text x="1066" y="240" text-anchor="middle" font-family="Arial" font-size="10" fill="#374151">핵심 요약</text>
+    <line x1="1076" y1="216" x2="1226" y2="216" stroke="#276B4C" stroke-width="2"/>
+    <circle cx="1236" cy="216" r="10" fill="#276B4C"/><text x="1236" y="220" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="white">3</text>
+    <text x="1236" y="240" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#276B4C">기록 선택</text>
+    <line x1="1246" y1="216" x2="1366" y2="216" stroke="#E5E7EB" stroke-width="2"/>
+    <circle cx="1376" cy="216" r="10" fill="#E5E7EB"/><text x="1376" y="220" text-anchor="middle" font-family="Arial" font-size="9" fill="#6B7280">4</text>
+    <text x="1376" y="240" text-anchor="middle" font-family="Arial" font-size="10" fill="#6B7280">발송</text>
+  </g>
+
+  <!-- Search/filter -->
+  <rect x="876" y="266" width="508" height="40" rx="8" fill="#F9FAFB" stroke="#D1D5DB"/>
+  <text x="892" y="290" font-family="Arial" font-size="11" fill="#9CA3AF">🔍 기록 검색...</text>
+  <rect x="1160" y="274" width="100" height="24" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="1210" y="290" text-anchor="middle" font-family="Arial" font-size="10" fill="#374151">분야 ▾</text>
+  <rect x="1268" y="274" width="100" height="24" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="1318" y="290" text-anchor="middle" font-family="Arial" font-size="10" fill="#374151">중요도 ▾</text>
+
+  <!-- Selected count -->
+  <rect x="876" y="318" width="508" height="40" rx="8" fill="#EDFAF3"/>
+  <text x="892" y="343" font-family="Arial" font-size="12" font-weight="bold" fill="#276B4C">📌 선택된 기록 6건 · 권장 5~8건</text>
+
+  <!-- Records list -->
+  <rect x="876" y="370" width="508" height="56" rx="10" fill="#EDFAF3" stroke="#276B4C" stroke-width="2"/>
+  <rect x="892" y="384" width="20" height="20" rx="4" fill="#276B4C"/>
+  <text x="902" y="400" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">✓</text>
+  <rect x="920" y="386" width="40" height="18" rx="9" fill="#FEF0F0"/>
+  <text x="940" y="399" text-anchor="middle" font-family="Arial" font-size="9" fill="#BF3030">의료</text>
+  <text x="970" y="395" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">알레르기·금기 약물 정보 (응급정보)</text>
+  <text x="970" y="412" font-family="Arial" font-size="10" fill="#6B7280">⭐ 최우선 · 2025-08 작성</text>
+
+  <rect x="876" y="438" width="508" height="56" rx="10" fill="#EDFAF3" stroke="#276B4C" stroke-width="2"/>
+  <rect x="892" y="452" width="20" height="20" rx="4" fill="#276B4C"/>
+  <text x="902" y="468" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">✓</text>
+  <rect x="920" y="454" width="40" height="18" rx="9" fill="#EDFAF3"/>
+  <text x="940" y="467" text-anchor="middle" font-family="Arial" font-size="9" fill="#276B4C">ISP</text>
+  <text x="970" y="463" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">김다정 — 2026 ISP (목표·서비스)</text>
+  <text x="970" y="480" font-family="Arial" font-size="10" fill="#6B7280">현재 진행 중 · 본인 작성</text>
+
+  <rect x="876" y="506" width="508" height="56" rx="10" fill="#EDFAF3" stroke="#276B4C" stroke-width="2"/>
+  <rect x="892" y="520" width="20" height="20" rx="4" fill="#276B4C"/>
+  <text x="902" y="536" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">✓</text>
+  <rect x="920" y="522" width="40" height="18" rx="9" fill="#FFF5E6"/>
+  <text x="940" y="535" text-anchor="middle" font-family="Arial" font-size="9" fill="#B56F10">일상</text>
+  <text x="970" y="531" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">최근 활동지원 일지 (3건 평균)</text>
+  <text x="970" y="548" font-family="Arial" font-size="10" fill="#6B7280">5월 마지막주 ~ 6월 첫째주</text>
+
+  <rect x="876" y="574" width="508" height="56" rx="10" fill="#EDFAF3" stroke="#276B4C" stroke-width="2"/>
+  <rect x="892" y="588" width="20" height="20" rx="4" fill="#276B4C"/>
+  <text x="902" y="604" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">✓</text>
+  <rect x="920" y="590" width="40" height="18" rx="9" fill="#EEF4FD"/>
+  <text x="940" y="603" text-anchor="middle" font-family="Arial" font-size="9" fill="#2E5FA8">교육</text>
+  <text x="970" y="599" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">IEP 1학기 점검 결과</text>
+  <text x="970" y="616" font-family="Arial" font-size="10" fill="#6B7280">교육-복지 연계 핵심</text>
+
+  <rect x="876" y="642" width="508" height="56" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="892" y="656" width="20" height="20" rx="4" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <rect x="920" y="658" width="40" height="18" rx="9" fill="#F4EFFB"/>
+  <text x="940" y="671" text-anchor="middle" font-family="Arial" font-size="9" fill="#6A43A8">전환</text>
+  <text x="970" y="667" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">전환계획 — 향후 진로 (선택)</text>
+  <text x="970" y="684" font-family="Arial" font-size="10" fill="#6B7280">청소년기 · 참고용</text>
+
+  <rect x="876" y="710" width="508" height="56" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="892" y="724" width="20" height="20" rx="4" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <rect x="920" y="726" width="40" height="18" rx="9" fill="#FEF0F0"/>
+  <text x="940" y="739" text-anchor="middle" font-family="Arial" font-size="9" fill="#BF3030">의료</text>
+  <text x="970" y="735" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">최근 진료 기록 (3건)</text>
+  <text x="970" y="752" font-family="Arial" font-size="10" fill="#6B7280">참고 가능 · 권한 별도 필요</text>
+
+  <text x="1130" y="800" text-anchor="middle" font-family="Arial" font-size="11" fill="#9CA3AF">+ 18건 더 보기</text>
+
+  <rect x="876" y="826" width="248" height="40" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="1000" y="851" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">← 이전</text>
+  <rect x="1136" y="826" width="248" height="40" rx="8" fill="#276B4C"/>
+  <text x="1260" y="851" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">다음 → 미리보기</text>
+</svg>

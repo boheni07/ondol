@@ -1,0 +1,115 @@
+<svg viewBox="0 0 390 844" xmlns="http://www.w3.org/2000/svg">
+  <!-- G-30 · ST-07 Permission Matrix (Mobile) · 390×844 -->
+  <text x="8" y="12" font-family="Arial" font-size="9" fill="#9CA3AF">G-30 · ST-07 Permission Matrix · Mobile 390×844</text>
+  <rect width="390" height="844" fill="#F9FAFB"/>
+  <rect width="390" height="844" rx="0" fill="none" stroke="#E5E7EB"/>
+
+  <!-- Status bar -->
+  <rect width="390" height="44" fill="#FFFFFF"/>
+  <text x="20" y="30" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">9:41</text>
+
+  <!-- Nav bar -->
+  <rect y="44" width="390" height="56" fill="#FFFFFF"/>
+  <line y1="100" x1="0" y2="100" x2="390" stroke="#E5E7EB"/>
+  <text x="20" y="78" font-family="Arial" font-size="22" fill="#374151">←</text>
+  <text x="195" y="80" text-anchor="middle" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">권한 관리</text>
+  <text x="370" y="78" text-anchor="end" font-family="Arial" font-size="20" fill="#3B7D8E">+</text>
+
+  <!-- Person selector -->
+  <rect x="0" y="100" width="390" height="48" fill="#FFFFFF"/>
+  <line y1="148" x1="0" y2="148" x2="390" stroke="#E5E7EB"/>
+  <circle cx="36" cy="124" r="14" fill="#E8724A"/>
+  <text x="36" y="130" text-anchor="middle" font-family="Arial" font-size="11" fill="white">이</text>
+  <text x="60" y="130" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">이온돌 (20) ▾</text>
+
+  <!-- Summary cards -->
+  <rect x="16" y="164" width="172" height="56" rx="10" fill="#EEF4FD"/>
+  <text x="32" y="184" font-family="Arial" font-size="10" fill="#2E5FA8">활성 권한자</text>
+  <text x="32" y="206" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">6명</text>
+
+  <rect x="202" y="164" width="172" height="56" rx="10" fill="#FEF0F0"/>
+  <text x="218" y="184" font-family="Arial" font-size="10" fill="#BF3030">⚠ 권한 외 시도</text>
+  <text x="218" y="206" font-family="Arial" font-size="20" font-weight="bold" fill="#BF3030">2건</text>
+
+  <!-- Stakeholder cards -->
+  <text x="16" y="248" font-family="Arial" font-size="12" font-weight="bold" fill="#6B7280">이해관계자 (6)</text>
+
+  <!-- Card 1 -->
+  <rect x="16" y="260" width="358" height="84" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <circle cx="40" cy="290" r="18" fill="#2E5FA8"/>
+  <text x="40" y="296" text-anchor="middle" font-family="Arial" font-size="13" fill="white">이</text>
+  <text x="68" y="286" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">이특수교사</text>
+  <text x="68" y="304" font-family="Arial" font-size="10" fill="#6B7280">교사 · 2026.03 ~ 2027.02</text>
+  <rect x="16" y="322" width="358" height="22" fill="#F9FAFB"/>
+  <text x="28" y="338" font-family="Arial" font-size="10" font-weight="bold" fill="#374151">분야 권한</text>
+  <rect x="80" y="326" width="48" height="16" rx="8" fill="#EEF4FD"/>
+  <text x="104" y="338" text-anchor="middle" font-family="Arial" font-size="9" fill="#2E5FA8">교육·편집</text>
+  <rect x="134" y="326" width="48" height="16" rx="8" fill="#EDFAF3"/>
+  <text x="158" y="338" text-anchor="middle" font-family="Arial" font-size="9" fill="#276B4C">복지·열람</text>
+  <rect x="188" y="326" width="48" height="16" rx="8" fill="#F4EFFB"/>
+  <text x="212" y="338" text-anchor="middle" font-family="Arial" font-size="9" fill="#6A43A8">전환·작성</text>
+
+  <!-- Card 2 -->
+  <rect x="16" y="356" width="358" height="84" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <circle cx="40" cy="386" r="18" fill="#276B4C"/>
+  <text x="40" y="392" text-anchor="middle" font-family="Arial" font-size="13" fill="white">최</text>
+  <text x="68" y="382" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">최복지사</text>
+  <text x="68" y="400" font-family="Arial" font-size="10" fill="#6B7280">복지사 · 무기한</text>
+  <rect x="16" y="418" width="358" height="22" fill="#F9FAFB"/>
+  <text x="28" y="434" font-family="Arial" font-size="10" font-weight="bold" fill="#374151">분야 권한</text>
+  <rect x="80" y="422" width="48" height="16" rx="8" fill="#EDFAF3"/>
+  <text x="104" y="434" text-anchor="middle" font-family="Arial" font-size="9" fill="#276B4C">복지·편집</text>
+  <rect x="134" y="422" width="48" height="16" rx="8" fill="#F4EFFB"/>
+  <text x="158" y="434" text-anchor="middle" font-family="Arial" font-size="9" fill="#6A43A8">전환·편집</text>
+
+  <!-- Card 3 -->
+  <rect x="16" y="452" width="358" height="84" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <circle cx="40" cy="482" r="18" fill="#B56F10"/>
+  <text x="40" y="488" text-anchor="middle" font-family="Arial" font-size="13" fill="white">박</text>
+  <text x="68" y="478" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">박지원사</text>
+  <text x="68" y="496" font-family="Arial" font-size="10" fill="#6B7280">활동지원 · 2026.06 ~ 2027.05</text>
+  <rect x="16" y="514" width="358" height="22" fill="#F9FAFB"/>
+  <text x="28" y="530" font-family="Arial" font-size="10" font-weight="bold" fill="#374151">분야 권한</text>
+  <rect x="80" y="518" width="48" height="16" rx="8" fill="#FFF5E6"/>
+  <text x="104" y="530" text-anchor="middle" font-family="Arial" font-size="9" fill="#B56F10">일상·편집</text>
+
+  <!-- Card 4 -->
+  <rect x="16" y="548" width="358" height="84" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <circle cx="40" cy="578" r="18" fill="#BF3030"/>
+  <text x="40" y="584" text-anchor="middle" font-family="Arial" font-size="13" fill="white">김</text>
+  <text x="68" y="574" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">김의사</text>
+  <text x="68" y="592" font-family="Arial" font-size="10" fill="#6B7280">주치의 · 1년</text>
+  <rect x="16" y="610" width="358" height="22" fill="#F9FAFB"/>
+  <text x="28" y="626" font-family="Arial" font-size="10" font-weight="bold" fill="#374151">분야 권한</text>
+  <rect x="80" y="614" width="48" height="16" rx="8" fill="#FEF0F0"/>
+  <text x="104" y="626" text-anchor="middle" font-family="Arial" font-size="9" fill="#BF3030">의료·작성</text>
+
+  <!-- Card 5 -->
+  <rect x="16" y="644" width="358" height="84" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <circle cx="40" cy="674" r="18" fill="#6A43A8"/>
+  <text x="40" y="680" text-anchor="middle" font-family="Arial" font-size="13" fill="white">한</text>
+  <text x="68" y="670" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">한치료사</text>
+  <text x="68" y="688" font-family="Arial" font-size="10" fill="#6B7280">치료사 · 2026.01 ~ 2026.12</text>
+  <rect x="16" y="706" width="358" height="22" fill="#F9FAFB"/>
+  <text x="28" y="722" font-family="Arial" font-size="10" font-weight="bold" fill="#374151">분야 권한</text>
+  <rect x="80" y="710" width="48" height="16" rx="8" fill="#FEF0F0"/>
+  <text x="104" y="722" text-anchor="middle" font-family="Arial" font-size="9" fill="#BF3030">의료·작성</text>
+
+  <!-- Bottom tab bar -->
+  <rect y="744" width="390" height="60" fill="#FFFFFF"/>
+  <line y1="744" x1="0" y2="744" x2="390" stroke="#E5E7EB"/>
+  <text x="39" y="772" text-anchor="middle" font-family="Arial" font-size="20" fill="#9CA3AF">🏠</text>
+  <text x="39" y="790" text-anchor="middle" font-family="Arial" font-size="9" fill="#9CA3AF">홈</text>
+  <text x="117" y="772" text-anchor="middle" font-family="Arial" font-size="20" fill="#9CA3AF">📅</text>
+  <text x="117" y="790" text-anchor="middle" font-family="Arial" font-size="9" fill="#9CA3AF">타임라인</text>
+  <text x="195" y="772" text-anchor="middle" font-family="Arial" font-size="20" fill="#9CA3AF">📝</text>
+  <text x="195" y="790" text-anchor="middle" font-family="Arial" font-size="9" fill="#9CA3AF">기록</text>
+  <text x="273" y="772" text-anchor="middle" font-family="Arial" font-size="20" fill="#3B7D8E">🔑</text>
+  <text x="273" y="790" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#3B7D8E">권한</text>
+  <text x="351" y="772" text-anchor="middle" font-family="Arial" font-size="20" fill="#9CA3AF">⚙</text>
+  <text x="351" y="790" text-anchor="middle" font-family="Arial" font-size="9" fill="#9CA3AF">설정</text>
+
+  <!-- Bottom safe -->
+  <rect y="800" width="390" height="44" fill="#FFFFFF"/>
+  <rect x="155" y="820" width="80" height="5" rx="2.5" fill="#D1D5DB"/>
+</svg>

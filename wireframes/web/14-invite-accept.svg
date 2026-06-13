@@ -1,0 +1,57 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- A-06 · ST-09 Invite Accept · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">A-06 · ST-09 Invite Accept · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Top bar -->
+  <rect width="1440" height="64" fill="#FFFFFF"/>
+  <line x1="0" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="40" y="42" font-family="Arial" font-size="20" font-weight="bold" fill="#3B7D8E">온돌</text>
+  <text x="86" y="42" font-family="Arial" font-size="13" fill="#6B7280">OnDol</text>
+
+  <!-- Invite card -->
+  <rect x="380" y="130" width="680" height="670" rx="20" fill="#FFFFFF" stroke="#E5E7EB"/>
+
+  <!-- Top banner -->
+  <rect x="380" y="130" width="680" height="120" rx="20" fill="#3B7D8E"/>
+  <rect x="380" y="220" width="680" height="30" fill="#3B7D8E"/>
+  <text x="720" y="180" text-anchor="middle" font-family="Arial" font-size="14" fill="rgba(255,255,255,0.7)">초대장</text>
+  <text x="720" y="216" text-anchor="middle" font-family="Arial" font-size="24" font-weight="bold" fill="white">OnDol 권한 초대를 받으셨습니다</text>
+
+  <!-- Inviter section -->
+  <text x="720" y="306" text-anchor="middle" font-family="Arial" font-size="13" fill="#6B7280">초대한 보호자</text>
+  <circle cx="720" cy="350" r="32" fill="#3B7D8E"/>
+  <text x="720" y="358" text-anchor="middle" font-family="Arial" font-size="22" fill="white">김</text>
+  <text x="720" y="406" text-anchor="middle" font-family="Arial" font-size="17" font-weight="bold" fill="#111827">김보호자</text>
+  <text x="720" y="426" text-anchor="middle" font-family="Arial" font-size="13" fill="#6B7280">guardian@example.com</text>
+
+  <!-- Person box -->
+  <rect x="430" y="456" width="580" height="80" rx="12" fill="#F9FAFB" stroke="#E5E7EB"/>
+  <text x="450" y="482" font-family="Arial" font-size="12" fill="#6B7280">당사자</text>
+  <text x="450" y="508" font-family="Arial" font-size="16" font-weight="bold" fill="#111827">이온돌 (20세)</text>
+  <text x="450" y="528" font-family="Arial" font-size="12" fill="#6B7280">자폐성 장애 2급 · 성인전환기</text>
+  <rect x="918" y="478" width="76" height="32" rx="6" fill="#FFF8F4"/>
+  <text x="956" y="498" text-anchor="middle" font-family="Arial" font-size="11" fill="#E8724A">관리 대상</text>
+
+  <!-- Permission preview -->
+  <text x="430" y="568" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">부여될 권한</text>
+  <rect x="430" y="578" width="580" height="156" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <!-- domain rows -->
+  <text x="448" y="606" font-family="Arial" font-size="13" font-weight="bold" fill="#2E5FA8">교육 분야</text>
+  <text x="1000" y="606" text-anchor="end" font-family="Arial" font-size="12" fill="#374151">편집 가능</text>
+  <line x1="448" y1="618" x2="992" y2="618" stroke="#F3F4F6"/>
+  <text x="448" y="640" font-family="Arial" font-size="13" font-weight="bold" fill="#276B4C">복지서비스</text>
+  <text x="1000" y="640" text-anchor="end" font-family="Arial" font-size="12" fill="#374151">열람 가능</text>
+  <line x1="448" y1="652" x2="992" y2="652" stroke="#F3F4F6"/>
+  <text x="448" y="674" font-family="Arial" font-size="13" fill="#9CA3AF">의료 / 일상 / 전환 / 법적</text>
+  <text x="1000" y="674" text-anchor="end" font-family="Arial" font-size="12" fill="#9CA3AF">권한 없음</text>
+  <text x="448" y="716" font-family="Arial" font-size="11" fill="#6B7280">기간: 2026.06.12 ~ 2027.02.28 (학년도)</text>
+
+  <!-- Buttons -->
+  <rect x="430" y="754" width="280" height="48" rx="10" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="570" y="784" text-anchor="middle" font-family="Arial" font-size="14" fill="#374151">거절</text>
+  <rect x="730" y="754" width="280" height="48" rx="10" fill="#3B7D8E"/>
+  <text x="870" y="784" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="white">초대 수락 (회원가입)</text>
+
+  <text x="720" y="828" text-anchor="middle" font-family="Arial" font-size="11" fill="#9CA3AF">수락 시 회원가입이 진행됩니다. 거절 시 보호자에게 알림이 갑니다.</text>
+</svg>

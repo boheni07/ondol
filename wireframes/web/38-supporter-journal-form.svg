@@ -1,0 +1,142 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- S-12 · ST-05 Journal Wizard (Step 2/5) · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">S-12 · ST-05 Journal Wizard (Step 2/5 활동내역) · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Sidebar collapsed -->
+  <rect width="64" height="900" fill="#F5F5F5"/>
+  <rect width="64" height="64" fill="#FFFFFF"/>
+  <text x="32" y="42" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#B56F10">온</text>
+
+  <!-- Header -->
+  <rect x="64" width="1376" height="64" fill="#FFFFFF"/><line x1="64" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="96" y="40" font-family="Arial" font-size="13" fill="#6B7280">일지 / <tspan fill="#111827" font-weight="bold">새 일지 — 이온돌</tspan></text>
+  <rect x="1244" y="16" width="120" height="32" rx="6" fill="#FFF5E6"/>
+  <text x="1304" y="36" text-anchor="middle" font-family="Arial" font-size="11" fill="#925810">자동저장 · 30초 전</text>
+
+  <!-- Step indicator -->
+  <rect x="64" y="64" width="1376" height="76" fill="#FFFFFF"/>
+  <line x1="64" y1="140" x2="1440" y2="140" stroke="#E5E7EB"/>
+  <g>
+    <circle cx="288" cy="100" r="14" fill="#B56F10"/><text x="288" y="105" text-anchor="middle" font-family="Arial" font-size="11" fill="white">✓</text>
+    <text x="288" y="128" text-anchor="middle" font-family="Arial" font-size="11" fill="#374151">서비스 정보</text>
+    <line x1="306" y1="100" x2="498" y2="100" stroke="#B56F10" stroke-width="2"/>
+
+    <circle cx="516" cy="100" r="14" fill="#B56F10"/><text x="516" y="105" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="white">2</text>
+    <text x="516" y="128" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#B56F10">활동 내역</text>
+    <line x1="534" y1="100" x2="726" y2="100" stroke="#E5E7EB" stroke-width="2"/>
+
+    <circle cx="744" cy="100" r="14" fill="#E5E7EB"/><text x="744" y="105" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7280">3</text>
+    <text x="744" y="128" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7280">식사·건강</text>
+    <line x1="762" y1="100" x2="954" y2="100" stroke="#E5E7EB" stroke-width="2"/>
+
+    <circle cx="972" cy="100" r="14" fill="#E5E7EB"/><text x="972" y="105" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7280">4</text>
+    <text x="972" y="128" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7280">특이사항</text>
+    <line x1="990" y1="100" x2="1182" y2="100" stroke="#E5E7EB" stroke-width="2"/>
+
+    <circle cx="1200" cy="100" r="14" fill="#E5E7EB"/><text x="1200" y="105" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7280">5</text>
+    <text x="1200" y="128" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7280">확인·제출</text>
+  </g>
+
+  <!-- Form -->
+  <rect x="280" y="172" width="840" height="640" rx="16" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="312" y="208" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">오늘은 어떤 활동을 했나요?</text>
+  <text x="312" y="232" font-family="Arial" font-size="13" fill="#6B7280">활동을 추가하고 소요 시간을 입력하세요. 사진도 함께 첨부 가능합니다</text>
+
+  <!-- Activity 1 -->
+  <rect x="312" y="260" width="780" height="120" rx="12" fill="#FFF5E6" stroke="#F2C94C"/>
+  <text x="332" y="288" font-family="Arial" font-size="13" font-weight="bold" fill="#92670D">활동 1</text>
+  <rect x="396" y="276" width="60" height="20" rx="10" fill="#FFFFFF"/>
+  <text x="426" y="290" text-anchor="middle" font-family="Arial" font-size="11" fill="#374151">신변지원</text>
+  <text x="1070" y="288" text-anchor="end" font-family="Arial" font-size="12" fill="#BF3030">🗑 삭제</text>
+
+  <text x="332" y="320" font-family="Arial" font-size="11" fill="#6B7280">활동 내용</text>
+  <rect x="332" y="328" width="496" height="36" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="346" y="350" font-family="Arial" font-size="12" fill="#111827">화장실 도움 · 옷 갈아입기</text>
+
+  <text x="852" y="320" font-family="Arial" font-size="11" fill="#6B7280">시간</text>
+  <rect x="852" y="328" width="100" height="36" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="866" y="350" font-family="Arial" font-size="12" fill="#111827">13:00</text>
+  <rect x="960" y="328" width="100" height="36" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="974" y="350" font-family="Arial" font-size="12" fill="#111827">13:20</text>
+
+  <!-- Activity 2 -->
+  <rect x="312" y="396" width="780" height="120" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="332" y="424" font-family="Arial" font-size="13" font-weight="bold" fill="#92670D">활동 2</text>
+  <rect x="396" y="412" width="50" height="20" rx="10" fill="#F9FAFB"/>
+  <text x="421" y="426" text-anchor="middle" font-family="Arial" font-size="11" fill="#374151">외출</text>
+
+  <text x="332" y="456" font-family="Arial" font-size="11" fill="#6B7280">활동 내용</text>
+  <rect x="332" y="464" width="496" height="36" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="346" y="486" font-family="Arial" font-size="12" fill="#111827">동네 산책 · 도서관 방문</text>
+
+  <text x="852" y="456" font-family="Arial" font-size="11" fill="#6B7280">시간</text>
+  <rect x="852" y="464" width="100" height="36" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="866" y="486" font-family="Arial" font-size="12" fill="#111827">13:30</text>
+  <rect x="960" y="464" width="100" height="36" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="974" y="486" font-family="Arial" font-size="12" fill="#111827">15:30</text>
+
+  <!-- Activity 3 -->
+  <rect x="312" y="532" width="780" height="120" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="332" y="560" font-family="Arial" font-size="13" font-weight="bold" fill="#92670D">활동 3</text>
+  <rect x="396" y="548" width="50" height="20" rx="10" fill="#F9FAFB"/>
+  <text x="421" y="562" text-anchor="middle" font-family="Arial" font-size="11" fill="#374151">식사</text>
+
+  <text x="332" y="592" font-family="Arial" font-size="11" fill="#6B7280">활동 내용</text>
+  <rect x="332" y="600" width="496" height="36" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="346" y="622" font-family="Arial" font-size="12" fill="#111827">저녁 식사 준비·식사 보조</text>
+
+  <text x="852" y="592" font-family="Arial" font-size="11" fill="#6B7280">시간</text>
+  <rect x="852" y="600" width="100" height="36" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="866" y="622" font-family="Arial" font-size="12" fill="#111827">16:00</text>
+  <rect x="960" y="600" width="100" height="36" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="974" y="622" font-family="Arial" font-size="12" fill="#111827">16:45</text>
+
+  <!-- Add activity -->
+  <rect x="312" y="668" width="780" height="56" rx="12" fill="#F9FAFB" stroke="#D1D5DB" stroke-dasharray="6 4"/>
+  <text x="702" y="700" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#B56F10">+ 활동 추가</text>
+
+  <!-- Total -->
+  <rect x="312" y="740" width="780" height="56" rx="10" fill="#FFF5E6"/>
+  <text x="332" y="774" font-family="Arial" font-size="13" font-weight="bold" fill="#925810">총 활동 시간 (자동 계산)</text>
+  <text x="1072" y="774" text-anchor="end" font-family="Arial" font-size="20" font-weight="bold" fill="#B56F10">3시간 5분</text>
+
+  <!-- Right summary panel -->
+  <rect x="1144" y="172" width="264" height="640" rx="16" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="1168" y="204" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">📋 입력 요약</text>
+  <line x1="1168" y1="218" x2="1384" y2="218" stroke="#E5E7EB"/>
+
+  <text x="1168" y="246" font-family="Arial" font-size="11" fill="#9CA3AF">서비스 정보</text>
+  <text x="1168" y="266" font-family="Arial" font-size="12" fill="#111827">이온돌</text>
+  <text x="1168" y="282" font-family="Arial" font-size="12" fill="#111827">2026-06-12 (목)</text>
+  <text x="1168" y="298" font-family="Arial" font-size="12" fill="#111827">13:00 시작 (예정 17:00)</text>
+
+  <line x1="1168" y1="320" x2="1384" y2="320" stroke="#F3F4F6"/>
+  <text x="1168" y="346" font-family="Arial" font-size="11" fill="#9CA3AF">활동 (3건)</text>
+  <text x="1168" y="368" font-family="Arial" font-size="12" font-weight="bold" fill="#B56F10">3시간 5분</text>
+  <text x="1168" y="386" font-family="Arial" font-size="11" fill="#374151">신변 20분 / 외출 120분 / 식사 45분</text>
+
+  <line x1="1168" y1="404" x2="1384" y2="404" stroke="#F3F4F6"/>
+  <text x="1168" y="430" font-family="Arial" font-size="11" fill="#9CA3AF">남은 입력</text>
+  <text x="1168" y="450" font-family="Arial" font-size="12" fill="#6B7280">⚪ 식사·건강</text>
+  <text x="1168" y="468" font-family="Arial" font-size="12" fill="#6B7280">⚪ 특이사항</text>
+  <text x="1168" y="486" font-family="Arial" font-size="12" fill="#6B7280">⚪ 확인·제출</text>
+
+  <line x1="1168" y1="510" x2="1384" y2="510" stroke="#F3F4F6"/>
+  <text x="1168" y="536" font-family="Arial" font-size="11" fill="#9CA3AF">💡 도움말</text>
+  <text x="1168" y="556" font-family="Arial" font-size="11" fill="#6B7280">활동 카테고리 추천:</text>
+  <text x="1168" y="572" font-family="Arial" font-size="11" fill="#374151">- 신변지원 (옷·청결)</text>
+  <text x="1168" y="588" font-family="Arial" font-size="11" fill="#374151">- 가사지원 (청소·세탁)</text>
+  <text x="1168" y="604" font-family="Arial" font-size="11" fill="#374151">- 외출 (이동·사회참여)</text>
+  <text x="1168" y="620" font-family="Arial" font-size="11" fill="#374151">- 신변 외 의사소통, 식사</text>
+
+  <!-- Sticky footer -->
+  <rect x="64" y="828" width="1376" height="72" fill="#FFFFFF"/>
+  <line x1="64" y1="828" x2="1440" y2="828" stroke="#E5E7EB"/>
+  <rect x="280" y="846" width="160" height="48" rx="10" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="360" y="876" text-anchor="middle" font-family="Arial" font-size="14" fill="#374151">← 이전</text>
+  <rect x="448" y="846" width="160" height="48" rx="10" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="528" y="876" text-anchor="middle" font-family="Arial" font-size="14" fill="#374151">임시저장</text>
+  <rect x="932" y="846" width="200" height="48" rx="10" fill="#B56F10"/>
+  <text x="1032" y="876" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="white">다음 →</text>
+</svg>

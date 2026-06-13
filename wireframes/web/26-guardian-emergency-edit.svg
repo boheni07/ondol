@@ -1,0 +1,119 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- G-63 · ST-04 Emergency Info Edit · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">G-63 · ST-04 Emergency Info Edit · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Sidebar -->
+  <rect width="240" height="900" fill="#F5F5F5"/>
+  <rect width="240" height="64" fill="#FFFFFF"/><line x1="0" y1="64" x2="240" y2="64" stroke="#E5E7EB"/>
+  <text x="24" y="42" font-family="Arial" font-size="18" font-weight="bold" fill="#3B7D8E">온돌</text>
+  <text x="24" y="120" font-family="Arial" font-size="11" font-weight="bold" fill="#9CA3AF">설정</text>
+  <text x="44" y="148" font-family="Arial" font-size="13" fill="#6B7280">내 프로필</text>
+  <rect x="0" y="160" width="240" height="40" fill="#EEF4FD"/>
+  <text x="44" y="186" font-family="Arial" font-size="13" font-weight="bold" fill="#2E5FA8">당사자 정보</text>
+
+  <!-- Header -->
+  <rect x="240" width="1200" height="64" fill="#FFFFFF"/><line x1="240" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="272" y="40" font-family="Arial" font-size="13" fill="#6B7280">설정 / 당사자 정보 / 이온돌 / <tspan fill="#BF3030" font-weight="bold">⚠ 응급 정보</tspan></text>
+
+  <!-- Title -->
+  <rect x="272" y="96" width="1136" height="80" rx="12" fill="#FEF0F0" stroke="#FACDB8"/>
+  <circle cx="316" cy="136" r="22" fill="#BF3030"/>
+  <text x="316" y="143" text-anchor="middle" font-family="Arial" font-size="20" fill="white">!</text>
+  <text x="352" y="128" font-family="Arial" font-size="18" font-weight="bold" fill="#BF3030">응급 정보 — 이온돌</text>
+  <text x="352" y="152" font-family="Arial" font-size="12" fill="#6B7280">의료진·지원사·교사가 응급 상황에서 빠르게 확인할 수 있는 정보입니다. 정확히 입력해 주세요.</text>
+  <text x="1388" y="148" text-anchor="end" font-family="Arial" font-size="11" fill="#6B7280">마지막 수정 2026-05-22</text>
+
+  <!-- Card 1 - Allergies -->
+  <rect x="272" y="200" width="556" height="184" rx="12" fill="#FFFFFF" stroke="#FACDB8"/>
+  <text x="292" y="228" font-family="Arial" font-size="14" font-weight="bold" fill="#BF3030">알레르기 <tspan fill="#E04545">*</tspan></text>
+  <rect x="292" y="240" width="516" height="48" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <rect x="308" y="254" width="68" height="22" rx="11" fill="#FEF0F0"/>
+  <text x="342" y="270" text-anchor="middle" font-family="Arial" font-size="11" fill="#BF3030">땅콩 ×</text>
+  <rect x="384" y="254" width="60" height="22" rx="11" fill="#FEF0F0"/>
+  <text x="414" y="270" text-anchor="middle" font-family="Arial" font-size="11" fill="#BF3030">새우 ×</text>
+  <rect x="452" y="254" width="80" height="22" rx="11" fill="#FEF0F0"/>
+  <text x="492" y="270" text-anchor="middle" font-family="Arial" font-size="11" fill="#BF3030">고양이털 ×</text>
+  <text x="544" y="270" font-family="Arial" font-size="12" fill="#9CA3AF">+ 추가</text>
+
+  <text x="292" y="316" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">알레르기 반응 메모</text>
+  <rect x="292" y="326" width="516" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="308" y="353" font-family="Arial" font-size="13" fill="#111827">땅콩 섭취 시 호흡곤란, 에피펜 휴대</text>
+
+  <!-- Card 2 - Forbidden meds -->
+  <rect x="852" y="200" width="556" height="184" rx="12" fill="#FFFFFF" stroke="#FACDB8"/>
+  <text x="872" y="228" font-family="Arial" font-size="14" font-weight="bold" fill="#BF3030">금기 약물 <tspan fill="#E04545">*</tspan></text>
+  <rect x="872" y="240" width="516" height="48" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <rect x="888" y="254" width="120" height="22" rx="11" fill="#FEF0F0"/>
+  <text x="948" y="270" text-anchor="middle" font-family="Arial" font-size="11" fill="#BF3030">페니실린 계열 ×</text>
+  <rect x="1016" y="254" width="100" height="22" rx="11" fill="#FEF0F0"/>
+  <text x="1066" y="270" text-anchor="middle" font-family="Arial" font-size="11" fill="#BF3030">아스피린 ×</text>
+
+  <text x="872" y="316" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">현재 복용 약</text>
+  <rect x="872" y="326" width="516" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="888" y="353" font-family="Arial" font-size="13" fill="#111827">리스페달 1mg, 1일 1회 (취침 전, 김의사 처방)</text>
+
+  <!-- Card 3 - Emergency contacts -->
+  <rect x="272" y="404" width="1136" height="220" rx="12" fill="#FFFFFF" stroke="#FACDB8"/>
+  <text x="292" y="432" font-family="Arial" font-size="14" font-weight="bold" fill="#BF3030">비상연락처 (3순위까지)</text>
+
+  <!-- Contact 1 -->
+  <rect x="292" y="446" width="1096" height="48" rx="8" fill="#F9FAFB"/>
+  <rect x="304" y="458" width="20" height="24" rx="4" fill="#BF3030"/>
+  <text x="314" y="476" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">1</text>
+  <rect x="340" y="454" width="220" height="32" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="356" y="475" font-family="Arial" font-size="13" fill="#111827">김보호자 (모)</text>
+  <rect x="576" y="454" width="220" height="32" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="592" y="475" font-family="Arial" font-size="13" fill="#111827">010-1234-5678</text>
+  <rect x="812" y="454" width="220" height="32" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="828" y="475" font-family="Arial" font-size="13" fill="#111827">관계: 모 (보호자)</text>
+
+  <!-- Contact 2 -->
+  <rect x="292" y="502" width="1096" height="48" rx="8" fill="#F9FAFB"/>
+  <rect x="304" y="514" width="20" height="24" rx="4" fill="#E8724A"/>
+  <text x="314" y="532" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">2</text>
+  <rect x="340" y="510" width="220" height="32" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="356" y="531" font-family="Arial" font-size="13" fill="#111827">이아버지</text>
+  <rect x="576" y="510" width="220" height="32" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="592" y="531" font-family="Arial" font-size="13" fill="#111827">010-2345-6789</text>
+  <rect x="812" y="510" width="220" height="32" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="828" y="531" font-family="Arial" font-size="13" fill="#111827">관계: 부</text>
+
+  <!-- Contact 3 -->
+  <rect x="292" y="558" width="1096" height="48" rx="8" fill="#F9FAFB"/>
+  <rect x="304" y="570" width="20" height="24" rx="4" fill="#9CA3AF"/>
+  <text x="314" y="588" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">3</text>
+  <rect x="340" y="566" width="220" height="32" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="356" y="587" font-family="Arial" font-size="13" fill="#9CA3AF">선택 — 이모, 형제 등</text>
+  <rect x="576" y="566" width="220" height="32" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="592" y="587" font-family="Arial" font-size="13" fill="#9CA3AF">010-0000-0000</text>
+  <rect x="812" y="566" width="220" height="32" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="828" y="587" font-family="Arial" font-size="13" fill="#9CA3AF">관계</text>
+
+  <!-- Card 4 - Medical contacts -->
+  <rect x="272" y="644" width="1136" height="160" rx="12" fill="#FFFFFF" stroke="#FACDB8"/>
+  <text x="292" y="672" font-family="Arial" font-size="14" font-weight="bold" fill="#BF3030">의료 정보</text>
+
+  <text x="292" y="700" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">주치의</text>
+  <rect x="292" y="710" width="350" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="308" y="737" font-family="Arial" font-size="13" fill="#111827">박교수 (서울아동발달센터)</text>
+
+  <text x="660" y="700" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">주치의 연락처</text>
+  <rect x="660" y="710" width="350" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="676" y="737" font-family="Arial" font-size="13" fill="#111827">02-3456-7890</text>
+
+  <text x="1028" y="700" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">의료보장</text>
+  <rect x="1028" y="710" width="360" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="1044" y="737" font-family="Arial" font-size="13" fill="#111827">건강보험 + 의료급여 1종</text>
+
+  <text x="292" y="780" font-family="Arial" font-size="11" fill="#6B7280">💡 응급 상황 시 보호자 → 부 → 주치의 순으로 연락하도록 권장됩니다</text>
+
+  <!-- Save bar -->
+  <rect x="240" y="828" width="1200" height="72" fill="#FEF0F0"/>
+  <line x1="240" y1="828" x2="1440" y2="828" stroke="#FACDB8"/>
+  <text x="272" y="868" font-family="Arial" font-size="12" fill="#BF3030">⚠ 응급 정보는 의료/일상 권한자 모두에게 항상 표시됩니다</text>
+  <rect x="1216" y="846" width="80" height="40" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="1256" y="870" text-anchor="middle" font-family="Arial" font-size="13" fill="#6B7280">취소</text>
+  <rect x="1304" y="846" width="104" height="40" rx="8" fill="#BF3030"/>
+  <text x="1356" y="870" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">저장</text>
+</svg>

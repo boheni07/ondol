@@ -1,0 +1,181 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- G-40 · ST-07 Access Log Matrix · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">G-40 · ST-07 Access Log · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Sidebar -->
+  <rect width="240" height="900" fill="#F5F5F5"/>
+  <rect width="240" height="64" fill="#FFFFFF"/><line x1="0" y1="64" x2="240" y2="64" stroke="#E5E7EB"/>
+  <text x="24" y="42" font-family="Arial" font-size="18" font-weight="bold" fill="#3B7D8E">온돌</text>
+  <circle cx="32" cy="86" r="7" fill="#D1D5DB"/><text x="52" y="91" font-family="Arial" font-size="13" fill="#374151">홈</text>
+  <circle cx="32" cy="130" r="7" fill="#D1D5DB"/><text x="52" y="135" font-family="Arial" font-size="13" fill="#374151">타임라인</text>
+  <circle cx="32" cy="174" r="7" fill="#D1D5DB"/><text x="52" y="179" font-family="Arial" font-size="13" fill="#374151">기록 관리</text>
+  <circle cx="32" cy="218" r="7" fill="#D1D5DB"/><text x="52" y="223" font-family="Arial" font-size="13" fill="#374151">권한 관리</text>
+  <rect y="240" width="240" height="44" fill="#EEF4FD"/><rect y="240" width="3" height="44" fill="#3B7D8E"/>
+  <circle cx="32" cy="262" r="7" fill="#4377C0"/><text x="52" y="267" font-family="Arial" font-size="13" font-weight="bold" fill="#2E5FA8">접근 로그</text>
+  <circle cx="32" cy="306" r="7" fill="#D1D5DB"/><text x="52" y="311" font-family="Arial" font-size="13" fill="#374151">알림</text>
+
+  <!-- Header -->
+  <rect x="240" width="1200" height="64" fill="#FFFFFF"/><line x1="240" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="272" y="40" font-family="Arial" font-size="13" fill="#6B7280">접근 로그 / <tspan fill="#111827" font-weight="bold">이온돌</tspan></text>
+  <text x="1408" y="40" text-anchor="end" font-family="Arial" font-size="13" fill="#3B7D8E">⬇ CSV 내보내기</text>
+
+  <!-- Summary cards -->
+  <rect x="272" y="96" width="272" height="80" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="288" y="120" font-family="Arial" font-size="12" fill="#6B7280">최근 30일 접근</text>
+  <text x="288" y="148" font-family="Arial" font-size="24" font-weight="bold" fill="#111827">342</text>
+  <text x="288" y="166" font-family="Arial" font-size="11" fill="#22A06B">↑ 전월 대비 +12%</text>
+
+  <rect x="560" y="96" width="272" height="80" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="576" y="120" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">접근자 수</text>
+  <text x="576" y="148" font-family="Arial" font-size="24" font-weight="bold" fill="#111827">6명</text>
+  <text x="576" y="166" font-family="Arial" font-size="11" fill="#6B7280">권한 보유자 전원</text>
+
+  <rect x="848" y="96" width="272" height="80" rx="12" fill="#FEF0F0" stroke="#FACDB8"/>
+  <text x="864" y="120" font-family="Arial" font-size="12" font-weight="bold" fill="#BF3030">이상 활동</text>
+  <text x="864" y="148" font-family="Arial" font-size="24" font-weight="bold" fill="#BF3030">2건</text>
+  <text x="864" y="166" font-family="Arial" font-size="11" fill="#6B7280">권한 외 시도 · 새벽 접근</text>
+
+  <rect x="1136" y="96" width="272" height="80" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="1152" y="120" font-family="Arial" font-size="12" fill="#6B7280">가장 많은 활동</text>
+  <text x="1152" y="148" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">박활동지원사</text>
+  <text x="1152" y="166" font-family="Arial" font-size="11" fill="#6B7280">158회 (일지 작성)</text>
+
+  <!-- Filter bar -->
+  <rect x="272" y="196" width="1136" height="56" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="296" y="228" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">필터</text>
+  <rect x="344" y="208" width="160" height="32" rx="6" fill="#F3F4F6"/>
+  <text x="424" y="228" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">최근 30일 ▾</text>
+  <rect x="520" y="208" width="160" height="32" rx="6" fill="#F3F4F6"/>
+  <text x="600" y="228" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">접근자 (전체) ▾</text>
+  <rect x="696" y="208" width="160" height="32" rx="6" fill="#F3F4F6"/>
+  <text x="776" y="228" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">분야 (전체) ▾</text>
+  <rect x="872" y="208" width="160" height="32" rx="6" fill="#F3F4F6"/>
+  <text x="952" y="228" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">동작 (전체) ▾</text>
+  <rect x="1048" y="208" width="180" height="32" rx="6" fill="#FEF0F0"/>
+  <text x="1138" y="228" text-anchor="middle" font-family="Arial" font-size="12" fill="#BF3030">⚠ 이상 활동만</text>
+
+  <!-- Table -->
+  <rect x="272" y="272" width="1136" height="600" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <!-- Table header -->
+  <rect x="272" y="272" width="1136" height="44" fill="#F9FAFB"/>
+  <text x="296" y="298" font-family="Arial" font-size="12" font-weight="bold" fill="#6B7280">일시</text>
+  <text x="448" y="298" font-family="Arial" font-size="12" font-weight="bold" fill="#6B7280">접근자</text>
+  <text x="640" y="298" font-family="Arial" font-size="12" font-weight="bold" fill="#6B7280">분야</text>
+  <text x="744" y="298" font-family="Arial" font-size="12" font-weight="bold" fill="#6B7280">동작</text>
+  <text x="864" y="298" font-family="Arial" font-size="12" font-weight="bold" fill="#6B7280">대상 기록</text>
+  <text x="1280" y="298" font-family="Arial" font-size="12" font-weight="bold" fill="#6B7280">IP / 디바이스</text>
+
+  <!-- Rows -->
+  <g>
+    <text x="296" y="346" font-family="Arial" font-size="12" fill="#111827">06-12 14:30</text>
+    <text x="448" y="346" font-family="Arial" font-size="12" fill="#111827">김의사</text>
+    <rect x="640" y="334" width="48" height="20" rx="10" fill="#FEF0F0"/>
+    <text x="664" y="348" text-anchor="middle" font-family="Arial" font-size="10" fill="#BF3030">의료</text>
+    <rect x="744" y="334" width="56" height="20" rx="10" fill="#EDFAF3"/>
+    <text x="772" y="348" text-anchor="middle" font-family="Arial" font-size="10" fill="#276B4C">작성</text>
+    <text x="864" y="346" font-family="Arial" font-size="12" fill="#111827">정기 진료 — 소아청소년과</text>
+    <text x="1280" y="346" font-family="Arial" font-size="11" fill="#6B7280">PC · Chrome · 서울</text>
+    <line x1="296" y1="362" x2="1392" y2="362" stroke="#F3F4F6"/>
+
+    <text x="296" y="392" font-family="Arial" font-size="12" fill="#111827">06-12 10:48</text>
+    <text x="448" y="392" font-family="Arial" font-size="12" fill="#111827">박활동지원사</text>
+    <rect x="640" y="380" width="48" height="20" rx="10" fill="#FFF5E6"/>
+    <text x="664" y="394" text-anchor="middle" font-family="Arial" font-size="10" fill="#B56F10">일상</text>
+    <rect x="744" y="380" width="56" height="20" rx="10" fill="#EEF4FD"/>
+    <text x="772" y="394" text-anchor="middle" font-family="Arial" font-size="10" fill="#2E5FA8">열람</text>
+    <text x="864" y="392" font-family="Arial" font-size="12" fill="#111827">2026-06-11 일지</text>
+    <text x="1280" y="392" font-family="Arial" font-size="11" fill="#6B7280">모바일 · iOS · 서울</text>
+    <line x1="296" y1="408" x2="1392" y2="408" stroke="#F3F4F6"/>
+
+    <text x="296" y="438" font-family="Arial" font-size="12" fill="#111827">06-12 08:12</text>
+    <text x="448" y="438" font-family="Arial" font-size="12" fill="#111827">이특수교사</text>
+    <rect x="640" y="426" width="48" height="20" rx="10" fill="#EEF4FD"/>
+    <text x="664" y="440" text-anchor="middle" font-family="Arial" font-size="10" fill="#2E5FA8">교육</text>
+    <rect x="744" y="426" width="56" height="20" rx="10" fill="#EEF4FD"/>
+    <text x="772" y="440" text-anchor="middle" font-family="Arial" font-size="10" fill="#2E5FA8">열람</text>
+    <text x="864" y="438" font-family="Arial" font-size="12" fill="#111827">IEP 2026-1학기</text>
+    <text x="1280" y="438" font-family="Arial" font-size="11" fill="#6B7280">PC · Safari · 강남</text>
+    <line x1="296" y1="454" x2="1392" y2="454" stroke="#F3F4F6"/>
+
+    <!-- Anomaly row 1 -->
+    <rect x="272" y="464" width="1136" height="44" fill="#FEF0F0"/>
+    <text x="296" y="484" font-family="Arial" font-size="12" fill="#BF3030">⚠ 06-11 23:42</text>
+    <text x="448" y="484" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">한치료사</text>
+    <rect x="640" y="472" width="48" height="20" rx="10" fill="#F3F4F6"/>
+    <text x="664" y="486" text-anchor="middle" font-family="Arial" font-size="10" fill="#9CA3AF">교육</text>
+    <rect x="744" y="472" width="64" height="20" rx="10" fill="#FEF0F0"/>
+    <text x="776" y="486" text-anchor="middle" font-family="Arial" font-size="10" fill="#BF3030">권한 외</text>
+    <text x="864" y="484" font-family="Arial" font-size="12" fill="#BF3030">IEP 열람 시도 (차단됨)</text>
+    <text x="1280" y="484" font-family="Arial" font-size="11" fill="#6B7280">PC · 새벽 시간</text>
+
+    <text x="296" y="538" font-family="Arial" font-size="12" fill="#111827">06-11 19:00</text>
+    <text x="448" y="538" font-family="Arial" font-size="12" fill="#111827">박활동지원사</text>
+    <rect x="640" y="526" width="48" height="20" rx="10" fill="#FFF5E6"/>
+    <text x="664" y="540" text-anchor="middle" font-family="Arial" font-size="10" fill="#B56F10">일상</text>
+    <rect x="744" y="526" width="56" height="20" rx="10" fill="#EDFAF3"/>
+    <text x="772" y="540" text-anchor="middle" font-family="Arial" font-size="10" fill="#276B4C">작성</text>
+    <text x="864" y="538" font-family="Arial" font-size="12" fill="#111827">활동지원 일지 — 2026-06-11</text>
+    <text x="1280" y="538" font-family="Arial" font-size="11" fill="#6B7280">모바일 · iOS · 서울</text>
+    <line x1="296" y1="554" x2="1392" y2="554" stroke="#F3F4F6"/>
+
+    <text x="296" y="584" font-family="Arial" font-size="12" fill="#111827">06-11 16:00</text>
+    <text x="448" y="584" font-family="Arial" font-size="12" fill="#111827">한치료사</text>
+    <rect x="640" y="572" width="48" height="20" rx="10" fill="#FEF0F0"/>
+    <text x="664" y="586" text-anchor="middle" font-family="Arial" font-size="10" fill="#BF3030">의료</text>
+    <rect x="744" y="572" width="56" height="20" rx="10" fill="#EDFAF3"/>
+    <text x="772" y="586" text-anchor="middle" font-family="Arial" font-size="10" fill="#276B4C">작성</text>
+    <text x="864" y="584" font-family="Arial" font-size="12" fill="#111827">언어치료 회기 — 발음 명료도</text>
+    <text x="1280" y="584" font-family="Arial" font-size="11" fill="#6B7280">PC · Chrome · 강남</text>
+    <line x1="296" y1="600" x2="1392" y2="600" stroke="#F3F4F6"/>
+
+    <text x="296" y="630" font-family="Arial" font-size="12" fill="#111827">06-10 11:20</text>
+    <text x="448" y="630" font-family="Arial" font-size="12" fill="#111827">최복지사</text>
+    <rect x="640" y="618" width="48" height="20" rx="10" fill="#EDFAF3"/>
+    <text x="664" y="632" text-anchor="middle" font-family="Arial" font-size="10" fill="#276B4C">복지</text>
+    <rect x="744" y="618" width="56" height="20" rx="10" fill="#FFF8F4"/>
+    <text x="772" y="632" text-anchor="middle" font-family="Arial" font-size="10" fill="#E8724A">편집</text>
+    <text x="864" y="630" font-family="Arial" font-size="12" fill="#111827">ISP 2026 — 목표 항목 수정</text>
+    <text x="1280" y="630" font-family="Arial" font-size="11" fill="#6B7280">PC · Chrome · 강북</text>
+    <line x1="296" y1="646" x2="1392" y2="646" stroke="#F3F4F6"/>
+
+    <text x="296" y="676" font-family="Arial" font-size="12" fill="#111827">06-10 09:12</text>
+    <text x="448" y="676" font-family="Arial" font-size="12" fill="#111827">이온돌 (당사자)</text>
+    <rect x="640" y="664" width="64" height="20" rx="10" fill="#FFF8F4"/>
+    <text x="672" y="678" text-anchor="middle" font-family="Arial" font-size="10" fill="#E8724A">자기표현</text>
+    <rect x="744" y="664" width="56" height="20" rx="10" fill="#EDFAF3"/>
+    <text x="772" y="678" text-anchor="middle" font-family="Arial" font-size="10" fill="#276B4C">작성</text>
+    <text x="864" y="676" font-family="Arial" font-size="12" fill="#111827">오늘 기분: 😊 좋아요</text>
+    <text x="1280" y="676" font-family="Arial" font-size="11" fill="#6B7280">모바일 · iOS · 집</text>
+    <line x1="296" y1="692" x2="1392" y2="692" stroke="#F3F4F6"/>
+
+    <text x="296" y="722" font-family="Arial" font-size="12" fill="#111827">06-09 14:32</text>
+    <text x="448" y="722" font-family="Arial" font-size="12" fill="#111827">이특수교사</text>
+    <rect x="640" y="710" width="48" height="20" rx="10" fill="#EEF4FD"/>
+    <text x="664" y="724" text-anchor="middle" font-family="Arial" font-size="10" fill="#2E5FA8">교육</text>
+    <rect x="744" y="710" width="56" height="20" rx="10" fill="#EDFAF3"/>
+    <text x="772" y="724" text-anchor="middle" font-family="Arial" font-size="10" fill="#276B4C">작성</text>
+    <text x="864" y="722" font-family="Arial" font-size="12" fill="#111827">관찰 기록 — 6월 둘째주</text>
+    <text x="1280" y="722" font-family="Arial" font-size="11" fill="#6B7280">PC · Chrome · 학교</text>
+    <line x1="296" y1="738" x2="1392" y2="738" stroke="#F3F4F6"/>
+
+    <text x="296" y="768" font-family="Arial" font-size="12" fill="#111827">06-08 09:48</text>
+    <text x="448" y="768" font-family="Arial" font-size="12" fill="#111827">이특수교사</text>
+    <rect x="640" y="756" width="48" height="20" rx="10" fill="#EDFAF3"/>
+    <text x="664" y="770" text-anchor="middle" font-family="Arial" font-size="10" fill="#276B4C">복지</text>
+    <rect x="744" y="756" width="56" height="20" rx="10" fill="#EEF4FD"/>
+    <text x="772" y="770" text-anchor="middle" font-family="Arial" font-size="10" fill="#2E5FA8">열람</text>
+    <text x="864" y="768" font-family="Arial" font-size="12" fill="#111827">ISP — 교육-복지 연계 검토</text>
+    <text x="1280" y="768" font-family="Arial" font-size="11" fill="#6B7280">PC · Chrome · 학교</text>
+    <line x1="296" y1="784" x2="1392" y2="784" stroke="#F3F4F6"/>
+
+    <text x="296" y="814" font-family="Arial" font-size="12" fill="#111827">06-07 22:18</text>
+    <text x="448" y="814" font-family="Arial" font-size="12" fill="#111827">김보호자 (본인)</text>
+    <rect x="640" y="802" width="48" height="20" rx="10" fill="#F4EFFB"/>
+    <text x="664" y="816" text-anchor="middle" font-family="Arial" font-size="10" fill="#6A43A8">전환</text>
+    <rect x="744" y="802" width="56" height="20" rx="10" fill="#EEF4FD"/>
+    <text x="772" y="816" text-anchor="middle" font-family="Arial" font-size="10" fill="#2E5FA8">열람</text>
+    <text x="864" y="814" font-family="Arial" font-size="12" fill="#111827">전환계획 2026 — 직업재활시설</text>
+    <text x="1280" y="814" font-family="Arial" font-size="11" fill="#6B7280">PC · Safari · 집</text>
+  </g>
+</svg>

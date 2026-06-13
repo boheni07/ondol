@@ -1,0 +1,132 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- S-11 · ST-03 Journal Detail · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">S-11 · ST-03 Journal Detail · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Sidebar -->
+  <rect width="240" height="900" fill="#F5F5F5"/>
+  <rect width="240" height="64" fill="#FFFFFF"/>
+  <text x="24" y="42" font-family="Arial" font-size="18" font-weight="bold" fill="#B56F10">온돌</text>
+  <text x="68" y="42" font-family="Arial" font-size="11" fill="#6B7280">지원사</text>
+  <rect y="108" width="240" height="44" fill="#FFF5E6"/>
+  <rect y="108" width="3" height="44" fill="#B56F10"/>
+  <text x="52" y="135" font-family="Arial" font-size="13" font-weight="bold" fill="#925810">일지</text>
+
+  <!-- Header -->
+  <rect x="240" width="1200" height="64" fill="#FFFFFF"/><line x1="240" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="272" y="40" font-family="Arial" font-size="13" fill="#6B7280">일지 / <tspan fill="#111827" font-weight="bold">2026-06-11 (이온돌)</tspan></text>
+  <rect x="1244" y="16" width="84" height="32" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="1286" y="36" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">⬇ PDF</text>
+  <rect x="1336" y="16" width="72" height="32" rx="6" fill="#B56F10"/>
+  <text x="1372" y="36" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">수정</text>
+
+  <!-- Hero -->
+  <rect x="272" y="96" width="1136" height="100" rx="16" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <circle cx="320" cy="146" r="28" fill="#E8724A"/>
+  <text x="320" y="154" text-anchor="middle" font-family="Arial" font-size="16" fill="white">이</text>
+  <text x="360" y="138" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">이온돌 · 활동지원 일지</text>
+  <text x="360" y="160" font-family="Arial" font-size="13" fill="#6B7280">2026-06-11 (수) · 13:00 ~ 17:00 (실 서비스 4시간)</text>
+  <text x="360" y="180" font-family="Arial" font-size="12" fill="#9CA3AF">작성자: 박지원 · 어제 19:24 작성 · 첨부 사진 2</text>
+  <rect x="1268" y="120" width="140" height="32" rx="16" fill="#EDFAF3"/>
+  <text x="1338" y="140" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#276B4C">✓ 제출 완료</text>
+
+  <!-- Activities -->
+  <rect x="272" y="216" width="556" height="280" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="296" y="248" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">📋 활동 내역</text>
+
+  <rect x="296" y="266" width="508" height="60" rx="8" fill="#F9FAFB"/>
+  <rect x="306" y="278" width="56" height="22" rx="11" fill="#FFF5E6"/>
+  <text x="334" y="292" text-anchor="middle" font-family="Arial" font-size="11" fill="#B56F10">신변지원</text>
+  <text x="376" y="292" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">화장실 도움 · 옷 갈아입기</text>
+  <text x="376" y="312" font-family="Arial" font-size="11" fill="#6B7280">13:00-13:20 (20분)</text>
+
+  <rect x="296" y="334" width="508" height="60" rx="8" fill="#F9FAFB"/>
+  <rect x="306" y="346" width="44" height="22" rx="11" fill="#FFF5E6"/>
+  <text x="328" y="360" text-anchor="middle" font-family="Arial" font-size="11" fill="#B56F10">외출</text>
+  <text x="364" y="360" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">동네 산책 · 도서관 방문</text>
+  <text x="364" y="380" font-family="Arial" font-size="11" fill="#6B7280">13:30-15:30 (2시간) · 📍 ○○도서관</text>
+
+  <rect x="296" y="402" width="508" height="60" rx="8" fill="#F9FAFB"/>
+  <rect x="306" y="414" width="44" height="22" rx="11" fill="#FFF5E6"/>
+  <text x="328" y="428" text-anchor="middle" font-family="Arial" font-size="11" fill="#B56F10">식사</text>
+  <text x="364" y="428" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">저녁 식사 준비·식사 보조</text>
+  <text x="364" y="448" font-family="Arial" font-size="11" fill="#6B7280">16:00-16:45 (45분) · 가정에서</text>
+
+  <text x="298" y="486" font-family="Arial" font-size="12" fill="#6B7280">총 활동 시간 · </text>
+  <text x="388" y="486" font-family="Arial" font-size="13" font-weight="bold" fill="#B56F10">3시간 5분</text>
+
+  <!-- Meal & Health -->
+  <rect x="852" y="216" width="556" height="280" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="876" y="248" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">🍚 식사 · 건강</text>
+
+  <text x="876" y="284" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">식사</text>
+  <g>
+    <rect x="876" y="294" width="160" height="56" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <text x="956" y="318" text-anchor="middle" font-family="Arial" font-size="12" fill="#6B7280">아침</text>
+    <text x="956" y="340" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#276B4C">잘 먹음</text>
+
+    <rect x="1048" y="294" width="160" height="56" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <text x="1128" y="318" text-anchor="middle" font-family="Arial" font-size="12" fill="#6B7280">점심</text>
+    <text x="1128" y="340" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#276B4C">잘 먹음</text>
+
+    <rect x="1220" y="294" width="168" height="56" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <text x="1304" y="318" text-anchor="middle" font-family="Arial" font-size="12" fill="#6B7280">저녁</text>
+    <text x="1304" y="340" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#B56F10">조금 먹음</text>
+  </g>
+
+  <text x="876" y="382" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">건강 상태</text>
+  <g>
+    <rect x="876" y="392" width="112" height="56" rx="10" fill="#EDFAF3" stroke="#A9DCC4" stroke-width="2"/>
+    <text x="932" y="430" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#276B4C">💪 건강 ✓</text>
+    <rect x="1000" y="392" width="112" height="56" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <text x="1056" y="430" text-anchor="middle" font-family="Arial" font-size="13" fill="#6B7280">🤧 감기</text>
+    <rect x="1124" y="392" width="112" height="56" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <text x="1180" y="430" text-anchor="middle" font-family="Arial" font-size="13" fill="#6B7280">😴 피곤</text>
+    <rect x="1248" y="392" width="140" height="56" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <text x="1318" y="430" text-anchor="middle" font-family="Arial" font-size="13" fill="#6B7280">🤕 아픔</text>
+  </g>
+
+  <text x="876" y="476" font-family="Arial" font-size="11" fill="#9CA3AF">전반적으로 컨디션 양호, 저녁 식사량만 평소보다 적었습니다.</text>
+
+  <!-- Notes -->
+  <rect x="272" y="512" width="848" height="200" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="296" y="544" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">📝 특이사항</text>
+
+  <text x="296" y="574" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">행동 관찰</text>
+  <text x="296" y="594" font-family="Arial" font-size="13" fill="#111827">도서관 방문 시 평소보다 더 집중해서 책장을 넘기며 탐색.</text>
+  <text x="296" y="612" font-family="Arial" font-size="13" fill="#111827">사진집·자동차 책에 강한 관심 보임.</text>
+
+  <text x="296" y="644" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">사고/특이사항</text>
+  <text x="296" y="664" font-family="Arial" font-size="13" fill="#111827">없음</text>
+
+  <text x="296" y="694" font-family="Arial" font-size="12" font-weight="bold" fill="#92670D">다음 담당자 인계</text>
+  <text x="296" y="710" font-family="Arial" font-size="12" fill="#374151">— 오늘 저녁 식사량 적음 (관찰 권장) / 도서관 활동 만족도 높음</text>
+
+  <!-- Attached -->
+  <rect x="1144" y="512" width="264" height="200" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="1164" y="544" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">📎 첨부 (2)</text>
+  <rect x="1164" y="558" width="108" height="120" rx="8" fill="#F3F4F6"/>
+  <text x="1218" y="618" text-anchor="middle" font-family="Arial" font-size="14" fill="#9CA3AF">🖼</text>
+  <text x="1218" y="640" text-anchor="middle" font-family="Arial" font-size="10" fill="#6B7280">도서관.jpg</text>
+  <rect x="1280" y="558" width="108" height="120" rx="8" fill="#F3F4F6"/>
+  <text x="1334" y="618" text-anchor="middle" font-family="Arial" font-size="14" fill="#9CA3AF">🖼</text>
+  <text x="1334" y="640" text-anchor="middle" font-family="Arial" font-size="10" fill="#6B7280">산책.jpg</text>
+
+  <!-- Linked records -->
+  <text x="272" y="752" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">🔗 관련 기록</text>
+  <rect x="272" y="764" width="556" height="72" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="288" y="780" width="48" height="20" rx="10" fill="#EEF4FD"/>
+  <text x="312" y="794" text-anchor="middle" font-family="Arial" font-size="10" fill="#2E5FA8">교육</text>
+  <text x="288" y="812" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">IEP — 도서관 활동 목표 연계</text>
+  <text x="288" y="828" font-family="Arial" font-size="11" fill="#6B7280">자기결정 · 지역사회 참여</text>
+
+  <rect x="852" y="764" width="556" height="72" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="868" y="780" width="48" height="20" rx="10" fill="#FFF8F4"/>
+  <text x="892" y="794" text-anchor="middle" font-family="Arial" font-size="10" fill="#E8724A">표현</text>
+  <text x="868" y="812" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">자기표현 — "오늘 도서관 좋았어요"</text>
+  <text x="868" y="828" font-family="Arial" font-size="11" fill="#6B7280">이온돌 직접 입력 · 어제 16:00</text>
+
+  <!-- Confirmation -->
+  <rect x="272" y="852" width="1136" height="40" rx="8" fill="#EDFAF3" stroke="#A9DCC4"/>
+  <text x="296" y="877" font-family="Arial" font-size="12" fill="#276B4C">✓ 보호자 김보호자님이 확인했습니다 (어제 21:30)</text>
+</svg>

@@ -1,0 +1,113 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- S-01 · ST-01 Supporter Home · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">S-01 · ST-01 Supporter Home · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Sidebar -->
+  <rect width="240" height="900" fill="#F5F5F5"/>
+  <rect width="240" height="64" fill="#FFFFFF"/><line x1="0" y1="64" x2="240" y2="64" stroke="#E5E7EB"/>
+  <text x="24" y="42" font-family="Arial" font-size="18" font-weight="bold" fill="#B56F10">온돌</text>
+  <text x="68" y="42" font-family="Arial" font-size="11" fill="#6B7280">지원사</text>
+  <rect y="64" width="240" height="44" fill="#FFF5E6"/>
+  <rect y="64" width="3" height="44" fill="#B56F10"/>
+  <circle cx="32" cy="86" r="7" fill="#B56F10"/><text x="52" y="91" font-family="Arial" font-size="13" font-weight="bold" fill="#925810">홈</text>
+  <circle cx="32" cy="130" r="7" fill="#D1D5DB"/><text x="52" y="135" font-family="Arial" font-size="13" fill="#374151">일지</text>
+  <circle cx="32" cy="174" r="7" fill="#D1D5DB"/><text x="52" y="179" font-family="Arial" font-size="13" fill="#374151">인수인계</text>
+  <circle cx="32" cy="218" r="7" fill="#D1D5DB"/><text x="52" y="223" font-family="Arial" font-size="13" fill="#374151">알림</text>
+  <circle cx="210" cy="220" r="9" fill="#E04545"/><text x="210" y="225" text-anchor="middle" font-family="Arial" font-size="9" fill="white">2</text>
+  <circle cx="32" cy="262" r="7" fill="#D1D5DB"/><text x="52" y="267" font-family="Arial" font-size="13" fill="#374151">설정</text>
+
+  <line x1="16" y1="820" x2="224" y2="820" stroke="#E5E7EB"/>
+  <circle cx="32" cy="858" r="18" fill="#B56F10"/>
+  <text x="32" y="864" text-anchor="middle" font-family="Arial" font-size="12" fill="white">박</text>
+  <text x="58" y="854" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">박지원</text>
+  <text x="58" y="868" font-family="Arial" font-size="11" fill="#6B7280">활동지원사</text>
+
+  <!-- Header -->
+  <rect x="240" width="1200" height="64" fill="#FFFFFF"/><line x1="240" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="272" y="28" font-family="Arial" font-size="11" fill="#9CA3AF">담당 당사자</text>
+  <text x="272" y="48" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">이온돌 · 김다정 · 최희망 ▾</text>
+  <text x="1408" y="42" text-anchor="end" font-family="Arial" font-size="13" fill="#B56F10">🌤 2026.06.12 (목)</text>
+
+  <!-- Greeting -->
+  <text x="272" y="120" font-family="Arial" font-size="22" font-weight="bold" fill="#111827">박지원 선생님, 오늘도 수고하세요</text>
+  <text x="272" y="146" font-family="Arial" font-size="13" fill="#6B7280">담당 당사자 3명 · 오늘 서비스 2건 · 일지 미작성 1건</text>
+
+  <!-- Big CTA -->
+  <rect x="272" y="172" width="1136" height="120" rx="16" fill="#B56F10"/>
+  <text x="304" y="210" font-family="Arial" font-size="14" fill="rgba(255,255,255,0.8)">⏰ 오늘 활동지원 시작</text>
+  <text x="304" y="244" font-family="Arial" font-size="28" font-weight="bold" fill="white">+ 오늘 일지 작성</text>
+  <text x="304" y="272" font-family="Arial" font-size="13" fill="rgba(255,255,255,0.85)">단계별로 천천히 작성해요 · 임시저장 가능</text>
+  <rect x="1240" y="200" width="148" height="56" rx="14" fill="white"/>
+  <text x="1314" y="234" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#B56F10">시작하기 →</text>
+
+  <!-- Today's service section -->
+  <text x="272" y="332" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">오늘 서비스 일정</text>
+
+  <rect x="272" y="346" width="556" height="160" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="272" y="346" width="6" height="160" fill="#B56F10"/>
+  <circle cx="324" cy="386" r="22" fill="#E8724A"/>
+  <text x="324" y="392" text-anchor="middle" font-family="Arial" font-size="14" fill="white">이</text>
+  <text x="356" y="376" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">이온돌 (20세)</text>
+  <text x="356" y="394" font-family="Arial" font-size="12" fill="#6B7280">자폐성 장애 2급 · 성인전환기</text>
+  <rect x="720" y="362" width="92" height="28" rx="14" fill="#FEF7E0"/>
+  <text x="766" y="380" text-anchor="middle" font-family="Arial" font-size="11" fill="#925810">⏳ 진행 예정</text>
+
+  <rect x="288" y="426" width="524" height="64" rx="10" fill="#F9FAFB"/>
+  <text x="304" y="452" font-family="Arial" font-size="12" fill="#6B7280">서비스 시간</text>
+  <text x="304" y="472" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">13:00 - 17:00 (4시간)</text>
+  <text x="500" y="452" font-family="Arial" font-size="12" fill="#6B7280">예정 활동</text>
+  <text x="500" y="472" font-family="Arial" font-size="14" fill="#111827">외출, 산책, 식사</text>
+
+  <rect x="848" y="346" width="560" height="160" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="848" y="346" width="6" height="160" fill="#9CA3AF"/>
+  <circle cx="900" cy="386" r="22" fill="#3EA673"/>
+  <text x="900" y="392" text-anchor="middle" font-family="Arial" font-size="14" fill="white">김</text>
+  <text x="932" y="376" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">김다정 (16세)</text>
+  <text x="932" y="394" font-family="Arial" font-size="12" fill="#6B7280">지적 장애 1급 · 청소년기</text>
+  <rect x="1296" y="362" width="92" height="28" rx="14" fill="#EDFAF3"/>
+  <text x="1342" y="380" text-anchor="middle" font-family="Arial" font-size="11" fill="#276B4C">✓ 완료</text>
+
+  <rect x="864" y="426" width="528" height="64" rx="10" fill="#F9FAFB"/>
+  <text x="880" y="452" font-family="Arial" font-size="12" fill="#6B7280">서비스 시간</text>
+  <text x="880" y="472" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">09:00 - 12:00 (3시간)</text>
+  <text x="1076" y="452" font-family="Arial" font-size="12" fill="#6B7280">상태</text>
+  <text x="1076" y="472" font-family="Arial" font-size="14" fill="#276B4C">일지 작성 완료</text>
+
+  <!-- Pending journals -->
+  <text x="272" y="542" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">미작성 일지 (1건)</text>
+  <text x="1408" y="542" text-anchor="end" font-family="Arial" font-size="12" fill="#B56F10">전체 일지 →</text>
+
+  <rect x="272" y="556" width="1136" height="80" rx="12" fill="#FEF7E0" stroke="#F2C94C"/>
+  <circle cx="316" cy="596" r="22" fill="#E8724A"/>
+  <text x="316" y="602" text-anchor="middle" font-family="Arial" font-size="14" fill="white">이</text>
+  <text x="354" y="588" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">이온돌 · 2026-06-11 (어제) 일지 미작성</text>
+  <text x="354" y="608" font-family="Arial" font-size="12" fill="#6B7280">서비스 시간: 13:00-17:00 · 어제 임시저장 1건 있음</text>
+  <text x="354" y="624" font-family="Arial" font-size="11" fill="#92670D">⚠ 작성 권장: 서비스 종료 후 24시간 이내</text>
+  <rect x="1252" y="576" width="140" height="40" rx="8" fill="#B56F10"/>
+  <text x="1322" y="602" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">일지 작성</text>
+
+  <!-- Recent journals -->
+  <text x="272" y="676" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">최근 일지</text>
+
+  <rect x="272" y="690" width="556" height="86" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="294" y="716" font-family="Arial" font-size="11" fill="#9CA3AF">2026-06-10 (화)</text>
+  <rect x="384" y="704" width="60" height="20" rx="10" fill="#FFF5E6"/>
+  <text x="414" y="718" text-anchor="middle" font-family="Arial" font-size="10" fill="#B56F10">일상</text>
+  <text x="294" y="746" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">이온돌 · 외출 · 산책 · 식사</text>
+  <text x="294" y="764" font-family="Arial" font-size="11" fill="#6B7280">실 서비스 4시간 · 첨부 사진 2</text>
+
+  <rect x="848" y="690" width="560" height="86" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="870" y="716" font-family="Arial" font-size="11" fill="#9CA3AF">2026-06-10 (화)</text>
+  <rect x="960" y="704" width="60" height="20" rx="10" fill="#FFF5E6"/>
+  <text x="990" y="718" text-anchor="middle" font-family="Arial" font-size="10" fill="#B56F10">일상</text>
+  <text x="870" y="746" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">김다정 · 가사지원 · 의사소통</text>
+  <text x="870" y="764" font-family="Arial" font-size="11" fill="#6B7280">실 서비스 3시간</text>
+
+  <!-- Handover snippet -->
+  <text x="272" y="816" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">최근 인수인계</text>
+  <rect x="272" y="828" width="1136" height="56" rx="10" fill="#EEF4FD" stroke="#A8C4E4"/>
+  <text x="294" y="852" font-family="Arial" font-size="12" font-weight="bold" fill="#2E5FA8">이온돌 — 6월 활동 인계 (확인 필요)</text>
+  <text x="294" y="870" font-family="Arial" font-size="11" fill="#6B7280">전임 김지원사 → 박지원 · 핵심 요약 + 특이사항 4건</text>
+  <text x="1388" y="864" text-anchor="end" font-family="Arial" font-size="12" fill="#3B7D8E">상세 →</text>
+</svg>

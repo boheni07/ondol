@@ -1,0 +1,117 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- G-32 · ST-05 Grant Permission Wizard · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">G-32 · ST-05 Grant Permission (Step 2/4) · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Sidebar collapsed -->
+  <rect width="64" height="900" fill="#F5F5F5"/>
+  <rect width="64" height="64" fill="#FFFFFF"/><line x1="0" y1="64" x2="64" y2="64" stroke="#E5E7EB"/>
+  <text x="32" y="42" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#3B7D8E">온</text>
+
+  <!-- Header -->
+  <rect x="64" width="1376" height="64" fill="#FFFFFF"/><line x1="64" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="96" y="40" font-family="Arial" font-size="13" fill="#6B7280">권한 관리 / <tspan fill="#111827" font-weight="bold">+ 권한 부여</tspan></text>
+  <text x="1408" y="40" text-anchor="end" font-family="Arial" font-size="13" fill="#9CA3AF">취소</text>
+
+  <!-- Step indicator -->
+  <rect x="64" y="64" width="1376" height="80" fill="#FFFFFF"/>
+  <line x1="64" y1="144" x2="1440" y2="144" stroke="#E5E7EB"/>
+  <g>
+    <circle cx="448" cy="104" r="14" fill="#3B7D8E"/><text x="448" y="109" text-anchor="middle" font-family="Arial" font-size="11" fill="white">✓</text>
+    <text x="448" y="134" text-anchor="middle" font-family="Arial" font-size="11" fill="#374151">대상자 선택</text>
+    <line x1="466" y1="104" x2="710" y2="104" stroke="#3B7D8E" stroke-width="2"/>
+
+    <circle cx="728" cy="104" r="14" fill="#3B7D8E"/><text x="728" y="109" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="white">2</text>
+    <text x="728" y="134" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#3B7D8E">분야 선택</text>
+    <line x1="746" y1="104" x2="990" y2="104" stroke="#E5E7EB" stroke-width="2"/>
+
+    <circle cx="1008" cy="104" r="14" fill="#E5E7EB"/><text x="1008" y="109" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7280">3</text>
+    <text x="1008" y="134" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7280">수준 · 기간</text>
+    <line x1="1026" y1="104" x2="1270" y2="104" stroke="#E5E7EB" stroke-width="2"/>
+
+    <circle cx="1288" cy="104" r="14" fill="#E5E7EB"/><text x="1288" y="109" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7280">4</text>
+    <text x="1288" y="134" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7280">미리보기</text>
+  </g>
+
+  <!-- Selected person & inviter info -->
+  <rect x="280" y="172" width="880" height="60" rx="10" fill="#FFF8F4" stroke="#FACDB8"/>
+  <circle cx="312" cy="202" r="18" fill="#E8724A"/>
+  <text x="312" y="208" text-anchor="middle" font-family="Arial" font-size="13" fill="white">이</text>
+  <text x="344" y="198" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">관리 대상: 이온돌 (20세)</text>
+  <text x="344" y="216" font-family="Arial" font-size="11" fill="#6B7280">자폐성 장애 2급 · 성인전환기</text>
+  <text x="664" y="198" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">권한 받을 사람: 한치료사</text>
+  <text x="664" y="216" font-family="Arial" font-size="11" fill="#6B7280">therapist@clinic.kr · 언어치료사</text>
+
+  <!-- Form -->
+  <rect x="280" y="252" width="880" height="540" rx="16" fill="#FFFFFF" stroke="#E5E7EB"/>
+
+  <text x="312" y="290" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">어떤 분야의 기록 권한을 부여할까요?</text>
+  <text x="312" y="314" font-family="Arial" font-size="13" fill="#6B7280">여러 분야를 선택할 수 있습니다. 분야별로 수준은 다음 단계에서 설정합니다</text>
+
+  <g>
+    <!-- Medical (selected) -->
+    <rect x="312" y="346" width="408" height="100" rx="12" fill="#FEF0F0" stroke="#BF3030" stroke-width="2"/>
+    <circle cx="346" cy="380" r="14" fill="#BF3030"/>
+    <text x="346" y="386" text-anchor="middle" font-family="Arial" font-size="14" fill="white">A</text>
+    <text x="372" y="376" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">의료</text>
+    <text x="372" y="396" font-family="Arial" font-size="11" fill="#6B7280">진단·진료·치료·약물 (MED-001~007)</text>
+    <text x="372" y="424" font-family="Arial" font-size="11" fill="#BF3030">언어치료 회기 기록에 필요</text>
+    <rect x="676" y="358" width="28" height="28" rx="6" fill="#BF3030"/>
+    <text x="690" y="378" text-anchor="middle" font-family="Arial" font-size="14" fill="white">✓</text>
+
+    <!-- Education (unchecked) -->
+    <rect x="736" y="346" width="408" height="100" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <circle cx="770" cy="380" r="14" fill="#2E5FA8"/>
+    <text x="770" y="386" text-anchor="middle" font-family="Arial" font-size="14" fill="white">B</text>
+    <text x="796" y="376" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">교육</text>
+    <text x="796" y="396" font-family="Arial" font-size="11" fill="#6B7280">IEP·관찰·평가 (EDU-001~007)</text>
+    <rect x="1100" y="358" width="28" height="28" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+
+    <!-- Welfare (unchecked) -->
+    <rect x="312" y="458" width="408" height="100" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <circle cx="346" cy="492" r="14" fill="#276B4C"/>
+    <text x="346" y="498" text-anchor="middle" font-family="Arial" font-size="14" fill="white">C</text>
+    <text x="372" y="488" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">복지서비스</text>
+    <text x="372" y="508" font-family="Arial" font-size="11" fill="#6B7280">ISP·서비스 이용 (WEL-001~006)</text>
+    <rect x="676" y="470" width="28" height="28" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+
+    <!-- Daily -->
+    <rect x="736" y="458" width="408" height="100" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <circle cx="770" cy="492" r="14" fill="#B56F10"/>
+    <text x="770" y="498" text-anchor="middle" font-family="Arial" font-size="14" fill="white">D</text>
+    <text x="796" y="488" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">일상/돌봄</text>
+    <text x="796" y="508" font-family="Arial" font-size="11" fill="#6B7280">활동지원 일지 (DAI-001~003)</text>
+    <rect x="1100" y="470" width="28" height="28" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+
+    <!-- Transition -->
+    <rect x="312" y="570" width="408" height="100" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <circle cx="346" cy="604" r="14" fill="#6A43A8"/>
+    <text x="346" y="610" text-anchor="middle" font-family="Arial" font-size="14" fill="white">E</text>
+    <text x="372" y="600" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">전환/자립</text>
+    <text x="372" y="620" font-family="Arial" font-size="11" fill="#6B7280">전환계획·취업·주거 (TRA-001~003)</text>
+    <rect x="676" y="582" width="28" height="28" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+
+    <!-- Legal -->
+    <rect x="736" y="570" width="408" height="100" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <circle cx="770" cy="604" r="14" fill="#3E5E7A"/>
+    <text x="770" y="610" text-anchor="middle" font-family="Arial" font-size="14" fill="white">F</text>
+    <text x="796" y="600" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">법적/행정</text>
+    <text x="796" y="620" font-family="Arial" font-size="11" fill="#6B7280">후견·재정·동의서 (LEG-001~003)</text>
+    <rect x="1100" y="582" width="28" height="28" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  </g>
+
+  <!-- Select all -->
+  <rect x="312" y="700" width="408" height="60" rx="10" fill="#F9FAFB" stroke="#E5E7EB" stroke-dasharray="4 4"/>
+  <rect x="328" y="716" width="28" height="28" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="368" y="736" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">모든 분야 선택</text>
+  <text x="368" y="752" font-family="Arial" font-size="11" fill="#6B7280">필요할 때만 선택하세요 (최소 권한 원칙)</text>
+
+  <!-- Sticky footer -->
+  <rect x="64" y="828" width="1376" height="72" fill="#FFFFFF"/>
+  <line x1="64" y1="828" x2="1440" y2="828" stroke="#E5E7EB"/>
+  <rect x="280" y="846" width="200" height="48" rx="10" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="380" y="876" text-anchor="middle" font-family="Arial" font-size="14" fill="#374151">← 이전</text>
+  <text x="720" y="876" text-anchor="middle" font-family="Arial" font-size="12" fill="#6B7280">선택: 의료 1개</text>
+  <rect x="960" y="846" width="200" height="48" rx="10" fill="#3B7D8E"/>
+  <text x="1060" y="876" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="white">다음 →</text>
+</svg>

@@ -1,0 +1,106 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- G-64 · ST-11 Notification Settings · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">G-64 · ST-11 Notification Settings · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Sidebar -->
+  <rect width="240" height="900" fill="#F5F5F5"/>
+  <rect width="240" height="64" fill="#FFFFFF"/><line x1="0" y1="64" x2="240" y2="64" stroke="#E5E7EB"/>
+  <text x="24" y="42" font-family="Arial" font-size="18" font-weight="bold" fill="#3B7D8E">온돌</text>
+  <text x="24" y="120" font-family="Arial" font-size="11" font-weight="bold" fill="#9CA3AF">설정</text>
+  <text x="44" y="148" font-family="Arial" font-size="13" fill="#6B7280">내 프로필</text>
+  <text x="44" y="180" font-family="Arial" font-size="13" fill="#6B7280">당사자 정보</text>
+  <rect x="0" y="192" width="240" height="40" fill="#EEF4FD"/>
+  <rect x="0" y="192" width="3" height="40" fill="#3B7D8E"/>
+  <text x="44" y="218" font-family="Arial" font-size="13" font-weight="bold" fill="#2E5FA8">알림 설정</text>
+  <text x="44" y="252" font-family="Arial" font-size="13" fill="#6B7280">보안</text>
+  <text x="44" y="284" font-family="Arial" font-size="13" fill="#6B7280">접근 로그</text>
+
+  <!-- Header -->
+  <rect x="240" width="1200" height="64" fill="#FFFFFF"/><line x1="240" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="272" y="40" font-family="Arial" font-size="13" fill="#6B7280">설정 / <tspan fill="#111827" font-weight="bold">알림</tspan></text>
+
+  <text x="272" y="112" font-family="Arial" font-size="22" font-weight="bold" fill="#111827">알림 설정</text>
+  <text x="272" y="136" font-family="Arial" font-size="13" fill="#6B7280">언제, 어떤 방식으로 알림을 받을지 설정합니다</text>
+
+  <!-- Channel section -->
+  <text x="272" y="180" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">알림 채널</text>
+  <rect x="272" y="192" width="1136" height="240" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+
+  <!-- Push -->
+  <rect x="288" y="208" width="1104" height="64" rx="8" fill="#F9FAFB"/>
+  <circle cx="316" cy="240" r="20" fill="#EEF4FD"/>
+  <text x="316" y="246" text-anchor="middle" font-family="Arial" font-size="14" fill="#2E5FA8">📱</text>
+  <text x="352" y="234" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">앱 푸시 알림</text>
+  <text x="352" y="252" font-family="Arial" font-size="11" fill="#6B7280">iOS / Android · 실시간 알림</text>
+  <text x="1226" y="246" font-family="Arial" font-size="12" fill="#22A06B">활성화됨</text>
+  <rect x="1316" y="226" width="60" height="28" rx="14" fill="#3B7D8E"/>
+  <circle cx="1356" cy="240" r="11" fill="white"/>
+
+  <!-- Email -->
+  <rect x="288" y="280" width="1104" height="64" rx="8" fill="#F9FAFB"/>
+  <circle cx="316" cy="312" r="20" fill="#EEF4FD"/>
+  <text x="316" y="318" text-anchor="middle" font-family="Arial" font-size="14" fill="#2E5FA8">✉</text>
+  <text x="352" y="306" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">이메일 알림</text>
+  <text x="352" y="324" font-family="Arial" font-size="11" fill="#6B7280">guardian@example.com</text>
+  <text x="1226" y="318" font-family="Arial" font-size="12" fill="#22A06B">중요 알림만</text>
+  <rect x="1316" y="298" width="60" height="28" rx="14" fill="#3B7D8E"/>
+  <circle cx="1356" cy="312" r="11" fill="white"/>
+
+  <!-- SMS -->
+  <rect x="288" y="352" width="1104" height="64" rx="8" fill="#F9FAFB"/>
+  <circle cx="316" cy="384" r="20" fill="#F3F4F6"/>
+  <text x="316" y="390" text-anchor="middle" font-family="Arial" font-size="14" fill="#6B7280">💬</text>
+  <text x="352" y="378" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">SMS</text>
+  <text x="352" y="396" font-family="Arial" font-size="11" fill="#6B7280">010-1234-5678 · 응급 알림만</text>
+  <text x="1226" y="390" font-family="Arial" font-size="12" fill="#9CA3AF">비활성화</text>
+  <rect x="1316" y="370" width="60" height="28" rx="14" fill="#E5E7EB"/>
+  <circle cx="1326" cy="384" r="11" fill="white"/>
+
+  <!-- Notification type section -->
+  <text x="272" y="468" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">알림 유형별 설정</text>
+
+  <rect x="272" y="480" width="1136" height="320" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <!-- Table header -->
+  <rect x="272" y="480" width="1136" height="40" fill="#F9FAFB"/>
+  <text x="296" y="506" font-family="Arial" font-size="12" font-weight="bold" fill="#6B7280">알림 유형</text>
+  <text x="900" y="506" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#6B7280">앱 푸시</text>
+  <text x="1080" y="506" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#6B7280">이메일</text>
+  <text x="1260" y="506" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#6B7280">SMS</text>
+
+  <g>
+    <text x="296" y="552" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">새 기록 작성됨</text>
+    <text x="296" y="568" font-family="Arial" font-size="11" fill="#6B7280">권한자가 기록을 작성·수정할 때</text>
+    <rect x="876" y="540" width="48" height="24" rx="12" fill="#3B7D8E"/><circle cx="908" cy="552" r="9" fill="white"/>
+    <rect x="1056" y="540" width="48" height="24" rx="12" fill="#3B7D8E"/><circle cx="1088" cy="552" r="9" fill="white"/>
+    <rect x="1236" y="540" width="48" height="24" rx="12" fill="#E5E7EB"/><circle cx="1248" cy="552" r="9" fill="white"/>
+    <line x1="296" y1="592" x2="1392" y2="592" stroke="#F3F4F6"/>
+
+    <text x="296" y="618" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">당사자 자기표현</text>
+    <text x="296" y="634" font-family="Arial" font-size="11" fill="#6B7280">당사자가 직접 입력한 기분·상태</text>
+    <rect x="876" y="606" width="48" height="24" rx="12" fill="#3B7D8E"/><circle cx="908" cy="618" r="9" fill="white"/>
+    <rect x="1056" y="606" width="48" height="24" rx="12" fill="#E5E7EB"/><circle cx="1068" cy="618" r="9" fill="white"/>
+    <rect x="1236" y="606" width="48" height="24" rx="12" fill="#E5E7EB"/><circle cx="1248" cy="618" r="9" fill="white"/>
+    <line x1="296" y1="658" x2="1392" y2="658" stroke="#F3F4F6"/>
+
+    <text x="296" y="684" font-family="Arial" font-size="13" font-weight="bold" fill="#BF3030">⚠ 권한 외 접근 시도</text>
+    <text x="296" y="700" font-family="Arial" font-size="11" fill="#6B7280">권한 없는 사용자의 접근 시도</text>
+    <rect x="876" y="672" width="48" height="24" rx="12" fill="#3B7D8E"/><circle cx="908" cy="684" r="9" fill="white"/>
+    <rect x="1056" y="672" width="48" height="24" rx="12" fill="#3B7D8E"/><circle cx="1088" cy="684" r="9" fill="white"/>
+    <rect x="1236" y="672" width="48" height="24" rx="12" fill="#3B7D8E"/><circle cx="1268" cy="684" r="9" fill="white"/>
+    <line x1="296" y1="722" x2="1392" y2="722" stroke="#F3F4F6"/>
+
+    <text x="296" y="748" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">권한 요청·승인</text>
+    <text x="296" y="764" font-family="Arial" font-size="11" fill="#6B7280">새 권한 부여 요청, 초대 응답</text>
+    <rect x="876" y="736" width="48" height="24" rx="12" fill="#3B7D8E"/><circle cx="908" cy="748" r="9" fill="white"/>
+    <rect x="1056" y="736" width="48" height="24" rx="12" fill="#3B7D8E"/><circle cx="1088" cy="748" r="9" fill="white"/>
+    <rect x="1236" y="736" width="48" height="24" rx="12" fill="#E5E7EB"/><circle cx="1248" cy="748" r="9" fill="white"/>
+  </g>
+
+  <!-- Quiet hours -->
+  <text x="272" y="836" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">방해 금지 시간</text>
+  <rect x="272" y="848" width="1136" height="40" rx="8" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="296" y="874" font-family="Arial" font-size="13" fill="#111827">22:00 - 07:00 (응급 알림 제외)</text>
+  <rect x="1340" y="856" width="60" height="28" rx="14" fill="#3B7D8E"/>
+  <circle cx="1380" cy="870" r="11" fill="white"/>
+</svg>

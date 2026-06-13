@@ -1,0 +1,78 @@
+<svg viewBox="0 0 390 844" xmlns="http://www.w3.org/2000/svg">
+  <!-- S-01 · ST-01 Supporter Home · Mobile 390×844 -->
+  <text x="8" y="12" font-family="Arial" font-size="9" fill="#9CA3AF">S-01 · ST-01 Supporter Home · Mobile 390×844</text>
+  <rect width="390" height="844" fill="#F9FAFB"/>
+  <rect width="390" height="844" rx="0" fill="none" stroke="#E5E7EB"/>
+
+  <!-- Status bar -->
+  <rect width="390" height="44" fill="#FFFFFF"/>
+  <text x="20" y="30" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">9:41</text>
+
+  <!-- Header -->
+  <rect y="44" width="390" height="80" fill="#B56F10"/>
+  <text x="20" y="74" font-family="Arial" font-size="13" fill="rgba(255,255,255,0.85)">오늘 일정 · 2026.06.13 (금)</text>
+  <text x="20" y="104" font-family="Arial" font-size="20" font-weight="bold" fill="white">박지원사 선생님</text>
+
+  <!-- Today person -->
+  <rect x="16" y="140" width="358" height="100" rx="14" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="32" y="166" font-family="Arial" font-size="11" font-weight="bold" fill="#B56F10">⏰ 13:00 시작 · 진행 예정</text>
+  <circle cx="40" cy="200" r="18" fill="#E8724A"/>
+  <text x="40" y="206" text-anchor="middle" font-family="Arial" font-size="13" fill="white">이</text>
+  <text x="68" y="196" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">이온돌 · 4시간 서비스</text>
+  <text x="68" y="214" font-family="Arial" font-size="11" fill="#6B7280">외출 · 산책 · 식사</text>
+  <text x="68" y="230" font-family="Arial" font-size="10" fill="#9CA3AF">📍 가정 → 도서관</text>
+
+  <!-- Big CTA -->
+  <rect x="16" y="256" width="358" height="120" rx="16" fill="#B56F10"/>
+  <text x="32" y="296" font-family="Arial" font-size="13" fill="rgba(255,255,255,0.85)">오늘 일지를 시작해요</text>
+  <text x="32" y="326" font-family="Arial" font-size="22" font-weight="bold" fill="white">+ 일지 작성</text>
+  <text x="32" y="350" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.8)">5단계 · 임시저장 가능</text>
+  <rect x="240" y="298" width="120" height="48" rx="12" fill="#FFFFFF"/>
+  <text x="300" y="328" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#B56F10">시작 →</text>
+
+  <!-- Pending -->
+  <rect x="16" y="392" width="358" height="76" rx="12" fill="#FEF7E0" stroke="#F2C94C"/>
+  <text x="32" y="416" font-family="Arial" font-size="12" font-weight="bold" fill="#92670D">⚠ 미작성 일지 1건</text>
+  <text x="32" y="436" font-family="Arial" font-size="11" fill="#6B7280">어제 활동지원 · 김다정</text>
+  <text x="32" y="454" font-family="Arial" font-size="10" fill="#92670D">24시간 이내 작성 권장</text>
+  <text x="358" y="436" text-anchor="end" font-family="Arial" font-size="11" fill="#B56F10">작성 →</text>
+
+  <!-- Handover -->
+  <rect x="16" y="484" width="358" height="76" rx="12" fill="#EEF4FD" stroke="#A8C4E4"/>
+  <text x="32" y="508" font-family="Arial" font-size="12" font-weight="bold" fill="#2E5FA8">📥 새 인수인계</text>
+  <text x="32" y="528" font-family="Arial" font-size="11" fill="#6B7280">이온돌 — 6월 활동지원 인계</text>
+  <text x="32" y="546" font-family="Arial" font-size="10" fill="#9CA3AF">김지원사 → 본인 · 확인 필요</text>
+  <text x="358" y="528" text-anchor="end" font-family="Arial" font-size="11" fill="#3B7D8E">확인 →</text>
+
+  <!-- Recent -->
+  <text x="20" y="592" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">최근 일지</text>
+
+  <rect x="16" y="604" width="358" height="60" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="32" y="626" font-family="Arial" font-size="10" fill="#9CA3AF">6/10 (월)</text>
+  <text x="100" y="626" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">이온돌 · 4시간</text>
+  <text x="32" y="648" font-family="Arial" font-size="11" fill="#6B7280">외출 · 산책 · 식사 · 첨부 2</text>
+
+  <rect x="16" y="676" width="358" height="60" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="32" y="698" font-family="Arial" font-size="10" fill="#9CA3AF">6/10 (월)</text>
+  <text x="100" y="698" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">김다정 · 3시간</text>
+  <text x="32" y="720" font-family="Arial" font-size="11" fill="#6B7280">가사지원 · 의사소통</text>
+
+  <!-- Bottom tab -->
+  <rect y="744" width="390" height="60" fill="#FFFFFF"/>
+  <line y1="744" x1="0" y2="744" x2="390" stroke="#E5E7EB"/>
+  <text x="49" y="772" text-anchor="middle" font-family="Arial" font-size="18" fill="#B56F10">🏠</text>
+  <text x="49" y="790" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#B56F10">홈</text>
+  <text x="147" y="772" text-anchor="middle" font-family="Arial" font-size="18" fill="#9CA3AF">📋</text>
+  <text x="147" y="790" text-anchor="middle" font-family="Arial" font-size="9" fill="#9CA3AF">일지</text>
+  <text x="245" y="772" text-anchor="middle" font-family="Arial" font-size="18" fill="#9CA3AF">🤝</text>
+  <text x="245" y="790" text-anchor="middle" font-family="Arial" font-size="9" fill="#9CA3AF">인계</text>
+  <text x="343" y="772" text-anchor="middle" font-family="Arial" font-size="18" fill="#9CA3AF">⚙</text>
+  <text x="343" y="790" text-anchor="middle" font-family="Arial" font-size="9" fill="#9CA3AF">설정</text>
+
+  <!-- FAB -->
+  <circle cx="335" cy="704" r="28" fill="#B56F10"/>
+  <text x="335" y="713" text-anchor="middle" font-family="Arial" font-size="22" fill="white">+</text>
+
+  <rect y="800" width="390" height="44" fill="#FFFFFF"/>
+  <rect x="155" y="820" width="80" height="5" rx="2.5" fill="#D1D5DB"/>
+</svg>

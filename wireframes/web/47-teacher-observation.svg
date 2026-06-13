@@ -1,0 +1,138 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- T-15 + T-16 · ST-02 Observation List + ST-04 Form · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">T-15 관찰 목록 (좌) + T-16 관찰 작성 (우) · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Sidebar -->
+  <rect width="240" height="900" fill="#F5F5F5"/>
+  <rect width="240" height="64" fill="#FFFFFF"/>
+  <text x="24" y="42" font-family="Arial" font-size="18" font-weight="bold" fill="#2E5FA8">온돌</text>
+  <text x="68" y="42" font-family="Arial" font-size="11" fill="#6B7280">특수교사</text>
+  <rect y="108" width="240" height="44" fill="#EEF4FD"/>
+  <text x="52" y="135" font-family="Arial" font-size="13" font-weight="bold" fill="#2E5FA8">교육 기록</text>
+  <text x="68" y="168" font-family="Arial" font-size="12" fill="#6B7280">IEP (5)</text>
+  <rect x="44" y="180" width="180" height="32" fill="#EEF4FD"/>
+  <text x="68" y="200" font-family="Arial" font-size="12" font-weight="bold" fill="#2E5FA8">관찰 (24)</text>
+
+  <!-- Header -->
+  <rect x="240" width="1200" height="64" fill="#FFFFFF"/><line x1="240" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="272" y="40" font-family="Arial" font-size="13" fill="#6B7280">교육 기록 / <tspan fill="#111827" font-weight="bold">관찰</tspan></text>
+
+  <!-- Left: List -->
+  <text x="272" y="112" font-family="Arial" font-size="22" font-weight="bold" fill="#111827">관찰 기록 (EDU-004)</text>
+  <text x="272" y="136" font-family="Arial" font-size="13" fill="#6B7280">전체 24건 · 이번 주 8건</text>
+
+  <rect x="272" y="160" width="556" height="44" rx="8" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="288" y="186" font-family="Arial" font-size="12" fill="#9CA3AF">🔍 검색</text>
+  <rect x="528" y="168" width="80" height="28" rx="6" fill="#F3F4F6"/>
+  <text x="568" y="186" text-anchor="middle" font-family="Arial" font-size="11" fill="#374151">학생 ▾</text>
+  <rect x="616" y="168" width="80" height="28" rx="6" fill="#F3F4F6"/>
+  <text x="656" y="186" text-anchor="middle" font-family="Arial" font-size="11" fill="#374151">영역 ▾</text>
+  <rect x="704" y="168" width="80" height="28" rx="6" fill="#F3F4F6"/>
+  <text x="744" y="186" text-anchor="middle" font-family="Arial" font-size="11" fill="#374151">기간 ▾</text>
+
+  <!-- This week -->
+  <text x="272" y="232" font-family="Arial" font-size="13" font-weight="bold" fill="#6B7280">이번 주 (6/9 - 6/13)</text>
+
+  <rect x="272" y="246" width="556" height="80" rx="12" fill="#EEF4FD" stroke="#A8C4E4"/>
+  <rect x="272" y="246" width="6" height="80" fill="#2E5FA8"/>
+  <text x="294" y="270" font-family="Arial" font-size="11" fill="#9CA3AF">오늘 09:14</text>
+  <circle cx="382" cy="266" r="12" fill="#3EA673"/>
+  <text x="382" y="271" text-anchor="middle" font-family="Arial" font-size="10" fill="white">최</text>
+  <text x="406" y="270" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">최희망</text>
+  <text x="294" y="296" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">6월 둘째주 사회성 관찰</text>
+  <text x="294" y="314" font-family="Arial" font-size="11" fill="#6B7280">또래와 교실 활동 참여 빈도·반응 패턴 기록</text>
+
+  <rect x="272" y="338" width="556" height="80" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="272" y="338" width="6" height="80" fill="#2E5FA8"/>
+  <text x="294" y="362" font-family="Arial" font-size="11" fill="#9CA3AF">어제 14:32</text>
+  <circle cx="382" cy="358" r="12" fill="#E8724A"/>
+  <text x="382" y="363" text-anchor="middle" font-family="Arial" font-size="10" fill="white">이</text>
+  <text x="406" y="362" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">이온돌</text>
+  <text x="294" y="388" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">PECS 4단계 진척 관찰</text>
+  <text x="294" y="406" font-family="Arial" font-size="11" fill="#6B7280">감정 카드 활용 시도 5회 중 4회 성공</text>
+
+  <rect x="272" y="430" width="556" height="80" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="272" y="430" width="6" height="80" fill="#2E5FA8"/>
+  <text x="294" y="454" font-family="Arial" font-size="11" fill="#9CA3AF">6/11 (수) 15:00</text>
+  <circle cx="382" cy="450" r="12" fill="#4377C0"/>
+  <text x="382" y="455" text-anchor="middle" font-family="Arial" font-size="10" fill="white">박</text>
+  <text x="406" y="454" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">박성장</text>
+  <text x="294" y="480" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">수학 시간 집중도 관찰</text>
+  <text x="294" y="498" font-family="Arial" font-size="11" fill="#6B7280">집중 시간 평균 8분 → 12분 향상</text>
+
+  <rect x="272" y="522" width="556" height="80" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="272" y="522" width="6" height="80" fill="#2E5FA8"/>
+  <text x="294" y="546" font-family="Arial" font-size="11" fill="#9CA3AF">6/10 (화) 10:20</text>
+  <circle cx="382" cy="542" r="12" fill="#9C68D6"/>
+  <text x="382" y="547" text-anchor="middle" font-family="Arial" font-size="10" fill="white">정</text>
+  <text x="406" y="546" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">정도전</text>
+  <text x="294" y="572" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">정서 불안정 행동 관찰</text>
+  <text x="294" y="590" font-family="Arial" font-size="11" fill="#BF3030">⚠ 점심 시간 자해 행동 1회 (1분 내 진정)</text>
+
+  <!-- Last week summary -->
+  <text x="272" y="634" font-family="Arial" font-size="13" font-weight="bold" fill="#6B7280">지난 주</text>
+  <rect x="272" y="648" width="556" height="56" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="294" y="676" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">6월 첫째주 관찰 6건</text>
+  <text x="816" y="676" text-anchor="end" font-family="Arial" font-size="11" fill="#3B7D8E">펼치기 ▾</text>
+
+  <rect x="272" y="716" width="556" height="56" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="294" y="744" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">5월 마지막주 관찰 7건</text>
+  <text x="816" y="744" text-anchor="end" font-family="Arial" font-size="11" fill="#3B7D8E">펼치기 ▾</text>
+
+  <!-- Right: Quick form -->
+  <rect x="852" y="96" width="556" height="780" rx="16" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="876" y="124" font-family="Arial" font-size="11" fill="#9CA3AF">T-16 · 관찰 기록 작성</text>
+  <text x="876" y="156" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">+ 새 관찰 기록</text>
+  <text x="876" y="180" font-family="Arial" font-size="12" fill="#6B7280">교실·일상 상황을 빠르게 기록합니다</text>
+
+  <text x="876" y="216" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">학생 <tspan fill="#E04545">*</tspan></text>
+  <rect x="876" y="226" width="508" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="892" y="253" font-family="Arial" font-size="13" fill="#111827">정도전 (초3, 자폐 1급)</text>
+  <text x="1372" y="253" text-anchor="end" font-family="Arial" font-size="12" fill="#6B7280">▾</text>
+
+  <text x="876" y="296" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">관찰 일시 <tspan fill="#E04545">*</tspan></text>
+  <rect x="876" y="306" width="248" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="892" y="333" font-family="Arial" font-size="13" fill="#111827">📅 오늘 10:30</text>
+  <text x="1140" y="296" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">장소</text>
+  <rect x="1140" y="306" width="244" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="1156" y="333" font-family="Arial" font-size="13" fill="#111827">특수학급 교실</text>
+
+  <text x="876" y="376" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">관찰 영역</text>
+  <g>
+    <rect x="876" y="386" width="92" height="32" rx="16" fill="#EEF4FD" stroke="#2E5FA8"/>
+    <text x="922" y="406" text-anchor="middle" font-family="Arial" font-size="11" fill="#2E5FA8">정서 ✓</text>
+    <rect x="980" y="386" width="92" height="32" rx="16" fill="#FFFFFF" stroke="#D1D5DB"/>
+    <text x="1026" y="406" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7280">사회성</text>
+    <rect x="1084" y="386" width="100" height="32" rx="16" fill="#FFFFFF" stroke="#D1D5DB"/>
+    <text x="1134" y="406" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7280">의사소통</text>
+    <rect x="1196" y="386" width="92" height="32" rx="16" fill="#FFFFFF" stroke="#D1D5DB"/>
+    <text x="1242" y="406" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7280">학업</text>
+    <rect x="1300" y="386" width="84" height="32" rx="16" fill="#FFFFFF" stroke="#D1D5DB"/>
+    <text x="1342" y="406" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7280">행동</text>
+  </g>
+
+  <text x="876" y="446" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">관찰 내용 <tspan fill="#E04545">*</tspan></text>
+  <rect x="876" y="456" width="508" height="160" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="892" y="482" font-family="Arial" font-size="13" fill="#111827">10:15 - 미술 시간 시작 직후 평소와 다른 자리 배치로 인해</text>
+  <text x="892" y="500" font-family="Arial" font-size="13" fill="#111827">불안 신호 (손 흔들기, 시선 회피) 보임.</text>
+  <text x="892" y="518" font-family="Arial" font-size="13" fill="#111827">10:18 - 익숙한 그림카드(나무) 활동지로 전환 → 점진적으로</text>
+  <text x="892" y="536" font-family="Arial" font-size="13" fill="#111827">안정. 5분 후 자발적으로 색칠 시작.</text>
+  <text x="892" y="554" font-family="Arial" font-size="13" fill="#111827">10:30 - 미술 활동 25분 지속 (이번 학기 최장)</text>
+  <text x="892" y="572" font-family="Arial" font-size="13" fill="#111827">메모: 자리 배치 변경 시 사전 예고가 필요함을 재확인</text>
+
+  <text x="876" y="650" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">관련 IEP 목표 (자동 연결)</text>
+  <rect x="876" y="660" width="508" height="44" rx="8" fill="#F9FAFB" stroke="#E5E7EB"/>
+  <rect x="892" y="672" width="60" height="20" rx="10" fill="#EEF4FD"/>
+  <text x="922" y="686" text-anchor="middle" font-family="Arial" font-size="10" fill="#2E5FA8">정서안정</text>
+  <text x="964" y="686" font-family="Arial" font-size="12" fill="#111827">정서 불안정 시간 감소 (Q2 단기 목표)</text>
+
+  <text x="876" y="730" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">첨부 (선택)</text>
+  <rect x="876" y="740" width="508" height="56" rx="8" fill="#F9FAFB" stroke="#D1D5DB" stroke-dasharray="4 4"/>
+  <text x="1130" y="772" text-anchor="middle" font-family="Arial" font-size="13" fill="#9CA3AF">📷 사진·영상 첨부</text>
+
+  <rect x="876" y="816" width="248" height="44" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="1000" y="843" text-anchor="middle" font-family="Arial" font-size="13" fill="#374151">임시저장</text>
+  <rect x="1136" y="816" width="248" height="44" rx="8" fill="#2E5FA8"/>
+  <text x="1260" y="843" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">저장</text>
+</svg>

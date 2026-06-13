@@ -1,0 +1,131 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- G-31 · ST-03 Stakeholder Detail · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">G-31 · ST-03 Stakeholder Detail · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Sidebar -->
+  <rect width="240" height="900" fill="#F5F5F5"/>
+  <rect width="240" height="64" fill="#FFFFFF"/><line x1="0" y1="64" x2="240" y2="64" stroke="#E5E7EB"/>
+  <text x="24" y="42" font-family="Arial" font-size="18" font-weight="bold" fill="#3B7D8E">온돌</text>
+  <circle cx="32" cy="86" r="7" fill="#D1D5DB"/><text x="52" y="91" font-family="Arial" font-size="13" fill="#374151">홈</text>
+  <circle cx="32" cy="130" r="7" fill="#D1D5DB"/><text x="52" y="135" font-family="Arial" font-size="13" fill="#374151">타임라인</text>
+  <circle cx="32" cy="174" r="7" fill="#D1D5DB"/><text x="52" y="179" font-family="Arial" font-size="13" fill="#374151">기록 관리</text>
+  <rect y="196" width="240" height="44" fill="#EEF4FD"/><rect y="196" width="3" height="44" fill="#3B7D8E"/>
+  <circle cx="32" cy="218" r="7" fill="#4377C0"/><text x="52" y="223" font-family="Arial" font-size="13" font-weight="bold" fill="#2E5FA8">권한 관리</text>
+  <circle cx="32" cy="262" r="7" fill="#D1D5DB"/><text x="52" y="267" font-family="Arial" font-size="13" fill="#374151">접근 로그</text>
+
+  <!-- Header -->
+  <rect x="240" width="1200" height="64" fill="#FFFFFF"/><line x1="240" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="272" y="40" font-family="Arial" font-size="13" fill="#6B7280">권한 관리 / <tspan fill="#111827" font-weight="bold">이특수교사</tspan></text>
+
+  <!-- Profile hero -->
+  <rect x="272" y="96" width="1136" height="160" rx="16" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <circle cx="356" cy="176" r="48" fill="#2E5FA8"/>
+  <text x="356" y="184" text-anchor="middle" font-family="Arial" font-size="28" fill="white">이</text>
+  <text x="424" y="142" font-family="Arial" font-size="24" font-weight="bold" fill="#111827">이특수교사</text>
+  <rect x="612" y="122" width="80" height="24" rx="12" fill="#EEF4FD"/>
+  <text x="652" y="139" text-anchor="middle" font-family="Arial" font-size="11" fill="#2E5FA8">특수교사</text>
+  <text x="424" y="170" font-family="Arial" font-size="13" fill="#6B7280">📧 lee.teacher@school.kr · 📞 010-2222-3333</text>
+  <text x="424" y="194" font-family="Arial" font-size="13" fill="#6B7280">소속: ○○특수학교 · 담당 기간: 2026.03 ~ 2027.02</text>
+  <text x="424" y="216" font-family="Arial" font-size="12" fill="#9CA3AF">권한 부여: 2026.03.01 · 마지막 접속: 어제</text>
+
+  <rect x="1216" y="122" width="176" height="40" rx="8" fill="#3B7D8E"/>
+  <text x="1304" y="148" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">권한 수정</text>
+  <rect x="1216" y="170" width="176" height="40" rx="8" fill="#FEF0F0" stroke="#FACDB8"/>
+  <text x="1304" y="196" text-anchor="middle" font-family="Arial" font-size="13" fill="#BF3030">권한 회수</text>
+  <rect x="1216" y="218" width="176" height="32" rx="8" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="1304" y="238" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">접근 로그 보기</text>
+
+  <!-- Permission grid -->
+  <text x="272" y="296" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">분야별 권한</text>
+
+  <g>
+    <!-- Education granted -->
+    <rect x="272" y="312" width="368" height="160" rx="12" fill="#EEF4FD" stroke="#A8C4E4"/>
+    <text x="290" y="338" font-family="Arial" font-size="14" font-weight="bold" fill="#2E5FA8">B. 교육</text>
+    <rect x="556" y="324" width="68" height="24" rx="12" fill="#3B7D8E"/>
+    <text x="590" y="340" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="white">편집</text>
+    <text x="290" y="372" font-family="Arial" font-size="12" fill="#374151">기간 · 2026.03.01 ~ 2027.02.28</text>
+    <text x="290" y="392" font-family="Arial" font-size="12" fill="#374151">기록 수 · 18건 작성/편집</text>
+    <text x="290" y="412" font-family="Arial" font-size="12" fill="#374151">최근 활동 · 어제 IEP 점검</text>
+    <line x1="290" y1="426" x2="624" y2="426" stroke="#A8C4E4"/>
+    <text x="290" y="450" font-family="Arial" font-size="11" fill="#6B7280">하위 기록 유형 (편집 가능)</text>
+    <text x="290" y="466" font-family="Arial" font-size="11" font-weight="bold" fill="#2E5FA8">IEP · 관찰 · 평가 · 전환교육</text>
+
+    <!-- Welfare read-only -->
+    <rect x="656" y="312" width="368" height="160" rx="12" fill="#EDFAF3" stroke="#A9DCC4"/>
+    <text x="674" y="338" font-family="Arial" font-size="14" font-weight="bold" fill="#276B4C">C. 복지서비스</text>
+    <rect x="940" y="324" width="68" height="24" rx="12" fill="#276B4C"/>
+    <text x="974" y="340" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="white">열람</text>
+    <text x="674" y="372" font-family="Arial" font-size="12" fill="#374151">기간 · 2026.03.01 ~ 2027.02.28</text>
+    <text x="674" y="392" font-family="Arial" font-size="12" fill="#374151">교육-복지 연계용</text>
+    <line x1="674" y1="426" x2="1008" y2="426" stroke="#A9DCC4"/>
+    <text x="674" y="450" font-family="Arial" font-size="11" fill="#6B7280">하위 기록 유형 (읽기 전용)</text>
+    <text x="674" y="466" font-family="Arial" font-size="11" font-weight="bold" fill="#276B4C">ISP · 서비스 이용</text>
+
+    <!-- Transition granted -->
+    <rect x="1040" y="312" width="368" height="160" rx="12" fill="#F4EFFB" stroke="#C9B6E6"/>
+    <text x="1058" y="338" font-family="Arial" font-size="14" font-weight="bold" fill="#6A43A8">E. 전환/자립</text>
+    <rect x="1324" y="324" width="68" height="24" rx="12" fill="#6A43A8"/>
+    <text x="1358" y="340" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="white">작성</text>
+    <text x="1058" y="372" font-family="Arial" font-size="12" fill="#374151">기간 · 2026.03.01 ~ 2027.02.28</text>
+    <text x="1058" y="392" font-family="Arial" font-size="12" fill="#374151">기록 수 · 3건 작성</text>
+    <line x1="1058" y1="426" x2="1392" y2="426" stroke="#C9B6E6"/>
+    <text x="1058" y="450" font-family="Arial" font-size="11" fill="#6B7280">하위 기록 유형 (작성 가능)</text>
+    <text x="1058" y="466" font-family="Arial" font-size="11" font-weight="bold" fill="#6A43A8">전환교육 계획</text>
+
+    <!-- Other domains - no access -->
+    <rect x="272" y="488" width="368" height="80" rx="12" fill="#F9FAFB" stroke="#E5E7EB"/>
+    <text x="290" y="514" font-family="Arial" font-size="14" font-weight="bold" fill="#9CA3AF">A. 의료</text>
+    <rect x="556" y="500" width="68" height="24" rx="12" fill="#F3F4F6"/>
+    <text x="590" y="516" text-anchor="middle" font-family="Arial" font-size="11" fill="#9CA3AF">없음</text>
+    <text x="290" y="546" font-family="Arial" font-size="12" fill="#6B7280">권한 없음</text>
+
+    <rect x="656" y="488" width="368" height="80" rx="12" fill="#F9FAFB" stroke="#E5E7EB"/>
+    <text x="674" y="514" font-family="Arial" font-size="14" font-weight="bold" fill="#9CA3AF">D. 일상/돌봄</text>
+    <rect x="940" y="500" width="68" height="24" rx="12" fill="#F3F4F6"/>
+    <text x="974" y="516" text-anchor="middle" font-family="Arial" font-size="11" fill="#9CA3AF">없음</text>
+    <text x="674" y="546" font-family="Arial" font-size="12" fill="#6B7280">권한 없음</text>
+
+    <rect x="1040" y="488" width="368" height="80" rx="12" fill="#F9FAFB" stroke="#E5E7EB"/>
+    <text x="1058" y="514" font-family="Arial" font-size="14" font-weight="bold" fill="#9CA3AF">F. 법적/행정</text>
+    <rect x="1324" y="500" width="68" height="24" rx="12" fill="#F3F4F6"/>
+    <text x="1358" y="516" text-anchor="middle" font-family="Arial" font-size="11" fill="#9CA3AF">없음</text>
+    <text x="1058" y="546" font-family="Arial" font-size="12" fill="#6B7280">권한 없음</text>
+  </g>
+
+  <!-- Activity log -->
+  <text x="272" y="608" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">최근 활동 로그</text>
+  <text x="1408" y="608" text-anchor="end" font-family="Arial" font-size="12" fill="#3B7D8E">전체 로그 →</text>
+  <rect x="272" y="620" width="1136" height="240" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <g>
+    <text x="296" y="650" font-family="Arial" font-size="11" fill="#9CA3AF">2026-06-11 10:14</text>
+    <text x="440" y="650" font-family="Arial" font-size="13" fill="#111827">IEP 1학기 점검 작성</text>
+    <rect x="1300" y="638" width="92" height="20" rx="10" fill="#EEF4FD"/>
+    <text x="1346" y="652" text-anchor="middle" font-family="Arial" font-size="10" fill="#2E5FA8">교육 · 편집</text>
+    <line x1="296" y1="668" x2="1392" y2="668" stroke="#F3F4F6"/>
+
+    <text x="296" y="694" font-family="Arial" font-size="11" fill="#9CA3AF">2026-06-09 14:32</text>
+    <text x="440" y="694" font-family="Arial" font-size="13" fill="#111827">관찰 기록 작성</text>
+    <rect x="1300" y="682" width="92" height="20" rx="10" fill="#EEF4FD"/>
+    <text x="1346" y="696" text-anchor="middle" font-family="Arial" font-size="10" fill="#2E5FA8">교육 · 편집</text>
+    <line x1="296" y1="712" x2="1392" y2="712" stroke="#F3F4F6"/>
+
+    <text x="296" y="738" font-family="Arial" font-size="11" fill="#9CA3AF">2026-06-08 09:48</text>
+    <text x="440" y="738" font-family="Arial" font-size="13" fill="#111827">ISP 열람 — 활동지원 연계</text>
+    <rect x="1300" y="726" width="92" height="20" rx="10" fill="#EDFAF3"/>
+    <text x="1346" y="740" text-anchor="middle" font-family="Arial" font-size="10" fill="#276B4C">복지 · 열람</text>
+    <line x1="296" y1="756" x2="1392" y2="756" stroke="#F3F4F6"/>
+
+    <text x="296" y="782" font-family="Arial" font-size="11" fill="#9CA3AF">2026-06-05 11:20</text>
+    <text x="440" y="782" font-family="Arial" font-size="13" fill="#111827">전환교육 계획 작성 (성인전환 진로)</text>
+    <rect x="1300" y="770" width="92" height="20" rx="10" fill="#F4EFFB"/>
+    <text x="1346" y="784" text-anchor="middle" font-family="Arial" font-size="10" fill="#6A43A8">전환 · 작성</text>
+    <line x1="296" y1="800" x2="1392" y2="800" stroke="#F3F4F6"/>
+
+    <text x="296" y="826" font-family="Arial" font-size="11" fill="#9CA3AF">2026-06-01 08:15</text>
+    <text x="440" y="826" font-family="Arial" font-size="13" fill="#111827">2학기 학기 일정 등록</text>
+    <rect x="1300" y="814" width="92" height="20" rx="10" fill="#EEF4FD"/>
+    <text x="1346" y="828" text-anchor="middle" font-family="Arial" font-size="10" fill="#2E5FA8">교육 · 작성</text>
+  </g>
+</svg>

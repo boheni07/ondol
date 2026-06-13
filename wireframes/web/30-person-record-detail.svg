@@ -1,0 +1,61 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- P-11 · ST-03 Person Record Detail (Easy Summary) · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">P-11 · ST-03 Record Detail (Easy Summary) · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#FFFFFF"/>
+
+  <!-- Sidebar simplified -->
+  <rect width="280" height="900" fill="#FFF8F4"/>
+  <rect width="280" height="80" fill="#FFFFFF"/>
+  <text x="32" y="52" font-family="Arial" font-size="24" font-weight="bold" fill="#E8724A">온돌</text>
+  <text x="32" y="146" font-family="Arial" font-size="22" fill="#374151">🌟 오늘 기록</text>
+  <rect x="0" y="170" width="280" height="80" fill="#FFE8DA"/>
+  <text x="32" y="218" font-family="Arial" font-size="22" font-weight="bold" fill="#E8724A">📖 내 기록</text>
+  <text x="32" y="290" font-family="Arial" font-size="22" fill="#374151">🔔 알림</text>
+  <text x="32" y="362" font-family="Arial" font-size="22" fill="#374151">⚙️ 설정</text>
+
+  <!-- Back -->
+  <rect x="312" y="48" width="120" height="48" rx="12" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+  <text x="372" y="78" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#3B7D8E">← 뒤로</text>
+
+  <!-- Title hero -->
+  <rect x="312" y="116" width="1096" height="160" rx="20" fill="#FEF0F0"/>
+  <circle cx="384" cy="196" r="40" fill="#BF3030"/>
+  <text x="384" y="208" text-anchor="middle" font-family="Arial" font-size="32" fill="white">🏥</text>
+  <text x="448" y="184" font-family="Arial" font-size="20" font-weight="bold" fill="#BF3030">병원·치료</text>
+  <text x="448" y="226" font-family="Arial" font-size="32" font-weight="bold" fill="#111827">병원에 갔어요</text>
+  <text x="448" y="258" font-family="Arial" font-size="18" fill="#374151">📅 오늘 (2026년 6월 12일) 오후 2시 30분</text>
+
+  <!-- Easy summary -->
+  <rect x="312" y="304" width="1096" height="280" rx="20" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+  <text x="340" y="344" font-family="Arial" font-size="22" font-weight="bold" fill="#111827">💡 쉬운 말로 설명해요</text>
+
+  <text x="340" y="392" font-family="Arial" font-size="20" fill="#111827">오늘은 김의사 선생님을 만났어요.</text>
+  <text x="340" y="424" font-family="Arial" font-size="20" fill="#111827">선생님이 "요즘 잠은 잘 자나요?" 하고 물어봤어요.</text>
+  <text x="340" y="456" font-family="Arial" font-size="20" fill="#111827">나는 "네, 잘 자요!" 라고 말했어요. 👍</text>
+
+  <text x="340" y="500" font-family="Arial" font-size="20" fill="#111827">먹는 약은 그대로 계속 먹기로 했어요.</text>
+  <text x="340" y="532" font-family="Arial" font-size="20" fill="#111827">한 달 뒤에 또 만나기로 했어요.</text>
+
+  <rect x="328" y="552" width="220" height="20" rx="10" fill="#EDFAF3"/>
+  <text x="438" y="568" text-anchor="middle" font-family="Arial" font-size="12" fill="#276B4C">✓ 보호자가 확인했어요</text>
+
+  <!-- Who -->
+  <rect x="312" y="608" width="540" height="120" rx="20" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="332" y="640" font-family="Arial" font-size="16" font-weight="bold" fill="#6B7280">👨‍⚕️ 누가 적었어요?</text>
+  <circle cx="356" cy="688" r="22" fill="#BF3030"/>
+  <text x="356" y="694" text-anchor="middle" font-family="Arial" font-size="14" fill="white">김</text>
+  <text x="392" y="684" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">김의사 선생님</text>
+  <text x="392" y="706" font-family="Arial" font-size="14" fill="#6B7280">서울아동발달센터</text>
+
+  <rect x="868" y="608" width="540" height="120" rx="20" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="888" y="640" font-family="Arial" font-size="16" font-weight="bold" fill="#6B7280">📅 다음에 만나는 날</text>
+  <text x="888" y="688" font-family="Arial" font-size="28" font-weight="bold" fill="#3B7D8E">7월 12일 (일요일)</text>
+  <text x="888" y="712" font-family="Arial" font-size="14" fill="#6B7280">한 달 뒤예요</text>
+
+  <!-- More info (optional) -->
+  <rect x="312" y="752" width="1096" height="92" rx="16" fill="#F9FAFB" stroke="#E5E7EB" stroke-dasharray="6 4"/>
+  <text x="340" y="784" font-family="Arial" font-size="16" font-weight="bold" fill="#6B7280">📋 더 자세히 알고 싶다면</text>
+  <text x="340" y="810" font-family="Arial" font-size="14" fill="#9CA3AF">의사 선생님이 적은 정식 진료 기록을 볼 수 있어요. 어려울 수 있어요.</text>
+  <rect x="1240" y="772" width="160" height="48" rx="12" fill="#FFFFFF" stroke="#3B7D8E" stroke-width="2"/>
+  <text x="1320" y="802" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#3B7D8E">원본 보기</text>
+</svg>

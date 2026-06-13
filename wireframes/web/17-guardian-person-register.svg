@@ -1,0 +1,106 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- G-03 · ST-05 Person Register Wizard · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">G-03 · ST-05 Person Register (Step 3/5) · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Sidebar (collapsed) -->
+  <rect width="64" height="900" fill="#F5F5F5"/>
+  <rect width="64" height="64" fill="#FFFFFF"/><line x1="0" y1="64" x2="64" y2="64" stroke="#E5E7EB"/>
+  <text x="32" y="42" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#3B7D8E">온</text>
+  <circle cx="32" cy="100" r="7" fill="#D1D5DB"/>
+  <circle cx="32" cy="140" r="7" fill="#D1D5DB"/>
+  <circle cx="32" cy="180" r="7" fill="#D1D5DB"/>
+
+  <!-- Header -->
+  <rect x="64" width="1376" height="64" fill="#FFFFFF"/><line x1="64" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="96" y="40" font-family="Arial" font-size="13" fill="#6B7280">홈 / 당사자 / <tspan fill="#111827" font-weight="bold">새 당사자 등록</tspan></text>
+  <text x="1408" y="40" text-anchor="end" font-family="Arial" font-size="13" fill="#9CA3AF">취소</text>
+
+  <!-- Step indicator bar -->
+  <rect x="64" y="64" width="1376" height="80" fill="#FFFFFF"/>
+  <line x1="64" y1="144" x2="1440" y2="144" stroke="#E5E7EB"/>
+  <g>
+    <circle cx="288" cy="104" r="14" fill="#3B7D8E"/><text x="288" y="109" text-anchor="middle" font-family="Arial" font-size="11" fill="white">✓</text>
+    <text x="288" y="134" text-anchor="middle" font-family="Arial" font-size="11" fill="#374151">기본 정보</text>
+    <line x1="306" y1="104" x2="498" y2="104" stroke="#3B7D8E" stroke-width="2"/>
+
+    <circle cx="516" cy="104" r="14" fill="#3B7D8E"/><text x="516" y="109" text-anchor="middle" font-family="Arial" font-size="11" fill="white">✓</text>
+    <text x="516" y="134" text-anchor="middle" font-family="Arial" font-size="11" fill="#374151">장애 정보</text>
+    <line x1="534" y1="104" x2="726" y2="104" stroke="#3B7D8E" stroke-width="2"/>
+
+    <circle cx="744" cy="104" r="14" fill="#3B7D8E"/><text x="744" y="109" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="white">3</text>
+    <text x="744" y="134" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#3B7D8E">응급 정보</text>
+    <line x1="762" y1="104" x2="954" y2="104" stroke="#E5E7EB" stroke-width="2"/>
+
+    <circle cx="972" cy="104" r="14" fill="#E5E7EB"/><text x="972" y="109" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7280">4</text>
+    <text x="972" y="134" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7280">프로필 사진</text>
+    <line x1="990" y1="104" x2="1182" y2="104" stroke="#E5E7EB" stroke-width="2"/>
+
+    <circle cx="1200" cy="104" r="14" fill="#E5E7EB"/><text x="1200" y="109" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7280">5</text>
+    <text x="1200" y="134" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7280">확인</text>
+  </g>
+
+  <!-- Form container -->
+  <rect x="360" y="172" width="784" height="640" rx="16" fill="#FFFFFF" stroke="#E5E7EB"/>
+
+  <text x="392" y="208" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">응급 시 필요한 정보</text>
+  <text x="392" y="232" font-family="Arial" font-size="13" fill="#6B7280">의료진·지원사가 빠르게 대응할 수 있도록 정확히 입력해 주세요</text>
+
+  <!-- Allergies -->
+  <text x="392" y="278" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">알레르기 <tspan fill="#E04545">*</tspan></text>
+  <rect x="392" y="288" width="720" height="48" rx="8" fill="#FFFFFF" stroke="#3B7D8E" stroke-width="2"/>
+  <rect x="408" y="302" width="68" height="22" rx="11" fill="#FEF0F0"/>
+  <text x="442" y="318" text-anchor="middle" font-family="Arial" font-size="11" fill="#BF3030">땅콩 ×</text>
+  <rect x="484" y="302" width="58" height="22" rx="11" fill="#FEF0F0"/>
+  <text x="513" y="318" text-anchor="middle" font-family="Arial" font-size="11" fill="#BF3030">새우 ×</text>
+  <text x="554" y="318" font-family="Arial" font-size="13" fill="#9CA3AF">입력 후 Enter로 태그 추가...</text>
+
+  <!-- Forbidden medications -->
+  <text x="392" y="378" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">금기 약물 <tspan fill="#E04545">*</tspan></text>
+  <rect x="392" y="388" width="720" height="48" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <rect x="408" y="402" width="120" height="22" rx="11" fill="#FEF0F0"/>
+  <text x="468" y="418" text-anchor="middle" font-family="Arial" font-size="11" fill="#BF3030">페니실린 계열 ×</text>
+
+  <!-- Current medications -->
+  <text x="392" y="478" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">현재 복용 약</text>
+  <rect x="392" y="488" width="720" height="48" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="408" y="516" font-family="Arial" font-size="13" fill="#111827">리스페달 1mg, 1일 1회</text>
+
+  <!-- Emergency contact -->
+  <text x="392" y="578" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">비상연락처 1순위 <tspan fill="#E04545">*</tspan></text>
+  <rect x="392" y="588" width="350" height="48" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="408" y="616" font-family="Arial" font-size="13" fill="#111827">김보호자 (모)</text>
+  <rect x="762" y="588" width="350" height="48" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="778" y="616" font-family="Arial" font-size="13" fill="#111827">010-1234-5678</text>
+
+  <text x="392" y="678" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">비상연락처 2순위</text>
+  <rect x="392" y="688" width="350" height="48" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="408" y="716" font-family="Arial" font-size="13" fill="#9CA3AF">이름·관계</text>
+  <rect x="762" y="688" width="350" height="48" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="778" y="716" font-family="Arial" font-size="13" fill="#9CA3AF">010-0000-0000</text>
+
+  <!-- Communication method -->
+  <text x="392" y="772" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">의사소통 방법</text>
+  <g>
+    <rect x="392" y="782" width="120" height="36" rx="18" fill="#EEF4FD" stroke="#3B7D8E" stroke-width="1.5"/>
+    <text x="452" y="804" text-anchor="middle" font-family="Arial" font-size="12" fill="#2E5FA8">단어 ✓</text>
+    <rect x="524" y="782" width="120" height="36" rx="18" fill="#EEF4FD" stroke="#3B7D8E" stroke-width="1.5"/>
+    <text x="584" y="804" text-anchor="middle" font-family="Arial" font-size="12" fill="#2E5FA8">그림카드 ✓</text>
+    <rect x="656" y="782" width="120" height="36" rx="18" fill="#F9FAFB" stroke="#D1D5DB"/>
+    <text x="716" y="804" text-anchor="middle" font-family="Arial" font-size="12" fill="#6B7280">수어</text>
+    <rect x="788" y="782" width="120" height="36" rx="18" fill="#F9FAFB" stroke="#D1D5DB"/>
+    <text x="848" y="804" text-anchor="middle" font-family="Arial" font-size="12" fill="#6B7280">AAC</text>
+    <rect x="920" y="782" width="120" height="36" rx="18" fill="#F9FAFB" stroke="#D1D5DB"/>
+    <text x="980" y="804" text-anchor="middle" font-family="Arial" font-size="12" fill="#6B7280">제스처</text>
+  </g>
+
+  <!-- Sticky footer buttons -->
+  <rect x="64" y="828" width="1376" height="72" fill="#FFFFFF"/>
+  <line x1="64" y1="828" x2="1440" y2="828" stroke="#E5E7EB"/>
+  <rect x="360" y="846" width="200" height="48" rx="10" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="460" y="876" text-anchor="middle" font-family="Arial" font-size="14" fill="#374151">← 이전</text>
+  <rect x="568" y="846" width="200" height="48" rx="10" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="668" y="876" text-anchor="middle" font-family="Arial" font-size="14" fill="#374151">임시저장</text>
+  <rect x="944" y="846" width="200" height="48" rx="10" fill="#3B7D8E"/>
+  <text x="1044" y="876" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="white">다음 →</text>
+</svg>

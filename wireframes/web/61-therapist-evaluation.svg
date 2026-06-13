@@ -1,0 +1,150 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- TH-14 회기 일지 목록 (좌) + TH-16/17 평가 보고서 작성 (우, Step 3/4) · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">TH-14 회기 일지 목록 (좌) + TH-16/17 평가 보고서 (우, Step 3/4) · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Sidebar -->
+  <rect width="240" height="900" fill="#F5F5F5"/>
+  <rect width="240" height="64" fill="#FFFFFF"/>
+  <text x="24" y="42" font-family="Arial" font-size="18" font-weight="bold" fill="#6A43A8">온돌</text>
+  <text x="68" y="42" font-family="Arial" font-size="11" fill="#6B7280">치료사</text>
+  <rect y="108" width="240" height="44" fill="#F4EFFB"/>
+  <text x="52" y="135" font-family="Arial" font-size="13" font-weight="bold" fill="#6A43A8">치료 기록</text>
+  <text x="68" y="168" font-family="Arial" font-size="12" fill="#6B7280">치료계획서 (8)</text>
+  <rect x="44" y="180" width="180" height="32" fill="#F4EFFB"/>
+  <text x="68" y="200" font-family="Arial" font-size="12" font-weight="bold" fill="#6A43A8">회기 일지 (146)</text>
+
+  <!-- Header -->
+  <rect x="240" width="1200" height="64" fill="#FFFFFF"/><line x1="240" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="272" y="40" font-family="Arial" font-size="13" fill="#6B7280">치료 기록 / <tspan fill="#111827" font-weight="bold">회기 일지 + 평가 보고서</tspan></text>
+
+  <!-- Left: Session List -->
+  <text x="272" y="112" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">회기 일지 (MED-006)</text>
+  <text x="272" y="134" font-family="Arial" font-size="12" fill="#6B7280">전체 146건 · 이번 주 18건 · 작성 대기 2건</text>
+
+  <!-- Filter row -->
+  <rect x="272" y="156" width="556" height="44" rx="8" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="288" y="184" font-family="Arial" font-size="11" fill="#9CA3AF">🔍 학생·날짜 검색</text>
+  <rect x="556" y="166" width="100" height="24" rx="6" fill="#F3F4F6"/>
+  <text x="606" y="182" text-anchor="middle" font-family="Arial" font-size="10" fill="#374151">학생 ▾</text>
+  <rect x="664" y="166" width="100" height="24" rx="6" fill="#F3F4F6"/>
+  <text x="714" y="182" text-anchor="middle" font-family="Arial" font-size="10" fill="#374151">치료 종류 ▾</text>
+
+  <!-- Today section -->
+  <text x="272" y="232" font-family="Arial" font-size="13" font-weight="bold" fill="#6B7280">오늘 (2026-06-13)</text>
+
+  <rect x="272" y="246" width="556" height="76" rx="12" fill="#F4EFFB" stroke="#6A43A8" stroke-width="2"/>
+  <rect x="272" y="246" width="6" height="76" fill="#6A43A8"/>
+  <circle cx="304" cy="282" r="14" fill="#E8724A"/>
+  <text x="304" y="288" text-anchor="middle" font-family="Arial" font-size="11" fill="white">이</text>
+  <text x="328" y="272" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">이온돌 · 언어치료 4회기</text>
+  <rect x="600" y="260" width="60" height="22" rx="11" fill="#FFFFFF"/>
+  <text x="630" y="274" text-anchor="middle" font-family="Arial" font-size="10" fill="#6A43A8">방금 작성</text>
+  <text x="328" y="292" font-family="Arial" font-size="11" fill="#6B7280">PECS 거리 1m · 4/5 성공 · 보호자 공유</text>
+  <text x="328" y="310" font-family="Arial" font-size="11" fill="#22A06B">목표 달성 ✓</text>
+
+  <!-- This week -->
+  <text x="272" y="354" font-family="Arial" font-size="13" font-weight="bold" fill="#6B7280">이번 주</text>
+
+  <rect x="272" y="368" width="556" height="68" rx="12" fill="#FEF7E0" stroke="#F2C94C"/>
+  <rect x="272" y="368" width="6" height="68" fill="#92670D"/>
+  <circle cx="304" cy="402" r="14" fill="#4377C0"/>
+  <text x="304" y="408" text-anchor="middle" font-family="Arial" font-size="11" fill="white">박</text>
+  <text x="328" y="394" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">박성장 · 작업치료 8회기 (어제)</text>
+  <rect x="600" y="382" width="84" height="22" rx="11" fill="#FFFFFF"/>
+  <text x="642" y="396" text-anchor="middle" font-family="Arial" font-size="10" fill="#92670D">작성 대기</text>
+  <text x="328" y="416" font-family="Arial" font-size="11" fill="#6B7280">⏳ 24시간 이내 작성 권장</text>
+
+  <rect x="272" y="448" width="556" height="60" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="288" y="472" font-family="Arial" font-size="11" fill="#9CA3AF">6/12 (목)</text>
+  <text x="370" y="472" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">이온돌 · 언어 3회기</text>
+  <text x="288" y="492" font-family="Arial" font-size="11" fill="#6B7280">발음 명료도 향상 관찰 · 보호자 확인 완료</text>
+
+  <rect x="272" y="520" width="556" height="60" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="288" y="544" font-family="Arial" font-size="11" fill="#9CA3AF">6/11 (수)</text>
+  <text x="370" y="544" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">정도전 · 인지 12회기</text>
+  <text x="288" y="564" font-family="Arial" font-size="11" fill="#BF3030">⚠ 자해 행동 관찰 → 평가 보고서 작성 권장</text>
+
+  <rect x="272" y="592" width="556" height="60" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="288" y="616" font-family="Arial" font-size="11" fill="#9CA3AF">6/11 (수)</text>
+  <text x="370" y="616" font-family="Arial" font-size="12" font-weight="bold" fill="#111827">최희망 · 언어 6회기</text>
+  <text x="288" y="636" font-family="Arial" font-size="11" fill="#6B7280">조음 정확도 향상 · 어휘 5개 추가</text>
+
+  <text x="272" y="676" font-family="Arial" font-size="11" fill="#9CA3AF">+ 14건 더 보기</text>
+
+  <!-- Right: Evaluation Report Wizard Step 3/4 -->
+  <rect x="852" y="96" width="556" height="780" rx="16" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="876" y="124" font-family="Arial" font-size="11" fill="#9CA3AF">TH-17 · 평가 보고서 작성 (Step 3/4 — 권고사항)</text>
+  <text x="876" y="156" font-family="Arial" font-size="20" font-weight="bold" fill="#111827">평가 보고서 — 박성장</text>
+  <text x="876" y="180" font-family="Arial" font-size="12" fill="#6B7280">MED-007 · 작업치료 8회기 평가 · 보호자·교사 공유 예정</text>
+
+  <!-- Step bar -->
+  <g>
+    <circle cx="900" cy="216" r="10" fill="#6A43A8"/><text x="900" y="220" text-anchor="middle" font-family="Arial" font-size="9" fill="white">✓</text>
+    <text x="900" y="240" text-anchor="middle" font-family="Arial" font-size="10" fill="#374151">검사 결과</text>
+    <line x1="910" y1="216" x2="1054" y2="216" stroke="#6A43A8" stroke-width="2"/>
+    <circle cx="1064" cy="216" r="10" fill="#6A43A8"/><text x="1064" y="220" text-anchor="middle" font-family="Arial" font-size="9" fill="white">✓</text>
+    <text x="1064" y="240" text-anchor="middle" font-family="Arial" font-size="10" fill="#374151">진척 분석</text>
+    <line x1="1074" y1="216" x2="1218" y2="216" stroke="#6A43A8" stroke-width="2"/>
+    <circle cx="1228" cy="216" r="10" fill="#6A43A8"/><text x="1228" y="220" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="white">3</text>
+    <text x="1228" y="240" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#6A43A8">권고사항</text>
+    <line x1="1238" y1="216" x2="1370" y2="216" stroke="#E5E7EB" stroke-width="2"/>
+    <circle cx="1380" cy="216" r="10" fill="#E5E7EB"/><text x="1380" y="220" text-anchor="middle" font-family="Arial" font-size="9" fill="#6B7280">4</text>
+    <text x="1380" y="240" text-anchor="middle" font-family="Arial" font-size="10" fill="#6B7280">확인</text>
+  </g>
+
+  <!-- Summary card -->
+  <rect x="876" y="266" width="508" height="80" rx="10" fill="#F4EFFB"/>
+  <text x="892" y="290" font-family="Arial" font-size="11" font-weight="bold" fill="#6A43A8">📊 진척 요약 (Step 2 결과)</text>
+  <text x="892" y="312" font-family="Arial" font-size="12" fill="#374151">소근육 발달: 8회기 동안 가위 사용 정확도 35% → 68% 향상</text>
+  <text x="892" y="330" font-family="Arial" font-size="12" fill="#374151">자조기술: 옷 단추 잠그기 자율 수행 가능 (목표 초과 달성)</text>
+
+  <!-- Continue/End -->
+  <text x="876" y="372" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">치료 지속 여부 <tspan fill="#E04545">*</tspan></text>
+  <g>
+    <rect x="876" y="382" width="160" height="64" rx="10" fill="#F4EFFB" stroke="#6A43A8" stroke-width="2"/>
+    <text x="956" y="408" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#6A43A8">지속 ✓</text>
+    <text x="956" y="428" text-anchor="middle" font-family="Arial" font-size="10" fill="#6B7280">추가 8회기 권장</text>
+
+    <rect x="1048" y="382" width="160" height="64" rx="10" fill="#FFFFFF" stroke="#D1D5DB"/>
+    <text x="1128" y="408" text-anchor="middle" font-family="Arial" font-size="13" fill="#374151">종결</text>
+    <text x="1128" y="428" text-anchor="middle" font-family="Arial" font-size="10" fill="#6B7280">목표 달성</text>
+
+    <rect x="1220" y="382" width="164" height="64" rx="10" fill="#FFFFFF" stroke="#D1D5DB"/>
+    <text x="1302" y="408" text-anchor="middle" font-family="Arial" font-size="13" fill="#374151">치료 변경</text>
+    <text x="1302" y="428" text-anchor="middle" font-family="Arial" font-size="10" fill="#6B7280">새 영역 추가</text>
+  </g>
+
+  <!-- Next goals -->
+  <text x="876" y="478" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">다음 단계 권장 목표</text>
+  <rect x="876" y="488" width="508" height="100" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="892" y="512" font-family="Arial" font-size="12" fill="#111827">1. 가위 사용 정확도 80% 달성 (현재 68%)</text>
+  <text x="892" y="530" font-family="Arial" font-size="12" fill="#111827">2. 글씨 쓰기 도입 — 모방 쓰기 → 자율 쓰기</text>
+  <text x="892" y="548" font-family="Arial" font-size="12" fill="#111827">3. 양손 협응 강화 (구슬 꿰기, 종이접기)</text>
+  <text x="892" y="566" font-family="Arial" font-size="12" fill="#111827">4. 학교·가정 연계 — 일상에서 소근육 활용 기회 확장</text>
+
+  <!-- Recommendations to others -->
+  <text x="876" y="616" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">협업자 권고사항</text>
+  <rect x="876" y="628" width="508" height="56" rx="10" fill="#EEF4FD"/>
+  <circle cx="896" cy="656" r="14" fill="#2E5FA8"/>
+  <text x="896" y="662" text-anchor="middle" font-family="Arial" font-size="10" fill="white">이</text>
+  <text x="920" y="652" font-family="Arial" font-size="11" font-weight="bold" fill="#111827">특수교사 · 이특수교사</text>
+  <text x="920" y="668" font-family="Arial" font-size="10" fill="#6B7280">학교에서 글쓰기 활동 도입 시 모방→자율 단계 적용 권장</text>
+
+  <rect x="876" y="692" width="508" height="56" rx="10" fill="#FFF8F4"/>
+  <circle cx="896" cy="720" r="14" fill="#E8724A"/>
+  <text x="896" y="726" text-anchor="middle" font-family="Arial" font-size="10" fill="white">박</text>
+  <text x="920" y="716" font-family="Arial" font-size="11" font-weight="bold" fill="#111827">보호자 · 박보호자</text>
+  <text x="920" y="732" font-family="Arial" font-size="10" fill="#6B7280">일상 활동(요리·놀이)에서 가위·구슬 등 양손 도구 자주 활용</text>
+
+  <rect x="876" y="756" width="508" height="56" rx="10" fill="#EDFAF3"/>
+  <circle cx="896" cy="784" r="14" fill="#276B4C"/>
+  <text x="896" y="790" text-anchor="middle" font-family="Arial" font-size="10" fill="white">최</text>
+  <text x="920" y="780" font-family="Arial" font-size="11" font-weight="bold" fill="#111827">사회복지사 · 최복지사</text>
+  <text x="920" y="796" font-family="Arial" font-size="10" fill="#6B7280">ISP 자조기술 목표 상향 조정 권장 (목표 초과 달성)</text>
+
+  <rect x="876" y="824" width="240" height="40" rx="8" fill="#FFFFFF" stroke="#D1D5DB"/>
+  <text x="996" y="848" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">← 이전</text>
+  <rect x="1128" y="824" width="256" height="40" rx="8" fill="#6A43A8"/>
+  <text x="1256" y="848" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">다음 → 미리보기</text>
+</svg>

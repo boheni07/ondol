@@ -1,0 +1,90 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- S-20 · ST-02 Handover List · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">S-20 · ST-02 Handover List · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Sidebar -->
+  <rect width="240" height="900" fill="#F5F5F5"/>
+  <rect width="240" height="64" fill="#FFFFFF"/>
+  <text x="24" y="42" font-family="Arial" font-size="18" font-weight="bold" fill="#B56F10">온돌</text>
+  <text x="68" y="42" font-family="Arial" font-size="11" fill="#6B7280">지원사</text>
+  <text x="52" y="91" font-family="Arial" font-size="13" fill="#374151">홈</text>
+  <text x="52" y="135" font-family="Arial" font-size="13" fill="#374151">일지</text>
+  <rect y="152" width="240" height="44" fill="#FFF5E6"/>
+  <rect y="152" width="3" height="44" fill="#B56F10"/>
+  <text x="52" y="179" font-family="Arial" font-size="13" font-weight="bold" fill="#925810">인수인계</text>
+  <text x="52" y="223" font-family="Arial" font-size="13" fill="#374151">알림</text>
+
+  <!-- Header -->
+  <rect x="240" width="1200" height="64" fill="#FFFFFF"/><line x1="240" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="272" y="40" font-family="Arial" font-size="13" fill="#6B7280">인수인계</text>
+
+  <text x="272" y="112" font-family="Arial" font-size="22" font-weight="bold" fill="#111827">인수인계</text>
+  <text x="272" y="136" font-family="Arial" font-size="13" fill="#6B7280">받은 인계 4건 · 전달한 인계 1건</text>
+
+  <!-- Tabs -->
+  <line x1="272" y1="172" x2="1408" y2="172" stroke="#E5E7EB"/>
+  <rect x="282" y="168" width="80" height="3" fill="#B56F10"/>
+  <text x="322" y="162" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#B56F10">받은 인계 (4)</text>
+  <text x="442" y="162" text-anchor="middle" font-family="Arial" font-size="13" fill="#6B7280">전달한 인계 (1)</text>
+
+  <!-- Pending action -->
+  <rect x="272" y="196" width="1136" height="56" rx="10" fill="#FEF7E0" stroke="#F2C94C"/>
+  <text x="296" y="220" font-family="Arial" font-size="13" font-weight="bold" fill="#92670D">⏰ 확인 대기 인계 (1건)</text>
+  <text x="296" y="240" font-family="Arial" font-size="11" fill="#6B7280">이온돌 — 6월 활동 인계 · 전임 김지원사가 전달했어요</text>
+  <rect x="1284" y="208" width="108" height="32" rx="6" fill="#B56F10"/>
+  <text x="1338" y="228" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">확인하기 →</text>
+
+  <!-- List -->
+  <text x="272" y="288" font-family="Arial" font-size="13" font-weight="bold" fill="#6B7280">모든 인계</text>
+
+  <!-- Item 1 - new -->
+  <rect x="272" y="302" width="1136" height="124" rx="12" fill="#EEF4FD" stroke="#A8C4E4"/>
+  <rect x="272" y="302" width="6" height="124" fill="#3B7D8E"/>
+  <rect x="294" y="318" width="74" height="22" rx="11" fill="#FEF0F0"/>
+  <text x="331" y="332" text-anchor="middle" font-family="Arial" font-size="11" fill="#BF3030">새 인계</text>
+  <text x="380" y="332" font-family="Arial" font-size="11" fill="#6B7280">2026-06-08 받음</text>
+  <text x="294" y="358" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">이온돌 — 6월 활동지원 인계</text>
+  <text x="294" y="380" font-family="Arial" font-size="12" fill="#6B7280">전임: 김지원사 → 박지원 · 기간: 2026.06.01 ~ 2026.11.30</text>
+  <text x="294" y="402" font-family="Arial" font-size="12" fill="#374151">📋 핵심 요약 + 특이사항 4건 + 중요 기록 6건 연결</text>
+  <rect x="1192" y="338" width="92" height="28" rx="14" fill="#FFFFFF" stroke="#3B7D8E"/>
+  <text x="1238" y="356" text-anchor="middle" font-family="Arial" font-size="11" fill="#3B7D8E">상세 →</text>
+  <rect x="1296" y="338" width="96" height="28" rx="14" fill="#3B7D8E"/>
+  <text x="1344" y="356" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="white">확인 완료</text>
+
+  <!-- Item 2 -->
+  <rect x="272" y="442" width="1136" height="100" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="272" y="442" width="6" height="100" fill="#9CA3AF"/>
+  <rect x="294" y="458" width="74" height="22" rx="11" fill="#EDFAF3"/>
+  <text x="331" y="472" text-anchor="middle" font-family="Arial" font-size="11" fill="#276B4C">확인 완료</text>
+  <text x="380" y="472" font-family="Arial" font-size="11" fill="#9CA3AF">2026-05-15 받음</text>
+  <text x="294" y="498" font-family="Arial" font-size="15" font-weight="bold" fill="#374151">김다정 — 5월 활동지원 인계</text>
+  <text x="294" y="520" font-family="Arial" font-size="12" fill="#6B7280">전임: 이지원사 → 박지원 · 기간: 2026.05.01 ~ 2026.10.31</text>
+  <text x="1388" y="498" text-anchor="end" font-family="Arial" font-size="12" fill="#3B7D8E">상세 →</text>
+
+  <!-- Item 3 -->
+  <rect x="272" y="558" width="1136" height="100" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="272" y="558" width="6" height="100" fill="#9CA3AF"/>
+  <rect x="294" y="574" width="74" height="22" rx="11" fill="#EDFAF3"/>
+  <text x="331" y="588" text-anchor="middle" font-family="Arial" font-size="11" fill="#276B4C">확인 완료</text>
+  <text x="380" y="588" font-family="Arial" font-size="11" fill="#9CA3AF">2026-04-02 받음</text>
+  <text x="294" y="614" font-family="Arial" font-size="15" font-weight="bold" fill="#374151">최희망 — 4월 활동지원 신규 배정</text>
+  <text x="294" y="636" font-family="Arial" font-size="12" fill="#6B7280">담당자: 최복지사(W) · 신규 사례 인계 · 의사소통 가이드 첨부</text>
+  <text x="1388" y="614" text-anchor="end" font-family="Arial" font-size="12" fill="#3B7D8E">상세 →</text>
+
+  <!-- Item 4 -->
+  <rect x="272" y="674" width="1136" height="100" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="272" y="674" width="6" height="100" fill="#9CA3AF"/>
+  <rect x="294" y="690" width="74" height="22" rx="11" fill="#EDFAF3"/>
+  <text x="331" y="704" text-anchor="middle" font-family="Arial" font-size="11" fill="#276B4C">확인 완료</text>
+  <text x="380" y="704" font-family="Arial" font-size="11" fill="#9CA3AF">2026-03-22 받음</text>
+  <text x="294" y="730" font-family="Arial" font-size="15" font-weight="bold" fill="#374151">이온돌 — 5월 활동지원 인계</text>
+  <text x="294" y="752" font-family="Arial" font-size="12" fill="#6B7280">전임: 박지원(연장) · 자가 인계 — 5월 한 달간 변화 기록</text>
+  <text x="1388" y="730" text-anchor="end" font-family="Arial" font-size="12" fill="#3B7D8E">상세 →</text>
+
+  <!-- Sent box (preview) -->
+  <text x="272" y="810" font-family="Arial" font-size="13" font-weight="bold" fill="#6B7280">전달한 인계 (이번 달)</text>
+  <rect x="272" y="824" width="1136" height="68" rx="12" fill="#F9FAFB" stroke="#E5E7EB"/>
+  <text x="296" y="852" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">이온돌 — 5월 활동지원 인계 (자가)</text>
+  <text x="296" y="872" font-family="Arial" font-size="11" fill="#6B7280">2026-03-22 작성 · 후임자(자기 자신) 확인 완료</text>
+</svg>

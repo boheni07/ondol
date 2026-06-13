@@ -1,11 +1,11 @@
 ---
 name: ondol-dev
-description: OnDol B2C 웹/앱 서비스 개발 하네스의 오케스트레이터. OnDol 기능 개발, 서비스 구현, 팀 작업 조율 요청 시 반드시 이 스킬을 사용할 것. "OnDol 개발", "기능 만들어줘", "서비스 구현", "팀 돌려줘", "다시 실행", "재실행", "업데이트", "수정해줘", "이전 결과 개선", "부분만 다시" 등의 표현에 트리거된다. analyst, architect-developer, qa-reviewer, documenter 에이전트를 에이전트 팀으로 조율한다.
+description: OnDol B2C 웹/앱 서비스 개발 하네스의 오케스트레이터. OnDol 기능 개발, 서비스 구현, 기획/WBS/일정, 팀 작업 조율 요청 시 반드시 이 스킬을 사용할 것. "OnDol 개발", "기능 만들어줘", "서비스 구현", "WBS 만들어줘", "작업 분해", "일정 짜줘", "이슈 등록", "마일스톤", "담당자 배정", "팀 돌려줘", "다시 실행", "재실행", "업데이트", "수정해줘", "이전 결과 개선", "부분만 다시" 등의 표현에 트리거된다. pm-planner, analyst, architect-developer, qa-reviewer, documenter 에이전트를 에이전트 팀으로 조율한다.
 ---
 
 ## 실행 모드
 
-**에이전트 팀** — analyst, architect-developer, qa-reviewer, documenter가 SendMessage로 직접 통신하며 자체 조율한다. 오케스트레이터는 팀 구성과 작업 할당만 담당하고, 진행 상황을 모니터링한다.
+**에이전트 팀** — pm-planner, analyst, architect-developer, qa-reviewer, documenter가 SendMessage로 직접 통신하며 자체 조율한다. 오케스트레이터는 팀 구성과 작업 할당만 담당하고, 진행 상황을 모니터링한다.
 
 ## Phase 0: 컨텍스트 확인
 
@@ -18,13 +18,30 @@ _workspace/ 존재?
   └── 있음 + 새 요청 → 새 실행 (_workspace를 _workspace_prev로 이동 후 시작)
 ```
 
+## Phase 0.5: 기획·WBS (기획 범위 요청 시)
+
+**실행 모드:** 에이전트 팀 (pm-planner 주도)
+
+이 Phase는 **기획·WBS·일정·이슈 등록 범위의 요청일 때만** 실행한다. 단순 단일 기능 구현·버그 수정이면 건너뛰고 Phase 1로 간다.
+
+1. pm-planner에게 `TaskCreate`로 작업 할당:
+   - "WBS 분해 및 기획: {요청 내용}"
+   - skill: project-planning
+   - 입력: `_workspace/01_analyst_requirements.md`(있으면) + `docs/` 설계 문서
+
+2. pm-planner가 `docs/08-wbs.md`(+xlsx) 및 GitHub 등록 자산 생성, `_workspace/00_pm_plan.md` 요약 공유
+
+3. GitHub 이슈 등록은 자산 생성까지만 하고, 실제 `gh` 실행은 사용자 확인 후 진행
+
+**완료 조건:** `docs/08-wbs.md` 생성/갱신 + `_workspace/00_pm_plan.md` 요약 + 사용자 확인
+
 ## Phase 1: 요구사항 분석
 
 **실행 모드:** 에이전트 팀 (analyst 단독 시작)
 
 1. `TeamCreate`로 팀 구성:
    - team_name: `ondol-{작업명}-team`
-   - members: analyst, architect-developer, qa-reviewer, documenter
+   - members: pm-planner, analyst, architect-developer, qa-reviewer, documenter
 
 2. analyst에게 `TaskCreate`로 작업 할당:
    - "요구사항 명세 작성: {기능/요청 내용}"
@@ -78,6 +95,9 @@ _workspace/ 존재?
 ## 데이터 전달 경로
 
 ```
+pm-planner (기획 범위 요청 시)
+  └─→ docs/08-wbs.md (+xlsx) + GitHub 등록 자산 + _workspace/00_pm_plan.md
+        └─→ analyst
 analyst
   └─→ _workspace/01_analyst_requirements.md
         └─→ architect-developer
@@ -99,6 +119,7 @@ analyst
 ## 부분 재실행 (후속 작업)
 
 특정 Phase만 다시 실행이 필요하면:
+- "WBS/일정 수정", "이슈 다시", "담당자 재배정": Phase 0.5만 (pm-planner)
 - "분석만 다시": Phase 1만
 - "코드 수정": Phase 2 + Phase 3
 - "문서 업데이트": Phase 4만
@@ -107,7 +128,8 @@ analyst
 ## 테스트 시나리오
 
 **정상 흐름:**
-1. "로그인 기능 만들어줘" → Phase 0(신규) → Phase 1(요구사항) → Phase 2(NextAuth 구현) → Phase 3(QA) → Phase 4(README 업데이트)
+1. "로그인 기능 만들어줘" → Phase 0(신규) → (기획 범위 아님, Phase 0.5 건너뜀) → Phase 1(요구사항) → Phase 2(NextAuth 구현) → Phase 3(QA) → Phase 4(README 업데이트)
+2. "전체 WBS 만들고 GitHub 이슈로 등록 준비해줘" → Phase 0 → Phase 0.5(pm-planner: docs/08-wbs.md + 엑셀 + 이슈 자산) → 사용자 확인 후 gh 스크립트 실행
 
 **에러 흐름:**
 1. QA FAIL 2회 → architect-developer가 요구사항 범위 재확인 → analyst와 협의 → 범위 축소 후 재구현

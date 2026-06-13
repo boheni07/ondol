@@ -1198,7 +1198,7 @@ CREATE TYPE access_level AS ENUM (
   'read',           -- 열람만
   'write',          -- 새 기록 작성
   'edit',           -- 기존 기록 수정 포함
-  'admin'           -- 전체 관리
+  'admin'           -- 전체 관리 (주보호자 전용 — 권한 부여 위자드로 위임 불가)
 );
 
 -- 생애주기 단계

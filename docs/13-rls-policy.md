@@ -339,7 +339,7 @@ ROLLBACK;
 | 4 | self_expressions 전문가 SELECT 허용 여부 | 자기표현 도메인 매핑 부재 | 권한 모델 확장 검토 |
 | 5 | access_logs/permission_logs 권한자 본인 SELECT | docs 미정 | 11.x 조회 API 설계와 정합 |
 | 6 | handovers "미확인 상태에서만 수정"(9.1.5) RLS화 | API 레벨 언급, RLS 규칙 미정 | `is_confirmed=false` USING 조건 후보 |
-| 7 | `access_level` 'manage'(WBS) vs 'edit/admin'(§4) | Enum 표기 불일치 | docs/02 §4를 정본으로 통일 |
+| 7 | `access_level` 'manage'(WBS) vs 'edit/admin'(§4) | ✅ 해결 (2026-06-14) | WBS 4.1.1 `manage`→`read/write/edit` 수정. `admin`은 주보호자 전용·위임 불가로 확정(docs/02 §4·docs/06 Flow-3). 위자드 3단계 노출 |
 
 ---
 

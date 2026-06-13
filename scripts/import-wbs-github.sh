@@ -306,7 +306,7 @@ BODY=$(cat <<'WBSEOF'
 **우선순위:** P0  ·  **예상 공수:** 12d  ·  **작업 수:** 8  ·  **일정:** W6–W8
 
 ### 작업 목록
-- [ ] **4.1.1** 권한 부여 API (도메인·수준·기간) `M` `P0` — 권한 부여 — 권한자·도메인(멀티)·수준(read/write/manage)·기간 UPSERT. 참고: docs/02 §2(permissions)·§4 Enum, docs/05 §2 권한 부여
+- [ ] **4.1.1** 권한 부여 API (도메인·수준·기간) `M` `P0` — 권한 부여 — 권한자·도메인(멀티)·수준(read/write/edit, admin은 주보호자 전용·위임 불가)·기간 UPSERT. 참고: docs/02 §2(permissions)·§4 Enum(access_level), docs/05 §2 권한 부여
 - [ ] **4.1.2** 권한 단건 조회 `XS` `P0` — 권한 단건 조회.
 - [ ] **4.1.3** 당사자별 권한 매트릭스 조회 `M` `P0` — 당사자별 권한 매트릭스(이해관계자×도메인 그리드). 참고: docs/05 §2, wireframes/web/07-permission-matrix.svg
 - [ ] **4.1.4** 사용자별 받은 권한 목록 `S` `P0` — 사용자(전문가)별 받은 권한 목록. 참고: wireframes/web/20-guardian-stakeholder-detail.svg
@@ -1368,11 +1368,9 @@ echo "  created: ${URL:-(실패: [19.3] 운영)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
 if [ "$CREATE_PROJECT" = "true" ]; then
-  echo "== 4) Projects =="
   PNUM=$(gh project create --owner "$OWNER" --title "$PROJECT_TITLE" --format json -q .number 2>/dev/null)
   if [ -n "${PNUM:-}" ]; then
     for u in "${CREATED_URLS[@]}"; do gh project item-add "$PNUM" --owner "$OWNER" --url "$u" >/dev/null 2>&1 || true; done
-    echo "  added ${#CREATED_URLS[@]} issues"
-  else echo "  프로젝트 생성 실패"; fi
+  fi
 fi
 echo "== 완료: ${#CREATED_URLS[@]} 이슈 =="

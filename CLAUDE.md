@@ -20,3 +20,4 @@
 | 2026-06-14 | 담당자 재배정 + 문서 정합성 보완 | docs/02,03,06,08 + wireframes/index.html | 개발자 B 부하 분산(161→115.5d), WBS 요약표·화면 수·ERD·플로우·컬러 정합화 |
 | 2026-06-14 | README + 기술 스택 문서 작성 | README.md, docs/10-tech-stack.md | 프로젝트 부재 문서 보완, WBS 0.2 산출물 경로 정합화 |
 | 2026-06-14 | 권장 문서 6종 작성 | docs/11~15 + docs/structure.md | 화면 인벤토리 SSOT·API 인덱스·RLS 정책·접근성 체크리스트·마이그레이션 순서·폴더 구조(병렬 문서 에이전트 4 + 직접 2) |
+| 2026-06-14 | access_level 정합화 + admin 위임 정책 확정 | docs/02,06,08,13 + 파생자산 | WBS 4.1.1 `manage`→enum 정합, admin은 주보호자 전용·위임 불가(위자드 read/write/edit 3단계) |

@@ -56,7 +56,7 @@
 | ID | 작업 | 산출물 | 공수 | 우선순위 | 의존성 | 세부사항 | 담당자 |
 |----|------|-------|:---:|:------:|:----:| :-------- | :----: |
 | 0.1 | Git 저장소 초기화 + .gitignore + README | 빈 저장소 | XS | P0 | — | 모노레포 Git 저장소 초기화. .gitignore(node_modules·.env·빌드 산출물·.expo), README에 서비스 개요·로컬 실행법·환경 구성 명시. 참고: CLAUDE.md(하네스 정의) | PL |
-| 0.2 | 기술 스택 확정 문서 작성 | docs/tech-stack.md | S | P0 | — | 프론트(Next.js App Router)·모바일(Expo RN)·백엔드(Supabase/bkend.ai)·DB(PostgreSQL+RLS) 스택 확정 및 근거 문서화. 참고: docs/02-data-specification.md, docs/03-erd.md | PL |
+| 0.2 | 기술 스택 확정 문서 작성 | docs/10-tech-stack.md | S | P0 | — | 프론트(Next.js App Router)·모바일(Expo RN)·백엔드(Supabase/bkend.ai)·DB(PostgreSQL+RLS) 스택 확정 및 근거 문서화. 참고: docs/02-data-specification.md, docs/03-erd.md, docs/10-tech-stack.md | PL |
 | 0.3 | Next.js (App Router) 프로젝트 부팅 | apps/web | S | P0 | 0.2 | apps/web 에 Next.js App Router 프로젝트 부팅(라우팅·서버컴포넌트 구조). 참고: docs/06-information-architecture.md §4 반응형 웹 IA | PL |
 | 0.4 | React Native (Expo) 프로젝트 부팅 | apps/mobile | S | P0 | 0.2 | apps/mobile 에 Expo 기반 RN 앱 부팅(네비게이션 스택·탭). 참고: docs/06-information-architecture.md §5 모바일 앱 IA | PL |
 | 0.5 | Supabase 프로젝트 생성 + 환경 변수 분리 | .env.{dev,stg,prod} | S | P0 | 0.2 | Supabase 프로젝트 생성 후 dev/stg/prod 3환경 분리(.env.dev/.stg/.prod). 키·URL 환경변수화. 참고: docs/03-erd.md §RLS 정책 요약 | PL |

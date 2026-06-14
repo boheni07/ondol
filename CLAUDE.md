@@ -22,3 +22,4 @@
 | 2026-06-14 | 권장 문서 6종 작성 | docs/11~15 + docs/structure.md | 화면 인벤토리 SSOT·API 인덱스·RLS 정책·접근성 체크리스트·마이그레이션 순서·폴더 구조(병렬 문서 에이전트 4 + 직접 2) |
 | 2026-06-14 | access_level 정합화 + admin 위임 정책 확정 | docs/02,06,08,13 + 파생자산 | WBS 4.1.1 `manage`→enum 정합, admin은 주보호자 전용·위임 불가(위자드 read/write/edit 3단계) |
 | 2026-06-14 | 기술 스택 미결 4건 확정 | docs/10-tech-stack.md, README | BaaS=Supabase 직접, 서버상태=TanStack Query, 폼=RHF+Zod, 이메일=Resend |
+| 2026-06-14 | 에이전트 3종 + 스킬 3종 추가 (팀 5→8명) | agents/{designer,security-reviewer,data-infra}.md, skills/{design-spec,security-review,infra-ops}, skills/ondol-dev, skills/qa-review | 전문 영역 공백 보완 — designer(Phase 1.5: 와이어프레임·a11y), security-reviewer(Phase 3 병렬: RLS·OWASP·PII), data-infra(Phase 3.5: 마이그레이션·배포·CI/CD). 오케스트레이터 Phase·데이터흐름·재실행 갱신, qa-review와 보안 트리거 경계 분리 |

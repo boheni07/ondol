@@ -93,9 +93,11 @@ WBS 0.6의 "bkend.ai BaaS 연동 (또는 Supabase 직접)" 선택지를 **Supaba
 |------|------|------|
 | 단위 | **Vitest** ✅ | WBS 18.1.1 |
 | API 통합 | **Supertest** ✅ | WBS 18.1.2 |
-| E2E | **Playwright** ✅ | 5개 핵심 플로우. WBS 18.1.3 |
+| E2E (웹) | **Playwright** ✅ | 5개 핵심 플로우. WBS 18.1.3 |
+| E2E (모바일) | **Detox** ✅ | RN 사용자 플로우. WBS Phase 16(16.1.x~) |
 | RLS 정책 | **pgTAP** ✅ | DB 보안 자동 검증. WBS 18.1.4 |
 | 시각 회귀 | Chromatic ⚪ | WBS 18.1.5 (P1) |
+| 성능·부하 | 미선정 ⚪ | 도구·범위 미정(WBS 작업 부재). docs/17 §2 TBD |
 
 ## 6. 인프라 · 운영
 

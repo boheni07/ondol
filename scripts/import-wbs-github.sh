@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
-# OnDol WBS -> GitHub 자동 등록 (라벨/마일스톤/이슈/프로젝트)
-# 생성: project-planning 스킬 · 멱등 재실행 가능
+# OnDol WBS -> GitHub 자동 등록 (라벨/마일스톤/이슈)
+# 생성: scripts/gen-wbs-assets.py (SSOT=docs/08-wbs-v1.1.md) · 멱등 재실행 가능
+# 사용: 아래 GH_* 에 GitHub username 매핑 후 `bash scripts/import-wbs-github.sh`
 set -uo pipefail
-REPO="boheni07/ondol"
-OWNER="boheni07"
+REPO="${REPO:-boheni07/ondol}"
 START_DATE="${START_DATE:-2026-06-16}"
-CREATE_PROJECT="${CREATE_PROJECT:-false}"
-PROJECT_TITLE="OnDol 개발 (WBS)"
 
 GH_PM=""
 GH_PL=""
@@ -19,6 +17,7 @@ GH_DEV_E=""
 role_user() { case "$1" in
   PM) echo "$GH_PM";; PL) echo "$GH_PL";; Dev-A) echo "$GH_DEV_A";; Dev-B) echo "$GH_DEV_B";;
   Dev-C) echo "$GH_DEV_C";; Dev-D) echo "$GH_DEV_D";; Dev-E) echo "$GH_DEV_E";; *) echo "";; esac; }
+due_for() { date -u -d "$START_DATE +$(( $1 * 7 )) days" +%Y-%m-%dT%H:%M:%SZ 2>/dev/null || echo ""; }
 
 echo "== 1) 라벨 =="
 gh label create "phase:0" --color C5DEF5 --description "Phase 0" -R "$REPO" --force >/dev/null 2>&1 || true
@@ -32,6 +31,7 @@ gh label create "phase:7" --color C5DEF5 --description "Phase 7" -R "$REPO" --fo
 gh label create "phase:8" --color C5DEF5 --description "Phase 8" -R "$REPO" --force >/dev/null 2>&1 || true
 gh label create "phase:9" --color C5DEF5 --description "Phase 9" -R "$REPO" --force >/dev/null 2>&1 || true
 gh label create "phase:10" --color C5DEF5 --description "Phase 10" -R "$REPO" --force >/dev/null 2>&1 || true
+gh label create "phase:11.5" --color C5DEF5 --description "Phase 11.5" -R "$REPO" --force >/dev/null 2>&1 || true
 gh label create "phase:11" --color C5DEF5 --description "Phase 11" -R "$REPO" --force >/dev/null 2>&1 || true
 gh label create "phase:12" --color C5DEF5 --description "Phase 12" -R "$REPO" --force >/dev/null 2>&1 || true
 gh label create "phase:13" --color C5DEF5 --description "Phase 13" -R "$REPO" --force >/dev/null 2>&1 || true
@@ -41,76 +41,76 @@ gh label create "phase:16" --color C5DEF5 --description "Phase 16" -R "$REPO" --
 gh label create "phase:17" --color C5DEF5 --description "Phase 17" -R "$REPO" --force >/dev/null 2>&1 || true
 gh label create "phase:18" --color C5DEF5 --description "Phase 18" -R "$REPO" --force >/dev/null 2>&1 || true
 gh label create "phase:19" --color C5DEF5 --description "Phase 19" -R "$REPO" --force >/dev/null 2>&1 || true
-gh label create "priority:P0" --color D73A4A --description "MVP 필수" -R "$REPO" --force >/dev/null 2>&1 || true
-gh label create "priority:P1" --color FBCA04 --description "권장" -R "$REPO" --force >/dev/null 2>&1 || true
-gh label create "priority:P2" --color 0E8A16 --description "차기" -R "$REPO" --force >/dev/null 2>&1 || true
-gh label create "type:infra" --color BFD4F2 --description "infra" -R "$REPO" --force >/dev/null 2>&1 || true
-gh label create "type:db" --color 5319E7 --description "db" -R "$REPO" --force >/dev/null 2>&1 || true
-gh label create "type:backend" --color 1D76DB --description "backend" -R "$REPO" --force >/dev/null 2>&1 || true
-gh label create "type:frontend" --color B60205 --description "frontend" -R "$REPO" --force >/dev/null 2>&1 || true
-gh label create "type:mobile" --color D93F0B --description "mobile" -R "$REPO" --force >/dev/null 2>&1 || true
-gh label create "type:design" --color C2E0C6 --description "design" -R "$REPO" --force >/dev/null 2>&1 || true
-gh label create "type:security" --color E99695 --description "security" -R "$REPO" --force >/dev/null 2>&1 || true
-gh label create "type:qa" --color FBCA04 --description "qa" -R "$REPO" --force >/dev/null 2>&1 || true
-gh label create "role:PM" --color 5319E7 --description "PM" -R "$REPO" --force >/dev/null 2>&1 || true
-gh label create "role:PL" --color 0052CC --description "PL" -R "$REPO" --force >/dev/null 2>&1 || true
-gh label create "role:Dev-A" --color 1D76DB --description "Dev-A" -R "$REPO" --force >/dev/null 2>&1 || true
-gh label create "role:Dev-B" --color 0E8A16 --description "Dev-B" -R "$REPO" --force >/dev/null 2>&1 || true
-gh label create "role:Dev-C" --color B60205 --description "Dev-C" -R "$REPO" --force >/dev/null 2>&1 || true
-gh label create "role:Dev-D" --color D93F0B --description "Dev-D" -R "$REPO" --force >/dev/null 2>&1 || true
-gh label create "role:Dev-E" --color 6F42C1 --description "Dev-E" -R "$REPO" --force >/dev/null 2>&1 || true
+gh label create "priority:P0" --color B60205 --description "P0" -R "$REPO" --force >/dev/null 2>&1 || true
+gh label create "priority:P1" --color FBCA04 --description "P1" -R "$REPO" --force >/dev/null 2>&1 || true
+gh label create "priority:P2" --color 0E8A16 --description "P2" -R "$REPO" --force >/dev/null 2>&1 || true
+gh label create "type:infra" --color D4C5F9 --description "infra" -R "$REPO" --force >/dev/null 2>&1 || true
+gh label create "type:db" --color D4C5F9 --description "db" -R "$REPO" --force >/dev/null 2>&1 || true
+gh label create "type:backend" --color D4C5F9 --description "backend" -R "$REPO" --force >/dev/null 2>&1 || true
+gh label create "type:security" --color D4C5F9 --description "security" -R "$REPO" --force >/dev/null 2>&1 || true
+gh label create "type:qa" --color D4C5F9 --description "qa" -R "$REPO" --force >/dev/null 2>&1 || true
+gh label create "type:design" --color D4C5F9 --description "design" -R "$REPO" --force >/dev/null 2>&1 || true
+gh label create "type:frontend" --color D4C5F9 --description "frontend" -R "$REPO" --force >/dev/null 2>&1 || true
+gh label create "type:mobile" --color D4C5F9 --description "mobile" -R "$REPO" --force >/dev/null 2>&1 || true
+gh label create "role:PM" --color BFD4F2 --description "PM" -R "$REPO" --force >/dev/null 2>&1 || true
+gh label create "role:PL" --color BFD4F2 --description "PL" -R "$REPO" --force >/dev/null 2>&1 || true
+gh label create "role:Dev-A" --color BFD4F2 --description "Dev-A" -R "$REPO" --force >/dev/null 2>&1 || true
+gh label create "role:Dev-B" --color BFD4F2 --description "Dev-B" -R "$REPO" --force >/dev/null 2>&1 || true
+gh label create "role:Dev-C" --color BFD4F2 --description "Dev-C" -R "$REPO" --force >/dev/null 2>&1 || true
+gh label create "role:Dev-D" --color BFD4F2 --description "Dev-D" -R "$REPO" --force >/dev/null 2>&1 || true
+gh label create "role:Dev-E" --color BFD4F2 --description "Dev-E" -R "$REPO" --force >/dev/null 2>&1 || true
 
 echo "== 2) 마일스톤 =="
-mk_due() { date -d "$START_DATE +$(( $1 * 7 )) days" +%Y-%m-%dT00:00:00Z 2>/dev/null || echo ""; }
-DUE=$(mk_due 2)
+DUE=$(due_for 2)
 gh api -X POST "repos/$REPO/milestones" -f title="Phase 0 · 프로젝트 셋업" -f state="open" -f description="프로젝트 셋업 (W1-W2)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
-DUE=$(mk_due 4)
+DUE=$(due_for 4)
 gh api -X POST "repos/$REPO/milestones" -f title="Phase 1 · DB 스키마 + RLS" -f state="open" -f description="DB 스키마 + RLS (W2-W4)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
-DUE=$(mk_due 6)
+DUE=$(due_for 6)
 gh api -X POST "repos/$REPO/milestones" -f title="Phase 2 · 인증 (Auth)" -f state="open" -f description="인증 (Auth) (W4-W6)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
-DUE=$(mk_due 7)
+DUE=$(due_for 7)
 gh api -X POST "repos/$REPO/milestones" -f title="Phase 3 · 사용자·당사자·매핑" -f state="open" -f description="사용자·당사자·매핑 (W5-W7)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
-DUE=$(mk_due 8)
+DUE=$(due_for 8)
 gh api -X POST "repos/$REPO/milestones" -f title="Phase 4 · 권한 관리" -f state="open" -f description="권한 관리 (W6-W8)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
-DUE=$(mk_due 12)
+DUE=$(due_for 12)
 gh api -X POST "repos/$REPO/milestones" -f title="Phase 5 · 기록 (Records)" -f state="open" -f description="기록 (Records) (W7-W12)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
-DUE=$(mk_due 10)
+DUE=$(due_for 10)
 gh api -X POST "repos/$REPO/milestones" -f title="Phase 6 · 자기표현" -f state="open" -f description="자기표현 (W9-W10)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
-DUE=$(mk_due 10)
+DUE=$(due_for 10)
 gh api -X POST "repos/$REPO/milestones" -f title="Phase 7 · 파일 첨부" -f state="open" -f description="파일 첨부 (W9-W10)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
-DUE=$(mk_due 12)
+DUE=$(due_for 12)
 gh api -X POST "repos/$REPO/milestones" -f title="Phase 8 · 이정표·타임라인" -f state="open" -f description="이정표·타임라인 (W10-W12)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
-DUE=$(mk_due 13)
+DUE=$(due_for 13)
 gh api -X POST "repos/$REPO/milestones" -f title="Phase 9 · 인수인계" -f state="open" -f description="인수인계 (W11-W13)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
-DUE=$(mk_due 13)
+DUE=$(due_for 13)
 gh api -X POST "repos/$REPO/milestones" -f title="Phase 10 · 알림" -f state="open" -f description="알림 (W11-W13)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
-DUE=$(mk_due 13)
+DUE=$(due_for 13)
 gh api -X POST "repos/$REPO/milestones" -f title="Phase 11 · 접근 로그" -f state="open" -f description="접근 로그 (W12-W13)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
-DUE=$(mk_due 6)
+DUE=$(due_for 13)
+gh api -X POST "repos/$REPO/milestones" -f title="Phase 11.5 · 백엔드 통합 테스트" -f state="open" -f description="백엔드 통합 테스트 체크포인트 (W13)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
+DUE=$(due_for 6)
 gh api -X POST "repos/$REPO/milestones" -f title="Phase 12 · 디자인 시스템" -f state="open" -f description="디자인 시스템 (W4-W6)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
-DUE=$(mk_due 11)
+DUE=$(due_for 11)
 gh api -X POST "repos/$REPO/milestones" -f title="Phase 13 · 웹 UI — 보호자" -f state="open" -f description="웹 UI — 보호자 (W7-W11)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
-DUE=$(mk_due 12)
+DUE=$(due_for 12)
 gh api -X POST "repos/$REPO/milestones" -f title="Phase 14 · 웹 UI — 당사자(접근성)" -f state="open" -f description="웹 UI — 당사자(접근성) (W10-W12)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
-DUE=$(mk_due 14)
+DUE=$(due_for 14)
 gh api -X POST "repos/$REPO/milestones" -f title="Phase 15 · 웹 UI — 전문가(4역할)" -f state="open" -f description="웹 UI — 전문가(4역할) (W9-W14)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
-DUE=$(mk_due 15)
+DUE=$(due_for 15)
 gh api -X POST "repos/$REPO/milestones" -f title="Phase 16 · 모바일 앱(RN)" -f state="open" -f description="모바일 앱(RN) (W11-W15)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
-DUE=$(mk_due 15)
+DUE=$(due_for 15)
 gh api -X POST "repos/$REPO/milestones" -f title="Phase 17 · SEO·보안·접근성" -f state="open" -f description="SEO·보안·접근성 (W13-W15)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
-DUE=$(mk_due 16)
+DUE=$(due_for 16)
 gh api -X POST "repos/$REPO/milestones" -f title="Phase 18 · QA·테스트" -f state="open" -f description="QA·테스트 (W14-W16)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
-DUE=$(mk_due 16)
+DUE=$(due_for 16)
 gh api -X POST "repos/$REPO/milestones" -f title="Phase 19 · CI/CD·배포" -f state="open" -f description="CI/CD·배포 (W15-W16)" ${DUE:+-f due_on="$DUE"} >/dev/null 2>&1 || true
 
-echo "== 3) 이슈 =="
-declare -a CREATED_URLS=()
-
-# --- [0] 프로젝트 셋업 (Phase 0) ---
-BODY=$(cat <<'WBSEOF'
-**Phase:** 0 · 프로젝트 셋업  
+echo "== 3) 이슈 58개 =="
+CREATED_URLS=()
+ASSIGNEE=$(role_user PL)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
+**Phase:** 0 · 프로젝트 셋업 + CI 기초  
 **담당자:** PL (PL)  
-**우선순위:** P0  ·  **예상 공수:** 10.5d  ·  **작업 수:** 12  ·  **일정:** W1–W2
+**우선순위:** P0  ·  **예상 공수:** 14d  ·  **작업 수:** 14  ·  **일정:** W1–W2
 
 ### 작업 목록
 - [ ] **0.1** Git 저장소 초기화 + .gitignore + README `XS` `P0` — 모노레포 Git 저장소 초기화. .gitignore(node_modules·.env·빌드 산출물·.expo), README에 서비스 개요·로컬 실행법·환경 구성 명시. 참고: CLAUDE.md(하네스 정의)
@@ -122,23 +122,23 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **0.7** TypeScript 컨벤션 + ESLint + Prettier `XS` `P0` — TypeScript strict + ESLint + Prettier 규칙 정립(AI 협업용 코딩 컨벤션). 참고: bkit:phase-2-convention 스킬
 - [ ] **0.8** 폴더 구조 컨벤션 문서 `XS` `P0` — 도메인 기반 폴더 구조(features/·lib/·components/·app/) 컨벤션 문서화.
 - [ ] **0.9** 모노레포 (pnpm workspaces) `S` `P1` — pnpm workspaces 로 web·mobile·shared(타입·API 클라이언트·검증 스키마) 패키지 공유 구성.
-- [ ] **0.10** Vercel/Render 배포 환경 셋업 `S` `P1` — Vercel(웹)·EAS/Render(모바일·서버) 배포 환경 사전 셋업. 참고: docs/08-wbs.md §19 CI/CD
+- [ ] **0.10** Vercel/Render 배포 환경 셋업 `S` `P1` — Vercel(웹)·EAS/Render(모바일·서버) 배포 환경 사전 셋업. 참고: §19 CI/CD
 - [ ] **0.11** 에러 모니터링 (Sentry) 연동 `S` `P1` — Sentry 연동 — 웹·모바일·서버 런타임 에러 트래킹 및 소스맵 업로드.
 - [ ] **0.12** i18n 셋업 (한국어 기본, 추후 영어) `S` `P2` — i18n 셋업(한국어 기본, 영어 차기 릴리스). 참고: docs/07-design-system.md §2 타이포그래피(Pretendard)
+- [ ] **0.13** ✨ NEW Vitest + Playwright + pgTAP 테스트 환경 셋업 `M` `P0` — 단위(Vitest)·E2E(Playwright)·DB(pgTAP) 3계층 테스트 환경 셋업. 테스트 디렉터리 컨벤션·실행 스크립트·커버리지 리포트·CI 연동 준비. 이후 모든 Phase가 이 인프라 위에서 테스트를 작성한다.
+- [ ] **0.14** ✨ NEW GitHub Actions 기본 파이프라인 (lint+type+test) `S` `P0` — PR마다 lint·typecheck·단위/통합 테스트를 실행하는 GitHub Actions 기본 파이프라인. Phase 19에서 PR 프리뷰·배포까지 확장한다.
 
-> 원본: docs/08-wbs.md · 0. 프로젝트 셋업 (Phase 0)
-WBSEOF
-)
-ASSIGNEE=$(role_user "PL")
-URL=$(gh issue create -R "$REPO" --title "[0] 프로젝트 셋업 (Phase 0)" --body "$BODY" --milestone "Phase 0 · 프로젝트 셋업" --label "phase:0,priority:P0,type:infra,role:PL" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
-echo "  created: ${URL:-(실패: [0] 프로젝트 셋업 (Phase 0))}"
+> 원본: docs/08-wbs-v1.1.md · 프로젝트 셋업 + CI 기초 (Phase 0)
+ONDOL_BODY_EOF
+URL=$(gh issue create -R "$REPO" --title "[0] 프로젝트 셋업 + CI 기초 (Phase 0)" --body "$BODY" --milestone "Phase 0 · 프로젝트 셋업" --label "phase:0,priority:P0,type:infra,role:PL" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
+echo "  created: ${URL:-(실패: [0] 프로젝트 셋업 + CI 기초 (Phase 0))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [1.1] 마이그레이션 — 핵심 테이블 ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user PL)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 1 · DB 스키마 + RLS  
 **담당자:** PL (PL)  
-**우선순위:** P0  ·  **예상 공수:** 7d  ·  **작업 수:** 13  ·  **일정:** W2–W4
+**우선순위:** P0  ·  **예상 공수:** 9d  ·  **작업 수:** 16  ·  **일정:** W2–W4
 
 ### 작업 목록
 - [ ] **1.1.1** `users` 테이블 생성 `XS` `P0` — users 테이블 — 모든 역할(보호자·당사자·전문가)의 계정. role enum·email·phone·status. 참고: docs/02-data-specification.md §2 핵심 테이블 상세(users), docs/03-erd.md
@@ -154,45 +154,46 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **1.1.11** `handovers` 테이블 `XS` `P0` — handovers — 전문가 인수인계. domain·summary·linked_record_ids·is_confirmed. 참고: docs/02 §2(handovers), docs/05 §7 인수인계
 - [ ] **1.1.12** `access_logs` 테이블 (INSERT-only) `XS` `P0` — access_logs — INSERT-only 접근 로그(불변). actor·action·target. 참고: docs/02 §2(access_logs), docs/03 §RLS 정책 요약
 - [ ] **1.1.13** `notifications` 테이블 `XS` `P0` — notifications — 알림. type·payload(JSONB)·self_expression_id FK·is_read. 참고: docs/02 §2(notifications), §3 JSONB, docs/05 §8 알림
+- [ ] **1.1.14** ✨ NEW `secure_identifiers` 테이블 (고유식별정보 암호화 저장) `XS` `P0` — secure_identifiers — 고유식별정보(장애 등록번호·증명서 문서번호)를 records.content 평문에서 분리해 암호화 저장(PIPA §24). person_id·identifier_type enum·encrypted_value(BYTEA)·value_masked·encryption_ref·deleted_at. 참고: docs/02 §2.14, docs/16 §3.2
+- [ ] **1.1.15** ✨ NEW `consents` 테이블 (동의 이력) `XS` `P0` — consents — 필수/선택·민감·고유식별 별도 동의 이력(PIPA §22~24). consent_type enum·subject_user_id XOR person_id·is_required·granted·consented_by·on_behalf·legal_basis·policy_version·consented_at·revoked_at·deleted_at. 참고: docs/02 §2.15, docs/16 §2
+- [ ] **1.1.16** ✨ NEW `deleted_at` 컬럼 + soft-delete 부분 인덱스 `S` `P0` — 사용자 대면 엔티티(persons·records·self_expressions·record_files·guardian_persons·person_accounts·secure_identifiers·consents)에 deleted_at TIMESTAMPTZ NULL 추가 + `WHERE deleted_at IS NULL` 부분 인덱스·부분 유니크 인덱스. append-only 로그(access_logs·permission_logs)는 제외. 참고: docs/02 §5 인덱스 전략·deleted_at, docs/16 §4.3
 
-> 원본: docs/08-wbs.md · 1.1 마이그레이션 — 핵심 테이블
-WBSEOF
-)
-ASSIGNEE=$(role_user "PL")
+> 원본: docs/08-wbs-v1.1.md · 마이그레이션 — 핵심 테이블
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[1.1] 마이그레이션 — 핵심 테이블" --body "$BODY" --milestone "Phase 1 · DB 스키마 + RLS" --label "phase:1,priority:P0,type:db,role:PL" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [1.1] 마이그레이션 — 핵심 테이블)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [1.2] RLS 정책 ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user PL)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 1 · DB 스키마 + RLS  
 **담당자:** PL (PL)  
-**우선순위:** P0  ·  **예상 공수:** 6d  ·  **작업 수:** 5  ·  **일정:** W2–W4
+**우선순위:** P0  ·  **예상 공수:** 8d  ·  **작업 수:** 7  ·  **일정:** W2–W4
 
 ### 작업 목록
 - [ ] **1.2.1** `records` SELECT RLS (보호자/당사자/권한자) `M` `P0` — records SELECT RLS — 보호자(매핑)·당사자 본인·권한자(permissions 유효기간 내)만 조회. 참고: docs/03 §RLS 정책 요약, docs/02 §6 제약조건
 - [ ] **1.2.2** `records` INSERT/UPDATE RLS `S` `P0` — records INSERT/UPDATE RLS — 도메인·access_level(write 이상) 검증. 참고: docs/03 §RLS, docs/05 §4 기록 작성 공통
 - [ ] **1.2.3** `self_expressions` 당사자 본인만 작성 `S` `P0` — self_expressions RLS — 당사자 본인 계정만 작성/수정(당일). 참고: docs/03 §RLS, docs/04-workflows-user.md §2 당사자
-- [ ] **1.2.4** `access_logs` INSERT-only 정책 `XS` `P0` — access_logs INSERT-only 정책 — UPDATE/DELETE 차단으로 로그 불변성 보장. 참고: docs/03 §RLS, docs/08-wbs.md §17.2.8
+- [ ] **1.2.4** `access_logs` INSERT-only 정책 `XS` `P0` — access_logs INSERT-only 정책 — UPDATE/DELETE 차단으로 로그 불변성 보장. 참고: docs/03 §RLS, §17.2.8
 - [ ] **1.2.5** `permissions` 보호자만 변경 가능 `S` `P0` — permissions 변경 RLS — 주보호자만 권한 부여/회수 가능. 참고: docs/03 §RLS, docs/05 §2 권한 부여
+- [ ] **1.2.6** ✨ NEW soft-delete 가시성 RLS (`deleted_at IS NULL` 게이트) `S` `P0` — 사용자 대면 테이블 SELECT 정책 USING 절에 `deleted_at IS NULL`을 AND 결합해 파기 행을 권한자에게도 미노출. 기존 접근 주체 조건(보호자/본인/권한자)은 유지하고 가시성 게이트만 덧댐. 참고: docs/13 §4.2, docs/16 §4.3
+- [ ] **1.2.7** ✨ NEW `secure_identifiers`/`consents` RLS + 복호화 통제 `S` `P0` — secure_identifiers는 records와 동일 주체 매핑으로 행 접근하되 SELECT는 value_masked만 노출(원문 비노출), encrypted_value 복호화는 service_role/Edge Function 권한 재검증 후에만. consents는 동의 주체 본인·법정대리인·주보호자 접근, 철회는 행 삭제가 아닌 granted=false 신규 행. 참고: docs/13 §3.5, docs/16 §3.2·§2
 
-> 원본: docs/08-wbs.md · 1.2 RLS 정책
-WBSEOF
-)
-ASSIGNEE=$(role_user "PL")
+> 원본: docs/08-wbs-v1.1.md · RLS 정책
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[1.2] RLS 정책" --body "$BODY" --milestone "Phase 1 · DB 스키마 + RLS" --label "phase:1,priority:P0,type:db,role:PL" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [1.2] RLS 정책)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [2] 인증 (Auth) ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-A)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 2 · 인증 (Auth)  
 **담당자:** 개발자 A (Dev-A)  
-**우선순위:** P0  ·  **예상 공수:** 15d  ·  **작업 수:** 11  ·  **일정:** W4–W6
+**우선순위:** P0  ·  **예상 공수:** 18.5d  ·  **작업 수:** 13  ·  **일정:** W4–W6
 
 ### 작업 목록
-- [ ] **2.1** 이메일/비밀번호 회원가입 API `S` `P0` — 이메일/비밀번호 회원가입. role 선택 분기(보호자·당사자·전문가). users insert + 이메일 인증 트리거. 참고: docs/05 §1 회원가입 & 역할별 온보딩, wireframes/web/11-signup-role.svg·12-signup-profile.svg
-- [ ] **2.2** 이메일/비밀번호 로그인 API `S` `P0` — 이메일/비밀번호 로그인 + JWT 발급·세션. 참고: docs/04 §7 역할별 진입점 비교, wireframes/web/01-login.svg, bkit:bkend-auth 스킬
+- [ ] **2.1** 이메일/비밀번호 회원가입 API `S` `P0` — 이메일/비밀번호 회원가입. role 선택 분기(보호자·당사자·전문가). users insert + 이메일 인증 트리거. 참고: docs/05 §1 회원가입 & 역할별 온보딩, wireframes/web/11-signup-role.svg
+- [ ] **2.2** 이메일/비밀번호 로그인 API `S` `P0` — 이메일/비밀번호 로그인 + JWT 발급·세션. 참고: docs/04 §7 역할별 진입점 비교, wireframes/web/01-login.svg
 - [ ] **2.3** 로그아웃 API `XS` `P0` — 로그아웃 — 세션/토큰 무효화. 참고: bkit:bkend-auth 스킬
 - [ ] **2.4** 이메일 인증 발송 API `S` `P0` — 이메일 인증 메일 발송(토큰 생성·만료). 참고: docs/05 §1, wireframes/web/13-signup-verify.svg
 - [ ] **2.5** 이메일 인증 확인 API `S` `P0` — 이메일 인증 토큰 확인 + users.status 활성화. 참고: docs/05 §1 온보딩, wireframes/web/13-signup-verify.svg
@@ -202,17 +203,17 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **2.9** 초대 링크 수락 API (회원가입 분기) `M` `P0` — 초대 링크 수락 — 토큰 검증 후 신규 가입 또는 기존 계정 연결 분기 + 권한 자동 매핑. 참고: docs/05 §1, wireframes/web/14-invite-accept.svg
 - [ ] **2.10** 카카오 소셜 로그인 OAuth `M` `P1` — 카카오 OAuth 소셜 로그인(P1). 참고: docs/04 §7 진입점, bkit:bkend-auth 스킬
 - [ ] **2.11** 네이버 소셜 로그인 OAuth `M` `P1` — 네이버 OAuth 소셜 로그인(P1). 참고: docs/04 §7 진입점, bkit:bkend-auth 스킬
+- [ ] **2.12** ✨ NEW 동의 수집 API (필수/선택·민감·고유식별 분리 INSERT) `M` `P0` — 동의 수집 — 회원가입·당사자 등록 시 유형별 분리 레코드 INSERT(PIPA §22⑤ 일괄동의 금지). consent_type별·필수/선택 분리, policy_version 기록, 철회는 granted=false 신규 행. docs/18 준수(에러봉투·Idempotency-Key). 참고: docs/05 §1-3 동의 수집 단계, docs/02 §2.15, docs/16 §2·§3
+- [ ] **2.13** ✨ NEW 동의 주체 판정 (연령·후견 분기) `S` `P0` — 동의 주체 판정 — 당사자 정보 입력 시 성인 본인 / 만 14세 미만·피후견인 법정대리인 대리동의(on_behalf=true) / 만 14세 이상 미성년자 분기. legal_basis(친권자/성년후견인) 결정. 참고: docs/05 §1-3, docs/16 §2.2
 
-> 원본: docs/08-wbs.md · 2. 인증 (Auth)
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-A")
+> 원본: docs/08-wbs-v1.1.md · 인증 (Auth)
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[2] 인증 (Auth)" --body "$BODY" --milestone "Phase 2 · 인증 (Auth)" --label "phase:2,priority:P0,type:backend,role:Dev-A" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [2] 인증 (Auth))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [3.1] 사용자 (users) ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-A)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 3 · 사용자·당사자·매핑  
 **담당자:** 개발자 A (Dev-A)  
 **우선순위:** P0  ·  **예상 공수:** 3.5d  ·  **작업 수:** 5  ·  **일정:** W5–W7
@@ -224,41 +225,38 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **3.1.4** 사용자 검색 (이메일·전화) `S` `P0` — 이메일·전화번호로 사용자 검색(초대·권한 부여 시). 참고: docs/05 §2 권한 부여 Step1
 - [ ] **3.1.5** 역할 기반 사용자 필터 `XS` `P1` — 역할 기반 사용자 필터(전문가 유형별 등, P1).
 
-> 원본: docs/08-wbs.md · 3.1 사용자 (users)
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-A")
+> 원본: docs/08-wbs-v1.1.md · 사용자 (users)
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[3.1] 사용자 (users)" --body "$BODY" --milestone "Phase 3 · 사용자·당사자·매핑" --label "phase:3,priority:P0,type:backend,role:Dev-A" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [3.1] 사용자 (users))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [3.2] 당사자 (persons) ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-A)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 3 · 사용자·당사자·매핑  
 **담당자:** 개발자 A (Dev-A)  
-**우선순위:** P0  ·  **예상 공수:** 11.5d  ·  **작업 수:** 9  ·  **일정:** W5–W7
+**우선순위:** P0  ·  **예상 공수:** 14d  ·  **작업 수:** 10  ·  **일정:** W5–W7
 
 ### 작업 목록
 - [ ] **3.2.1** 당사자 신규 등록 API `M` `P0` — 당사자 신규 등록 — 기본정보·생애주기·응급정보 입력 + guardian_persons 자동 연결. 참고: docs/02 §2(persons), docs/04 §1 보호자, wireframes/web/17-guardian-person-register.svg
 - [ ] **3.2.2** 당사자 단건 조회 `S` `P0` — 당사자 상세 조회(프로필·요약). 참고: wireframes/web/16-guardian-person-profile.svg
 - [ ] **3.2.3** 당사자 목록 조회 (보호자 기준) `S` `P0` — 보호자 기준 담당 당사자 목록(대시보드 진입점). 참고: docs/04 §1 보호자, wireframes/web/02-guardian-dashboard.svg
 - [ ] **3.2.4** 당사자 기본정보 수정 `S` `P0` — 당사자 기본정보 수정. 참고: wireframes/web/25-guardian-person-edit.svg
-- [ ] **3.2.5** 당사자 응급정보 수정 (별도 권한) `M` `P0` — 당사자 응급정보(혈액형·알레르기·복약·비상연락) 수정 — 추가 인증 필요. 참고: docs/02 §3 JSONB(emergency), docs/08-wbs.md §17.2.5, wireframes/web/26-guardian-emergency-edit.svg
+- [ ] **3.2.5** 당사자 응급정보 수정 (별도 권한) `M` `P0` — 당사자 응급정보(혈액형·알레르기·복약·비상연락) 수정 — 추가 인증 필요. 참고: docs/02 §3 JSONB(emergency), §17.2.5, wireframes/web/26-guardian-emergency-edit.svg
 - [ ] **3.2.6** 당사자 사진 업로드 `S` `P0` — 당사자 프로필 사진 업로드(presigned URL). 참고: docs/05 §5 파일 첨부
 - [ ] **3.2.7** 당사자 사진 삭제 `XS` `P0` — 당사자 프로필 사진 삭제(storage+meta).
 - [ ] **3.2.8** 당사자 비활성화 (이장) `S` `P1` — 당사자 비활성화/이장(archive) — 사망·이전 등(P1). 참고: docs/05 §10 당사자 전환기 처리
 - [ ] **3.2.9** 당사자 생애주기 자동 계산 (트리거) `S` `P0` — birth_date 기반 life_stage 자동 계산 DB 트리거(영유아~노년 6단계). 참고: docs/01-record-matrix.md, docs/02 §4 Enum(life_stage)
+- [ ] **3.2.10** ✨ NEW 성년 도달 본인 동의 재취득 `M` `P1` — 성년 전환기(19세) 후견 미개시 당사자의 본인 명의 동의 재취득(docs/05 §10 흐름). 기존 대리동의(on_behalf=true) 유지하되 본인 명의 신규 consents INSERT(subject_user_id=당사자 계정·on_behalf=false), person_accounts.user_id 연결. 참고: docs/05 §10, docs/16 §2.3
 
-> 원본: docs/08-wbs.md · 3.2 당사자 (persons)
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-A")
+> 원본: docs/08-wbs-v1.1.md · 당사자 (persons)
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[3.2] 당사자 (persons)" --body "$BODY" --milestone "Phase 3 · 사용자·당사자·매핑" --label "phase:3,priority:P0,type:backend,role:Dev-A" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [3.2] 당사자 (persons))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [3.3] 보호자-당사자 매핑 (guardian_persons) ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-A)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 3 · 사용자·당사자·매핑  
 **담당자:** 개발자 A (Dev-A)  
 **우선순위:** P0  ·  **예상 공수:** 5d  ·  **작업 수:** 6  ·  **일정:** W5–W7
@@ -271,16 +269,14 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **3.3.5** 관계(부/모/후견인) 수정 `XS` `P0` — 관계(부/모/후견인 등) 수정. 참고: docs/02 §4 Enum(relationship)
 - [ ] **3.3.6** 보호자 연결 해제 `S` `P1` — 보호자 연결 해제(P1).
 
-> 원본: docs/08-wbs.md · 3.3 보호자-당사자 매핑 (guardian_persons)
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-A")
+> 원본: docs/08-wbs-v1.1.md · 보호자-당사자 매핑 (guardian_persons)
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[3.3] 보호자-당사자 매핑 (guardian_persons)" --body "$BODY" --milestone "Phase 3 · 사용자·당사자·매핑" --label "phase:3,priority:P0,type:backend,role:Dev-A" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [3.3] 보호자-당사자 매핑 (guardian_persons))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [3.4] 당사자 계정 (person_accounts) ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-A)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 3 · 사용자·당사자·매핑  
 **담당자:** 개발자 A (Dev-A)  
 **우선순위:** P0  ·  **예상 공수:** 3d  ·  **작업 수:** 4  ·  **일정:** W5–W7
@@ -291,16 +287,14 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **3.4.3** 접근성 설정 수정 `S` `P0` — 접근성 설정 수정(글씨 크기·고대비·TTS). 참고: docs/07 §9 당사자 접근성 모드, wireframes/web/32-person-accessibility.svg
 - [ ] **3.4.4** UI 모드 (아이콘/혼합) 변경 `XS` `P0` — UI 모드(아이콘 전용/혼합) 전환. 참고: docs/07 §9, docs/06 §1 스크린 유형
 
-> 원본: docs/08-wbs.md · 3.4 당사자 계정 (person_accounts)
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-A")
+> 원본: docs/08-wbs-v1.1.md · 당사자 계정 (person_accounts)
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[3.4] 당사자 계정 (person_accounts)" --body "$BODY" --milestone "Phase 3 · 사용자·당사자·매핑" --label "phase:3,priority:P0,type:backend,role:Dev-A" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [3.4] 당사자 계정 (person_accounts))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [4.1] 권한 CRUD ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-A)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 4 · 권한 관리  
 **담당자:** 개발자 A (Dev-A)  
 **우선순위:** P0  ·  **예상 공수:** 12d  ·  **작업 수:** 8  ·  **일정:** W6–W8
@@ -315,16 +309,14 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **4.1.7** 기간 만료 자동 회수 (cron) `M` `P0` — valid_until 만료 권한 자동 회수 cron(scheduled fn). 참고: docs/05 §3 권한 회수
 - [ ] **4.1.8** 만료 7일 전 알림 (cron) `S` `P1` — 권한 만료 7일 전 사전 알림 cron(P1). 참고: docs/05 §8 알림
 
-> 원본: docs/08-wbs.md · 4.1 권한 CRUD
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-A")
+> 원본: docs/08-wbs-v1.1.md · 권한 CRUD
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[4.1] 권한 CRUD" --body "$BODY" --milestone "Phase 4 · 권한 관리" --label "phase:4,priority:P0,type:backend,role:Dev-A" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [4.1] 권한 CRUD)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [4.2] 권한 위자드 플로우 (4 step) ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-A)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 4 · 권한 관리  
 **담당자:** 개발자 A (Dev-A)  
 **우선순위:** P0  ·  **예상 공수:** 5.5d  ·  **작업 수:** 4  ·  **일정:** W6–W8
@@ -335,16 +327,14 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **4.2.3** Step3 — 수준·기간 설정 `S` `P0` — Step3 — 도메인별 접근 수준·유효 기간 설정. 참고: wireframes/web/21-guardian-grant-wizard.svg
 - [ ] **4.2.4** Step4 — 미리보기·UPSERT `M` `P0` — Step4 — 미리보기 후 permissions UPSERT + 알림 발송. 참고: docs/05 §2, wireframes/web/21-guardian-grant-wizard.svg
 
-> 원본: docs/08-wbs.md · 4.2 권한 위자드 플로우 (4 step)
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-A")
+> 원본: docs/08-wbs-v1.1.md · 권한 위자드 플로우 (4 step)
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[4.2] 권한 위자드 플로우 (4 step)" --body "$BODY" --milestone "Phase 4 · 권한 관리" --label "phase:4,priority:P0,type:backend,role:Dev-A" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [4.2] 권한 위자드 플로우 (4 step))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [4.3] 권한 변경 이력 (permission_logs) ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-A)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 4 · 권한 관리  
 **담당자:** 개발자 A (Dev-A)  
 **우선순위:** P0  ·  **예상 공수:** 3d  ·  **작업 수:** 3  ·  **일정:** W6–W8
@@ -354,16 +344,14 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **4.3.2** 당사자별 권한 이력 조회 `S` `P0` — 당사자별 권한 변경 이력 조회. 참고: docs/05 §9 접근 로그
 - [ ] **4.3.3** 사용자별 권한 변동 이력 `S` `P0` — 사용자별 권한 변동 이력 조회.
 
-> 원본: docs/08-wbs.md · 4.3 권한 변경 이력 (permission_logs)
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-A")
+> 원본: docs/08-wbs-v1.1.md · 권한 변경 이력 (permission_logs)
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[4.3] 권한 변경 이력 (permission_logs)" --body "$BODY" --milestone "Phase 4 · 권한 관리" --label "phase:4,priority:P0,type:backend,role:Dev-A" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [4.3] 권한 변경 이력 (permission_logs))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [4.4] RLS 권한 검증 ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-A)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 4 · 권한 관리  
 **담당자:** 개발자 A (Dev-A)  
 **우선순위:** P0  ·  **예상 공수:** 4.5d  ·  **작업 수:** 3  ·  **일정:** W6–W8
@@ -373,16 +361,14 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **4.4.2** 이상 접근 알림 발송 `S` `P0` — 이상 접근 감지 시 보호자 알림 발송. 참고: docs/05 §8·§11
 - [ ] **4.4.3** 권한 캐시 무효화 `S` `P1` — 권한 변경 시 Redis 권한 캐시 무효화(P1).
 
-> 원본: docs/08-wbs.md · 4.4 RLS 권한 검증
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-A")
+> 원본: docs/08-wbs-v1.1.md · RLS 권한 검증
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[4.4] RLS 권한 검증" --body "$BODY" --milestone "Phase 4 · 권한 관리" --label "phase:4,priority:P0,type:backend,role:Dev-A" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [4.4] RLS 권한 검증)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [5.0] 기록 공통 CRUD ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-B)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 5 · 기록 (Records)  
 **담당자:** 개발자 B (Dev-B)  
 **우선순위:** P0  ·  **예상 공수:** 18d  ·  **작업 수:** 13  ·  **일정:** W7–W12
@@ -402,16 +388,14 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **5.0.12** 기록 일괄 내보내기 (PDF/CSV) `M` `P1` — 기록 일괄 PDF/CSV 내보내기(P1). 참고: docs/05 §6 타임라인 PDF
 - [ ] **5.0.13** 기록 작성자별 카운트 `S` `P2` — 작성자별 기록 통계 카운트(P2).
 
-> 원본: docs/08-wbs.md · 5.0 기록 공통 CRUD
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-B")
+> 원본: docs/08-wbs-v1.1.md · 기록 공통 CRUD
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[5.0] 기록 공통 CRUD" --body "$BODY" --milestone "Phase 5 · 기록 (Records)" --label "phase:5,priority:P0,type:backend,role:Dev-B" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [5.0] 기록 공통 CRUD)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [5.A] 의료 기록 (MED-001 ~ MED-010) ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-B)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 5 · 기록 (Records)  
 **담당자:** 개발자 B (Dev-B)  
 **우선순위:** P0  ·  **예상 공수:** 13d  ·  **작업 수:** 10  ·  **일정:** W7–W12
@@ -420,7 +404,7 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **5.A.1** MED-001 초기 진단 요약 (보호자) `S` `P0` — MED-001 초기 진단 요약(보호자 작성). content JSONB: 진단명·진단일·기관. 참고: docs/01-record-matrix.md §1 영유아기, docs/02 §3 JSONB(MED-001)
 - [ ] **5.A.2** MED-002 발달 검사 결과 (보호자) `S` `P0` — MED-002 발달 검사 결과(보호자). 검사도구·점수·해석. 참고: docs/01 §1·§2, docs/02 §3 JSONB(MED-002)
 - [ ] **5.A.3** MED-003 복약 기록 (보호자) `S` `P0` — MED-003 복약 기록(보호자). 약물·용량·주기·부작용. 참고: docs/02 §3 JSONB(MED-003)
-- [ ] **5.A.4** MED-004 응급 대응 정보 (보호자 · 핀고정) `S` `P0` — MED-004 응급 대응 정보(보호자·핀고정·삭제불가). 발작·알레르기·대처. 참고: docs/02 §3 JSONB(MED-004), docs/08-wbs.md §17.2.5
+- [ ] **5.A.4** MED-004 응급 대응 정보 (보호자 · 핀고정) `S` `P0` — MED-004 응급 대응 정보(보호자·핀고정·삭제불가). 발작·알레르기·대처. 참고: docs/02 §3 JSONB(MED-004), §17.2.5
 - [ ] **5.A.5** MED-005 치료계획서 (치료사) `M` `P0` — MED-005 치료계획서(치료사). 목표·회기 계획·평가지표. 참고: docs/01 §2·§3, docs/02 §3 JSONB(MED-005), wireframes/web/59-therapist-plan.svg
 - [ ] **5.A.6** MED-006 치료 회기 일지 (치료사) `S` `P0` — MED-006 치료 회기 일지(치료사). 회기 활동·반응·과제. 참고: docs/02 §3 JSONB(MED-006), wireframes/web/60-therapist-session-form.svg
 - [ ] **5.A.7** MED-007 치료 평가 보고서 (치료사) `M` `P0` — MED-007 치료 평가 보고서(치료사). 기간 성과·재평가. 참고: docs/02 §3 JSONB(MED-007), wireframes/web/61-therapist-evaluation.svg
@@ -428,16 +412,14 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **5.A.9** MED-009 치료 종결 평가 (치료사) `S` `P1` — MED-009 치료 종결 평가(치료사·삭제불가, P1). 참고: docs/02 §3 JSONB(MED-009)
 - [ ] **5.A.10** MED-010 만성질환 관리 (보호자) `S` `P1` — MED-010 만성질환 관리(보호자, P1·중장년). 참고: docs/01 §6 중장년/노년기, docs/02 §3 JSONB(MED-010)
 
-> 원본: docs/08-wbs.md · 5.A 의료 기록 (MED-001 ~ MED-010)
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-B")
+> 원본: docs/08-wbs-v1.1.md · 의료 기록 (MED-001 ~ MED-010)
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[5.A] 의료 기록 (MED-001 ~ MED-010)" --body "$BODY" --milestone "Phase 5 · 기록 (Records)" --label "phase:5,priority:P0,type:backend,role:Dev-B" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [5.A] 의료 기록 (MED-001 ~ MED-010))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [5.B] 교육 기록 (EDU-001 ~ EDU-009) ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-B)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 5 · 기록 (Records)  
 **담당자:** 개발자 B (Dev-B)  
 **우선순위:** P0  ·  **예상 공수:** 16d  ·  **작업 수:** 9  ·  **일정:** W7–W12
@@ -453,22 +435,20 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **5.B.8** EDU-008 직업교육 참여 (교사) `S` `P1` — EDU-008 직업교육 참여(교사, P1). 참고: docs/02 §3 JSONB(EDU-008)
 - [ ] **5.B.9** EDU-009 졸업/수료 (교사) `S` `P0` — EDU-009 졸업/수료(교사·삭제불가). 참고: docs/02 §3 JSONB(EDU-009)
 
-> 원본: docs/08-wbs.md · 5.B 교육 기록 (EDU-001 ~ EDU-009)
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-B")
+> 원본: docs/08-wbs-v1.1.md · 교육 기록 (EDU-001 ~ EDU-009)
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[5.B] 교육 기록 (EDU-001 ~ EDU-009)" --body "$BODY" --milestone "Phase 5 · 기록 (Records)" --label "phase:5,priority:P0,type:backend,role:Dev-B" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [5.B] 교육 기록 (EDU-001 ~ EDU-009))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [5.C] 복지 기록 (WEL-001 ~ WEL-007) ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-B)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 5 · 기록 (Records)  
 **담당자:** 개발자 B (Dev-B)  
 **우선순위:** P0  ·  **예상 공수:** 15.5d  ·  **작업 수:** 7  ·  **일정:** W7–W12
 
 ### 작업 목록
-- [ ] **5.C.1** WEL-001 장애 등록 (보호자) `S` `P0` — WEL-001 장애 등록(보호자·삭제불가). 장애유형·정도·등록일. 참고: docs/01 §1, docs/02 §3 JSONB(WEL-001)
+- [ ] **5.C.1** WEL-001 장애 등록 (보호자) `S` `P0` — WEL-001 장애 등록(보호자·삭제불가). 장애유형·정도·등록일. **고유식별정보 분리:** `registration_number`(장애 등록번호)는 content 평문 금지 — 5.G.1 암호화 서비스로 secure_identifiers에 저장하고 content에는 `secure_identifier_id`(참조)·`value_masked`(표시용 마스킹)만 둠(unique_identifier 동의 전제, 2.12). 참고: docs/01 §1, docs/02 §3 JSONB(WEL-001), docs/16 §3.2
 - [ ] **5.C.2** WEL-002 초기 복지 연계 (복지사) `S` `P0` — WEL-002 초기 복지 연계(복지사). 참고: docs/02 §3 JSONB(WEL-002)
 - [ ] **5.C.3** WEL-003 활동지원 계획서 (복지사) `M` `P0` — WEL-003 활동지원 계획서(복지사). 참고: docs/02 §3 JSONB(WEL-003)
 - [ ] **5.C.4** WEL-004 ISP (복지사) `L` `P0` — WEL-004 ISP 개별지원계획(복지사·최대 공수). 욕구·목표·서비스 매핑. 참고: docs/01 §5 성인기, docs/02 §3 JSONB(WEL-004), wireframes/web/53-worker-isp-form.svg
@@ -476,16 +456,14 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **5.C.6** WEL-006 서비스 이용 현황 (복지사) `M` `P0` — WEL-006 서비스 이용 현황(복지사·매트릭스). 참고: docs/02 §3 JSONB(WEL-006), wireframes/web/55-worker-service-matrix.svg
 - [ ] **5.C.7** WEL-007 노인복지 연계 (복지사) `S` `P2` — WEL-007 노인복지 연계(복지사, P2·노년). 참고: docs/01 §6, docs/02 §3 JSONB(WEL-007)
 
-> 원본: docs/08-wbs.md · 5.C 복지 기록 (WEL-001 ~ WEL-007)
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-B")
+> 원본: docs/08-wbs-v1.1.md · 복지 기록 (WEL-001 ~ WEL-007)
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[5.C] 복지 기록 (WEL-001 ~ WEL-007)" --body "$BODY" --milestone "Phase 5 · 기록 (Records)" --label "phase:5,priority:P0,type:backend,role:Dev-B" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [5.C] 복지 기록 (WEL-001 ~ WEL-007))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [5.D] 일상/돌봄 기록 (DAI-001 ~ DAI-005) ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-B)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 5 · 기록 (Records)  
 **담당자:** 개발자 B (Dev-B)  
 **우선순위:** P0  ·  **예상 공수:** 6.5d  ·  **작업 수:** 5  ·  **일정:** W7–W12
@@ -497,16 +475,14 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **5.D.4** DAI-004 식이 기록 (지원사) `S` `P1` — DAI-004 식이 기록(지원사, P1). 참고: docs/02 §3 JSONB(DAI-004)
 - [ ] **5.D.5** DAI-005 수면 기록 (지원사) `S` `P1` — DAI-005 수면 기록(지원사, P1). 참고: docs/02 §3 JSONB(DAI-005)
 
-> 원본: docs/08-wbs.md · 5.D 일상/돌봄 기록 (DAI-001 ~ DAI-005)
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-B")
+> 원본: docs/08-wbs-v1.1.md · 일상/돌봄 기록 (DAI-001 ~ DAI-005)
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[5.D] 일상/돌봄 기록 (DAI-001 ~ DAI-005)" --body "$BODY" --milestone "Phase 5 · 기록 (Records)" --label "phase:5,priority:P0,type:backend,role:Dev-B" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [5.D] 일상/돌봄 기록 (DAI-001 ~ DAI-005))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [5.E] 전환/자립 기록 (TRA-001 ~ TRA-007) ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-B)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 5 · 기록 (Records)  
 **담당자:** 개발자 B (Dev-B)  
 **우선순위:** P0  ·  **예상 공수:** 18.5d  ·  **작업 수:** 7  ·  **일정:** W7–W12
@@ -520,37 +496,48 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **5.E.6** TRA-006 의사결정 지원 (복지사+당사자) `M` `P1` — TRA-006 의사결정 지원(복지사+당사자, P1). 참고: docs/01 §5, docs/02 §3 JSONB(TRA-006)
 - [ ] **5.E.7** TRA-007 돌봄 전환 계획 (복지사+보호자) `M` `P2` — TRA-007 돌봄 전환 계획(복지사+보호자, P2·노년 대비). 참고: docs/01 §6, docs/02 §3 JSONB(TRA-007)
 
-> 원본: docs/08-wbs.md · 5.E 전환/자립 기록 (TRA-001 ~ TRA-007)
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-B")
+> 원본: docs/08-wbs-v1.1.md · 전환/자립 기록 (TRA-001 ~ TRA-007)
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[5.E] 전환/자립 기록 (TRA-001 ~ TRA-007)" --body "$BODY" --milestone "Phase 5 · 기록 (Records)" --label "phase:5,priority:P0,type:backend,role:Dev-B" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [5.E] 전환/자립 기록 (TRA-001 ~ TRA-007))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [5.F] 법적/행정 기록 (LEG-001 ~ LEG-005) ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-B)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 5 · 기록 (Records)  
 **담당자:** 개발자 B (Dev-B)  
 **우선순위:** P0  ·  **예상 공수:** 8d  ·  **작업 수:** 5  ·  **일정:** W7–W12
 
 ### 작업 목록
-- [ ] **5.F.1** LEG-001 장애인 증명서 (보호자) `S` `P0` — LEG-001 장애인 증명서(보호자). 참고: docs/02 §3 JSONB(LEG-001)
+- [ ] **5.F.1** LEG-001 장애인 증명서 (보호자) `S` `P0` — LEG-001 장애인 증명서(보호자). **고유식별정보 분리:** `document_number`(증명서 문서번호)는 content 평문 금지 — 5.G.1 암호화 서비스로 secure_identifiers에 저장하고 content에는 `secure_identifier_id`(참조)·`value_masked`만 둠(unique_identifier 동의 전제, 2.12). 참고: docs/02 §3 JSONB(LEG-001), docs/16 §3.2
 - [ ] **5.F.2** LEG-002 수급 기록 (보호자) `S` `P0` — LEG-002 수급 기록(보호자). 참고: docs/02 §3 JSONB(LEG-002)
 - [ ] **5.F.3** LEG-003 후견 문서 (보호자) `M` `P0` — LEG-003 후견 문서(보호자). 후견 유형·범위·기간. 참고: docs/01 §4·§5, docs/02 §3 JSONB(LEG-003)
 - [ ] **5.F.4** LEG-004 의사결정 지원 계약 (보호자) `M` `P1` — LEG-004 의사결정 지원 계약(보호자, P1). 참고: docs/02 §3 JSONB(LEG-004)
 - [ ] **5.F.5** LEG-005 노후 돌봄 문서 (보호자) `S` `P2` — LEG-005 노후 돌봄 문서(보호자, P2). 참고: docs/01 §6, docs/02 §3 JSONB(LEG-005)
 
-> 원본: docs/08-wbs.md · 5.F 법적/행정 기록 (LEG-001 ~ LEG-005)
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-B")
+> 원본: docs/08-wbs-v1.1.md · 법적/행정 기록 (LEG-001 ~ LEG-005)
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[5.F] 법적/행정 기록 (LEG-001 ~ LEG-005)" --body "$BODY" --milestone "Phase 5 · 기록 (Records)" --label "phase:5,priority:P0,type:backend,role:Dev-B" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [5.F] 법적/행정 기록 (LEG-001 ~ LEG-005))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [6] 자기표현 (Self-Expression) ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-B)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
+**Phase:** 5 · 기록 (Records)  
+**담당자:** 개발자 B (Dev-B)  
+**우선순위:** P0  ·  **예상 공수:** 2.5d  ·  **작업 수:** 1  ·  **일정:** W7–W12
+
+### 작업 목록
+- [ ] **5.G.1** ✨ NEW 고유식별정보 암호화/복호화 서비스 `M` `P0` — secure_identifiers 입출력 서비스 — 저장 시 평문을 암호화(encrypted_value BYTEA)·표시용 마스킹(value_masked) 생성, 조회 시 마스킹값만 반환, 원문 복호화는 service_role/Edge Function에서 권한 재검증 후에만(1.2.7 EXECUTE 제한과 연계). WEL-001(5.C.1)·LEG-001(5.F.1)이 호출. 암호화 도구·키관리(Vault vs pgcrypto+KMS)는 docs/16 §9 #2 확정 후 채움 🟡. 참고: docs/02 §2.14, docs/13 §3.5, docs/16 §3.2
+
+> 원본: docs/08-wbs-v1.1.md · 고유식별정보 암호화 서비스 (PIPA §24)
+ONDOL_BODY_EOF
+URL=$(gh issue create -R "$REPO" --title "[5.G] 고유식별정보 암호화 서비스 (PIPA §24)" --body "$BODY" --milestone "Phase 5 · 기록 (Records)" --label "phase:5,priority:P0,type:security,role:Dev-B" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
+echo "  created: ${URL:-(실패: [5.G] 고유식별정보 암호화 서비스 (PIPA §24))}"
+[ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
+
+ASSIGNEE=$(role_user Dev-B)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 6 · 자기표현  
 **담당자:** 개발자 B (Dev-B)  
 **우선순위:** P0  ·  **예상 공수:** 9.5d  ·  **작업 수:** 8  ·  **일정:** W9–W10
@@ -561,20 +548,18 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **6.3** 자기표현 목록 (월·주 단위) `S` `P0` — 월·주 단위 자기표현 목록(캘린더/리스트). 참고: docs/02 §5 인덱스(date)
 - [ ] **6.4** 자기표현 수정 (당일만) `S` `P0` — 자기표현 수정(작성 당일만 허용). 참고: docs/03 §RLS(self_expressions)
 - [ ] **6.5** 자기표현 사진 업로드 `S` `P0` — 자기표현 사진 업로드(presigned URL). 참고: docs/05 §5 파일 첨부
-- [ ] **6.6** 자기표현 음성 메모 업로드 `S` `P1` — 자기표현 음성 메모 업로드(P1). 참고: docs/08-wbs.md §16.6.3
+- [ ] **6.6** 자기표현 음성 메모 업로드 `S` `P1` — 자기표현 음성 메모 업로드(P1). 참고: §16.6.3
 - [ ] **6.7** 자기표현 보호자 요약 발송 `S` `P0` — 자기표현 작성 시 보호자 요약 알림 발송. 참고: docs/05 §8 알림, notifications.self_expression_id FK
 - [ ] **6.8** 자기표현 통계 (연속 일수 등) `S` `P1` — 연속 입력 일수 등 자기표현 통계(P1).
 
-> 원본: docs/08-wbs.md · 6. 자기표현 (Self-Expression)
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-B")
+> 원본: docs/08-wbs-v1.1.md · 자기표현 (Self-Expression)
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[6] 자기표현 (Self-Expression)" --body "$BODY" --milestone "Phase 6 · 자기표현" --label "phase:6,priority:P0,type:backend,role:Dev-B" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [6] 자기표현 (Self-Expression))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [7] 파일 첨부 (Record Files) ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-B)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 7 · 파일 첨부  
 **담당자:** 개발자 B (Dev-B)  
 **우선순위:** P0  ·  **예상 공수:** 10.5d  ·  **작업 수:** 9  ·  **일정:** W9–W10
@@ -587,19 +572,17 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **7.5** 자기표현별 파일 목록 `XS` `P0` — 특정 자기표현의 첨부 파일 목록.
 - [ ] **7.6** 파일 메타 수정 (제목/민감도) `XS` `P0` — 파일 메타 수정(제목·민감 여부 is_sensitive BOOLEAN). 참고: docs/02 §2(record_files)
 - [ ] **7.7** 파일 삭제 (storage + meta) `S` `P0` — 파일 삭제(스토리지 객체 + 메타 동시).
-- [ ] **7.8** 민감 파일 추가 인증 (응급 정보) `M` `P0` — 민감 파일(응급정보 등) 다운로드 시 추가 인증 미들웨어. 참고: docs/05 §11 보안 흐름, docs/08-wbs.md §17.2.5
+- [ ] **7.8** 민감 파일 추가 인증 (응급 정보) `M` `P0` — 민감 파일(응급정보 등) 다운로드 시 추가 인증 미들웨어. 참고: docs/05 §11 보안 흐름, §17.2.5
 - [ ] **7.9** 파일 바이러스 스캔 (옵션) `M` `P2` — 업로드 파일 바이러스 스캔 edge function(P2).
 
-> 원본: docs/08-wbs.md · 7. 파일 첨부 (Record Files)
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-B")
+> 원본: docs/08-wbs-v1.1.md · 파일 첨부 (Record Files)
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[7] 파일 첨부 (Record Files)" --body "$BODY" --milestone "Phase 7 · 파일 첨부" --label "phase:7,priority:P0,type:backend,role:Dev-B" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [7] 파일 첨부 (Record Files))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [8.1] 이정표 CRUD ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-A)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 8 · 이정표·타임라인  
 **담당자:** 개발자 A (Dev-A)  
 **우선순위:** P0  ·  **예상 공수:** 4d  ·  **작업 수:** 6  ·  **일정:** W10–W12
@@ -612,16 +595,14 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **8.1.5** 이정표 삭제 `XS` `P0` — 이정표 삭제.
 - [ ] **8.1.6** 카테고리별 이정표 필터 `XS` `P0` — 카테고리별 이정표 필터.
 
-> 원본: docs/08-wbs.md · 8.1 이정표 CRUD
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-A")
+> 원본: docs/08-wbs-v1.1.md · 이정표 CRUD
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[8.1] 이정표 CRUD" --body "$BODY" --milestone "Phase 8 · 이정표·타임라인" --label "phase:8,priority:P0,type:backend,role:Dev-A" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [8.1] 이정표 CRUD)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [8.2] 타임라인 (records + milestones + self_expressions 통합) ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-A)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 8 · 이정표·타임라인  
 **담당자:** 개발자 A (Dev-A)  
 **우선순위:** P0  ·  **예상 공수:** 9.5d  ·  **작업 수:** 8  ·  **일정:** W10–W12
@@ -636,16 +617,14 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **8.2.7** 타임라인 PDF 내보내기 `M` `P1` — 타임라인 PDF 내보내기(P1). 참고: docs/05 §6
 - [ ] **8.2.8** 생애주기 자동 마커 (트리거) `S` `P0` — 생애주기 전환 시 자동 마커 삽입 트리거. 참고: docs/05 §10 당사자 전환기 처리
 
-> 원본: docs/08-wbs.md · 8.2 타임라인 (records + milestones + self_expressions 통합)
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-A")
+> 원본: docs/08-wbs-v1.1.md · 타임라인 (records + milestones + self_expressions 통합)
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[8.2] 타임라인 (records + milestones + self_expressions 통합)" --body "$BODY" --milestone "Phase 8 · 이정표·타임라인" --label "phase:8,priority:P0,type:backend,role:Dev-A" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [8.2] 타임라인 (records + milestones + self_expressions 통합))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [9.1] 인수인계 CRUD ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-A)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 9 · 인수인계  
 **담당자:** 개발자 A (Dev-A)  
 **우선순위:** P0  ·  **예상 공수:** 7d  ·  **작업 수:** 6  ·  **일정:** W11–W13
@@ -658,16 +637,14 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **9.1.5** 인계 수정 (미확인 상태에서만) `S` `P0` — 인계 수정(미확인 상태에서만). 참고: docs/03 §RLS
 - [ ] **9.1.6** 인계 삭제 (취소) `XS` `P1` — 인계 삭제/취소(P1).
 
-> 원본: docs/08-wbs.md · 9.1 인수인계 CRUD
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-A")
+> 원본: docs/08-wbs-v1.1.md · 인수인계 CRUD
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[9.1] 인수인계 CRUD" --body "$BODY" --milestone "Phase 9 · 인수인계" --label "phase:9,priority:P0,type:backend,role:Dev-A" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [9.1] 인수인계 CRUD)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [9.2] 인계 플로우 ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-A)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 9 · 인수인계  
 **담당자:** 개발자 A (Dev-A)  
 **우선순위:** P0  ·  **예상 공수:** 9d  ·  **작업 수:** 6  ·  **일정:** W11–W13
@@ -680,16 +657,14 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **9.2.5** 인계 확인 처리 (is_confirmed) `S` `P0` — 후임자 인계 확인 처리(is_confirmed). 참고: docs/04 §3 활동지원사
 - [ ] **9.2.6** 인계 확인 시 권한 자동 이양 (옵션) `M` `P1` — 인계 확인 시 권한 자동 이양 트리거(옵션, P1). 참고: docs/05 §7·§2
 
-> 원본: docs/08-wbs.md · 9.2 인계 플로우
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-A")
+> 원본: docs/08-wbs-v1.1.md · 인계 플로우
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[9.2] 인계 플로우" --body "$BODY" --milestone "Phase 9 · 인수인계" --label "phase:9,priority:P0,type:backend,role:Dev-A" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [9.2] 인계 플로우)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [10.1] 알림 인프라 ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-A)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 10 · 알림  
 **담당자:** 개발자 A (Dev-A)  
 **우선순위:** P0  ·  **예상 공수:** 5.5d  ·  **작업 수:** 6  ·  **일정:** W11–W13
@@ -702,43 +677,39 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **10.1.5** 알림 일괄 읽음 처리 `XS` `P0` — 알림 일괄 읽음 처리.
 - [ ] **10.1.6** 알림 삭제 `XS` `P1` — 알림 삭제(P1).
 
-> 원본: docs/08-wbs.md · 10.1 알림 인프라
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-A")
+> 원본: docs/08-wbs-v1.1.md · 알림 인프라
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[10.1] 알림 인프라" --body "$BODY" --milestone "Phase 10 · 알림" --label "phase:10,priority:P0,type:backend,role:Dev-A" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [10.1] 알림 인프라)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [10.2] 알림 채널 ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-A)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 10 · 알림  
 **담당자:** 개발자 A (Dev-A)  
 **우선순위:** P0  ·  **예상 공수:** 10.5d  ·  **작업 수:** 8  ·  **일정:** W11–W13
 
 ### 작업 목록
-- [ ] **10.2.1** FCM (앱 푸시) 발송 `M` `P0` — FCM 앱 푸시 발송 edge function. 참고: docs/05 §8, docs/08-wbs.md §16.6.1
+- [ ] **10.2.1** FCM (앱 푸시) 발송 `M` `P0` — FCM 앱 푸시 발송 edge function. 참고: docs/05 §8, §16.6.1
 - [ ] **10.2.2** 이메일 발송 (SendGrid/Resend) `S` `P0` — 이메일 발송(SendGrid/Resend) edge function. 참고: docs/05 §8
 - [ ] **10.2.3** SMS 발송 (응급용) `M` `P1` — SMS 발송(응급용, P1).
 - [ ] **10.2.4** 사용자별 채널 설정 조회 `XS` `P0` — 사용자별 알림 채널 설정 조회. 참고: wireframes/web/27-guardian-notification-settings.svg
 - [ ] **10.2.5** 사용자별 채널 설정 수정 `S` `P0` — 알림 채널 설정 수정.
 - [ ] **10.2.6** 알림 유형별 토글 (매트릭스) `S` `P0` — 알림 유형별 on/off 토글 매트릭스. 참고: wireframes/web/27-guardian-notification-settings.svg
 - [ ] **10.2.7** 방해 금지 시간대 설정 `S` `P1` — 방해 금지 시간대 설정(P1).
-- [ ] **10.2.8** 푸시 토큰 등록 (앱 설치) `S` `P0` — 앱 설치 시 푸시 토큰 등록. 참고: docs/08-wbs.md §16.6.1
+- [ ] **10.2.8** 푸시 토큰 등록 (앱 설치) `S` `P0` — 앱 설치 시 푸시 토큰 등록. 참고: §16.6.1
 
-> 원본: docs/08-wbs.md · 10.2 알림 채널
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-A")
+> 원본: docs/08-wbs-v1.1.md · 알림 채널
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[10.2] 알림 채널" --body "$BODY" --milestone "Phase 10 · 알림" --label "phase:10,priority:P0,type:backend,role:Dev-A" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [10.2] 알림 채널)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [11] 접근 로그 (Audit) ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user PL)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 11 · 접근 로그  
 **담당자:** PL (PL)  
-**우선순위:** P0  ·  **예상 공수:** 12.5d  ·  **작업 수:** 8  ·  **일정:** W12–W13
+**우선순위:** P0  ·  **예상 공수:** 14.5d  ·  **작업 수:** 10  ·  **일정:** W12–W13
 
 ### 작업 목록
 - [ ] **11.1** 모든 read 자동 로깅 (트리거) `M` `P0` — 모든 read 자동 로깅 트리거(누가 무엇을 열람). 참고: docs/02 §2(access_logs), docs/05 §9 접근 로그 조회
@@ -749,17 +720,34 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **11.6** 이상 활동 자동 감지 (rule engine) `M` `P1` — 이상 활동 자동 감지 rule engine(P1). 참고: docs/05 §11
 - [ ] **11.7** 로그 CSV 내보내기 `S` `P0` — 접근 로그 CSV 내보내기.
 - [ ] **11.8** 월간 보고서 자동 발송 (cron) `S` `P1` — 월간 접근 보고서 자동 발송 cron(P1).
+- [ ] **11.9** ✨ NEW 로그 파기 배치 (purge_expired_audit_logs + pg_cron) `S` `P0` — append-only 로그(access_logs·permission_logs)의 보유기간 경과분을 service_role(RLS 우회)로 파기하는 배치. `purge_expired_audit_logs(p_retention interval)` 함수(SECURITY DEFINER·service_role EXECUTE 전용) + pg_cron 스케줄. 사용자 불변 RLS는 유지(불변=사용자 변조 방지, 파기=시스템 배치). 보유기간 수치는 docs/16 §4.1·§9 #1 법무 확정 전 🟡 TBD. 참고: docs/13 §4.1, docs/16 §4.3
+- [ ] **11.10** ✨ NEW soft-delete hard-delete 배치 `S` `P1` — 사용자 대면 테이블의 soft-delete 행(deleted_at IS NOT NULL)을 유예기간 경과 후 물리 삭제하는 service_role 배치(P1). persons 파기 시 연결된 records·self_expressions·record_files·매핑·secure_identifiers·consents 동시 처리, record_files는 Storage 객체도 동시 hard delete. 유예기간은 🟡 TBD. 참고: docs/16 §4.2·§4.3, docs/02 §5
 
-> 원본: docs/08-wbs.md · 11. 접근 로그 (Audit)
-WBSEOF
-)
-ASSIGNEE=$(role_user "PL")
-URL=$(gh issue create -R "$REPO" --title "[11] 접근 로그 (Audit)" --body "$BODY" --milestone "Phase 11 · 접근 로그" --label "phase:11,priority:P0,type:backend,role:PL" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
+> 원본: docs/08-wbs-v1.1.md · 접근 로그 (Audit)
+ONDOL_BODY_EOF
+URL=$(gh issue create -R "$REPO" --title "[11] 접근 로그 (Audit)" --body "$BODY" --milestone "Phase 11 · 접근 로그" --label "phase:11,priority:P0,type:security,role:PL" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [11] 접근 로그 (Audit))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [12.1] 토큰 (07-design-system.md 기반) ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user PM)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
+**Phase:** 11.5 · 백엔드 통합 테스트 체크포인트  
+**담당자:** PM (PM)  
+**우선순위:** P0  ·  **예상 공수:** 7.5d  ·  **작업 수:** 3  ·  **일정:** W13
+
+### 작업 목록
+- [ ] **11.5.1** ✨ NEW API 통합 테스트 전체 실행 (핵심 워크플로우 5개) `M` `P0` — 핵심 워크플로우 5개(가입~당사자 등록~권한 부여 / 기록 작성~조회 / 자기표현~보호자 알림 / 인계 생성~확인 / 권한 회수~접근 차단)를 실 Supabase 연동 Supertest로 엔드투엔드 검증.
+- [ ] **11.5.2** ✨ NEW RLS 정책 전체 자동 검증 (pgTAP) `M` `P0` — Phase 1~11에서 작성한 모든 RLS 정책(records·self_expressions·permissions·access_logs 등)을 한 번에 회귀 검증하는 pgTAP 마스터 스위트.
+- [ ] **11.5.3** ✨ NEW 역할별 접근 시나리오 통합 테스트 `M` `P0` — 보호자·당사자·전문가 4역할 각각이 자신의 권한 범위 안/밖 리소스에 접근하는 시나리오를 통합 검증(권한 매트릭스 정합성).
+
+> 원본: docs/08-wbs-v1.1.md · 백엔드 통합 테스트 체크포인트
+ONDOL_BODY_EOF
+URL=$(gh issue create -R "$REPO" --title "[11.5] 백엔드 통합 테스트 체크포인트" --body "$BODY" --milestone "Phase 11.5 · 백엔드 통합 테스트" --label "phase:11.5,priority:P0,type:qa,role:PM" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
+echo "  created: ${URL:-(실패: [11.5] 백엔드 통합 테스트 체크포인트)}"
+[ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
+
+ASSIGNEE=$(role_user Dev-C)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 12 · 디자인 시스템  
 **담당자:** 개발자 C (Dev-C)  
 **우선순위:** P0  ·  **예상 공수:** 3d  ·  **작업 수:** 4  ·  **일정:** W4–W6
@@ -770,16 +758,14 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **12.1.3** 스페이싱·반경·그림자 토큰 `XS` `P0` — 스페이싱·보더 레디어스·엘리베이션 토큰. 참고: docs/07 §3·§4·§5
 - [ ] **12.1.4** 접근성 토큰 (당사자 모드: 큰글씨·고대비) `S` `P0` — 당사자 접근성 토큰(큰 글씨·고대비). 참고: docs/07 §9 당사자 접근성 모드
 
-> 원본: docs/08-wbs.md · 12.1 토큰 (07-design-system.md 기반)
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-C")
+> 원본: docs/08-wbs-v1.1.md · 토큰 (07-design-system.md 기반)
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[12.1] 토큰 (07-design-system.md 기반)" --body "$BODY" --milestone "Phase 12 · 디자인 시스템" --label "phase:12,priority:P0,type:design,role:Dev-C" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [12.1] 토큰 (07-design-system.md 기반))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [12.2] Primitives ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-C)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 12 · 디자인 시스템  
 **담당자:** 개발자 C (Dev-C)  
 **우선순위:** P0  ·  **예상 공수:** 5.5d  ·  **작업 수:** 8  ·  **일정:** W4–W6
@@ -794,16 +780,14 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **12.2.7** Badge (도메인 컬러 6 variant) `XS` `P0` — Badge(도메인 6 컬러 variant). 참고: docs/07 §1 도메인 컬러·§8
 - [ ] **12.2.8** Avatar `XS` `P0` — Avatar. 참고: docs/07 §8
 
-> 원본: docs/08-wbs.md · 12.2 Primitives
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-C")
+> 원본: docs/08-wbs-v1.1.md · Primitives
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[12.2] Primitives" --body "$BODY" --milestone "Phase 12 · 디자인 시스템" --label "phase:12,priority:P0,type:design,role:Dev-C" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [12.2] Primitives)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [12.3] Composite Components ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-C)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 12 · 디자인 시스템  
 **담당자:** 개발자 C (Dev-C)  
 **우선순위:** P0  ·  **예상 공수:** 6.5d  ·  **작업 수:** 5  ·  **일정:** W4–W6
@@ -815,16 +799,14 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **12.3.4** IconSelectorCard (ST-08, 자기표현 전용) `M` `P0` — IconSelectorCard(자기표현 전용, 큰 아이콘). 참고: docs/07 §6 아이콘·§9, docs/06 §6 Flow-1
 - [ ] **12.3.5** StepIndicator (위자드 진행) `S` `P0` — StepIndicator(위자드 진행 표시). 참고: docs/07 §8, docs/06 §6 플로우
 
-> 원본: docs/08-wbs.md · 12.3 Composite Components
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-C")
+> 원본: docs/08-wbs-v1.1.md · Composite Components
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[12.3] Composite Components" --body "$BODY" --milestone "Phase 12 · 디자인 시스템" --label "phase:12,priority:P0,type:design,role:Dev-C" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [12.3] Composite Components)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [12.4] 레이아웃 셀 ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-C)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 12 · 디자인 시스템  
 **담당자:** 개발자 C (Dev-C)  
 **우선순위:** P0  ·  **예상 공수:** 7d  ·  **작업 수:** 4  ·  **일정:** W4–W6
@@ -835,19 +817,17 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **12.4.3** 모바일 BottomTabBar (역할별 variant) `M` `P0` — 모바일 BottomTabBar(역할별 variant). 참고: docs/06 §5 모바일 앱 IA, §2 내비게이션
 - [ ] **12.4.4** 모바일 NavigationBar (Push 스택용) `S` `P0` — 모바일 NavigationBar(Push 스택용). 참고: docs/06 §5
 
-> 원본: docs/08-wbs.md · 12.4 레이아웃 셀
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-C")
+> 원본: docs/08-wbs-v1.1.md · 레이아웃 셀
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[12.4] 레이아웃 셀" --body "$BODY" --milestone "Phase 12 · 디자인 시스템" --label "phase:12,priority:P0,type:design,role:Dev-C" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [12.4] 레이아웃 셀)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [13.1] 인증 화면 ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-C)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 13 · 웹 UI — 보호자  
 **담당자:** 개발자 C (Dev-C)  
-**우선순위:** P0  ·  **예상 공수:** 7.5d  ·  **작업 수:** 6  ·  **일정:** W7–W11
+**우선순위:** P0  ·  **예상 공수:** 11d  ·  **작업 수:** 8  ·  **일정:** W7–W11
 
 ### 작업 목록
 - [ ] **13.1.1** A-01 로그인 `S` `P0` — 보호자 로그인 화면(이메일·소셜). 참고: docs/06 §4 반응형 웹 IA, wireframes/web/01-login.svg
@@ -856,17 +836,17 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **13.1.4** A-05 이메일 인증 `S` `P0` — 이메일 인증 화면. 참고: wireframes/web/13-signup-verify.svg
 - [ ] **13.1.5** A-06 초대 링크 수락 `M` `P0` — 초대 링크 수락 화면. 참고: docs/05 §1, wireframes/web/14-invite-accept.svg
 - [ ] **13.1.6** A-07 비밀번호 재설정 `S` `P0` — 비밀번호 재설정 화면. 참고: wireframes/web/15-reset-password.svg
+- [ ] **13.1.7** ✨ NEW A-08 동의 수집 화면 `M` `P0` — 회원가입·당사자 등록 플로우 내 동의 수집 단계 — 필수/선택 분리 체크박스, 민감정보·고유식별정보 별도 동의, 14세 미만·피후견인 대리동의 안내. policy_version 표시, A-09/A-10 전문 보기 진입. 일괄 동의 금지(PIPA §22⑤). 참고: docs/05 §1-3, docs/16 §2·§3, wireframes/web/63-signup-consent.svg
+- [ ] **13.1.8** ✨ NEW A-09 이용약관 · A-10 처리방침 전문 페이지 `S` `P1` — 정적 전문 페이지(PIPA §30 게시 의무) — 이용약관(A-09)·개인정보 처리방침(A-10). A-08 전문 보기·푸터·설정에서 진입. 버전·시행일 표기, 변경 고지 연계(docs/16 §7). 콘텐츠는 17.4.x(법무) 산출물 게시. 참고: docs/16 §7, wireframes/web/64-legal-terms.svg·65-legal-privacy.svg
 
-> 원본: docs/08-wbs.md · 13.1 인증 화면
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-C")
+> 원본: docs/08-wbs-v1.1.md · 인증 화면
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[13.1] 인증 화면" --body "$BODY" --milestone "Phase 13 · 웹 UI — 보호자" --label "phase:13,priority:P0,type:frontend,role:Dev-C" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [13.1] 인증 화면)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [13.2] 메인 화면 ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-C)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 13 · 웹 UI — 보호자  
 **담당자:** 개발자 C (Dev-C)  
 **우선순위:** P0  ·  **예상 공수:** 37.5d  ·  **작업 수:** 15  ·  **일정:** W7–W11
@@ -888,19 +868,17 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **13.2.14** G-40 접근 로그 `M` `P0` — 접근 로그 화면. 참고: docs/05 §9, wireframes/web/22-guardian-access-log.svg
 - [ ] **13.2.15** G-50 알림 `S` `P0` — 알림 목록. 참고: wireframes/web/23-guardian-notifications.svg
 
-> 원본: docs/08-wbs.md · 13.2 메인 화면
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-C")
+> 원본: docs/08-wbs-v1.1.md · 메인 화면
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[13.2] 메인 화면" --body "$BODY" --milestone "Phase 13 · 웹 UI — 보호자" --label "phase:13,priority:P0,type:frontend,role:Dev-C" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [13.2] 메인 화면)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [13.3] 설정 화면 ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-C)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 13 · 웹 UI — 보호자  
 **담당자:** 개발자 C (Dev-C)  
-**우선순위:** P0  ·  **예상 공수:** 8d  ·  **작업 수:** 5  ·  **일정:** W7–W11
+**우선순위:** P0  ·  **예상 공수:** 10.5d  ·  **작업 수:** 6  ·  **일정:** W7–W11
 
 ### 작업 목록
 - [ ] **13.3.1** G-60 설정 허브 `S` `P0` — 설정 허브. 참고: wireframes/web/10-settings.svg
@@ -908,17 +886,16 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **13.3.3** G-62 당사자 정보 편집 `M` `P0` — 당사자 정보 편집. 참고: wireframes/web/25-guardian-person-edit.svg
 - [ ] **13.3.4** G-63 응급 정보 편집 `M` `P0` — 응급 정보 편집(추가 인증). 참고: wireframes/web/26-guardian-emergency-edit.svg
 - [ ] **13.3.5** G-64 알림 설정 `S` `P0` — 알림 설정. 참고: wireframes/web/27-guardian-notification-settings.svg
+- [ ] **13.3.6** ✨ NEW G-65 동의·권리 관리 화면 `M` `P1` — 개인정보·동의 관리(PIPA §5 권리행사 창구) — 동의 현황 조회·선택 동의 철회(granted=false 신규 행)·데이터 내보내기. 설정 허브(G-60) 하위 진입. 참고: docs/16 §5, docs/05 §1-3, wireframes/web/66-guardian-consent-mgmt.svg
 
-> 원본: docs/08-wbs.md · 13.3 설정 화면
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-C")
+> 원본: docs/08-wbs-v1.1.md · 설정 화면
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[13.3] 설정 화면" --body "$BODY" --milestone "Phase 13 · 웹 UI — 보호자" --label "phase:13,priority:P0,type:frontend,role:Dev-C" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [13.3] 설정 화면)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [14] 웹 UI — 당사자 (Person, 접근성 모드, 10 screens) ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-C)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 14 · 웹 UI — 당사자(접근성)  
 **담당자:** 개발자 C (Dev-C)  
 **우선순위:** P0  ·  **예상 공수:** 19d  ·  **작업 수:** 10  ·  **일정:** W10–W12
@@ -935,16 +912,14 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **14.9** P-30 알림 (큰 카드) `S` `P0` — 알림(큰 카드). 참고: wireframes/web/34-person-notifications.svg
 - [ ] **14.10** 접근성 모드 자동 적용 (theme switch) `M` `P0` — 접근성 모드 자동 적용(theme switch). 참고: docs/07 §9 당사자 접근성 모드, tokens-a11y
 
-> 원본: docs/08-wbs.md · 14. 웹 UI — 당사자 (Person, 접근성 모드, 10 screens)
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-C")
+> 원본: docs/08-wbs-v1.1.md · 웹 UI — 당사자 (Person, 접근성 모드, 10 screens)
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[14] 웹 UI — 당사자 (Person, 접근성 모드, 10 screens)" --body "$BODY" --milestone "Phase 14 · 웹 UI — 당사자(접근성)" --label "phase:14,priority:P0,type:frontend,role:Dev-C" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [14] 웹 UI — 당사자 (Person, 접근성 모드, 10 screens))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [15.1] 활동지원사 (S) ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-D)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 15 · 웹 UI — 전문가(4역할)  
 **담당자:** 개발자 D (Dev-D)  
 **우선순위:** P0  ·  **예상 공수:** 13.5d  ·  **작업 수:** 8  ·  **일정:** W9–W14
@@ -959,16 +934,14 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **15.1.7** S-21 인수인계 상세 `M` `P0` — 인수인계 상세(확인 처리). 참고: docs/05 §7, wireframes/web/40-supporter-handover-detail.svg
 - [ ] **15.1.8** S-30/40 알림+설정 통합 `S` `P0` — 알림+설정 통합. 참고: wireframes/web/41-supporter-notifications-settings.svg
 
-> 원본: docs/08-wbs.md · 15.1 활동지원사 (S)
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-D")
+> 원본: docs/08-wbs-v1.1.md · 활동지원사 (S)
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[15.1] 활동지원사 (S)" --body "$BODY" --milestone "Phase 15 · 웹 UI — 전문가(4역할)" --label "phase:15,priority:P0,type:frontend,role:Dev-D" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [15.1] 활동지원사 (S))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [15.2] 특수교사 (T) ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-D)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 15 · 웹 UI — 전문가(4역할)  
 **담당자:** 개발자 D (Dev-D)  
 **우선순위:** P0  ·  **예상 공수:** 27d  ·  **작업 수:** 11  ·  **일정:** W9–W14
@@ -986,16 +959,14 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **15.2.10** T-20 교육 타임라인 `S` `P0` — 교육 타임라인(도메인 필터). 참고: wireframes/web/49-teacher-timeline.svg
 - [ ] **15.2.11** T-30/40 알림+설정 `S` `P0` — 알림+설정. 참고: wireframes/web/50-teacher-notifications-settings.svg
 
-> 원본: docs/08-wbs.md · 15.2 특수교사 (T)
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-D")
+> 원본: docs/08-wbs-v1.1.md · 특수교사 (T)
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[15.2] 특수교사 (T)" --body "$BODY" --milestone "Phase 15 · 웹 UI — 전문가(4역할)" --label "phase:15,priority:P0,type:frontend,role:Dev-D" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [15.2] 특수교사 (T))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [15.3] 사회복지사 (W) ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-D)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 15 · 웹 UI — 전문가(4역할)  
 **담당자:** 개발자 D (Dev-D)  
 **우선순위:** P0  ·  **예상 공수:** 35.5d  ·  **작업 수:** 12  ·  **일정:** W9–W14
@@ -1014,16 +985,14 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **15.3.11** W-31 인수인계 생성 (4 step, Flow-6) `L` `P0` — 인수인계 생성 4스텝(Flow-6). 참고: docs/06 §6 Flow-6, wireframes/web/56-worker-handover-create.svg
 - [ ] **15.3.12** W-40/50 알림+설정 `S` `P0` — 알림+설정. 참고: wireframes/web/57-worker-notifications-settings.svg
 
-> 원본: docs/08-wbs.md · 15.3 사회복지사 (W)
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-D")
+> 원본: docs/08-wbs-v1.1.md · 사회복지사 (W)
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[15.3] 사회복지사 (W)" --body "$BODY" --milestone "Phase 15 · 웹 UI — 전문가(4역할)" --label "phase:15,priority:P0,type:frontend,role:Dev-D" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [15.3] 사회복지사 (W))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [15.4] 치료사 (TH) ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-D)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 15 · 웹 UI — 전문가(4역할)  
 **담당자:** 개발자 D (Dev-D)  
 **우선순위:** P0  ·  **예상 공수:** 24d  ·  **작업 수:** 10  ·  **일정:** W9–W14
@@ -1040,16 +1009,14 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **15.4.9** TH-20 의료 타임라인 `M` `P0` — 의료 타임라인. 참고: wireframes/web/62-therapist-timeline-settings.svg
 - [ ] **15.4.10** TH-30/40 알림+설정 `S` `P0` — 알림+설정. 참고: wireframes/web/62-therapist-timeline-settings.svg
 
-> 원본: docs/08-wbs.md · 15.4 치료사 (TH)
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-D")
+> 원본: docs/08-wbs-v1.1.md · 치료사 (TH)
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[15.4] 치료사 (TH)" --body "$BODY" --milestone "Phase 15 · 웹 UI — 전문가(4역할)" --label "phase:15,priority:P0,type:frontend,role:Dev-D" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [15.4] 치료사 (TH))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [16.1] 인증 ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-E)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 16 · 모바일 앱(RN)  
 **담당자:** 개발자 E (Dev-E)  
 **우선순위:** P0  ·  **예상 공수:** 7d  ·  **작업 수:** 4  ·  **일정:** W11–W15
@@ -1058,18 +1025,16 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **16.1.1** A-01 로그인 (모바일) `S` `P0` — 모바일 로그인. 참고: docs/06 §5 모바일 앱 IA, wireframes/mobile/01-m-login.svg
 - [ ] **16.1.2** A-03 회원가입 역할 선택 `S` `P0` — 회원가입 역할 선택. 참고: wireframes/mobile/06-m-signup-role.svg
 - [ ] **16.1.3** A-02/04/05/07 회원가입·인증·재설정 통합 `M` `P0` — 회원가입·이메일 인증·재설정 통합 플로우. 참고: docs/05 §1 온보딩
-- [ ] **16.1.4** A-06 초대 수락 (Deep Link) `M` `P0` — 초대 수락(Deep Link 처리). 참고: docs/08-wbs.md §16.6.6
+- [ ] **16.1.4** A-06 초대 수락 (Deep Link) `M` `P0` — 초대 수락(Deep Link 처리). 참고: §16.6.6
 
-> 원본: docs/08-wbs.md · 16.1 인증
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-E")
+> 원본: docs/08-wbs-v1.1.md · 인증
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[16.1] 인증" --body "$BODY" --milestone "Phase 16 · 모바일 앱(RN)" --label "phase:16,priority:P0,type:mobile,role:Dev-E" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [16.1] 인증)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [16.2] 보호자 ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-E)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 16 · 모바일 앱(RN)  
 **담당자:** 개발자 E (Dev-E)  
 **우선순위:** P0  ·  **예상 공수:** 20.5d  ·  **작업 수:** 8  ·  **일정:** W11–W15
@@ -1084,16 +1049,14 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **16.2.7** G-50 알림 (인라인 액션) `S` `P0` — 알림(인라인 액션). 참고: wireframes/mobile/11-m-notifications.svg
 - [ ] **16.2.8** G-60 설정 (당사자별 진입) `S` `P0` — 설정(당사자별 진입). 참고: wireframes/mobile/12-m-settings.svg
 
-> 원본: docs/08-wbs.md · 16.2 보호자
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-E")
+> 원본: docs/08-wbs-v1.1.md · 보호자
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[16.2] 보호자" --body "$BODY" --milestone "Phase 16 · 모바일 앱(RN)" --label "phase:16,priority:P0,type:mobile,role:Dev-E" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [16.2] 보호자)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [16.3] 당사자 (접근성) ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-E)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 16 · 모바일 앱(RN)  
 **담당자:** 개발자 E (Dev-E)  
 **우선순위:** P0  ·  **예상 공수:** 12d  ·  **작업 수:** 5  ·  **일정:** W11–W15
@@ -1105,16 +1068,14 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **16.3.4** P-11 기록 상세 (쉬운 요약) `M` `P0` — 기록 상세(쉬운 요약). 참고: wireframes/mobile/14-m-person-record-detail.svg
 - [ ] **16.3.5** P-20 설정 (큰 카드) `S` `P0` — 설정(큰 카드). 참고: wireframes/mobile/15-m-person-settings.svg
 
-> 원본: docs/08-wbs.md · 16.3 당사자 (접근성)
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-E")
+> 원본: docs/08-wbs-v1.1.md · 당사자 (접근성)
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[16.3] 당사자 (접근성)" --body "$BODY" --milestone "Phase 16 · 모바일 앱(RN)" --label "phase:16,priority:P0,type:mobile,role:Dev-E" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [16.3] 당사자 (접근성))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [16.4] 활동지원사 ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-E)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 16 · 모바일 앱(RN)  
 **담당자:** 개발자 E (Dev-E)  
 **우선순위:** P0  ·  **예상 공수:** 10.5d  ·  **작업 수:** 3  ·  **일정:** W11–W15
@@ -1124,16 +1085,14 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **16.4.2** S-12 일지 작성 위자드 (5 step) `XL` `P0` — 일지 작성 위자드 5스텝. 참고: wireframes/mobile/17-m-supporter-journal-form.svg
 - [ ] **16.4.3** S-20 인수인계 목록 `S` `P0` — 인수인계 목록. 참고: wireframes/mobile/18-m-supporter-handover.svg
 
-> 원본: docs/08-wbs.md · 16.4 활동지원사
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-E")
+> 원본: docs/08-wbs-v1.1.md · 활동지원사
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[16.4] 활동지원사" --body "$BODY" --milestone "Phase 16 · 모바일 앱(RN)" --label "phase:16,priority:P0,type:mobile,role:Dev-E" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [16.4] 활동지원사)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [16.5] 전문가 4역할 통합 패턴 ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-E)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 16 · 모바일 앱(RN)  
 **담당자:** 개발자 E (Dev-E)  
 **우선순위:** P0  ·  **예상 공수:** 15d  ·  **작업 수:** 6  ·  **일정:** W11–W15
@@ -1146,39 +1105,35 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **16.5.5** TH-01 치료사 홈 `M` `P0` — 치료사 홈. 참고: wireframes/mobile/23-m-therapist-home.svg
 - [ ] **16.5.6** TH-15 회기 일지 작성 `M` `P0` — 회기 일지 작성. 참고: wireframes/mobile/24-m-therapist-session.svg
 
-> 원본: docs/08-wbs.md · 16.5 전문가 4역할 통합 패턴
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-E")
+> 원본: docs/08-wbs-v1.1.md · 전문가 4역할 통합 패턴
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[16.5] 전문가 4역할 통합 패턴" --body "$BODY" --milestone "Phase 16 · 모바일 앱(RN)" --label "phase:16,priority:P0,type:mobile,role:Dev-E" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [16.5] 전문가 4역할 통합 패턴)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [16.6] 모바일 전용 기능 ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user Dev-E)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 16 · 모바일 앱(RN)  
 **담당자:** 개발자 E (Dev-E)  
 **우선순위:** P0  ·  **예상 공수:** 18.5d  ·  **작업 수:** 7  ·  **일정:** W11–W15
 
 ### 작업 목록
-- [ ] **16.6.1** FCM 푸시 알림 통합 `M` `P0` — FCM 푸시 알림 통합(토큰 등록·수신). 참고: docs/05 §8 알림, docs/08-wbs.md §10.2.1·§10.2.8
+- [ ] **16.6.1** FCM 푸시 알림 통합 `M` `P0` — FCM 푸시 알림 통합(토큰 등록·수신). 참고: docs/05 §8 알림, §10.2.1·§10.2.8
 - [ ] **16.6.2** 카메라/갤러리 (사진 첨부) `M` `P0` — 카메라/갤러리 사진 첨부. 참고: docs/05 §5 파일 첨부
-- [ ] **16.6.3** 음성 메모 녹음 `M` `P1` — 음성 메모 녹음(P1). 참고: docs/08-wbs.md §6.6
+- [ ] **16.6.3** 음성 메모 녹음 `M` `P1` — 음성 메모 녹음(P1). 참고: §6.6
 - [ ] **16.6.4** 일지 오프라인 임시저장 (AsyncStorage) `L` `P0` — 일지 오프라인 임시저장(AsyncStorage) 후 동기화. 참고: docs/04 §3 활동지원사
-- [ ] **16.6.5** 생체 인증 (Face ID / 지문) `M` `P0` — 생체 인증(Face ID/지문) — 민감정보 보호. 참고: docs/08-wbs.md §17.2.5
-- [ ] **16.6.6** Deep Link 라우팅 (초대 등) `M` `P0` — Deep Link 라우팅(초대·알림 진입). 참고: docs/08-wbs.md §16.1.4
+- [ ] **16.6.5** 생체 인증 (Face ID / 지문) `M` `P0` — 생체 인증(Face ID/지문) — 민감정보 보호. 참고: §17.2.5
+- [ ] **16.6.6** Deep Link 라우팅 (초대 등) `M` `P0` — Deep Link 라우팅(초대·알림 진입). 참고: §16.1.4
 - [ ] **16.6.7** OTA 업데이트 (Expo Updates) `S` `P1` — OTA 업데이트(Expo Updates, P1).
 
-> 원본: docs/08-wbs.md · 16.6 모바일 전용 기능
-WBSEOF
-)
-ASSIGNEE=$(role_user "Dev-E")
+> 원본: docs/08-wbs-v1.1.md · 모바일 전용 기능
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[16.6] 모바일 전용 기능" --body "$BODY" --milestone "Phase 16 · 모바일 앱(RN)" --label "phase:16,priority:P0,type:mobile,role:Dev-E" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [16.6] 모바일 전용 기능)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [17.1] SEO (웹만) ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user PL)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 17 · SEO·보안·접근성  
 **담당자:** PL (PL)  
 **우선순위:** P1  ·  **예상 공수:** 2d  ·  **작업 수:** 3  ·  **일정:** W13–W15
@@ -1188,19 +1143,17 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **17.1.2** Sitemap·robots.txt `XS` `P1` — Sitemap·robots.txt(P1).
 - [ ] **17.1.3** OG 이미지·소셜 미리보기 `S` `P2` — OG 이미지·소셜 미리보기(P2).
 
-> 원본: docs/08-wbs.md · 17.1 SEO (웹만)
-WBSEOF
-)
-ASSIGNEE=$(role_user "PL")
-URL=$(gh issue create -R "$REPO" --title "[17.1] SEO (웹만)" --body "$BODY" --milestone "Phase 17 · SEO·보안·접근성" --label "phase:17,priority:P1,type:security,role:PL" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
+> 원본: docs/08-wbs-v1.1.md · SEO (웹만)
+ONDOL_BODY_EOF
+URL=$(gh issue create -R "$REPO" --title "[17.1] SEO (웹만)" --body "$BODY" --milestone "Phase 17 · SEO·보안·접근성" --label "phase:17,priority:P1,type:frontend,role:PL" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [17.1] SEO (웹만))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [17.2] 보안 ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user PL)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 17 · SEO·보안·접근성  
 **담당자:** PL (PL)  
-**우선순위:** P0  ·  **예상 공수:** 12.5d  ·  **작업 수:** 8  ·  **일정:** W13–W15
+**우선순위:** P0  ·  **예상 공수:** 13.5d  ·  **작업 수:** 9  ·  **일정:** W13–W15
 
 ### 작업 목록
 - [ ] **17.2.1** OWASP Top 10 자체 점검 `M` `P0` — OWASP Top 10 자체 점검. 참고: docs/05 §11 시스템 보안 흐름, bkit:phase-7-seo-security 스킬
@@ -1211,17 +1164,16 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **17.2.6** 민감 파일 다운로드 워터마킹 `M` `P1` — 민감 파일 다운로드 워터마킹(P1).
 - [ ] **17.2.7** Rate Limiting (API) `S` `P0` — API Rate Limiting.
 - [ ] **17.2.8** Audit log immutability (PostgreSQL) `S` `P0` — Audit log 불변성(PostgreSQL append-only). 참고: docs/02 §2(access_logs), docs/03 §RLS
+- [ ] **17.2.9** ✨ NEW Sentry PII 스크러빙 (beforeSend 마스킹) `S` `P0` — Sentry 에러 페이로드에서 민감정보(emergency_info·records.content·고유식별정보·이메일 등) 스크러빙 — beforeSend 훅 마스킹·민감 키 제거·국외이전 위탁(docs/16 §6.1) 위험 차단. 웹·모바일·서버 공통. 참고: docs/16 §6.2, docs/10 §6
 
-> 원본: docs/08-wbs.md · 17.2 보안
-WBSEOF
-)
-ASSIGNEE=$(role_user "PL")
+> 원본: docs/08-wbs-v1.1.md · 보안
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[17.2] 보안" --body "$BODY" --milestone "Phase 17 · SEO·보안·접근성" --label "phase:17,priority:P0,type:security,role:PL" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [17.2] 보안)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [17.3] 접근성 (WCAG 2.1 AA) ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user PL)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 17 · SEO·보안·접근성  
 **담당자:** PL (PL)  
 **우선순위:** P0  ·  **예상 공수:** 8.5d  ·  **작업 수:** 4  ·  **일정:** W13–W15
@@ -1232,37 +1184,48 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **17.3.3** 컬러 대비 4.5:1 검증 `S` `P0` — 컬러 대비 4.5:1 검증. 참고: docs/07 §1 컬러 시스템·§9
 - [ ] **17.3.4** 당사자 모드 — TTS 통합 `M` `P0` — 당사자 모드 TTS 통합. 참고: docs/07 §9 당사자 접근성 모드
 
-> 원본: docs/08-wbs.md · 17.3 접근성 (WCAG 2.1 AA)
-WBSEOF
-)
-ASSIGNEE=$(role_user "PL")
-URL=$(gh issue create -R "$REPO" --title "[17.3] 접근성 (WCAG 2.1 AA)" --body "$BODY" --milestone "Phase 17 · SEO·보안·접근성" --label "phase:17,priority:P0,type:security,role:PL" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
+> 원본: docs/08-wbs-v1.1.md · 접근성 (WCAG 2.1 AA)
+ONDOL_BODY_EOF
+URL=$(gh issue create -R "$REPO" --title "[17.3] 접근성 (WCAG 2.1 AA)" --body "$BODY" --milestone "Phase 17 · SEO·보안·접근성" --label "phase:17,priority:P0,type:frontend,role:PL" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [17.3] 접근성 (WCAG 2.1 AA))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [18.1] 자동화 테스트 ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user PL)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
+**Phase:** 17 · SEO·보안·접근성  
+**담당자:** PL (PL)  
+**우선순위:** P1  ·  **예상 공수:** 1d  ·  **작업 수:** 1  ·  **일정:** W13–W15
+
+### 작업 목록
+- [ ] **17.4.1** ✨ NEW 개인정보 처리방침·이용약관 게시 + CPO 지정 `S` `P1` — PIPA §30·§31 게시 의무 — 개인정보 처리방침(수집항목·목적·보유기간·위탁·권리·CPO)·이용약관 작성·게시, 개인정보 보호책임자(CPO) 지정·공개. 수치·항목은 docs/16 §1·§4·§6과 일치. A-09/A-10 페이지(13.1.8)에 게시. 변경 시 시행 7일 전 고지(불리 변경 30일). 법무 협업·확정. 참고: docs/16 §7, docs/16 §9 TBD
+
+> 원본: docs/08-wbs-v1.1.md · 법무·고지 (개인정보 거버넌스)
+ONDOL_BODY_EOF
+URL=$(gh issue create -R "$REPO" --title "[17.4] 법무·고지 (개인정보 거버넌스)" --body "$BODY" --milestone "Phase 17 · SEO·보안·접근성" --label "phase:17,priority:P1,type:security,role:PL" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
+echo "  created: ${URL:-(실패: [17.4] 법무·고지 (개인정보 거버넌스))}"
+[ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
+
+ASSIGNEE=$(role_user PM)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 18 · QA·테스트  
 **담당자:** PM (PM)  
 **우선순위:** P0  ·  **예상 공수:** 24.5d  ·  **작업 수:** 5  ·  **일정:** W14–W16
 
 ### 작업 목록
-- [ ] **18.1.1** 단위 테스트 (Vitest, 핵심 로직 70%) `L` `P0` — 단위 테스트(Vitest, 핵심 로직 70%).
-- [ ] **18.1.2** API 통합 테스트 (Supertest) `L` `P0` — API 통합 테스트(Supertest). 참고: docs/05 워크플로우
-- [ ] **18.1.3** E2E 테스트 (Playwright, 5개 핵심 플로우) `XL` `P0` — E2E 테스트(Playwright, 5개 핵심 플로우). 참고: docs/06 §6 주요 플로우
-- [ ] **18.1.4** RLS 정책 자동 검증 (pgTAP) `L` `P0` — RLS 정책 자동 검증(pgTAP). 참고: docs/03 §RLS 정책 요약
-- [ ] **18.1.5** 시각 회귀 (Chromatic) `M` `P1` — 시각 회귀 테스트(Chromatic, P1). 참고: docs/07 디자인 시스템
+- [ ] **18.1.1** 단위 테스트 (Vitest, 핵심 로직 70%) `L` `P0` — 단위 테스트(Vitest, 핵심 로직 70%). 각 Phase 분산 작성 테스트를 통합·커버리지 70% 게이트 관리.
+- [ ] **18.1.2** API 통합 테스트 (Supertest) `L` `P0` — API 통합 테스트(Supertest). 11.5.1 워크플로우 테스트를 전 API 회귀로 확장. 참고: docs/05 워크플로우
+- [ ] **18.1.3** E2E 테스트 (Playwright, 5개 핵심 플로우) `XL` `P0` — E2E 테스트(Playwright, 5개 핵심 플로우). Phase 13~15 화면별 E2E를 5개 핵심 플로우 스위트로 묶음. 참고: docs/06 §6 주요 플로우
+- [ ] **18.1.4** RLS 정책 자동 검증 (pgTAP) `L` `P0` — RLS 정책 자동 검증(pgTAP). 11.5.2 마스터 스위트를 CI 회귀로 운영. 참고: docs/03 §RLS 정책 요약
+- [ ] **18.1.5** 시각 회귀 (Chromatic) `M` `P1` — 시각 회귀 테스트(Chromatic, P1). Phase 12 Storybook 기반. 참고: docs/07 디자인 시스템
 
-> 원본: docs/08-wbs.md · 18.1 자동화 테스트
-WBSEOF
-)
-ASSIGNEE=$(role_user "PM")
+> 원본: docs/08-wbs-v1.1.md · 자동화 테스트
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[18.1] 자동화 테스트" --body "$BODY" --milestone "Phase 18 · QA·테스트" --label "phase:18,priority:P0,type:qa,role:PM" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [18.1] 자동화 테스트)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [18.2] Zero Script QA (역할별 시나리오) ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user PM)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 18 · QA·테스트  
 **담당자:** PM (PM)  
 **우선순위:** P0  ·  **예상 공수:** 17d  ·  **작업 수:** 8  ·  **일정:** W14–W16
@@ -1277,16 +1240,14 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **18.2.7** 권한 외 접근 시도 차단 검증 `M` `P0` — 권한 외 접근 차단 검증. 참고: docs/05 §11 보안 흐름
 - [ ] **18.2.8** 인수인계 권한 이양 검증 `S` `P0` — 인수인계 권한 이양 검증. 참고: docs/05 §7
 
-> 원본: docs/08-wbs.md · 18.2 Zero Script QA (역할별 시나리오)
-WBSEOF
-)
-ASSIGNEE=$(role_user "PM")
+> 원본: docs/08-wbs-v1.1.md · Zero Script QA (역할별 시나리오)
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[18.2] Zero Script QA (역할별 시나리오)" --body "$BODY" --milestone "Phase 18 · QA·테스트" --label "phase:18,priority:P0,type:qa,role:PM" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [18.2] Zero Script QA (역할별 시나리오))}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [18.3] 성능 ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user PM)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 18 · QA·테스트  
 **담당자:** PM (PM)  
 **우선순위:** P0  ·  **예상 공수:** 7d  ·  **작업 수:** 4  ·  **일정:** W14–W16
@@ -1297,36 +1258,32 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **18.3.3** 모바일 첫 화면 로드 (LCP < 2.5s) `S` `P0` — 모바일 첫 화면 로드(LCP<2.5s).
 - [ ] **18.3.4** 부하 테스트 (100 동시 일지 작성) `M` `P1` — 부하 테스트(100 동시 일지 작성, P1).
 
-> 원본: docs/08-wbs.md · 18.3 성능
-WBSEOF
-)
-ASSIGNEE=$(role_user "PM")
+> 원본: docs/08-wbs-v1.1.md · 성능
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[18.3] 성능" --body "$BODY" --milestone "Phase 18 · QA·테스트" --label "phase:18,priority:P0,type:qa,role:PM" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [18.3] 성능)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [19.1] CI ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user PL)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 19 · CI/CD·배포  
 **담당자:** PL (PL)  
 **우선순위:** P0  ·  **예상 공수:** 5.5d  ·  **작업 수:** 4  ·  **일정:** W15–W16
 
 ### 작업 목록
-- [ ] **19.1.1** GitHub Actions — Lint·Type·Test `S` `P0` — GitHub Actions — Lint·Type·Test 파이프라인. 참고: bkit:phase-9-deployment 스킬
+- [ ] **19.1.1** GitHub Actions — Lint·Type·Test `S` `P0` — GitHub Actions — Lint·Type·Test 파이프라인. 0.14 기본 파이프라인을 E2E·커버리지 게이트까지 확장. 참고: bkit:phase-9-deployment 스킬
 - [ ] **19.1.2** PR 미리보기 환경 (Vercel Preview) `S` `P0` — PR 미리보기 환경(Vercel Preview).
 - [ ] **19.1.3** DB 마이그레이션 검증 (스테이징) `S` `P0` — DB 마이그레이션 검증(스테이징).
 - [ ] **19.1.4** 모바일 EAS Build (iOS·Android) `M` `P0` — 모바일 EAS Build(iOS·Android).
 
-> 원본: docs/08-wbs.md · 19.1 CI
-WBSEOF
-)
-ASSIGNEE=$(role_user "PL")
+> 원본: docs/08-wbs-v1.1.md · CI
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[19.1] CI" --body "$BODY" --milestone "Phase 19 · CI/CD·배포" --label "phase:19,priority:P0,type:infra,role:PL" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [19.1] CI)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [19.2] CD ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user PL)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 19 · CI/CD·배포  
 **담당자:** PL (PL)  
 **우선순위:** P0  ·  **예상 공수:** 6.5d  ·  **작업 수:** 5  ·  **일정:** W15–W16
@@ -1338,16 +1295,14 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **19.2.4** DB 백업 자동화 (일 1회) `S` `P0` — DB 백업 자동화(일 1회).
 - [ ] **19.2.5** 롤백 시나리오 문서 `S` `P0` — 롤백 시나리오 문서. 참고: bkit:rollback 스킬
 
-> 원본: docs/08-wbs.md · 19.2 CD
-WBSEOF
-)
-ASSIGNEE=$(role_user "PL")
+> 원본: docs/08-wbs-v1.1.md · CD
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[19.2] CD" --body "$BODY" --milestone "Phase 19 · CI/CD·배포" --label "phase:19,priority:P0,type:infra,role:PL" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [19.2] CD)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-# --- [19.3] 운영 ---
-BODY=$(cat <<'WBSEOF'
+ASSIGNEE=$(role_user PL)
+read -r -d '' BODY <<'ONDOL_BODY_EOF' || true
 **Phase:** 19 · CI/CD·배포  
 **담당자:** PL (PL)  
 **우선순위:** P0  ·  **예상 공수:** 11d  ·  **작업 수:** 5  ·  **일정:** W15–W16
@@ -1359,18 +1314,10 @@ BODY=$(cat <<'WBSEOF'
 - [ ] **19.3.4** 보안 감사 분기별 (외부) `M` `P1` — 분기별 외부 보안 감사(P1).
 - [ ] **19.3.5** 사용자 데이터 GDPR/개인정보보호법 응대 워크플로우 `M` `P0` — GDPR/개인정보보호법 응대 워크플로우(데이터 열람·삭제 요청).
 
-> 원본: docs/08-wbs.md · 19.3 운영
-WBSEOF
-)
-ASSIGNEE=$(role_user "PL")
+> 원본: docs/08-wbs-v1.1.md · 운영
+ONDOL_BODY_EOF
 URL=$(gh issue create -R "$REPO" --title "[19.3] 운영" --body "$BODY" --milestone "Phase 19 · CI/CD·배포" --label "phase:19,priority:P0,type:infra,role:PL" ${ASSIGNEE:+--assignee "$ASSIGNEE"} 2>/dev/null)
 echo "  created: ${URL:-(실패: [19.3] 운영)}"
 [ -n "${URL:-}" ] && CREATED_URLS+=("$URL")
 
-if [ "$CREATE_PROJECT" = "true" ]; then
-  PNUM=$(gh project create --owner "$OWNER" --title "$PROJECT_TITLE" --format json -q .number 2>/dev/null)
-  if [ -n "${PNUM:-}" ]; then
-    for u in "${CREATED_URLS[@]}"; do gh project item-add "$PNUM" --owner "$OWNER" --url "$u" >/dev/null 2>&1 || true; done
-  fi
-fi
-echo "== 완료: ${#CREATED_URLS[@]} 이슈 =="
+echo "== 완료: 이슈 58개 시도 =="

@@ -25,15 +25,21 @@
 flowchart TD
     A([앱/웹 접속]) --> B[회원가입 선택]
     B --> C[역할 선택: 보호자]
-    C --> D[이름·연락처·이메일 입력]
+    C --> CC[본인 동의 수집\n필수: 약관·개인정보·위탁고지\n선택: 마케팅\nconsents INSERT subject_user_id\n→ docs/05 §1-3, 화면 A-08]
+    CC --> D[이름·연락처·이메일 입력]
     D --> E[이메일 인증]
     E --> F{인증 성공?}
     F -- 아니오 --> E
     F -- 예 --> G[보호자 계정 생성 완료]
     G --> H[당사자 등록 시작]
     H --> I[당사자 기본 정보 입력\n이름·생년월일·성별]
-    I --> J[장애 유형·정도 입력]
-    J --> K[응급 정보 입력\n알레르기·금기약·비상연락처]
+    I --> CD[당사자 정보 대리동의\n동의 주체 판정 F1/F2/F3\non_behalf=true·consented_by=보호자\n→ docs/05 §1-3, 화면 G-03 위자드 동의 Step]
+    CD --> J[장애 유형·정도 입력]
+    J --> JS[민감정보 별도 동의\nsensitive_info\n장애·건강\n→ docs/05 §1-3]
+    JS --> JU{고유식별정보\n입력 예정?\n장애등록번호·증명서번호}
+    JU -- 예 --> JU1[고유식별정보 별도 동의\nunique_identifier\n→ docs/05 §1-3]
+    JU -- 아니오 --> K
+    JU1 --> K[응급 정보 입력\n알레르기·금기약·비상연락처]
     K --> L[프로필 사진 업로드\n선택]
     L --> M[당사자 등록 완료]
     M --> N{다른 당사자\n추가?}
@@ -177,7 +183,11 @@ flowchart TD
     C --> D([당사자 앱 접속])
     D --> E[초대 코드 입력 또는 링크 클릭]
     E --> F[비밀번호 설정\n간단한 PIN 또는 생체인증]
-    F --> G[접근성 설정\n아이콘 크기·색상·언어 수준]
+    F --> FC{동의 주체 판정\n→ docs/05 §1-3}
+    FC -- 성인 본인 --> FC1[본인 동의 수집\nsubject_user_id=당사자 계정\non_behalf=false]
+    FC -- 미성년·피후견 --> FC2[법정대리인 대리동의 기록\non_behalf=true\n→ 보호자 온보딩 1-1에서 수집]
+    FC1 --> G[접근성 설정\n아이콘 크기·색상·언어 수준]
+    FC2 --> G
     G --> H{설정 확인}
     H --> I[당사자 전용 홈 화면 진입]
     I --> J[튜토리얼\n아이콘 사용법 안내 3단계]
@@ -323,7 +333,8 @@ flowchart TD
     C --> D{기존 계정\n있음?}
     D -- 있음 --> E[로그인]
     D -- 없음 --> F[회원가입\n이름·연락처·소속기관]
-    F --> G[이메일 인증]
+    F --> FC[본인 동의 수집\n약관·개인정보 필수·위탁고지\nconsents INSERT subject_user_id\non_behalf=false\n→ docs/05 §1-3, 화면 A-08]
+    FC --> G[이메일 인증]
     G --> E
     E --> H[당사자 연결 요청 확인\n이름·보호자 확인]
     H --> I{수락?}
@@ -407,7 +418,8 @@ flowchart TD
 ```mermaid
 flowchart TD
     A([보호자 초대 수락]) --> B[계정 생성\n이름·소속학교·학년]
-    B --> C[권한 확인\n교육 분야 Write + 학기 기간]
+    B --> BC[본인 동의 수집\n약관·개인정보 필수·위탁고지\nconsents INSERT subject_user_id\non_behalf=false\n→ docs/05 §1-3, 화면 A-08]
+    BC --> C[권한 확인\n교육 분야 Write + 학기 기간]
     C --> D[담당 학생 목록 확인]
     D --> E{이전 교사\n기록 있음?}
     E -- 예 --> F[handovers 조회\n인수인계 확인]
@@ -498,7 +510,8 @@ flowchart TD
 ```mermaid
 flowchart TD
     A([보호자 초대 수락]) --> B[계정 생성\n이름·소속기관·자격]
-    B --> C[권한 확인\n복지+전환 Write + 의료/교육 Read]
+    B --> BC[본인 동의 수집\n약관·개인정보 필수·위탁고지\nconsents INSERT subject_user_id\non_behalf=false\n→ docs/05 §1-3, 화면 A-08]
+    BC --> C[권한 확인\n복지+전환 Write + 의료/교육 Read]
     C --> D[담당 당사자 목록]
     D --> E[생애주기 타임라인 전체 열람]
     E --> F{이전 ISP\n존재?}
@@ -579,7 +592,8 @@ flowchart TD
 ```mermaid
 flowchart TD
     A([보호자 초대 수락]) --> B[계정 생성\n이름·소속기관·치료 전문 분야]
-    B --> C[치료 분야 선택\nOT/PT/ST/행동치료/음악치료 등]
+    B --> BC[본인 동의 수집\n약관·개인정보 필수·위탁고지\nconsents INSERT subject_user_id\non_behalf=false\n→ docs/05 §1-3, 화면 A-08]
+    BC --> C[치료 분야 선택\nOT/PT/ST/행동치료/음악치료 등]
     C --> D[권한 확인\n의료 분야 Write + 일상 Read]
     D --> E[담당 당사자 의료 기록 열람]
     E --> F[응급 정보 확인\n핀고정 기록]

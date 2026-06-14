@@ -1,0 +1,89 @@
+<svg viewBox="0 0 390 844" xmlns="http://www.w3.org/2000/svg">
+  <!-- G-65 · ST-11 Guardian Privacy &amp; Consent Mgmt · Mobile 390×844 -->
+  <text x="8" y="12" font-family="Arial" font-size="9" fill="#9CA3AF">G-65 · ST-11 Guardian Consent Management · Mobile 390×844</text>
+  <rect width="390" height="844" fill="#F9FAFB"/>
+  <rect width="390" height="844" rx="0" fill="none" stroke="#E5E7EB"/>
+
+  <!-- Status bar -->
+  <rect width="390" height="44" fill="#FFFFFF"/>
+  <text x="20" y="30" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">9:41</text>
+  <text x="340" y="30" font-family="Arial" font-size="12" fill="#111827">● ●● ■■■</text>
+
+  <!-- Nav bar (push from settings) -->
+  <rect y="44" width="390" height="56" fill="#FFFFFF"/>
+  <line y1="100" x1="0" y2="100" x2="390" stroke="#E5E7EB"/>
+  <text x="20" y="78" font-family="Arial" font-size="22" fill="#374151">←</text>
+  <text x="195" y="80" text-anchor="middle" font-family="Arial" font-size="15" font-weight="bold" fill="#111827">개인정보·동의 관리</text>
+
+  <!-- 대리/본인 탭 -->
+  <rect x="20" y="116" width="350" height="40" rx="10" fill="#F3F4F6"/>
+  <rect x="22" y="118" width="173" height="36" rx="8" fill="#FFFFFF" stroke="#3B7D8E"/>
+  <text x="108" y="141" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#2E5FA8">대리동의 · 김온돌</text>
+  <text x="282" y="141" text-anchor="middle" font-family="Arial" font-size="12" fill="#6B7280">내 계정</text>
+
+  <text x="20" y="184" font-family="Arial" font-size="12" font-weight="bold" fill="#9CA3AF">동의 현황</text>
+
+  <!-- Card: 이용약관 (필수) -->
+  <rect x="20" y="196" width="350" height="64" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="36" y="222" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">이용약관</text>
+  <rect x="120" y="210" width="36" height="18" rx="5" fill="#FDECEC"/>
+  <text x="138" y="223" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#C0362C">필수</text>
+  <text x="36" y="244" font-family="Arial" font-size="11" fill="#22A06B">동의함 · 2026-06-14 · 철회 불가</text>
+  <text x="354" y="230" text-anchor="end" font-family="Arial" font-size="12" fill="#3B7D8E">전문 ›</text>
+
+  <!-- Card: 개인정보(필수) -->
+  <rect x="20" y="268" width="350" height="64" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="36" y="294" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">개인정보 수집·이용</text>
+  <rect x="216" y="282" width="36" height="18" rx="5" fill="#FDECEC"/>
+  <text x="234" y="295" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#C0362C">필수</text>
+  <text x="36" y="316" font-family="Arial" font-size="11" fill="#22A06B">동의함 · 2026-06-14</text>
+  <text x="354" y="302" text-anchor="end" font-family="Arial" font-size="12" fill="#3B7D8E">전문 ›</text>
+
+  <!-- Card: 마케팅 (선택, Toggle) -->
+  <rect x="20" y="340" width="350" height="64" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="36" y="366" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">마케팅·알림 수신</text>
+  <rect x="184" y="354" width="36" height="18" rx="5" fill="#F3F4F6"/>
+  <text x="202" y="367" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#6B7280">선택</text>
+  <text x="36" y="388" font-family="Arial" font-size="11" fill="#6B7280">동의함 · 2026-06-14</text>
+  <!-- Toggle on -->
+  <rect x="312" y="358" width="44" height="24" rx="12" fill="#3B7D8E"/>
+  <circle cx="344" cy="370" r="9" fill="white"/>
+
+  <!-- Card: 위탁·국외이전 (고지) -->
+  <rect x="20" y="412" width="350" height="64" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="36" y="438" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">처리위탁·국외이전</text>
+  <rect x="194" y="426" width="36" height="18" rx="5" fill="#EEF4FD"/>
+  <text x="212" y="439" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#2E5FA8">고지</text>
+  <text x="36" y="460" font-family="Arial" font-size="11" fill="#6B7280">고지 확인 · 2026-06-14</text>
+  <text x="354" y="446" text-anchor="end" font-family="Arial" font-size="12" fill="#3B7D8E">고지 ›</text>
+
+  <!-- Card: 민감정보 (별도, 철회) -->
+  <rect x="20" y="484" width="350" height="76" rx="12" fill="#FFFFFF" stroke="#F5C982"/>
+  <text x="36" y="510" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">민감정보 (장애·건강)</text>
+  <rect x="216" y="498" width="36" height="18" rx="5" fill="#FEF3C7"/>
+  <text x="234" y="511" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#92670D">별도</text>
+  <text x="36" y="532" font-family="Arial" font-size="11" fill="#22A06B">동의함 · 2026-06-14</text>
+  <text x="36" y="550" font-family="Arial" font-size="10" fill="#9CA3AF">철회 시 핵심 기능 제한 (확인 후 처리)</text>
+  <rect x="288" y="516" width="68" height="30" rx="8" fill="#FFFFFF" stroke="#BF3030"/>
+  <text x="322" y="536" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#BF3030">철회</text>
+
+  <!-- Card: 고유식별 (미수집) -->
+  <rect x="20" y="568" width="350" height="56" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="36" y="594" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">고유식별 (등록번호)</text>
+  <rect x="206" y="582" width="36" height="18" rx="5" fill="#FEF3C7"/>
+  <text x="224" y="595" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#92670D">별도</text>
+  <text x="36" y="612" font-family="Arial" font-size="11" fill="#9CA3AF">미수집</text>
+  <text x="354" y="600" text-anchor="end" font-family="Arial" font-size="12" fill="#3B7D8E">지금 동의 ›</text>
+
+  <!-- 데이터 내보내기 -->
+  <rect x="20" y="636" width="350" height="76" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="36" y="664" font-family="Arial" font-size="14" font-weight="bold" fill="#111827">내 데이터 내보내기</text>
+  <text x="36" y="686" font-family="Arial" font-size="11" fill="#6B7280">기록을 CSV/PDF로 받습니다 (§35-2)</text>
+  <text x="36" y="702" font-family="Arial" font-size="10" fill="#9CA3AF">생성 완료 시 알림으로 안내</text>
+  <rect x="246" y="654" width="110" height="40" rx="10" fill="#FFFFFF" stroke="#3B7D8E"/>
+  <text x="301" y="679" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#3B7D8E">내보내기</text>
+
+  <!-- Bottom safe area -->
+  <rect y="800" width="390" height="44" fill="#FFFFFF"/>
+  <rect x="155" y="820" width="80" height="5" rx="2.5" fill="#D1D5DB"/>
+</svg>

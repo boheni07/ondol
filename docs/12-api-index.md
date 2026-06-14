@@ -1,14 +1,14 @@
 # API 엔드포인트 인덱스 — OnDol 플랫폼
 
-> 버전: v1.0 | 작성일: 2026-06-14
+> 버전: v1.1 | 작성일: 2026-06-14 | 개정: 2026-06-14 (동의·고유식별정보 그룹 추가, §13 공통규약 docs/18 확정)
 
-WBS(`docs/08-wbs.md`)의 각 작업 산출물 열에 흩어져 있는 API 연동 항목을 리소스 그룹별 단일 인덱스로 정리한 문서다. 요청/응답 계약(스키마·상태 코드)의 상세는 구현 단계(Phase 4 — API 설계·구현)에서 OpenAPI로 확정한다.
+WBS(`docs/08-wbs-v1.1.md`)의 각 작업 산출물 열에 흩어져 있는 API 연동 항목을 리소스 그룹별 단일 인덱스로 정리한 문서다. 요청/응답 계약(스키마·상태 코드)의 상세는 구현 단계(Phase 4 — API 설계·구현)에서 OpenAPI로 확정한다.
 
 ---
 
 ## 작성 원칙
 
-- 본 인덱스의 엔드포인트는 **`docs/08-wbs.md`의 산출물 열에 명시된 것만** 수록한다. WBS에 없는 경로는 추가하지 않았다.
+- 본 인덱스의 엔드포인트는 **`docs/08-wbs-v1.1.md`의 산출물 열에 명시된 것만** 수록한다. WBS에 없는 경로는 추가하지 않았다(동의·고유식별정보 그룹은 거버넌스 정합화로 추가된 파생 항목으로, WBS 2.12·5.G.1 등과 연계).
 - 요청/응답 JSON 스키마는 현재 정의된 바가 없으므로 **임의로 정의하지 않으며, 구현 시 OpenAPI로 확정**한다.
 - 인증/권한 열은 `docs/03-erd.md` §RLS 정책 요약을 근거로 한다. WBS·ERD에 명시가 없어 추정한 경우 **"(권한)"** 로 표기한다.
 - DB 트리거·scheduled fn·edge function 등 **HTTP 엔드포인트가 아닌 산출물**(예: `DB trigger`, `scheduled fn`, `notification fn`)은 본 인덱스에 수록하지 않았다.
@@ -94,6 +94,35 @@ WBS(`docs/08-wbs.md`)의 각 작업 산출물 열에 흩어져 있는 API 연동
 | GET /persons/:id/permission-logs | 당사자별 권한 변경 이력 조회 | 인증·(권한) 보호자 | 4.3.2 |
 
 > `4.1.7 기간 만료 자동 회수`·`4.1.8 만료 7일 전 알림`은 산출물이 `scheduled fn`, `4.2.* 권한 위자드`는 `UI step`, `4.3.1 자동 로그`는 `DB trigger`, `4.4.* RLS 검증`은 trigger/fn 이므로 HTTP 엔드포인트에서 제외.
+
+---
+
+## 5.5. 동의 (Consents) — Phase 2~3
+
+> PIPA §22~24 동의 체계(`docs/05 §1-3` 동의 수집 흐름·`docs/02 §2.15` consents 테이블)를 엔드포인트로 노출한다. 필수/선택·민감정보·고유식별정보를 **유형별 분리 레코드**로 수집하며(일괄동의 금지, PIPA §22⑤), 철회는 행 삭제가 아니라 `granted=false` 신규 행 + 원 행 `revoked_at` 기록(`docs/02 §2.15`). 동의 주체 판정(성인 본인 F1 / 14세 미만·피후견 대리동의 F2 / 14세 이상 미성년 F3)은 서버에서 수행한다. 본 그룹은 WBS에 독립 작업패키지가 없어 회원가입(2.x)·당사자 등록(3.2.x) 작업에 부속되며, WBS ID는 **(파생)** 으로 표기한다 🟡 TBD(WBS 반영 대상).
+
+| METHOD path | 설명 | 인증/권한 | WBS ID |
+|---|---|---|---|
+| POST /consents | 동의 수집(유형별 분리 레코드 일괄 INSERT, 필수/선택 분리 검증) | 인증 또는 공개(가입 토큰) | (파생) 2.x·3.2.1 |
+| GET /consents | 본인/당사자 동의 현황 조회(유형별 최신 상태) | 인증·본인/(권한) 보호자 | (파생) |
+| GET /persons/:id/consents | 당사자별 동의 현황 조회(대리동의 포함) | 인증·(권한) 보호자 | (파생) 3.2.1 |
+| POST /consents/revoke | 동의 철회(granted=false 신규 행 + revoked_at 기록) | 인증·본인/(권한) 보호자 | (파생) |
+| GET /consents/required | 현 정책 버전 기준 미충족 필수 동의 조회(재동의 판별) | 인증 | (파생) |
+
+> 성년 전환 재동의(`docs/05 §10`·`docs/02 §2.15`)는 `POST /consents`를 `subject_user_id`=당사자 계정·`on_behalf=false`로 재호출해 처리한다(기존 대리동의 레코드는 이력 보존). `policy_version` 변경 고지 시 재동의 대상 판별은 `GET /consents/required`로 수행한다(`docs/16 §7`). 대리동의 자격 증빙 절차는 미설계 🟡 TBD(`docs/16 TBD #8`).
+
+---
+
+## 5.6. 고유식별정보 (Secure Identifiers) — Phase 5(저장)·권한자 한정(복호화)
+
+> 고유식별정보(장애등록번호 WEL-001·증명서 문서번호 LEG-001)는 `records.content`에 평문 저장하지 않고 `secure_identifiers`(`docs/02 §2.14`, PIPA §24)에 **암호화 분리 저장**한다. **저장은 기록 생성 흐름(`POST /records`)에 통합**되어 별도 공개 엔드포인트를 두지 않으며(content에는 `secure_identifier_id` 참조·`value_masked`만 잔류), 화면·목록 출력은 항상 마스킹 값을 사용한다. **원문 복호화 조회는 권한자 한정 별도 경로**로만 허용하며 복호화 정책은 `docs/13 §3.5`(RLS·service_role/Edge Function)에서 통제한다. 본 그룹도 WBS 독립 작업패키지가 없어 WBS ID는 **(파생)** 으로 표기한다 🟡 TBD.
+
+| METHOD path | 설명 | 인증/권한 | WBS ID |
+|---|---|---|---|
+| GET /secure-identifiers/:id | 고유식별정보 마스킹 값 조회(value_masked만) | RLS·(권한) 보호자/권한자 | (파생) 5.0.1 |
+| POST /secure-identifiers/:id/reveal | 원문 복호화 조회(권한 재검증·접근 로그 필수, `unique_identifier` 동의 확인) | 인증·(권한) 권한자 한정 | (파생) |
+
+> 저장(생성·수정)은 `POST /records`·`PATCH /records/:id`(5.0.1·5.0.5) 처리 중 `unique_identifier` 동의(`docs/05 §1-3`) 확인 후 서버가 `secure_identifiers` 행을 암호화 INSERT하고 content에 참조 ID·마스킹 값을 기록한다(독립 INSERT 엔드포인트 없음). `POST /secure-identifiers/:id/reveal`은 복호화 시마다 `access_logs`를 남기며 에러 응답은 `docs/18` 에러 규약을 따른다. 암호화 도구(Vault vs pgcrypto)·키 관리는 `docs/02 §2.14`·`docs/16 §3.2` 기준 🟡 TBD.
 
 ---
 
@@ -214,18 +243,18 @@ WBS(`docs/08-wbs.md`)의 각 작업 산출물 열에 흩어져 있는 API 연동
 
 ---
 
-## 13. 공통 규약 (구현 시 확정 — TBD)
+## 13. 공통 규약
 
-아래 항목은 현재 docs에 구체 명세가 없다. **구현 단계(Phase 4)에서 OpenAPI 스펙으로 확정**하며, 본 인덱스에서는 임의로 정의하지 않는다.
+공통 규약 6건 중 5건은 **`docs/18-error-handling-api-conventions.md`에서 확정**되었다. 엔드포인트별 요청/응답 본문 스키마 1건만 구현 단계(Phase 4)에서 OpenAPI로 확정한다.
 
 | 항목 | 현재 상태 | 비고 |
 |---|---|---|
-| 인증 헤더(JWT) | TBD | `POST /login`(2.2)에서 JWT 발급. 헤더 형식·만료·리프레시 토큰 정책은 구현 시 확정. `bkit:bkend-auth` 참고. |
-| 페이징(`?page` / `?limit`) | TBD | `GET /persons/:id/records`(5.0.3)·`GET /notifications`(10.1.3) 등 목록 API에 페이징이 명시되어 있으나, 파라미터명·기본값·응답 메타(total·cursor 등) 형태는 구현 시 확정. |
-| 정렬·필터 파라미터 | TBD | 도메인 필터(`?domain=`)·카테고리(`?category=`)·날짜 범위(`?from=&to=`) 등은 WBS에 표기된 파라미터만 본 인덱스에 반영. 그 외 정렬 키·다중 필터 조합은 구현 시 확정. |
-| 에러 응답 형태 | TBD | 에러 코드·메시지·HTTP status 매핑 표준은 정의되지 않음. 구현 시 확정. |
-| 상태 코드 / 요청·응답 JSON 스키마 | TBD | 리소스·필드는 `docs/02-data-specification.md`, JSONB content 스키마는 동 문서 §3 참고. 엔드포인트별 요청/응답 본문은 **구현 시 OpenAPI로 확정**. |
-| Rate Limiting | TBD | `17.2.7 Rate Limiting (API)`로 적용 예정. 임계값·대상 경로는 구현 시 확정. |
+| 인증 헤더(JWT) | ✅ docs/18 §7 | `POST /login`(2.2)에서 JWT 발급. Bearer 헤더·만료·리프레시 정책은 docs/18 §7에서 확정. `bkit:bkend-auth` 참고. |
+| 페이징(`?page` / `?limit`) | ✅ docs/18 §5 | `GET /persons/:id/records`(5.0.3)·`GET /notifications`(10.1.3) 등 목록 API는 docs/18 §5에서 **cursor 페이징**으로 확정. |
+| 정렬·필터 파라미터 | ✅ docs/18 §5 | 도메인(`?domain=`)·카테고리(`?category=`)·날짜 범위(`?from=&to=`) 필터·정렬 규약은 docs/18 §5에서 확정. |
+| 에러 응답 형태 | ✅ docs/18 §1·§2 | 에러 코드 카탈로그·메시지·HTTP status 매핑 표준은 docs/18 §1(응답 봉투)·§2(에러 코드)에서 확정. |
+| 상태 코드 / 요청·응답 JSON 스키마 | 🟡 일부 TBD | 에러 status 매핑은 docs/18 §2에서 확정. 엔드포인트별 요청/응답 **본문 스키마**는 구현 시 OpenAPI로 확정(리소스·필드는 `docs/02` §2·§3 참고). |
+| Rate Limiting | ✅ docs/18 §6 | `17.2.7 Rate Limiting (API)` 적용. 키 분리·429 응답·임계값 방향은 docs/18 §6에서 확정. |
 
 ---
 
@@ -240,4 +269,4 @@ WBS(`docs/08-wbs.md`)의 각 작업 산출물 열에 흩어져 있는 API 연동
 
 ---
 
-> 본 인덱스는 `docs/08-wbs.md`(WBS) 산출물 열을 단일 출처로 추출했으며, 인증/권한 근거는 `docs/03-erd.md` §RLS, 리소스·필드는 `docs/02-data-specification.md`, 기능 흐름은 `docs/05-workflows-feature.md`를 참조한다. 요청/응답 계약 상세는 구현 단계(Phase 4)에서 OpenAPI로 확정한다.
+> 본 인덱스는 `docs/08-wbs-v1.1.md`(WBS 정본) 산출물 열을 단일 출처로 추출했으며, 인증/권한 근거는 `docs/03-erd.md` §RLS, 리소스·필드는 `docs/02-data-specification.md`, 기능 흐름은 `docs/05-workflows-feature.md`를 참조한다. 요청/응답 계약 상세는 구현 단계(Phase 4)에서 OpenAPI로 확정한다.

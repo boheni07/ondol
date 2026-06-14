@@ -1,6 +1,8 @@
 # 기능별 워크플로우 — OnDol 플랫폼
 
 > Mermaid flowchart 형식
+>
+> **개정(2026-06-14, docs/16 거버넌스 정합):** §1에 동의 수집 단계(1-3) 추가 — 필수/선택·민감정보·고유식별정보 별도 동의, 14세 미만·피후견인 대리동의(docs/16 TBD #7 해소). §10 성인전환기에 본인 동의 재취득 흐름 추가(docs/16 TBD #6 해소). `consents`·`secure_identifiers` 테이블은 docs/02 §2.14·§2.15 참조.
 
 ---
 
@@ -33,7 +35,8 @@ flowchart TD
     E -- 예 --> F[초대 당사자에 자동 연결]
     E -- 아니오 --> G{역할?}
 
-    D --> H[역할 선택]
+    D --> CN[동의 수집\n→ 1-3 동의 단계 참조]
+    CN --> H[역할 선택]
     H --> I1[보호자]
     H --> I2[활동지원사]
     H --> I3[특수교사]
@@ -48,7 +51,8 @@ flowchart TD
     I5 --> J2
     I6 --> J3[당사자 온보딩\n보호자 승인 필요]
 
-    J1 --> K1[당사자 프로필 생성]
+    J1 --> CS[민감정보·고유식별정보\n별도 동의\n→ 1-3 §민감/고유 동의]
+    CS --> K1[당사자 프로필 생성]
     K1 --> K2[응급 정보 입력]
     K2 --> K3[이해관계자 초대 시작\n선택]
     K3 --> L[대시보드 진입]
@@ -83,6 +87,54 @@ sequenceDiagram
         시스템->>이해관계자: 연결 완료 알림 + 권한 안내
     end
 ```
+
+### 1-3. 동의 수집 단계 (PIPA §22~24 / docs/16 §2·§3)
+
+회원가입(1-1 `CN` 노드) 및 당사자 등록(1-1 `CS` 노드)에서 거치는 동의 수집 흐름. 각 동의는 **분리된 체크박스**로 받으며 필수·선택을 묶어 일괄 동의받지 않는다(PIPA §22⑤). 동의 결과는 `consents` 테이블(docs/02 §2.15)에 유형별 분리 레코드로 INSERT된다.
+
+```mermaid
+flowchart TD
+    A([동의 단계 진입]) --> B[필수 동의 표시\n분리 체크박스]
+    B --> B1[이용약관\nterms_of_service]
+    B --> B2[개인정보 수집·이용 필수\nprivacy_required]
+
+    B1 --> C{필수 항목\n모두 동의?}
+    B2 --> C
+    C -- 아니오 --> C1[가입 진행 불가\n사유 안내]
+    C -- 예 --> D[선택 동의 표시\n미동의해도 서비스 동작]
+
+    D --> D1[마케팅·알림\nmarketing 선택]
+    D --> D2[위탁·국외이전 고지·동의\nthird_party_processing\n→ docs/16 §6]
+    D1 --> E
+    D2 --> E
+
+    E{동의 주체 판정\n당사자 정보 입력 시} --> F1[성인 본인\n→ 본인 동의]
+    E --> F2[만 14세 미만 / 피후견인\n→ 법정대리인 대리동의\non_behalf=true]
+    E --> F3[만 14세 이상 미성년자\n→ 본인 + 법정대리인 확인 🟡]
+
+    F1 --> G
+    F2 --> G
+    F3 --> G
+
+    subgraph 민감_고유["민감정보·고유식별정보 별도 동의 (당사자 등록 시)"]
+        G[민감정보 별도 동의\nsensitive_info\n장애·건강·자기표현] --> H{고유식별정보\n입력 예정?}
+        H -- 예 --> I[고유식별정보 별도 동의\nunique_identifier\n장애등록번호·증명서번호]
+        H -- 아니오 --> J
+        I --> J[동의 완료]
+    end
+
+    G -. 미동의 .-> G1[민감정보 미수집\n핵심 기능 제한 안내]
+    I -. 미동의 .-> I1[고유식별정보 미수집\nsecure_identifiers 미생성]
+
+    J --> K[consents INSERT\n유형별 분리 레코드\npolicy_version 기록]
+    K --> L[동의 완료 → 다음 단계]
+```
+
+- **대리동의(docs/16 §2.2):** 만 14세 미만·피후견인은 `consents.on_behalf=true`, `consented_by`=법정대리인, `legal_basis`(친권자/성년후견인) 기록. 법정대리인 자격 증빙 절차는 미설계 🟡 (docs/16 TBD #8).
+- 🟡 **F3(만 14세 이상 미성년자) 분기 권고(확정 필요, docs/16 §2.2.1):** 본인 동의(`subject_user_id`, `on_behalf=false`)만으로 당사자 등록·민감정보 저장을 **완료하지 않고 보류**(상태 `awaiting_guardian_confirmation`)한다. 법정대리인이 별도 인증 채널에서 확인하면 보조 레코드(`on_behalf=true`, `legal_basis='친권자'`)를 INSERT하고 두 레코드가 모두 존재할 때 상태 `confirmed`로 전이해 민감정보 저장을 활성화한다. **만 14세 이상 미성년자 민감정보의 본인 단독 동의 가부는 법무 확정** — 본인 의사 우선 원칙(TRA-006)과 미성년 계약 안정성을 절충한 권고다. 🔒 법정대리인 확인 링크는 만료·본인확인을 결합해 제3자 승인을 차단한다(권한 우회 위험).
+- 🟡 **법정대리인 자격 증빙 권고(확정 필요, docs/16 §2.2.2):** 친권자=가족관계증명서, 성년후견인=후견등기사항증명서를 당사자 등록·후견 등록 시점에 검증한다. 증빙 서류는 그 자체가 민감·고유식별정보를 포함하므로 `record_files`(`is_sensitive=true`) 또는 전용 검증 스토리지에 저장하고 **검증 완료 후 결과 플래그만 유지·원본은 최소 보유기간 후 파기**한다. `consents.legal_basis`에는 검증 결과만 남긴다. **요구 증빙 수단·법정 확인 수준은 법무 확정.** 🔒 증빙 원본 장기보관은 단일 유출로 가족 PII 노출을 초래하므로 검증 후 즉시 파기/암호화 격리(증빙서류 PII 위험).
+- **고유식별정보 동의(docs/16 §3.2):** `unique_identifier` 동의 없이는 `secure_identifiers`(docs/02 §2.14)에 등록번호·문서번호를 저장하지 않는다.
+- **정책 버전:** 동의 시점 처리방침/약관 버전(`policy_version`)을 함께 저장해 변경 고지(docs/16 §7) 시 재동의 대상을 판별한다.
 
 ---
 
@@ -506,7 +558,14 @@ flowchart TD
     F2 --> G2[특수교사 역할 만료 예고\n보호자에게 안내]
     G2 --> H2[사회복지사에게 알림\n성인 ISP 전환 준비]
     H2 --> I2[법적 서류 검토 알림\n후견/의사결정지원 계약]
-    I2 --> I1
+    I2 --> RC{후견 개시 여부\nLEG-003 status}
+    RC -- 성년후견 개시\nactive --> RC1[성년후견인이\n동의 주체 유지\nconsents on_behalf=true 유지]
+    RC -- 후견 미개시\nnot_applicable --> RC2[본인 동의 재취득 절차 개시\n→ 1-3 동의 단계 재실행]
+    RC1 --> I1
+    RC2 --> RC3[본인 명의 신규 consents INSERT\nsubject_user_id=당사자 계정\non_behalf=false]
+    RC3 --> RC4{기존 보호자 권한\n처리}
+    RC4 --> RC5[본인이 권한 유지/회수 결정\n→ 2·3번 프로세스]
+    RC5 --> I1
 
     F3 --> I1
     F4 --> I1
@@ -518,6 +577,8 @@ flowchart TD
     K -- 아니오 --> N[전환기 처리 완료]
     M --> N
 ```
+
+> **성년 도달 동의 재취득 (docs/16 §2.3 / TBD #6 해소):** 당사자가 성년에 도달하면 법정대리인 대리동의의 법적 근거가 변동된다. 후견 미개시 시(`LEG-003.status='not_applicable'`) **본인 동의를 재취득**한다 — `person_accounts.user_id`로 당사자 계정을 연결하고, 1-3 동의 단계를 본인 명의로 재실행해 `consents`(docs/02 §2.15)에 `on_behalf=false` 신규 레코드를 INSERT한다. 기존 대리동의 레코드(`on_behalf=true`)는 이력으로 보존한다. 본인 동의 전환 후 기존 보호자 권한(`permissions`)의 유지/회수는 **당사자 본인이 결정**한다.
 
 ---
 
@@ -661,7 +722,7 @@ stateDiagram-v2
 
 | 워크플로우 | 주 사용자 | 빈도 | 핵심 DB 작업 |
 |-----------|---------|------|------------|
-| 온보딩 | 전체 | 최초 1회 | users, guardian_persons, person_accounts INSERT |
+| 온보딩 | 전체 | 최초 1회 | users, guardian_persons, person_accounts, **consents** INSERT (고유식별정보 입력 시 secure_identifiers) |
 | 권한 부여 | 보호자 | 이해관계자 추가시 | permissions UPSERT, permission_logs INSERT |
 | 권한 회수 | 보호자/시스템 | 필요시/만료시 | permissions UPDATE, permission_logs INSERT |
 | 기록 작성 | 이해관계자 | 매일~월별 | records INSERT, access_logs INSERT |

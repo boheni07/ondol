@@ -1,5 +1,7 @@
 # WBS (Work Breakdown Structure) — OnDol 플랫폼
 
+> ⚠️ DEPRECATED — docs/08-wbs-v1.1.md로 이관(2026-06-14). 정본은 v1.1, 본 파일은 보존용.
+
 > 버전: v1.0 | 작성일: 2026-06-13
 > 분해 원칙: 기능의 최소 단위 (CRUD 각각 C/R-단건/R-목록/U/D 별도 작업)
 > 추정 단위: XS(0.5d) · S(1d) · M(2~3d) · L(5d) · XL(7d+)

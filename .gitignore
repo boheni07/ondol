@@ -39,3 +39,7 @@ yarn-error.log*
 
 # Workspace (작업 중간 파일 - docs/에 최종본 있음)
 _workspace/
+
+# Python
+__pycache__/
+*.pyc

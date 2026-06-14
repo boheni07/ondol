@@ -1,0 +1,71 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- P-23 · ST-11 Accessible · Person Consent &amp; Rights Mgmt · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">P-23 · ST-11 Accessible · Person Consent &amp; Rights · Web 1440×900 (대형 UI·쉬운 언어)</text>
+  <rect width="1440" height="900" fill="#FFFFFF"/>
+
+  <!-- Sidebar (person warm) -->
+  <rect width="280" height="900" fill="#FFF8F4"/>
+  <rect width="280" height="80" fill="#FFFFFF"/>
+  <text x="32" y="52" font-family="Arial" font-size="24" font-weight="bold" fill="#E8724A">온돌</text>
+  <text x="32" y="146" font-family="Arial" font-size="22" fill="#374151">🌟 오늘 기록</text>
+  <text x="32" y="218" font-family="Arial" font-size="22" fill="#374151">📖 내 기록</text>
+  <text x="32" y="290" font-family="Arial" font-size="22" fill="#374151">🔔 알림</text>
+  <rect x="0" y="314" width="280" height="80" fill="#FFE8DA"/>
+  <rect x="0" y="314" width="6" height="80" fill="#E8724A"/>
+  <text x="32" y="362" font-family="Arial" font-size="22" font-weight="bold" fill="#C4500A">⚙️ 설정</text>
+
+  <!-- Main heading (body-lg / easy language) -->
+  <text x="312" y="78" font-family="Arial" font-size="38" font-weight="bold" fill="#000000">내 정보 동의 관리</text>
+  <text x="312" y="112" font-family="Arial" font-size="20" fill="#374151">내 정보를 누구에게, 어떻게 쓰는지 정해요. 큰 글씨로 쉽게 볼 수 있어요.</text>
+
+  <!-- 안내 박스 -->
+  <rect x="312" y="140" width="1096" height="72" rx="16" fill="#FFF7ED" stroke="#F5C982" stroke-width="2"/>
+  <text x="340" y="174" font-family="Arial" font-size="20" fill="#92670D">💡 어려우면 도와주는 사람에게 물어봐도 괜찮아요.</text>
+  <text x="340" y="200" font-family="Arial" font-size="18" fill="#92670D">‘안 함’으로 바꾸면 어떤 일이 생기는지 친절하게 알려드려요.</text>
+
+  <!-- Card 1: 약관 (동의함, 큰 ● 버튼) -->
+  <rect x="312" y="232" width="1096" height="116" rx="24" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+  <text x="344" y="284" font-family="Arial" font-size="24" font-weight="bold" fill="#000000">서비스 약관</text>
+  <text x="344" y="316" font-family="Arial" font-size="18" fill="#374151">온돌을 쓰기 위해 꼭 필요해요. 바꿀 수 없어요.</text>
+  <!-- big ● 동의함 status -->
+  <rect x="1140" y="262" width="236" height="56" rx="28" fill="#E7F6EF" stroke="#22A06B" stroke-width="2"/>
+  <circle cx="1176" cy="290" r="12" fill="#22A06B"/>
+  <text x="1260" y="298" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#1A7A50">동의함 ●</text>
+
+  <!-- Card 2: 마케팅 (선택, 큰 ●/○ 토글 버튼) -->
+  <rect x="312" y="364" width="1096" height="116" rx="24" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+  <text x="344" y="416" font-family="Arial" font-size="24" font-weight="bold" fill="#000000">새 소식 받기</text>
+  <text x="344" y="448" font-family="Arial" font-size="18" fill="#374151">이벤트·소식 알림을 받아요. 받기 싫으면 ‘안 함’으로 바꿔요.</text>
+  <!-- big 동의함 / 안 함 두 버튼 -->
+  <rect x="1066" y="392" width="146" height="60" rx="30" fill="#FDEFE9" stroke="#C4500A" stroke-width="3"/>
+  <circle cx="1100" cy="422" r="12" fill="#C4500A"/>
+  <text x="1158" y="430" text-anchor="middle" font-family="Arial" font-size="19" font-weight="bold" fill="#C4500A">동의함</text>
+  <rect x="1224" y="392" width="152" height="60" rx="30" fill="#F9FAFB" stroke="#D1D5DB" stroke-width="2"/>
+  <circle cx="1258" cy="422" r="12" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="2"/>
+  <text x="1320" y="430" text-anchor="middle" font-family="Arial" font-size="19" fill="#6B7280">안 함</text>
+
+  <!-- Card 3: 민감정보 (별도, 동의함 + 큰 철회 버튼) -->
+  <rect x="312" y="496" width="1096" height="132" rx="24" fill="#FFFFFF" stroke="#F5C982" stroke-width="2"/>
+  <text x="344" y="548" font-family="Arial" font-size="24" font-weight="bold" fill="#000000">건강·장애 정보 쓰기</text>
+  <text x="344" y="580" font-family="Arial" font-size="18" fill="#374151">내 건강·장애 정보를 기록에 써요. ‘안 함’으로 바꾸면 일부 기록을</text>
+  <text x="344" y="606" font-family="Arial" font-size="18" fill="#374151">볼 수 없어요. 바꾸기 전에 한 번 더 물어봐요.</text>
+  <rect x="1140" y="528" width="236" height="56" rx="28" fill="#E7F6EF" stroke="#22A06B" stroke-width="2"/>
+  <circle cx="1176" cy="556" r="12" fill="#22A06B"/>
+  <text x="1260" y="564" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#1A7A50">동의함 ●</text>
+  <rect x="1196" y="590" width="180" height="56" rx="14" fill="#FFFFFF" stroke="#BF3030" stroke-width="3"/>
+  <text x="1286" y="624" text-anchor="middle" font-family="Arial" font-size="19" font-weight="bold" fill="#BF3030">안 함으로 바꾸기</text>
+
+  <!-- Card 4: 내 정보 가져오기 (데이터 내보내기, 큰 버튼) -->
+  <rect x="312" y="644" width="1096" height="116" rx="24" fill="#EEF4FD" stroke="#A8C4E4" stroke-width="2"/>
+  <text x="344" y="696" font-family="Arial" font-size="24" font-weight="bold" fill="#000000">내 정보 가져오기</text>
+  <text x="344" y="728" font-family="Arial" font-size="18" fill="#374151">내 기록을 파일로 받을 수 있어요. 다 만들면 알림으로 알려드려요.</text>
+  <rect x="1156" y="676" width="220" height="56" rx="14" fill="#3B7D8E"/>
+  <text x="1266" y="710" text-anchor="middle" font-family="Arial" font-size="19" font-weight="bold" fill="white">파일로 받기</text>
+
+  <!-- Helper contact (도와주는 사람) -->
+  <rect x="312" y="776" width="1096" height="92" rx="20" fill="#F9FAFB"/>
+  <text x="340" y="812" font-family="Arial" font-size="20" font-weight="bold" fill="#6B7280">💛 도와주는 사람</text>
+  <text x="340" y="842" font-family="Arial" font-size="18" fill="#374151">엄마 (김보호자) · 어려운 게 있으면 같이 정해요</text>
+  <rect x="1196" y="800" width="180" height="48" rx="24" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="1286" y="830" text-anchor="middle" font-family="Arial" font-size="17" fill="#3B7D8E">📞 전화하기</text>
+</svg>

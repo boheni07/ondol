@@ -20,7 +20,7 @@ description: OnDol 서비스의 프로젝트 기획·관리를 수행한다. 요
 ### 1. 입력 수집
 analyst 요구사항(`_workspace/01_analyst_requirements.md`)과 기존 설계 문서(`docs/02-data-specification.md`, `docs/03-erd.md`, `docs/06-information-architecture.md`, `docs/07-design-system.md`, 와이어프레임)를 읽는다. 입력이 없으면 사용자 요청 범위에서 상위 수준으로 시작한다.
 
-### 2. WBS 분해 — `docs/08-wbs.md`
+### 2. WBS 분해 — `docs/08-wbs-v1.1.md`
 Phase(대분류) → 작업패키지(하위 섹션) → 작업(행) 3계층으로 분해한다. 각 작업 테이블 컬럼:
 
 `ID | 작업 | 산출물 | 공수 | 우선순위 | 세부사항 | 담당자`
@@ -40,7 +40,7 @@ Phase(대분류) → 작업패키지(하위 섹션) → 작업(행) 3계층으�
 - 한글 깨짐 방지: UTF-8로 저장, 검증은 `PYTHONIOENCODING=utf-8`.
 
 ### 6. GitHub 등록 자산
-원천은 `docs/08-wbs.md`(단일 source of truth). 파싱해서 생성:
+원천은 `docs/08-wbs-v1.1.md`(단일 source of truth). 파싱해서 생성:
 - **`docs/09-wbs-github.md`** — 담당자 정책·마일스톤(Phase)·라벨·이슈 목록·등록 방법 가이드
 - **`docs/wbs-github-issues.csv`** — 작업패키지=Issue 임포트용 (Title·Body·Milestone·Labels·Assignee·공수)
 - **`scripts/import-wbs-github.sh`** — gh CLI 스크립트: 라벨→마일스톤→이슈→(옵션)Projects. 멱등 재실행 가능
@@ -59,11 +59,11 @@ Phase(대분류) → 작업패키지(하위 섹션) → 작업(행) 3계층으�
 
 ## 재생성 원칙
 
-`docs/08-wbs.md`를 수정하면 엑셀·CSV·가이드·스크립트는 항상 md를 다시 파싱해 재생성한다. 여러 산출물의 정합성을 보장하는 단일 원천 규칙이다. 부분 수정 요청 시 해당 Phase/작업패키지만 손대고 나머지는 보존한다.
+`docs/08-wbs-v1.1.md`를 수정하면 엑셀·CSV·가이드·스크립트는 항상 md를 다시 파싱해 재생성한다. 여러 산출물의 정합성을 보장하는 단일 원천 규칙이다. 부분 수정 요청 시 해당 Phase/작업패키지만 손대고 나머지는 보존한다.
 
 ## 산출물 체크리스트
 
-- [ ] `docs/08-wbs.md` — Phase·작업패키지·작업, 공수/우선순위/세부사항/담당자 컬럼 완비
+- [ ] `docs/08-wbs-v1.1.md` — Phase·작업패키지·작업, 공수/우선순위/세부사항/담당자 컬럼 완비
 - [ ] `docs/08-wbs.xlsx` — WBS + Gantt_Chart 시트, COUNTIF/SUMIF 연계 동작
 - [ ] `docs/09-wbs-github.md` + `wbs-github-issues.csv` + `scripts/import-wbs-github.sh`
 - [ ] 담당자 배정 근거 + 역할별 부하 점검

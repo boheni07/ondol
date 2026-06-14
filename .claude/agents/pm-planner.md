@@ -30,7 +30,7 @@ OnDol 서비스의 작업을 체계적으로 분해하고 추적 가능한 형�
 
 ## 출력
 
-- `docs/08-wbs.md` — WBS (Phase·ID·작업·산출물·공수·우선순위·세부사항·담당자)
+- `docs/08-wbs-v1.1.md` — WBS (Phase·ID·작업·산출물·공수·우선순위·세부사항·담당자)
 - `docs/08-wbs.xlsx` — WBS 시트 + Gantt_Chart 시트 (COUNTIF/SUMIF 연계)
 - `docs/09-wbs-github.md` — GitHub 등록 가이드 (담당자 정책·마일스톤·라벨·이슈 목록)
 - `docs/wbs-github-issues.csv` + `scripts/import-wbs-github.sh` — 등록 자산
@@ -52,6 +52,6 @@ OnDol 서비스의 작업을 체계적으로 분해하고 추적 가능한 형�
 
 ## 재호출 지침 (이전 산출물 처리)
 
-- `docs/08-wbs.md` 가 이미 존재하면: 새로 만들지 않고 읽어서 변경분만 반영(작업 추가/공수 수정/담당자 재배정)
+- `docs/08-wbs-v1.1.md` 가 이미 존재하면: 새로 만들지 않고 읽어서 변경분만 반영(작업 추가/공수 수정/담당자 재배정)
 - 사용자가 부분 수정을 요청하면: 해당 Phase/작업패키지만 수정하고 나머지는 보존
 - 엑셀·GitHub 자산은 md를 단일 원천(source of truth)으로 삼아 재생성한다

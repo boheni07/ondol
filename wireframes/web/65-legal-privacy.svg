@@ -1,0 +1,74 @@
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- A-10 · ST-03 Privacy Policy (PolicyViewer) · Web 1440×900 -->
+  <text x="8" y="14" font-family="Arial" font-size="10" fill="#9CA3AF">A-10 · ST-03 Legal · Privacy Policy · Web 1440×900</text>
+  <rect width="1440" height="900" fill="#F9FAFB"/>
+
+  <!-- Top brand bar -->
+  <rect width="1440" height="64" fill="#FFFFFF"/>
+  <line x1="0" y1="64" x2="1440" y2="64" stroke="#E5E7EB"/>
+  <text x="40" y="42" font-family="Arial" font-size="20" font-weight="bold" fill="#3B7D8E">온돌</text>
+  <text x="86" y="42" font-family="Arial" font-size="13" fill="#6B7280">OnDol</text>
+  <text x="40" y="98" font-family="Arial" font-size="12" fill="#9CA3AF">회원가입 / 동의 / 개인정보 처리방침</text>
+
+  <!-- Title + version badge -->
+  <text x="380" y="148" font-family="Arial" font-size="28" font-weight="bold" fill="#111827">개인정보 처리방침</text>
+  <rect x="624" y="128" width="74" height="26" rx="6" fill="#EEF4FD"/>
+  <text x="661" y="146" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#2E5FA8">버전 v1.2</text>
+  <text x="380" y="176" font-family="Arial" font-size="13" fill="#6B7280">시행일 2026-06-01 · 내가 동의한 일시 2026-06-14 14:32 · 개인정보 보호책임자 privacy@ondol.kr</text>
+
+  <!-- Left sticky TOC -->
+  <rect x="40" y="208" width="300" height="640" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="64" y="244" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">목차</text>
+  <rect x="40" y="260" width="300" height="36" fill="#EEF4FD"/>
+  <rect x="40" y="260" width="4" height="36" fill="#3B7D8E"/>
+  <text x="64" y="283" font-family="Arial" font-size="13" font-weight="bold" fill="#2E5FA8">1. 수집하는 개인정보 항목</text>
+  <text x="64" y="324" font-family="Arial" font-size="13" fill="#6B7280">2. 수집·이용 목적</text>
+  <text x="64" y="358" font-family="Arial" font-size="13" fill="#6B7280">3. 민감정보·고유식별정보</text>
+  <text x="64" y="392" font-family="Arial" font-size="13" fill="#6B7280">4. 보유·이용 기간</text>
+  <text x="64" y="426" font-family="Arial" font-size="13" fill="#6B7280">5. 제3자 제공</text>
+  <text x="64" y="460" font-family="Arial" font-size="13" fill="#6B7280">6. 처리위탁·국외이전</text>
+  <text x="64" y="494" font-family="Arial" font-size="13" fill="#6B7280">7. 정보주체의 권리</text>
+  <text x="64" y="528" font-family="Arial" font-size="13" fill="#6B7280">8. 파기 절차·방법</text>
+  <text x="64" y="562" font-family="Arial" font-size="13" fill="#6B7280">9. 안전성 확보 조치</text>
+  <text x="64" y="596" font-family="Arial" font-size="13" fill="#6B7280">10. 개인정보 보호책임자</text>
+
+  <!-- Main article -->
+  <rect x="380" y="208" width="1020" height="568" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="412" y="252" font-family="Arial" font-size="18" font-weight="bold" fill="#111827">1. 수집하는 개인정보 항목</text>
+  <text x="412" y="282" font-family="Arial" font-size="14" fill="#374151">회사는 서비스 제공을 위해 아래의 개인정보를 항목별 동의를 받아</text>
+  <text x="412" y="306" font-family="Arial" font-size="14" fill="#374151">수집합니다. 각 항목은 PIPA §22⑤에 따라 분리하여 동의받습니다.</text>
+
+  <!-- 표 형태 항목 -->
+  <rect x="412" y="324" width="956" height="32" fill="#F3F4F6"/>
+  <text x="428" y="345" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">구분</text>
+  <text x="620" y="345" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">항목</text>
+  <text x="1120" y="345" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">근거</text>
+  <line x1="412" y1="356" x2="1368" y2="356" stroke="#E5E7EB"/>
+  <text x="428" y="382" font-family="Arial" font-size="13" fill="#374151">필수</text>
+  <text x="620" y="382" font-family="Arial" font-size="13" fill="#374151">이름, 이메일, 전화번호</text>
+  <text x="1120" y="382" font-family="Arial" font-size="13" fill="#6B7280">계약 이행</text>
+  <line x1="412" y1="396" x2="1368" y2="396" stroke="#F3F4F6"/>
+  <text x="428" y="422" font-family="Arial" font-size="13" fill="#C0362C" font-weight="bold">민감</text>
+  <text x="620" y="422" font-family="Arial" font-size="13" fill="#374151">장애 유형·정도, 건강·진료 기록</text>
+  <text x="1120" y="422" font-family="Arial" font-size="13" fill="#6B7280">별도 동의 §23</text>
+  <line x1="412" y1="436" x2="1368" y2="436" stroke="#F3F4F6"/>
+  <text x="428" y="462" font-family="Arial" font-size="13" fill="#92670D" font-weight="bold">고유식별</text>
+  <text x="620" y="462" font-family="Arial" font-size="13" fill="#374151">장애인 등록번호 (선택)</text>
+  <text x="1120" y="462" font-family="Arial" font-size="13" fill="#6B7280">별도 동의 §24</text>
+
+  <text x="412" y="516" font-family="Arial" font-size="18" font-weight="bold" fill="#111827">3. 민감정보·고유식별정보 처리</text>
+  <text x="412" y="546" font-family="Arial" font-size="14" fill="#374151">회사는 장애·건강 정보 등 민감정보를 회원가입 시 별도 동의를 받아</text>
+  <text x="412" y="570" font-family="Arial" font-size="14" fill="#374151">생애기록의 핵심 기능 제공 목적에 한해 처리하며, 동의 철회 시 해당</text>
+  <text x="412" y="594" font-family="Arial" font-size="14" fill="#374151">기능 이용이 제한될 수 있습니다.</text>
+
+  <text x="412" y="648" font-family="Arial" font-size="18" font-weight="bold" fill="#111827">6. 처리위탁 및 국외이전</text>
+  <text x="412" y="678" font-family="Arial" font-size="14" fill="#374151">Supabase Inc.(미국, 클라우드 인프라)·Resend(미국, 이메일 발송)에</text>
+  <text x="412" y="702" font-family="Arial" font-size="14" fill="#374151">개인정보 처리를 위탁하며 국외 이전 사실을 고지합니다.</text>
+  <text x="412" y="748" font-family="Arial" font-size="13" fill="#9CA3AF">… 이하 본문 계속 (스크롤) …</text>
+
+  <!-- Sticky footer -->
+  <rect x="380" y="792" width="1020" height="64" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="404" y="808" width="180" height="40" rx="10" fill="#FFFFFF" stroke="#3B7D8E"/>
+  <text x="494" y="833" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#3B7D8E">← 동의 화면으로 돌아가기</text>
+  <text x="1380" y="833" text-anchor="end" font-family="Arial" font-size="12" fill="#9CA3AF">전체 다운로드 (PDF) ↓</text>
+</svg>

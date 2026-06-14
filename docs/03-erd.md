@@ -1,6 +1,8 @@
 # ERD — OnDol 플랫폼
 
-> 도구: Mermaid erDiagram | 버전: v1.0
+> 도구: Mermaid erDiagram | 버전: v1.1 (docs/02 v1.1 기준)
+>
+> **v1.1 변경(docs/02 v1.1 데이터모델 정합):** ①엔티티 2종 추가 — `secure_identifiers`(고유식별정보 암호화 분리, docs/02 §2.14)·`consents`(동의 이력, docs/02 §2.15) ②사용자 대면 8개 테이블에 `deleted_at` soft-delete 컬럼 추가(docs/02 §1 정책, docs/16 §4.3) ③`guardian_persons`·`self_expressions` 부분 유니크(`WHERE deleted_at IS NULL`) 반영 ④신규 enum 2종(`secure_identifier_type`·`consent_type`) 컬럼 주석 인라인. append-only 로그(`access_logs`·`permission_logs`)는 `deleted_at` 제외.
 
 ---
 
@@ -25,6 +27,7 @@ erDiagram
     text    current_life_stage  "현재 생애주기"
     timestamptz created_at
     timestamptz updated_at
+    timestamptz deleted_at      "soft-delete (NULL=활성)"
   }
 
   users {
@@ -50,6 +53,7 @@ erDiagram
     boolean is_primary          "주보호자 여부"
     text    relationship        "부|모|형제|후견인 등"
     timestamptz created_at
+    timestamptz deleted_at      "soft-delete; 부분 유니크 WHERE deleted_at IS NULL"
   }
 
   person_accounts {
@@ -58,6 +62,7 @@ erDiagram
     jsonb   accessibility_settings
     text    ui_mode             "icon|mixed"
     timestamptz created_at
+    timestamptz deleted_at      "soft-delete (NULL=활성)"
   }
 
   %% ============================================================
@@ -113,6 +118,7 @@ erDiagram
     text[]  tags
     timestamptz created_at
     timestamptz updated_at
+    timestamptz deleted_at      "soft-delete (NULL=활성)"
   }
 
   self_expressions {
@@ -127,6 +133,7 @@ erDiagram
     text    memo                "선택 메모"
     text    voice_memo_url
     timestamptz created_at
+    timestamptz deleted_at      "soft-delete; 부분 유니크 WHERE deleted_at IS NULL"
   }
 
   record_files {
@@ -140,6 +147,41 @@ erDiagram
     bigint  file_size
     boolean is_sensitive        "진단서 등 민감 문서"
     timestamptz created_at
+    timestamptz deleted_at      "soft-delete; Storage hard delete는 유예 후 배치"
+  }
+
+  %% ============================================================
+  %% 개인정보 보호 (PIPA — docs/02 v1.1)
+  %% ============================================================
+
+  secure_identifiers {
+    uuid    id                  PK "content/persons가 참조"
+    uuid    person_id           FK "소유 당사자"
+    uuid    record_id           FK "출처 기록, NULL 가능"
+    text    identifier_type     "Enum SecureIdentifierType: disability_registration_number|disability_certificate_number"
+    bytea   encrypted_value     "암호화된 원문(평문 저장 금지)"
+    text    value_masked        "표시용 마스킹 값 123-45-****"
+    text    encryption_ref      "Vault 시크릿/키 버전 식별자"
+    uuid    created_by          FK "입력자(users)"
+    timestamptz created_at
+    timestamptz updated_at
+    timestamptz deleted_at      "soft-delete (NULL=활성)"
+  }
+
+  consents {
+    uuid    id                  PK
+    uuid    subject_user_id     FK "성인 본인 동의(users), XOR person_id"
+    uuid    person_id           FK "당사자 정보 동의, XOR subject_user_id"
+    text    consent_type        "Enum ConsentType: terms_of_service|privacy_required|sensitive_info|unique_identifier|third_party_processing|marketing"
+    boolean is_required         "필수(true)/선택(false) — 일괄동의 금지"
+    boolean granted             "동의(true)/철회·거부(false)"
+    uuid    consented_by        FK "실제 동의 주체(본인/법정대리인, users)"
+    boolean on_behalf           "대리동의 여부"
+    text    legal_basis         "대리동의 근거 친권자|성년후견인"
+    text    policy_version      "동의 시점 약관/처리방침 버전"
+    timestamptz consented_at
+    timestamptz revoked_at      "철회 시각 (NULL=유효)"
+    timestamptz deleted_at      "soft-delete (NULL=활성)"
   }
 
   %% ============================================================
@@ -225,6 +267,13 @@ erDiagram
 
   records         ||--o{ record_files        : "has files"
   self_expressions||--o{ record_files        : "has files"
+
+  persons         ||--o{ secure_identifiers  : "owns"
+  records         ||--o{ secure_identifiers  : "source of"
+  users           ||--o{ secure_identifiers  : "created by (created_by)"
+
+  users           ||--o{ consents            : "consents (subject/consented_by)"
+  persons         ||--o{ consents            : "subject of"
 
   persons         ||--o{ life_milestones     : "has"
   users           ||--o{ life_milestones     : "created by"
@@ -331,6 +380,8 @@ graph LR
 | `records` | `persons`, `users` | person_id, author_id | 기록 |
 | `self_expressions` | `persons` | person_id | 당사자 자기표현 |
 | `record_files` | `records` OR `self_expressions`, `users` | record_id XOR self_expression_id | 첨부 파일 |
+| `secure_identifiers` | `persons`, `records`(선택), `users` | person_id, record_id, created_by | 고유식별정보 암호화 분리 저장 (docs/02 §2.14, PIPA §24) |
+| `consents` | `users`(×2), `persons` | subject_user_id, consented_by, person_id (subject_user_id XOR person_id) | 동의 이력 (docs/02 §2.15, PIPA §22~24) |
 | `access_logs` | `users`, `persons`, `records`(선택), `self_expressions`(선택) | | 접근 로그 |
 | `life_milestones` | `persons`, `users` | person_id, created_by | 이정표 |
 | `handovers` | `persons`, `users`(×2) | person_id, from_user_id, to_user_id | 인수인계 |

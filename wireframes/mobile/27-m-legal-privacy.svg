@@ -1,0 +1,66 @@
+<svg viewBox="0 0 390 844" xmlns="http://www.w3.org/2000/svg">
+  <!-- A-10 · ST-03 Privacy Policy (PolicyViewer) · Mobile 390×844 -->
+  <text x="8" y="12" font-family="Arial" font-size="9" fill="#9CA3AF">A-10 · ST-03 Privacy Policy · Mobile 390×844</text>
+  <rect width="390" height="844" fill="#FFFFFF"/>
+  <rect width="390" height="844" rx="0" fill="none" stroke="#E5E7EB"/>
+
+  <!-- Status bar -->
+  <rect width="390" height="44" fill="#FFFFFF"/>
+  <text x="20" y="30" font-family="Arial" font-size="13" font-weight="bold" fill="#111827">9:41</text>
+  <text x="340" y="30" font-family="Arial" font-size="12" fill="#111827">● ●● ■■■</text>
+
+  <!-- Nav bar -->
+  <rect y="44" width="390" height="56" fill="#FFFFFF"/>
+  <line y1="100" x1="0" y2="100" x2="390" stroke="#E5E7EB"/>
+  <text x="20" y="78" font-family="Arial" font-size="22" fill="#374151">←</text>
+  <text x="195" y="80" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#111827">개인정보 처리방침</text>
+
+  <!-- version + date -->
+  <rect x="20" y="116" width="350" height="56" rx="10" fill="#F9FAFB" stroke="#E5E7EB"/>
+  <rect x="36" y="130" width="64" height="24" rx="6" fill="#EEF4FD"/>
+  <text x="68" y="147" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#2E5FA8">버전 v1.2</text>
+  <text x="112" y="139" font-family="Arial" font-size="11" fill="#6B7280">시행일 2026-06-01</text>
+  <text x="112" y="158" font-family="Arial" font-size="11" fill="#6B7280">보호책임자 privacy@ondol.kr</text>
+
+  <!-- TOC accordion -->
+  <rect x="20" y="184" width="350" height="44" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="36" y="211" font-family="Arial" font-size="13" font-weight="bold" fill="#374151">목차 (10개 항목)</text>
+  <text x="354" y="211" text-anchor="end" font-family="Arial" font-size="14" fill="#6B7280">▾</text>
+
+  <!-- Body -->
+  <text x="20" y="266" font-family="Arial" font-size="16" font-weight="bold" fill="#111827">1. 수집하는 개인정보 항목</text>
+  <text x="20" y="292" font-family="Arial" font-size="13" fill="#374151">서비스 제공을 위해 항목별 동의를 받아</text>
+  <text x="20" y="314" font-family="Arial" font-size="13" fill="#374151">수집합니다 (PIPA §22⑤ 분리 동의).</text>
+
+  <!-- 항목 표 -->
+  <rect x="20" y="328" width="350" height="28" fill="#F3F4F6"/>
+  <text x="32" y="347" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">구분</text>
+  <text x="120" y="347" font-family="Arial" font-size="12" font-weight="bold" fill="#374151">항목</text>
+  <line x1="20" y1="356" x2="370" y2="356" stroke="#E5E7EB"/>
+  <text x="32" y="380" font-family="Arial" font-size="12" fill="#374151">필수</text>
+  <text x="120" y="380" font-family="Arial" font-size="12" fill="#374151">이름·이메일·전화번호</text>
+  <line x1="20" y1="392" x2="370" y2="392" stroke="#F3F4F6"/>
+  <text x="32" y="416" font-family="Arial" font-size="12" font-weight="bold" fill="#C0362C">민감</text>
+  <text x="120" y="416" font-family="Arial" font-size="12" fill="#374151">장애 유형·건강 기록</text>
+  <line x1="20" y1="428" x2="370" y2="428" stroke="#F3F4F6"/>
+  <text x="32" y="452" font-family="Arial" font-size="12" font-weight="bold" fill="#92670D">고유</text>
+  <text x="120" y="452" font-family="Arial" font-size="12" fill="#374151">장애인 등록번호 (선택)</text>
+
+  <text x="20" y="500" font-family="Arial" font-size="16" font-weight="bold" fill="#111827">6. 처리위탁·국외이전</text>
+  <text x="20" y="526" font-family="Arial" font-size="13" fill="#374151">Supabase(미국)·Resend(미국)에 처리를</text>
+  <text x="20" y="548" font-family="Arial" font-size="13" fill="#374151">위탁하며 국외 이전 사실을 고지합니다.</text>
+
+  <text x="20" y="592" font-family="Arial" font-size="16" font-weight="bold" fill="#111827">7. 정보주체의 권리</text>
+  <text x="20" y="618" font-family="Arial" font-size="13" fill="#374151">열람·정정·삭제·처리정지·전송요구권을</text>
+  <text x="20" y="640" font-family="Arial" font-size="13" fill="#374151">설정 &gt; 개인정보·동의 관리에서 행사합니다.</text>
+  <text x="20" y="680" font-family="Arial" font-size="12" fill="#9CA3AF">… 이하 본문 계속 (스크롤) …</text>
+
+  <!-- Sticky footer -->
+  <line y1="724" x1="0" y2="724" x2="390" stroke="#E5E7EB"/>
+  <rect x="20" y="736" width="350" height="52" rx="12" fill="#FFFFFF" stroke="#3B7D8E" stroke-width="2"/>
+  <text x="195" y="768" text-anchor="middle" font-family="Arial" font-size="15" font-weight="bold" fill="#3B7D8E">← 동의 화면으로 돌아가기</text>
+
+  <!-- Bottom safe area -->
+  <rect y="800" width="390" height="44" fill="#FFFFFF"/>
+  <rect x="155" y="820" width="80" height="5" rx="2.5" fill="#D1D5DB"/>
+</svg>

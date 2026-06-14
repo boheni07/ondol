@@ -31,11 +31,11 @@ _workspace/ 존재?
    - skill: project-planning
    - 입력: `_workspace/01_analyst_requirements.md`(있으면) + `docs/` 설계 문서
 
-2. pm-planner가 `docs/08-wbs.md`(+xlsx) 및 GitHub 등록 자산 생성, `_workspace/00_pm_plan.md` 요약 공유
+2. pm-planner가 `docs/08-wbs-v1.1.md`(+xlsx) 및 GitHub 등록 자산 생성, `_workspace/00_pm_plan.md` 요약 공유
 
 3. GitHub 이슈 등록은 자산 생성까지만 하고, 실제 `gh` 실행은 사용자 확인 후 진행
 
-**완료 조건:** `docs/08-wbs.md` 생성/갱신 + `_workspace/00_pm_plan.md` 요약 + 사용자 확인
+**완료 조건:** `docs/08-wbs-v1.1.md` 생성/갱신 + `_workspace/00_pm_plan.md` 요약 + 사용자 확인
 
 ## Phase 1: 요구사항 분석
 
@@ -139,7 +139,7 @@ _workspace/ 존재?
 
 ```
 pm-planner (기획 범위 요청 시)
-  └─→ docs/08-wbs.md (+xlsx) + GitHub 등록 자산 + _workspace/00_pm_plan.md
+  └─→ docs/08-wbs-v1.1.md (정본, +xlsx) + GitHub 등록 자산 + _workspace/00_pm_plan.md
         └─→ analyst
 analyst
   └─→ _workspace/01_analyst_requirements.md
@@ -154,6 +154,21 @@ analyst
                                       └─→ documenter
                                             └─→ docs/
 ```
+
+## 설계 변경 전파 체크리스트 (정합성 게이트)
+
+**왜:** 설계를 "구조 확정"까지만 하고 파생 문서에 전파하지 않아 drift가 누적되는 패턴이 반복됐다(고유식별정보·동의 거버넌스 정합화에서 ERD·마이그레이션·RLS·WBS·화면·API·인덱스가 일제히 누락). 설계 산출물을 바꾸는 에이전트는 **같은 작업 단위 안에서** 아래 하류 문서를 함께 갱신하고, 오케스트레이터는 완료 전 이 게이트를 점검한다. 변경 범위에 해당하는 줄만 적용하라(오버피팅 금지 — 원칙은 "SSOT를 바꾸면 그것을 인용·파생하는 모든 문서를 같은 패스에서 동기화").
+
+| 변경한 SSOT | 같은 패스에서 반드시 동기화 |
+|---|---|
+| **데이터 모델** (docs/02: 테이블·컬럼·enum) | docs/03 ERD(엔티티·관계·deleted_at), docs/13 RLS 매트릭스(+정책 행·테이블 수), docs/15 마이그레이션(FK 그래프·위상 Step·Step0 enum·인덱스·롤백·카운트), docs/12 API(신규 리소스), docs/16(거버넌스 영향 시), **"N개 테이블" 표기 전수** |
+| **기능 워크플로우** (docs/05: 플로우·노드) | docs/04 역할별 워크플로우, docs/06 IA(플로우·사이트맵), docs/11 화면 인벤토리, docs/07 디자인시스템(신규 컴포넌트), docs/12 API |
+| **화면 추가/변경** | docs/11(SSOT)·docs/06·README **화면 수 3곳 동시**, docs/08 WBS UI 작업, wireframes/ |
+| **신규 문서 추가** | README 문서 인덱스, docs/structure.md, 버전 헤더 |
+| **WBS 변경** | 파생자산 재생성(docs/08.xlsx·wbs-github-issues.csv·docs/09), 요약표 공수·작업 수 |
+| **모든 변경** | 영향받은 문서 버전 헤더, CLAUDE.md 변경 이력 |
+
+**운영 방식:** 정합성 검토 요청("정합성 점검·정합화") 시 읽기전용 검토 에이전트를 4차원(데이터모델 전파 / WBS / 화면·IA / 인덱스·상호참조)으로 fan-out해 drift를 카탈로그화한 뒤, 담당 파일을 분리(쓰기 충돌 방지)해 정합화한다. 화면 수처럼 여러 문서가 공유하는 수치는 한 에이전트가 확정·보고하고 나머지를 그 값으로 동기화한다.
 
 ## 에러 핸들링
 
@@ -182,7 +197,7 @@ analyst
 
 **정상 흐름:**
 1. "로그인 기능 만들어줘" → Phase 0(신규) → (기획 범위 아님, 0.5 건너뜀) → Phase 1(요구사항) → Phase 1.5(designer: 로그인 화면 명세) → Phase 2(구현) → Phase 3(QA + 보안: 인증이라 security 필수) → Phase 3.5(data-infra: 세션·RLS 마이그레이션) → Phase 4(문서)
-2. "전체 WBS 만들고 GitHub 이슈로 등록 준비해줘" → Phase 0 → Phase 0.5(pm-planner: docs/08-wbs.md + 엑셀 + 이슈 자산) → 사용자 확인 후 gh 스크립트 실행
+2. "전체 WBS 만들고 GitHub 이슈로 등록 준비해줘" → Phase 0 → Phase 0.5(pm-planner: docs/08-wbs-v1.1.md + 엑셀 + 이슈 자산) → 사용자 확인 후 gh 스크립트 실행
 3. "마이페이지 화면만 다시 설계해줘" → Phase 0(부분 재실행) → Phase 1.5만(designer)
 
 **에러 흐름:**

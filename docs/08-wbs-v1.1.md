@@ -1,14 +1,16 @@
 # WBS (Work Breakdown Structure) — OnDol 플랫폼
 
-> 버전: v1.1 | 작성일: 2026-06-14
+> 버전: v1.1 (정본 SSOT) | 작성일: 2026-06-14 (개정: 2026-06-14 — 개인정보 거버넌스 정합)
 > 분해 원칙: 기능의 최소 단위 (CRUD 각각 C/R-단건/R-목록/U/D 별도 작업)
 > 추정 단위: XS(0.5d) · S(1d) · M(2~3d) · L(5d) · XL(7d+)
 > 우선순위: P0(MVP 필수) · P1(MVP 권장) · P2(차기 릴리스)
+> **본 파일이 WBS 정본(SSOT)이다.** v1.0(`docs/08-wbs.md`)은 DEPRECATED 보존용이며, xlsx·csv·09-github 파생자산은 본 md를 단일 원천으로 재생성한다.
 
 > **v1.1 변경 요약**
 > 1. 모든 작업 테이블의 `세부사항` 열 다음에 **`AI 프롬프트`** 열 추가 — Claude Code에 바로 사용 가능한 한국어 프롬프트(200자 이내).
 > 2. **구현 순서 재정렬** — 단위→통합→E2E 테스트가 내재화되도록 Phase 헤더에 `🧪 테스트 전략` 노트 추가, 신규 작업(0.13·0.14·11.5.x) 삽입, Phase 11.5 백엔드 통합 테스트 체크포인트 신설.
 > 3. ✨ NEW = v1.1에서 새로 추가된 작업.
+> 4. **개인정보 거버넌스 정합(2026-06-14, docs/02 §2.14·§2.15·deleted_at·§5 / docs/05 §1-3·§10 / docs/13 §3.5·§4.1·§4.2 / docs/16 §2·§3·§4·§5·§7 / docs/18 에러규약)** — `secure_identifiers`·`consents` 테이블·soft-delete·복호화 통제 RLS·동의 수집/판정/재취득 API·고유식별정보 암호화 서비스·로그/soft-delete 파기 배치·동의·약관·처리방침·권리관리 화면·Sentry PII 스크러빙 등 **신규 작업패키지 16개** 추가. WEL-001·LEG-001은 `secure_identifier_id` 참조로 갱신. 본문의 자기참조(`docs/08-wbs.md §…`)를 `§…`(자체)로 교정. ✨ NEW로 표기.
 
 ---
 
@@ -18,30 +20,32 @@
 
 | 분류 | 작업 수 | 합계 공수 (person-day) |
 |------|--------|---------------|
-| 0. 프로젝트 셋업 + CI 기초 | 14 (✨+2) | 12.5d |
-| 1. DB 스키마 + RLS | 18 | 13d |
-| 2. 인증 (Auth) | 11 | 15d |
-| 3. 사용자·당사자·매핑 | 24 | 23d |
+| 0. 프로젝트 셋업 + CI 기초 | 14 (✨+2) | 14d |
+| 1. DB 스키마 + RLS | 23 (✨+5) | 17d |
+| 2. 인증 (Auth) | 13 (✨+2) | 18.5d |
+| 3. 사용자·당사자·매핑 | 25 (✨+1) | 25.5d |
 | 4. 권한 관리 | 18 | 25d |
-| 5. 기록 (Records) | 56 | 95.5d |
+| 5. 기록 (Records) | 57 (✨+1) | 98d |
 | 6. 자기표현 (Self-Expression) | 8 | 9.5d |
 | 7. 파일 첨부 (Files) | 9 | 10.5d |
 | 8. 이정표·타임라인 | 14 | 13.5d |
 | 9. 인수인계 (Handover) | 12 | 16d |
 | 10. 알림 (Notification) | 14 | 16d |
-| 11. 접근 로그 (Audit) | 8 | 12.5d |
-| 11.5 백엔드 통합 테스트 체크포인트 | 3 (✨+3) | 6d |
+| 11. 접근 로그 (Audit) | 10 (✨+2) | 14.5d |
+| 11.5 백엔드 통합 테스트 체크포인트 | 3 (✨+3) | 7.5d |
 | 12. 디자인 시스템 | 21 | 22d |
-| 13. 웹 UI — 보호자 | 26 | 53d |
+| 13. 웹 UI — 보호자 | 29 (✨+3) | 59d |
 | 14. 웹 UI — 당사자 (접근성) | 10 | 19d |
 | 15. 웹 UI — 전문가 4역할 | 41 | 100d |
 | 16. 모바일 앱 (RN) | 33 | 83.5d |
-| 17. SEO·보안·접근성 | 15 | 23d |
+| 17. SEO·보안·접근성 | 17 (✨+2) | 25d |
 | 18. QA·테스트 | 17 | 48.5d |
 | 19. CI/CD·배포 | 14 | 23d |
-| **합계** | **386 작업 (✨+5)** | **643.5 person-day** |
+| **합계** | **402 작업 (✨+21)** | **665.5 person-day** |
 
-> 기존 381개 작업 전부 유지 + v1.1 신규 5개(0.13·0.14·11.5.1·11.5.2·11.5.3) = **386 작업**. 7인 병렬·Gantt 기준 캘린더 약 16주. MVP(P0)만 추리면 부록 B 참조(약 280d). 담당자별 부하는 09-wbs-github.md 참조.
+> 기존 381개 작업 전부 유지 + v1.1 테스트 신규 5개(0.13·0.14·11.5.1·11.5.2·11.5.3) + v1.1 거버넌스 신규 16개(1.1.14·1.1.15·1.1.16·1.2.6·1.2.7·2.12·2.13·3.2.10·5.G.1·11.9·11.10·13.1.7·13.1.8·13.3.6·17.2.9·17.4.1) = **402 작업**. 거버넌스 16개로 +22.5 person-day(643.0→665.5). (※ 공수 합계는 전 작업 행 실측 기준 — `scripts/gen-wbs-assets.py` 파싱과 일치) 7인 병렬·Gantt 기준 캘린더 약 16주. MVP(P0)만 추리면 부록 B 참조(약 295d). 담당자별 부하는 09-wbs-github.md 참조(파생자산은 본 md 기준 재생성 대상).
+>
+> **거버넌스 신규 16개 우선순위:** P0 = 1.1.14·1.1.15·1.1.16·1.2.6·1.2.7·2.12·2.13·5.G.1·11.9·13.1.7·17.2.9 (11개), P1 = 3.2.10·11.10·13.1.8·13.3.6·17.4.1 (5개).
 
 ---
 
@@ -53,8 +57,8 @@
 - 🟧 **U** = Update (수정)
 - 🟥 **D** = Delete / Archive (삭제 또는 보관)
 - 🔀 **B** = Bulk / 일괄 처리
-- 🔐 **P** = Permission Check (RLS / 권한 검증)
-- ✨ **NEW** = v1.1 신규 작업
+- 🔐 **P** = Permission Check (RLS / 권한 검증 / 동의·고유식별정보 통제)
+- ✨ **NEW** = v1.1 신규 작업 (테스트 내재화 5개 + 개인정보 거버넌스 16개)
 
 ---
 
@@ -95,7 +99,7 @@ Phase 19  CI/CD·배포                → Phase 0 파이프라인 완성
 | 0.7 | TypeScript 컨벤션 + ESLint + Prettier | .eslint.json | XS | P0 | TypeScript strict + ESLint + Prettier 규칙 정립(AI 협업용 코딩 컨벤션). 참고: bkit:phase-2-convention 스킬 | `루트에 TypeScript strict tsconfig·ESLint·Prettier 설정을 추가하세요. import 정렬·미사용 변수 금지·any 경고 규칙을 포함하고, lint·format npm 스크립트를 정의하세요. CI에서 호출되도록 구성하세요.` | PL |
 | 0.8 | 폴더 구조 컨벤션 문서 | docs/structure.md | XS | P0 | 도메인 기반 폴더 구조(features/·lib/·components/·app/) 컨벤션 문서화. | `docs/structure.md에 도메인 기반 폴더 구조 컨벤션을 작성하세요. features/·lib/·components/·app/ 레이어 책임과 import 방향 규칙을 명시하고, web·mobile·shared 패키지 매핑을 표로 정리하세요.` | PL |
 | 0.9 | 모노레포 (pnpm workspaces) | pnpm-workspace.yaml | S | P1 | pnpm workspaces 로 web·mobile·shared(타입·API 클라이언트·검증 스키마) 패키지 공유 구성. | `pnpm-workspace.yaml로 모노레포를 구성하세요. apps/web·apps/mobile·packages/shared(타입·API 클라이언트·Zod 스키마) 패키지를 등록하고, shared 패키지 import가 web/mobile에서 동작하는지 검증 테스트를 작성하세요.` | PL |
-| 0.10 | Vercel/Render 배포 환경 셋업 | deploy config | S | P1 | Vercel(웹)·EAS/Render(모바일·서버) 배포 환경 사전 셋업. 참고: docs/08-wbs.md §19 CI/CD | `Vercel(웹)·EAS/Render(모바일·서버) 배포 설정 파일을 추가하세요. 환경별 빌드 커맨드·env 매핑을 정의하세요. Phase 19에서 완성할 기반이므로 최소 구성만 두세요. §19 CI/CD 참고.` | PL |
+| 0.10 | Vercel/Render 배포 환경 셋업 | deploy config | S | P1 | Vercel(웹)·EAS/Render(모바일·서버) 배포 환경 사전 셋업. 참고: §19 CI/CD | `Vercel(웹)·EAS/Render(모바일·서버) 배포 설정 파일을 추가하세요. 환경별 빌드 커맨드·env 매핑을 정의하세요. Phase 19에서 완성할 기반이므로 최소 구성만 두세요. §19 CI/CD 참고.` | PL |
 | 0.11 | 에러 모니터링 (Sentry) 연동 | sentry config | S | P1 | Sentry 연동 — 웹·모바일·서버 런타임 에러 트래킹 및 소스맵 업로드. | `웹·모바일·서버에 Sentry를 연동하세요. DSN을 env로 주입하고 소스맵 업로드를 CI에 연결하세요. 의도적 에러를 던져 캡처되는지 확인하는 통합 테스트를 작성하세요.` | PL |
 | 0.12 | i18n 셋업 (한국어 기본, 추후 영어) | i18n config | S | P2 | i18n 셋업(한국어 기본, 영어 차기 릴리스). 참고: docs/07-design-system.md §2 타이포그래피(Pretendard) | `i18n을 셋업하세요. 한국어를 기본 로케일로, 영어를 차기 릴리스 placeholder로 구성하세요. 번역 키 누락 감지 유틸과 단위 테스트를 작성하세요. docs/07 §2 Pretendard 타이포 참고.` | PL |
 | 0.13 ✨ NEW | Vitest + Playwright + pgTAP 테스트 환경 셋업 | test config | M | P0 | 단위(Vitest)·E2E(Playwright)·DB(pgTAP) 3계층 테스트 환경 셋업. 테스트 디렉터리 컨벤션·실행 스크립트·커버리지 리포트·CI 연동 준비. 이후 모든 Phase가 이 인프라 위에서 테스트를 작성한다. | `루트에 3계층 테스트 환경을 셋업하세요. (1) Vitest 단위 테스트 설정+커버리지(c8), (2) Playwright E2E 설정(브라우저·baseURL), (3) Supabase pgTAP 마이그레이션 테스트 러너. 각 계층 npm 스크립트(test:unit·test:e2e·test:db)와 샘플 통과 테스트 1개씩, 테스트 디렉터리 컨벤션을 docs/structure.md에 추가하세요.` | PL |
@@ -124,6 +128,9 @@ Phase 19  CI/CD·배포                → Phase 0 파이프라인 완성
 | 1.1.11 | `handovers` 테이블 | 🟦 | migration | XS | P0 | handovers — 전문가 인수인계. domain·summary·linked_record_ids·is_confirmed. 참고: docs/02 §2(handovers), docs/05 §7 인수인계 | `supabase/migrations/에 handovers 테이블을 작성하세요. person_id·domain·from_user·to_user·summary·linked_record_ids(uuid[])·is_confirmed 포함. docs/02 §2·docs/05 §7을 따르세요. pgTAP로 컬럼·배열 타입·is_confirmed 기본값을 검증하세요.` | 개발자 A |
 | 1.1.12 | `access_logs` 테이블 (INSERT-only) | 🟦 | migration | XS | P0 | access_logs — INSERT-only 접근 로그(불변). actor·action·target. 참고: docs/02 §2(access_logs), docs/03 §RLS 정책 요약 | `supabase/migrations/에 access_logs 테이블을 작성하세요. actor·action(read/write)·target_table·target_id·created_at 포함. docs/02 §2·docs/03 §RLS를 따르세요. pgTAP로 컬럼과 INSERT-only(UPDATE/DELETE 차단) 정책을 검증하세요.` | PL |
 | 1.1.13 | `notifications` 테이블 | 🟦 | migration | XS | P0 | notifications — 알림. type·payload(JSONB)·self_expression_id FK·is_read. 참고: docs/02 §2(notifications), §3 JSONB, docs/05 §8 알림 | `supabase/migrations/에 notifications 테이블을 작성하세요. user_id·type·payload JSONB·self_expression_id(nullable FK)·is_read 포함. docs/02 §2·§3·docs/05 §8을 따르세요. pgTAP로 컬럼·FK·is_read 기본값을 검증하세요.` | 개발자 A |
+| 1.1.14 ✨ NEW | `secure_identifiers` 테이블 (고유식별정보 암호화 저장) | 🟦 | migration | XS | P0 | secure_identifiers — 고유식별정보(장애 등록번호·증명서 문서번호)를 records.content 평문에서 분리해 암호화 저장(PIPA §24). person_id·identifier_type enum·encrypted_value(BYTEA)·value_masked·encryption_ref·deleted_at. 참고: docs/02 §2.14, docs/16 §3.2 | `supabase/migrations/에 secure_identifiers 테이블을 작성하세요. person_id FK, identifier_type enum(secure_identifier_type), encrypted_value BYTEA(평문 저장 금지), value_masked·encryption_ref·deleted_at 포함. docs/02 §2.14·docs/16 §3.2를 따르세요. pgTAP로 컬럼·enum·BYTEA 타입·평문 컬럼 부재를 검증하세요.` | PL |
+| 1.1.15 ✨ NEW | `consents` 테이블 (동의 이력) | 🟦 | migration | XS | P0 | consents — 필수/선택·민감·고유식별 별도 동의 이력(PIPA §22~24). consent_type enum·subject_user_id XOR person_id·is_required·granted·consented_by·on_behalf·legal_basis·policy_version·consented_at·revoked_at·deleted_at. 참고: docs/02 §2.15, docs/16 §2 | `supabase/migrations/에 consents 테이블을 작성하세요. consent_type enum(consent_type), subject_user_id XOR person_id(CHECK), is_required·granted·consented_by·on_behalf·legal_basis·policy_version·consented_at·revoked_at·deleted_at 포함. docs/02 §2.15·docs/16 §2를 따르세요. pgTAP로 컬럼·enum·XOR CHECK 제약을 검증하세요.` | PL |
+| 1.1.16 ✨ NEW | `deleted_at` 컬럼 + soft-delete 부분 인덱스 | 🟧 | migration | S | P0 | 사용자 대면 엔티티(persons·records·self_expressions·record_files·guardian_persons·person_accounts·secure_identifiers·consents)에 deleted_at TIMESTAMPTZ NULL 추가 + `WHERE deleted_at IS NULL` 부분 인덱스·부분 유니크 인덱스. append-only 로그(access_logs·permission_logs)는 제외. 참고: docs/02 §5 인덱스 전략·deleted_at, docs/16 §4.3 | `supabase/migrations/에 사용자 대면 테이블(persons·records·self_expressions·record_files·guardian_persons·person_accounts·secure_identifiers·consents)에 deleted_at TIMESTAMPTZ NULL 컬럼과 docs/02 §5의 부분 인덱스(idx_*_active)·부분 유니크 인덱스를 추가하세요. access_logs·permission_logs는 제외. docs/16 §4.3을 따르세요. pgTAP로 컬럼 존재·부분 유니크(파기 후 재연결 허용)를 검증하세요.` | PL |
 
 ## 1.2 RLS 정책
 
@@ -132,8 +139,10 @@ Phase 19  CI/CD·배포                → Phase 0 파이프라인 완성
 | 1.2.1 | `records` SELECT RLS (보호자/당사자/권한자) | 🔐 | RLS policy | M | P0 | records SELECT RLS — 보호자(매핑)·당사자 본인·권한자(permissions 유효기간 내)만 조회. 참고: docs/03 §RLS 정책 요약, docs/02 §6 제약조건 | `supabase/migrations/에 records SELECT RLS 정책을 작성하세요. 보호자(guardian_persons 매핑)·당사자 본인·권한자(permissions valid 기간 내)만 조회 가능하게 하세요. docs/03 §RLS를 따르세요. pgTAP로 3역할 허용·무권한 차단·만료 권한 차단 시나리오를 검증하세요.` | PL |
 | 1.2.2 | `records` INSERT/UPDATE RLS | 🔐 | RLS policy | S | P0 | records INSERT/UPDATE RLS — 도메인·access_level(write 이상) 검증. 참고: docs/03 §RLS, docs/05 §4 기록 작성 공통 | `supabase/migrations/에 records INSERT/UPDATE RLS 정책을 작성하세요. 해당 도메인에 write 이상 access_level을 가진 사용자만 작성/수정 가능하게 하세요. docs/03 §RLS·docs/05 §4를 따르세요. pgTAP로 write 허용·read 차단을 검증하세요.` | PL |
 | 1.2.3 | `self_expressions` 당사자 본인만 작성 | 🔐 | RLS policy | S | P0 | self_expressions RLS — 당사자 본인 계정만 작성/수정(당일). 참고: docs/03 §RLS, docs/04-workflows-user.md §2 당사자 | `supabase/migrations/에 self_expressions RLS 정책을 작성하세요. 당사자 본인 person_account만 작성·당일 수정 가능, 타인 작성 차단. docs/03 §RLS·docs/04 §2를 따르세요. pgTAP로 본인 작성 허용·타인 차단·익일 수정 차단을 검증하세요.` | PL |
-| 1.2.4 | `access_logs` INSERT-only 정책 | 🔐 | RLS policy | XS | P0 | access_logs INSERT-only 정책 — UPDATE/DELETE 차단으로 로그 불변성 보장. 참고: docs/03 §RLS, docs/08-wbs.md §17.2.8 | `supabase/migrations/에 access_logs INSERT-only RLS 정책을 작성하세요. INSERT만 허용하고 UPDATE·DELETE를 전면 차단해 불변성을 보장하세요. docs/03 §RLS·§17.2.8을 따르세요. pgTAP로 INSERT 허용·UPDATE/DELETE 차단을 검증하세요.` | PL |
+| 1.2.4 | `access_logs` INSERT-only 정책 | 🔐 | RLS policy | XS | P0 | access_logs INSERT-only 정책 — UPDATE/DELETE 차단으로 로그 불변성 보장. 참고: docs/03 §RLS, §17.2.8 | `supabase/migrations/에 access_logs INSERT-only RLS 정책을 작성하세요. INSERT만 허용하고 UPDATE·DELETE를 전면 차단해 불변성을 보장하세요. docs/03 §RLS·§17.2.8을 따르세요. pgTAP로 INSERT 허용·UPDATE/DELETE 차단을 검증하세요.` | PL |
 | 1.2.5 | `permissions` 보호자만 변경 가능 | 🔐 | RLS policy | S | P0 | permissions 변경 RLS — 주보호자만 권한 부여/회수 가능. 참고: docs/03 §RLS, docs/05 §2 권한 부여 | `supabase/migrations/에 permissions 변경 RLS 정책을 작성하세요. 해당 당사자의 주보호자(is_primary)만 INSERT/UPDATE/DELETE 가능하게 하세요. docs/03 §RLS·docs/05 §2를 따르세요. pgTAP로 주보호자 허용·일반 보호자 차단을 검증하세요.` | PL |
+| 1.2.6 ✨ NEW | soft-delete 가시성 RLS (`deleted_at IS NULL` 게이트) | 🔐 | RLS policy | S | P0 | 사용자 대면 테이블 SELECT 정책 USING 절에 `deleted_at IS NULL`을 AND 결합해 파기 행을 권한자에게도 미노출. 기존 접근 주체 조건(보호자/본인/권한자)은 유지하고 가시성 게이트만 덧댐. 참고: docs/13 §4.2, docs/16 §4.3 | `supabase/migrations/에 soft-delete 가시성 RLS를 적용하세요. records·self_expressions·record_files·persons·secure_identifiers·consents·매핑 테이블의 SELECT 정책 USING 절에 deleted_at IS NULL을 AND로 결합해 파기 행을 모든 권한자에게 미노출하세요. docs/13 §4.2를 따르세요. pgTAP로 파기 행이 보호자·본인·권한자 SELECT 모두에서 제외됨을 검증하세요.` | PL |
+| 1.2.7 ✨ NEW | `secure_identifiers`/`consents` RLS + 복호화 통제 | 🔐 | RLS policy | S | P0 | secure_identifiers는 records와 동일 주체 매핑으로 행 접근하되 SELECT는 value_masked만 노출(원문 비노출), encrypted_value 복호화는 service_role/Edge Function 권한 재검증 후에만. consents는 동의 주체 본인·법정대리인·주보호자 접근, 철회는 행 삭제가 아닌 granted=false 신규 행. 참고: docs/13 §3.5, docs/16 §3.2·§2 | `supabase/migrations/에 secure_identifiers·consents RLS 정책을 작성하세요. secure_identifiers: records와 동일 주체 매핑 SELECT(value_masked만), INSERT/UPDATE는 write 이상·보호자, 물리 DELETE는 service_role, 복호화 함수 EXECUTE는 보호자·권한자 한정(authenticated 제외). consents: 동의 주체·법정대리인·주보호자 SELECT/INSERT, 철회는 granted=false 신규 행. docs/13 §3.5·docs/16 §3.2를 따르세요. pgTAP로 원문 비노출·복호화 EXECUTE 제한·동의 주체 접근을 검증하세요.` | PL |
 
 ---
 
@@ -154,6 +163,8 @@ Phase 19  CI/CD·배포                → Phase 0 파이프라인 완성
 | 2.9 | 초대 링크 수락 API (회원가입 분기) | 🟦 | POST /invites/:token/accept | M | P0 | 초대 링크 수락 — 토큰 검증 후 신규 가입 또는 기존 계정 연결 분기 + 권한 자동 매핑. 참고: docs/05 §1, wireframes/web/14-invite-accept.svg | `POST /invites/:token/accept 핸들러를 구현하세요. 토큰 검증 후 신규 가입/기존 계정 연결 분기, permissions 자동 매핑. docs/05 §1을 따르세요. Supertest로 신규·기존·만료·위조 토큰 4케이스를 통합 테스트하세요.` | 개발자 A |
 | 2.10 | 카카오 소셜 로그인 OAuth | 🟦 | POST /auth/kakao | M | P1 | 카카오 OAuth 소셜 로그인(P1). 참고: docs/04 §7 진입점, bkit:bkend-auth 스킬 | `POST /auth/kakao 카카오 OAuth 로그인을 구현하세요. 콜백에서 프로필 매핑·users upsert·세션 발급. bkit:bkend-auth 스킬 참고. OAuth 응답을 모킹해 Supertest 통합 테스트를 작성하세요.` | 개발자 A |
 | 2.11 | 네이버 소셜 로그인 OAuth | 🟦 | POST /auth/naver | M | P1 | 네이버 OAuth 소셜 로그인(P1). 참고: docs/04 §7 진입점, bkit:bkend-auth 스킬 | `POST /auth/naver 네이버 OAuth 로그인을 구현하세요. 콜백에서 프로필 매핑·users upsert·세션 발급. bkit:bkend-auth 스킬 참고. OAuth 응답을 모킹해 Supertest 통합 테스트를 작성하세요.` | 개발자 A |
+| 2.12 ✨ NEW | 동의 수집 API (필수/선택·민감·고유식별 분리 INSERT) | 🟦 | POST /consents | M | P0 | 동의 수집 — 회원가입·당사자 등록 시 유형별 분리 레코드 INSERT(PIPA §22⑤ 일괄동의 금지). consent_type별·필수/선택 분리, policy_version 기록, 철회는 granted=false 신규 행. docs/18 준수(에러봉투·Idempotency-Key). 참고: docs/05 §1-3 동의 수집 단계, docs/02 §2.15, docs/16 §2·§3 | `POST /consents 핸들러를 구현하세요. consent_type별 동의를 분리 레코드로 INSERT(필수/선택 일괄동의 금지), subject_user_id XOR person_id·policy_version 기록, 철회 시 granted=false 신규 행. Zod 검증, docs/05 §1-3·docs/02 §2.15·docs/16 §2 따르기. docs/18 준수(data/error 봉투·POST에 Idempotency-Key·422 fields). Supertest로 분리 INSERT·필수 누락 거부·철회 이력 보존을 통합 테스트하세요.` | 개발자 A |
+| 2.13 ✨ NEW | 동의 주체 판정 (연령·후견 분기) | 🔐 | service fn | S | P0 | 동의 주체 판정 — 당사자 정보 입력 시 성인 본인 / 만 14세 미만·피후견인 법정대리인 대리동의(on_behalf=true) / 만 14세 이상 미성년자 분기. legal_basis(친권자/성년후견인) 결정. 참고: docs/05 §1-3, docs/16 §2.2 | `동의 주체 판정 서비스 함수를 구현하세요. persons.birth_date·후견 상태(LEG-003)로 성인 본인 / 만 14세 미만·피후견인(법정대리인 on_behalf=true) / 만 14세 이상 미성년자를 분기하고 consented_by·legal_basis를 결정하세요. docs/05 §1-3·docs/16 §2.2 따르기. 각 연령·후견 경계값의 주체 판정을 Vitest 단위 테스트하세요.` | 개발자 A |
 
 ---
 
@@ -179,11 +190,12 @@ Phase 19  CI/CD·배포                → Phase 0 파이프라인 완성
 | 3.2.2 | 당사자 단건 조회 | 🟩 | GET /persons/:id | S | P0 | 당사자 상세 조회(프로필·요약). 참고: wireframes/web/16-guardian-person-profile.svg | `GET /persons/:id 핸들러를 구현하세요. 당사자 프로필·요약을 권한 범위 내 조회. wireframes/web/16 참고. Supertest로 권한자 조회·무권한 차단을 통합 테스트하세요.` | 개발자 A |
 | 3.2.3 | 당사자 목록 조회 (보호자 기준) | 🟨 | GET /persons?guardian= | S | P0 | 보호자 기준 담당 당사자 목록(대시보드 진입점). 참고: docs/04 §1 보호자, wireframes/web/02-guardian-dashboard.svg | `GET /persons?guardian= 핸들러를 구현하세요. 보호자 기준 담당 당사자 목록(대시보드용)을 guardian_persons 조인으로 반환. docs/04 §1 참고. Supertest로 본인 매핑 당사자만 반환되는지 통합 테스트하세요.` | 개발자 A |
 | 3.2.4 | 당사자 기본정보 수정 | 🟧 | PATCH /persons/:id | S | P0 | 당사자 기본정보 수정. 참고: wireframes/web/25-guardian-person-edit.svg | `PATCH /persons/:id 핸들러를 구현하세요. 당사자 기본정보를 권한자만 수정. Zod 검증. wireframes/web/25 참고. Supertest로 권한자 수정·무권한 차단을 통합 테스트하세요.` | 개발자 A |
-| 3.2.5 | 당사자 응급정보 수정 (별도 권한) | 🟧 | PATCH /persons/:id/emergency | M | P0 | 당사자 응급정보(혈액형·알레르기·복약·비상연락) 수정 — 추가 인증 필요. 참고: docs/02 §3 JSONB(emergency), docs/08-wbs.md §17.2.5, wireframes/web/26-guardian-emergency-edit.svg | `PATCH /persons/:id/emergency 핸들러를 구현하세요. emergency_info JSONB(혈액형·알레르기·복약·비상연락) 수정 시 PIN/생체 추가 인증을 요구하세요. docs/02 §3·§17.2.5 따르기. Supertest로 인증 통과·미통과 케이스를 통합 테스트하세요.` | 개발자 A |
+| 3.2.5 | 당사자 응급정보 수정 (별도 권한) | 🟧 | PATCH /persons/:id/emergency | M | P0 | 당사자 응급정보(혈액형·알레르기·복약·비상연락) 수정 — 추가 인증 필요. 참고: docs/02 §3 JSONB(emergency), §17.2.5, wireframes/web/26-guardian-emergency-edit.svg | `PATCH /persons/:id/emergency 핸들러를 구현하세요. emergency_info JSONB(혈액형·알레르기·복약·비상연락) 수정 시 PIN/생체 추가 인증을 요구하세요. docs/02 §3·§17.2.5 따르기. Supertest로 인증 통과·미통과 케이스를 통합 테스트하세요.` | 개발자 A |
 | 3.2.6 | 당사자 사진 업로드 | 🟦 | POST /persons/:id/photo | S | P0 | 당사자 프로필 사진 업로드(presigned URL). 참고: docs/05 §5 파일 첨부 | `POST /persons/:id/photo 핸들러를 구현하세요. presigned URL 발급 후 업로드 완료 시 persons.photo_path 갱신. docs/05 §5 참고. Supertest로 presign 발급·메타 갱신을 통합 테스트하세요.` | 개발자 A |
 | 3.2.7 | 당사자 사진 삭제 | 🟥 | DELETE /persons/:id/photo | XS | P0 | 당사자 프로필 사진 삭제(storage+meta). | `DELETE /persons/:id/photo 핸들러를 구현하세요. 스토리지 객체와 persons.photo_path를 동시 삭제하세요. Supertest로 삭제 후 객체·메타 부재를 통합 테스트하세요.` | 개발자 A |
 | 3.2.8 | 당사자 비활성화 (이장) | 🟥 | PATCH /persons/:id/archive | S | P1 | 당사자 비활성화/이장(archive) — 사망·이전 등(P1). 참고: docs/05 §10 당사자 전환기 처리 | `PATCH /persons/:id/archive 핸들러를 구현하세요(P1). 당사자를 archive 상태로 전환(사망·이전), 데이터 보존·신규 기록 차단. docs/05 §10 참고. Supertest로 archive 후 쓰기 차단을 통합 테스트하세요.` | 개발자 A |
 | 3.2.9 | 당사자 생애주기 자동 계산 (트리거) | 🟧 | DB trigger | S | P0 | birth_date 기반 life_stage 자동 계산 DB 트리거(영유아~노년 6단계). 참고: docs/01-record-matrix.md, docs/02 §4 Enum(life_stage) | `supabase/migrations/에 birth_date 기반 life_stage 자동 계산 트리거를 작성하세요. 영유아~노년 6단계로 분류. docs/01·docs/02 §4 Enum 따르기. pgTAP로 각 연령 경계값이 올바른 life_stage로 계산되는지 검증하세요.` | 개발자 A |
+| 3.2.10 ✨ NEW | 성년 도달 본인 동의 재취득 | 🟧 | POST /persons/:id/consent-renewal | M | P1 | 성년 전환기(19세) 후견 미개시 당사자의 본인 명의 동의 재취득(docs/05 §10 흐름). 기존 대리동의(on_behalf=true) 유지하되 본인 명의 신규 consents INSERT(subject_user_id=당사자 계정·on_behalf=false), person_accounts.user_id 연결. 참고: docs/05 §10, docs/16 §2.3 | `POST /persons/:id/consent-renewal 핸들러를 구현하세요(P1). 성년 도달·후견 미개시 당사자에 대해 1-3 동의 단계를 재실행해 본인 명의 신규 consents(subject_user_id=당사자 계정·on_behalf=false)를 INSERT하고 person_accounts.user_id를 연결, 기존 대리동의 행은 보존하세요. docs/05 §10·docs/16 §2.3 따르기. docs/18 준수(에러봉투·Idempotency-Key). Supertest로 후견 미개시 분기 재취득·성년후견 개시 시 미실행을 통합 테스트하세요.` | 개발자 A |
 
 ## 3.3 보호자-당사자 매핑 (guardian_persons)
 
@@ -284,7 +296,7 @@ Phase 19  CI/CD·배포                → Phase 0 파이프라인 완성
 | 5.A.1 | MED-001 초기 진단 요약 (보호자) | 🟦 | 🟩 | 🟨 | 🟧 | 🟥 | S | P0 | MED-001 초기 진단 요약(보호자 작성). content JSONB: 진단명·진단일·기관. 참고: docs/01-record-matrix.md §1 영유아기, docs/02 §3 JSONB(MED-001) | `공통 records CRUD(5.0)를 재사용해 record_type='MED-001' 초기 진단 요약(보호자)을 구현하세요. content(진단명·진단일·기관)를 docs/02 §3 JSONB(MED-001) 기준 Zod 스키마로 정의하고 의료 도메인 RLS로 검증하세요. content 필수 필드·타입을 Vitest 단위 + pgTAP RLS 테스트로 검증하세요.` | 개발자 B |
 | 5.A.2 | MED-002 발달 검사 결과 (보호자) | 🟦 | 🟩 | 🟨 | 🟧 | 🟥 | S | P0 | MED-002 발달 검사 결과(보호자). 검사도구·점수·해석. 참고: docs/01 §1·§2, docs/02 §3 JSONB(MED-002) | `5.0 공통 CRUD로 record_type='MED-002' 발달 검사 결과(보호자)를 구현하세요. content(검사도구·점수·해석)를 docs/02 §3 JSONB(MED-002) 기준 Zod로 정의·의료 RLS 검증. Vitest 단위 + pgTAP RLS 테스트를 작성하세요.` | 개발자 B |
 | 5.A.3 | MED-003 복약 기록 (보호자) | 🟦 | 🟩 | 🟨 | 🟧 | 🟥 | S | P0 | MED-003 복약 기록(보호자). 약물·용량·주기·부작용. 참고: docs/02 §3 JSONB(MED-003) | `5.0 공통 CRUD로 record_type='MED-003' 복약 기록(보호자)을 구현하세요. content(약물·용량·주기·부작용)를 docs/02 §3 JSONB(MED-003) 기준 Zod로 정의·의료 RLS 검증. Vitest 단위 + pgTAP RLS 테스트를 작성하세요.` | 개발자 B |
-| 5.A.4 | MED-004 응급 대응 정보 (보호자 · 핀고정) | 🟦 | 🟩 | 🟨 | 🟧 | — | S | P0 | MED-004 응급 대응 정보(보호자·핀고정·삭제불가). 발작·알레르기·대처. 참고: docs/02 §3 JSONB(MED-004), docs/08-wbs.md §17.2.5 | `5.0 공통 CRUD로 record_type='MED-004' 응급 대응 정보(보호자·핀고정·삭제불가)를 구현하세요. content(발작·알레르기·대처)를 docs/02 §3 JSONB(MED-004) 기준 Zod로 정의, DELETE 차단·자동 핀고정. §17.2.5 추가 인증 참고. Vitest 단위 + pgTAP(삭제 차단) 테스트를 작성하세요.` | 개발자 B |
+| 5.A.4 | MED-004 응급 대응 정보 (보호자 · 핀고정) | 🟦 | 🟩 | 🟨 | 🟧 | — | S | P0 | MED-004 응급 대응 정보(보호자·핀고정·삭제불가). 발작·알레르기·대처. 참고: docs/02 §3 JSONB(MED-004), §17.2.5 | `5.0 공통 CRUD로 record_type='MED-004' 응급 대응 정보(보호자·핀고정·삭제불가)를 구현하세요. content(발작·알레르기·대처)를 docs/02 §3 JSONB(MED-004) 기준 Zod로 정의, DELETE 차단·자동 핀고정. §17.2.5 추가 인증 참고. Vitest 단위 + pgTAP(삭제 차단) 테스트를 작성하세요.` | 개발자 B |
 | 5.A.5 | MED-005 치료계획서 (치료사) | 🟦 | 🟩 | 🟨 | 🟧 | 🟥 | M | P0 | MED-005 치료계획서(치료사). 목표·회기 계획·평가지표. 참고: docs/01 §2·§3, docs/02 §3 JSONB(MED-005), wireframes/web/59-therapist-plan.svg | `5.0 공통 CRUD로 record_type='MED-005' 치료계획서(치료사)를 구현하세요. content(목표·회기 계획·평가지표)를 docs/02 §3 JSONB(MED-005) 기준 Zod로 정의·의료 RLS(치료사) 검증. wireframes/web/59 참고. Vitest 단위 + pgTAP RLS 테스트를 작성하세요.` | 개발자 B |
 | 5.A.6 | MED-006 치료 회기 일지 (치료사) | 🟦 | 🟩 | 🟨 | 🟧 | 🟥 | S | P0 | MED-006 치료 회기 일지(치료사). 회기 활동·반응·과제. 참고: docs/02 §3 JSONB(MED-006), wireframes/web/60-therapist-session-form.svg | `5.0 공통 CRUD로 record_type='MED-006' 치료 회기 일지(치료사)를 구현하세요. content(회기 활동·반응·과제)를 docs/02 §3 JSONB(MED-006) 기준 Zod로 정의·의료 RLS(치료사) 검증. wireframes/web/60 참고. Vitest 단위 + pgTAP RLS 테스트를 작성하세요.` | 개발자 B |
 | 5.A.7 | MED-007 치료 평가 보고서 (치료사) | 🟦 | 🟩 | 🟨 | 🟧 | 🟥 | M | P0 | MED-007 치료 평가 보고서(치료사). 기간 성과·재평가. 참고: docs/02 §3 JSONB(MED-007), wireframes/web/61-therapist-evaluation.svg | `5.0 공통 CRUD로 record_type='MED-007' 치료 평가 보고서(치료사)를 구현하세요. content(기간 성과·재평가)를 docs/02 §3 JSONB(MED-007) 기준 Zod로 정의·의료 RLS(치료사) 검증. wireframes/web/61 참고. Vitest 단위 + pgTAP RLS 테스트를 작성하세요.` | 개발자 B |
@@ -310,7 +322,7 @@ Phase 19  CI/CD·배포                → Phase 0 파이프라인 완성
 
 | ID | 기록 유형 | C | R | L | U | D | 공수 | P | 세부사항 | AI 프롬프트 | 담당자 |
 |----|---------|:-:|:-:|:-:|:-:|:-:|:---:|:-:| :-------- | :-------- | :----: |
-| 5.C.1 | WEL-001 장애 등록 (보호자) | 🟦 | 🟩 | 🟨 | 🟧 | — | S | P0 | WEL-001 장애 등록(보호자·삭제불가). 장애유형·정도·등록일. 참고: docs/01 §1, docs/02 §3 JSONB(WEL-001) | `5.0 공통 CRUD로 record_type='WEL-001' 장애 등록(보호자·삭제불가)을 구현하세요. content(장애유형·정도·등록일)를 docs/02 §3 JSONB(WEL-001) 기준 Zod로 정의·DELETE 차단·복지 RLS 검증. Vitest 단위 + pgTAP(삭제 차단) 테스트를 작성하세요.` | 개발자 B |
+| 5.C.1 | WEL-001 장애 등록 (보호자) | 🟦 | 🟩 | 🟨 | 🟧 | — | S | P0 | WEL-001 장애 등록(보호자·삭제불가). 장애유형·정도·등록일. **고유식별정보 분리:** `registration_number`(장애 등록번호)는 content 평문 금지 — 5.G.1 암호화 서비스로 secure_identifiers에 저장하고 content에는 `secure_identifier_id`(참조)·`value_masked`(표시용 마스킹)만 둠(unique_identifier 동의 전제, 2.12). 참고: docs/01 §1, docs/02 §3 JSONB(WEL-001), docs/16 §3.2 | `5.0 공통 CRUD로 record_type='WEL-001' 장애 등록(보호자·삭제불가)을 구현하세요. content(장애유형·정도·등록일)를 docs/02 §3 JSONB(WEL-001) 기준 Zod로 정의·DELETE 차단·복지 RLS 검증. registration_number는 평문 저장 금지 — 5.G.1 서비스로 secure_identifiers(identifier_type='disability_registration_number')에 암호화 저장하고 content엔 secure_identifier_id·마스킹값만 두세요(unique_identifier 동의 확인). docs/16 §3.2 따르기. Vitest 단위 + pgTAP(삭제 차단·평문 부재) 테스트를 작성하세요.` | 개발자 B |
 | 5.C.2 | WEL-002 초기 복지 연계 (복지사) | 🟦 | 🟩 | 🟨 | 🟧 | 🟥 | S | P0 | WEL-002 초기 복지 연계(복지사). 참고: docs/02 §3 JSONB(WEL-002) | `5.0 공통 CRUD로 record_type='WEL-002' 초기 복지 연계(복지사)를 구현하세요. content를 docs/02 §3 JSONB(WEL-002) 기준 Zod로 정의·복지 RLS(복지사) 검증. Vitest 단위 + pgTAP RLS 테스트를 작성하세요.` | 개발자 B |
 | 5.C.3 | WEL-003 활동지원 계획서 (복지사) | 🟦 | 🟩 | 🟨 | 🟧 | 🟥 | M | P0 | WEL-003 활동지원 계획서(복지사). 참고: docs/02 §3 JSONB(WEL-003) | `5.0 공통 CRUD로 record_type='WEL-003' 활동지원 계획서(복지사)를 구현하세요. content를 docs/02 §3 JSONB(WEL-003) 기준 Zod로 정의·복지 RLS(복지사) 검증. Vitest 단위 + pgTAP RLS 테스트를 작성하세요.` | 개발자 B |
 | 5.C.4 | WEL-004 ISP (복지사) | 🟦 | 🟩 | 🟨 | 🟧 | 🟥 | L | P0 | WEL-004 ISP 개별지원계획(복지사·최대 공수). 욕구·목표·서비스 매핑. 참고: docs/01 §5 성인기, docs/02 §3 JSONB(WEL-004), wireframes/web/53-worker-isp-form.svg | `5.0 공통 CRUD로 record_type='WEL-004' ISP 개별지원계획(복지사·최대 공수)을 구현하세요. content(욕구·목표·서비스 매핑)를 docs/02 §3 JSONB(WEL-004) 기준 Zod로 정의·복지 RLS(복지사) 검증. wireframes/web/53 참고. 중첩 매핑 검증을 Vitest 단위 + pgTAP RLS 테스트로 작성하세요.` | 개발자 B |
@@ -344,11 +356,17 @@ Phase 19  CI/CD·배포                → Phase 0 파이프라인 완성
 
 | ID | 기록 유형 | C | R | L | U | D | 공수 | P | 세부사항 | AI 프롬프트 | 담당자 |
 |----|---------|:-:|:-:|:-:|:-:|:-:|:---:|:-:| :-------- | :-------- | :----: |
-| 5.F.1 | LEG-001 장애인 증명서 (보호자) | 🟦 | 🟩 | 🟨 | 🟧 | 🟥 | S | P0 | LEG-001 장애인 증명서(보호자). 참고: docs/02 §3 JSONB(LEG-001) | `5.0 공통 CRUD로 record_type='LEG-001' 장애인 증명서(보호자)를 구현하세요. content를 docs/02 §3 JSONB(LEG-001) 기준 Zod로 정의·법적 RLS 검증. Vitest 단위 + pgTAP RLS 테스트를 작성하세요.` | 개발자 B |
+| 5.F.1 | LEG-001 장애인 증명서 (보호자) | 🟦 | 🟩 | 🟨 | 🟧 | 🟥 | S | P0 | LEG-001 장애인 증명서(보호자). **고유식별정보 분리:** `document_number`(증명서 문서번호)는 content 평문 금지 — 5.G.1 암호화 서비스로 secure_identifiers에 저장하고 content에는 `secure_identifier_id`(참조)·`value_masked`만 둠(unique_identifier 동의 전제, 2.12). 참고: docs/02 §3 JSONB(LEG-001), docs/16 §3.2 | `5.0 공통 CRUD로 record_type='LEG-001' 장애인 증명서(보호자)를 구현하세요. content를 docs/02 §3 JSONB(LEG-001) 기준 Zod로 정의·법적 RLS 검증. document_number는 평문 저장 금지 — 5.G.1 서비스로 secure_identifiers(identifier_type='disability_certificate_number')에 암호화 저장하고 content엔 secure_identifier_id·마스킹값만 두세요(unique_identifier 동의 확인). docs/16 §3.2 따르기. Vitest 단위 + pgTAP(평문 부재) 테스트를 작성하세요.` | 개발자 B |
 | 5.F.2 | LEG-002 수급 기록 (보호자) | 🟦 | 🟩 | 🟨 | 🟧 | 🟥 | S | P0 | LEG-002 수급 기록(보호자). 참고: docs/02 §3 JSONB(LEG-002) | `5.0 공통 CRUD로 record_type='LEG-002' 수급 기록(보호자)을 구현하세요. content를 docs/02 §3 JSONB(LEG-002) 기준 Zod로 정의·법적 RLS 검증. Vitest 단위 + pgTAP RLS 테스트를 작성하세요.` | 개발자 B |
 | 5.F.3 | LEG-003 후견 문서 (보호자) | 🟦 | 🟩 | 🟨 | 🟧 | 🟥 | M | P0 | LEG-003 후견 문서(보호자). 후견 유형·범위·기간. 참고: docs/01 §4·§5, docs/02 §3 JSONB(LEG-003) | `5.0 공통 CRUD로 record_type='LEG-003' 후견 문서(보호자)를 구현하세요. content(후견 유형·범위·기간)를 docs/02 §3 JSONB(LEG-003) 기준 Zod로 정의·법적 RLS 검증. Vitest 단위 + pgTAP RLS 테스트를 작성하세요.` | 개발자 B |
 | 5.F.4 | LEG-004 의사결정 지원 계약 (보호자) | 🟦 | 🟩 | 🟨 | 🟧 | 🟥 | M | P1 | LEG-004 의사결정 지원 계약(보호자, P1). 참고: docs/02 §3 JSONB(LEG-004) | `5.0 공통 CRUD로 record_type='LEG-004' 의사결정 지원 계약(보호자, P1)을 구현하세요. content를 docs/02 §3 JSONB(LEG-004) 기준 Zod로 정의·법적 RLS 검증. Vitest 단위 + pgTAP RLS 테스트를 작성하세요.` | 개발자 B |
 | 5.F.5 | LEG-005 노후 돌봄 문서 (보호자) | 🟦 | 🟩 | 🟨 | 🟧 | 🟥 | S | P2 | LEG-005 노후 돌봄 문서(보호자, P2). 참고: docs/01 §6, docs/02 §3 JSONB(LEG-005) | `5.0 공통 CRUD로 record_type='LEG-005' 노후 돌봄 문서(보호자, P2)를 구현하세요. content를 docs/02 §3 JSONB(LEG-005) 기준 Zod로 정의·법적 RLS 검증. Vitest 단위 + pgTAP RLS 테스트를 작성하세요.` | 개발자 B |
+
+## 5.G 고유식별정보 암호화 서비스 (PIPA §24)
+
+| ID | 작업 | CRUD | 산출물 | 공수 | P | 세부사항 | AI 프롬프트 | 담당자 |
+|----|------|:---:|------|:---:|:-:| :-------- | :-------- | :----: |
+| 5.G.1 ✨ NEW | 고유식별정보 암호화/복호화 서비스 | 🔐 | service / edge fn | M | P0 | secure_identifiers 입출력 서비스 — 저장 시 평문을 암호화(encrypted_value BYTEA)·표시용 마스킹(value_masked) 생성, 조회 시 마스킹값만 반환, 원문 복호화는 service_role/Edge Function에서 권한 재검증 후에만(1.2.7 EXECUTE 제한과 연계). WEL-001(5.C.1)·LEG-001(5.F.1)이 호출. 암호화 도구·키관리(Vault vs pgcrypto+KMS)는 docs/16 §9 #2 확정 후 채움 🟡. 참고: docs/02 §2.14, docs/13 §3.5, docs/16 §3.2 | `고유식별정보 암호화/복호화 서비스를 구현하세요. (1)저장: 평문을 암호화해 secure_identifiers.encrypted_value(BYTEA)에 저장하고 value_masked(부분 노출)·encryption_ref를 생성, (2)조회: 마스킹값만 반환, (3)복호화: service_role/Edge Function에서 보호자·권한자 재검증 후에만 원문 반환(authenticated 직접 호출 금지). docs/02 §2.14·docs/13 §3.5·docs/16 §3.2 따르기. 암호화 도구는 §9 #2 확정 전 인터페이스만 고정(🟡). 마스킹·복호화 권한 분기를 Vitest 단위 + pgTAP(EXECUTE 제한)로 검증하세요.` | 개발자 B |
 
 ---
 
@@ -363,7 +381,7 @@ Phase 19  CI/CD·배포                → Phase 0 파이프라인 완성
 | 6.3 | 자기표현 목록 (월·주 단위) | 🟨 | GET /self-expressions?month= | S | P0 | 월·주 단위 자기표현 목록(캘린더/리스트). 참고: docs/02 §5 인덱스(date) | `GET /self-expressions?month= 핸들러를 구현하세요. 월·주 단위 목록을 date 인덱스 기반 반환(캘린더용). docs/02 §5 참고. Supertest로 기간 필터·정렬을 통합 테스트하세요.` | 개발자 B |
 | 6.4 | 자기표현 수정 (당일만) | 🟧 | PATCH /self-expressions/:id | S | P0 | 자기표현 수정(작성 당일만 허용). 참고: docs/03 §RLS(self_expressions) | `PATCH /self-expressions/:id 핸들러를 구현하세요. 작성 당일만 수정 허용, 익일 차단. docs/03 §RLS 따르기. Supertest로 당일 수정 허용·익일 차단을 통합 테스트하세요.` | 개발자 B |
 | 6.5 | 자기표현 사진 업로드 | 🟦 | POST /self-expressions/:id/photo | S | P0 | 자기표현 사진 업로드(presigned URL). 참고: docs/05 §5 파일 첨부 | `POST /self-expressions/:id/photo 핸들러를 구현하세요. presigned URL 발급 후 record_files 메타 등록. docs/05 §5 참고. Supertest로 presign·메타 등록을 통합 테스트하세요.` | 개발자 B |
-| 6.6 | 자기표현 음성 메모 업로드 | 🟦 | POST /self-expressions/:id/voice | S | P1 | 자기표현 음성 메모 업로드(P1). 참고: docs/08-wbs.md §16.6.3 | `POST /self-expressions/:id/voice 핸들러를 구현하세요(P1). 음성 파일 presigned URL 발급·메타 등록. §16.6.3 참고. Supertest로 업로드·메타 등록을 통합 테스트하세요.` | 개발자 B |
+| 6.6 | 자기표현 음성 메모 업로드 | 🟦 | POST /self-expressions/:id/voice | S | P1 | 자기표현 음성 메모 업로드(P1). 참고: §16.6.3 | `POST /self-expressions/:id/voice 핸들러를 구현하세요(P1). 음성 파일 presigned URL 발급·메타 등록. §16.6.3 참고. Supertest로 업로드·메타 등록을 통합 테스트하세요.` | 개발자 B |
 | 6.7 | 자기표현 보호자 요약 발송 | 🟦 | notification fn | S | P0 | 자기표현 작성 시 보호자 요약 알림 발송. 참고: docs/05 §8 알림, notifications.self_expression_id FK | `자기표현 작성 시 보호자에게 요약 알림을 발송하는 함수를 구현하세요. notifications에 self_expression_id FK로 연결. docs/05 §8 따르기. Vitest로 작성 이벤트→알림 생성을 단위 테스트하세요.` | 개발자 B |
 | 6.8 | 자기표현 통계 (연속 일수 등) | 🟨 | GET /self-expressions/stats | S | P1 | 연속 입력 일수 등 자기표현 통계(P1). | `GET /self-expressions/stats 핸들러를 구현하세요(P1). 연속 입력 일수·월별 빈도 집계. Vitest로 연속 일수 계산 로직을 단위 테스트하세요.` | 개발자 B |
 
@@ -382,7 +400,7 @@ Phase 19  CI/CD·배포                → Phase 0 파이프라인 완성
 | 7.5 | 자기표현별 파일 목록 | 🟨 | GET /self-expressions/:id/files | XS | P0 | 특정 자기표현의 첨부 파일 목록. | `GET /self-expressions/:id/files 핸들러를 구현하세요. 특정 자기표현의 첨부 파일 목록을 반환. Supertest로 목록·권한 범위를 통합 테스트하세요.` | 개발자 B |
 | 7.6 | 파일 메타 수정 (제목/민감도) | 🟧 | PATCH /files/:id | XS | P0 | 파일 메타 수정(제목·민감 여부 is_sensitive BOOLEAN). 참고: docs/02 §2(record_files) | `PATCH /files/:id 핸들러를 구현하세요. 제목·is_sensitive 메타를 권한자만 수정. docs/02 §2 따르기. Supertest로 수정·권한 차단을 통합 테스트하세요.` | 개발자 B |
 | 7.7 | 파일 삭제 (storage + meta) | 🟥 | DELETE /files/:id | S | P0 | 파일 삭제(스토리지 객체 + 메타 동시). | `DELETE /files/:id 핸들러를 구현하세요. 스토리지 객체와 record_files 메타를 동시 삭제(트랜잭션). Supertest로 삭제 후 객체·메타 부재를 통합 테스트하세요.` | 개발자 B |
-| 7.8 | 민감 파일 추가 인증 (응급 정보) | 🔐 | middleware | M | P0 | 민감 파일(응급정보 등) 다운로드 시 추가 인증 미들웨어. 참고: docs/05 §11 보안 흐름, docs/08-wbs.md §17.2.5 | `민감 파일(is_sensitive) 다운로드 시 PIN/생체 추가 인증을 요구하는 미들웨어를 구현하세요. docs/05 §11·§17.2.5 따르기. Vitest 단위로 민감/비민감 분기·인증 통과/실패를 테스트하세요.` | 개발자 B |
+| 7.8 | 민감 파일 추가 인증 (응급 정보) | 🔐 | middleware | M | P0 | 민감 파일(응급정보 등) 다운로드 시 추가 인증 미들웨어. 참고: docs/05 §11 보안 흐름, §17.2.5 | `민감 파일(is_sensitive) 다운로드 시 PIN/생체 추가 인증을 요구하는 미들웨어를 구현하세요. docs/05 §11·§17.2.5 따르기. Vitest 단위로 민감/비민감 분기·인증 통과/실패를 테스트하세요.` | 개발자 B |
 | 7.9 | 파일 바이러스 스캔 (옵션) | 🔐 | edge function | M | P2 | 업로드 파일 바이러스 스캔 edge function(P2). | `업로드 파일 바이러스 스캔 edge function을 구현하세요(P2). 감염 시 격리·메타 플래그. 스캐너를 모킹해 Vitest로 정상/감염 처리 분기를 단위 테스트하세요.` | 개발자 B |
 
 ---
@@ -464,14 +482,14 @@ Phase 19  CI/CD·배포                → Phase 0 파이프라인 완성
 
 | ID | 작업 | CRUD | 산출물 | 공수 | P | 세부사항 | AI 프롬프트 | 담당자 |
 |----|------|:---:|------|:---:|:-:| :-------- | :-------- | :----: |
-| 10.2.1 | FCM (앱 푸시) 발송 | 🟦 | edge function | M | P0 | FCM 앱 푸시 발송 edge function. 참고: docs/05 §8, docs/08-wbs.md §16.6.1 | `FCM 앱 푸시 발송 edge function을 supabase/functions에 구현하세요. 토큰 조회·페이로드 구성·전송·실패 토큰 정리. docs/05 §8·§16.6.1 참고. FCM SDK를 모킹해 Vitest로 성공/실패 분기를 단위 테스트하세요.` | 개발자 A |
+| 10.2.1 | FCM (앱 푸시) 발송 | 🟦 | edge function | M | P0 | FCM 앱 푸시 발송 edge function. 참고: docs/05 §8, §16.6.1 | `FCM 앱 푸시 발송 edge function을 supabase/functions에 구현하세요. 토큰 조회·페이로드 구성·전송·실패 토큰 정리. docs/05 §8·§16.6.1 참고. FCM SDK를 모킹해 Vitest로 성공/실패 분기를 단위 테스트하세요.` | 개발자 A |
 | 10.2.2 | 이메일 발송 (SendGrid/Resend) | 🟦 | edge function | S | P0 | 이메일 발송(SendGrid/Resend) edge function. 참고: docs/05 §8 | `Resend 이메일 발송 edge function을 구현하세요. 템플릿 렌더·전송·실패 로깅. docs/05 §8 참고. Resend를 모킹해 Vitest로 템플릿 렌더·전송 호출을 단위 테스트하세요.` | 개발자 A |
 | 10.2.3 | SMS 발송 (응급용) | 🟦 | edge function | M | P1 | SMS 발송(응급용, P1). | `SMS 발송 edge function을 구현하세요(P1, 응급용). 발송·실패 폴백. SMS 게이트웨이를 모킹해 Vitest로 발송·실패 처리를 단위 테스트하세요.` | 개발자 A |
 | 10.2.4 | 사용자별 채널 설정 조회 | 🟩 | GET /notification-settings | XS | P0 | 사용자별 알림 채널 설정 조회. 참고: wireframes/web/27-guardian-notification-settings.svg | `GET /notification-settings 핸들러를 구현하세요. 본인 채널 설정을 조회·미설정 시 기본값. wireframes/web/27 참고. Supertest로 조회·기본값을 통합 테스트하세요.` | 개발자 A |
 | 10.2.5 | 사용자별 채널 설정 수정 | 🟧 | PATCH /notification-settings | S | P0 | 알림 채널 설정 수정. | `PATCH /notification-settings 핸들러를 구현하세요. 채널(푸시·이메일·SMS) on/off 수정. Zod 검증. Supertest로 수정·검증을 통합 테스트하세요.` | 개발자 A |
 | 10.2.6 | 알림 유형별 토글 (매트릭스) | 🟧 | PATCH /notification-settings/types | S | P0 | 알림 유형별 on/off 토글 매트릭스. 참고: wireframes/web/27-guardian-notification-settings.svg | `PATCH /notification-settings/types 핸들러를 구현하세요. 알림 유형×채널 매트릭스 토글 저장. wireframes/web/27 참고. Supertest로 매트릭스 저장·부분 갱신을 통합 테스트하세요.` | 개발자 A |
 | 10.2.7 | 방해 금지 시간대 설정 | 🟧 | PATCH /notification-settings/quiet-hours | S | P1 | 방해 금지 시간대 설정(P1). | `PATCH /notification-settings/quiet-hours 핸들러를 구현하세요(P1). 방해 금지 시간대 저장·발송 시 적용. Vitest로 시간대 내 발송 억제 로직을 단위 테스트하세요.` | 개발자 A |
-| 10.2.8 | 푸시 토큰 등록 (앱 설치) | 🟦 | POST /push-tokens | S | P0 | 앱 설치 시 푸시 토큰 등록. 참고: docs/08-wbs.md §16.6.1 | `POST /push-tokens 핸들러를 구현하세요. 앱 설치 시 디바이스 푸시 토큰 등록·중복 제거·만료 토큰 갱신. §16.6.1 참고. Supertest로 등록·중복 처리를 통합 테스트하세요.` | 개발자 A |
+| 10.2.8 | 푸시 토큰 등록 (앱 설치) | 🟦 | POST /push-tokens | S | P0 | 앱 설치 시 푸시 토큰 등록. 참고: §16.6.1 | `POST /push-tokens 핸들러를 구현하세요. 앱 설치 시 디바이스 푸시 토큰 등록·중복 제거·만료 토큰 갱신. §16.6.1 참고. Supertest로 등록·중복 처리를 통합 테스트하세요.` | 개발자 A |
 
 ---
 
@@ -489,6 +507,8 @@ Phase 19  CI/CD·배포                → Phase 0 파이프라인 완성
 | 11.6 | 이상 활동 자동 감지 (rule engine) | 🔐 | edge function | M | P1 | 이상 활동 자동 감지 rule engine(P1). 참고: docs/05 §11 | `이상 활동 감지 rule engine edge function을 구현하세요(P1). 임계치(빈도·시간대·대량 열람) 룰 평가→알림. docs/05 §11 참고. Vitest로 각 룰 트리거 조건을 단위 테스트하세요.` | PL |
 | 11.7 | 로그 CSV 내보내기 | 🔀 | POST /access-logs/export | S | P0 | 접근 로그 CSV 내보내기. | `POST /access-logs/export 핸들러를 구현하세요. 필터 적용 로그를 CSV로 내보내기·권한 범위 제한. Vitest로 CSV 포맷·이스케이프를 단위 테스트하세요.` | PL |
 | 11.8 | 월간 보고서 자동 발송 (cron) | 🔀 | scheduled fn | S | P1 | 월간 접근 보고서 자동 발송 cron(P1). | `월간 접근 보고서를 생성·발송하는 scheduled function을 구현하세요(P1). 시간을 모킹해 Vitest로 월 집계·발송 호출을 단위 테스트하세요.` | PL |
+| 11.9 ✨ NEW | 로그 파기 배치 (purge_expired_audit_logs + pg_cron) | 🔀 | scheduled fn | S | P0 | append-only 로그(access_logs·permission_logs)의 보유기간 경과분을 service_role(RLS 우회)로 파기하는 배치. `purge_expired_audit_logs(p_retention interval)` 함수(SECURITY DEFINER·service_role EXECUTE 전용) + pg_cron 스케줄. 사용자 불변 RLS는 유지(불변=사용자 변조 방지, 파기=시스템 배치). 보유기간 수치는 docs/16 §4.1·§9 #1 법무 확정 전 🟡 TBD. 참고: docs/13 §4.1, docs/16 §4.3 | `supabase/migrations/에 purge_expired_audit_logs(p_retention interval) 함수와 pg_cron 스케줄을 작성하세요. created_at < now()-p_retention인 access_logs·permission_logs 행만 service_role로 DELETE(SECURITY DEFINER, PUBLIC/authenticated EXECUTE 차단). 사용자 경로 불변 RLS는 그대로 두세요. docs/13 §4.1·docs/16 §4.3 따르기. p_retention 실제 수치는 법무 확정 전 주입하지 말 것(🟡). pgTAP로 경과분만 삭제·authenticated 호출 차단·사용자 변조 차단 유지를 검증하세요.` | PL |
+| 11.10 ✨ NEW | soft-delete hard-delete 배치 | 🔀 | scheduled fn | S | P1 | 사용자 대면 테이블의 soft-delete 행(deleted_at IS NOT NULL)을 유예기간 경과 후 물리 삭제하는 service_role 배치(P1). persons 파기 시 연결된 records·self_expressions·record_files·매핑·secure_identifiers·consents 동시 처리, record_files는 Storage 객체도 동시 hard delete. 유예기간은 🟡 TBD. 참고: docs/16 §4.2·§4.3, docs/02 §5 | `supabase/functions에 soft-delete hard-delete 배치를 구현하세요(P1). deleted_at이 유예기간을 경과한 행을 service_role로 물리 삭제하고, record_files는 Storage 객체도 동시 삭제하세요. persons 파기 시 연결 테이블(records·self_expressions·record_files·매핑·secure_identifiers·consents)을 일괄 처리하세요. docs/16 §4.2·§4.3 따르기. 유예기간 수치는 확정 전 주입하지 말 것(🟡). 경과분만 삭제·Storage 동기 삭제를 Vitest 단위 테스트하세요.` | PL |
 
 ---
 
@@ -565,6 +585,8 @@ Phase 19  CI/CD·배포                → Phase 0 파이프라인 완성
 | 13.1.4 | A-05 이메일 인증 | 2.5 | S | P0 | 이메일 인증 화면. 참고: wireframes/web/13-signup-verify.svg | `이메일 인증 화면을 구현하세요. API 연동 2.5(확인). 토큰 자동 확인·재발송 버튼. wireframes/web/13-signup-verify.svg 준수, 상태 안내 aria-live. Playwright E2E(인증 성공·만료) 테스트를 작성하세요.` | 개발자 C |
 | 13.1.5 | A-06 초대 링크 수락 | 2.9 | M | P0 | 초대 링크 수락 화면. 참고: docs/05 §1, wireframes/web/14-invite-accept.svg | `초대 링크 수락 화면을 구현하세요. API 연동 2.9. 토큰 검증·신규/기존 분기 UI·권한 미리보기. docs/05 §1·wireframes/web/14 준수. Playwright E2E(신규·기존·만료 분기) 테스트를 작성하세요.` | 개발자 C |
 | 13.1.6 | A-07 비밀번호 재설정 | 2.6, 2.7 | S | P0 | 비밀번호 재설정 화면. 참고: wireframes/web/15-reset-password.svg | `비밀번호 재설정 화면을 구현하세요. API 연동 2.6(요청)·2.7(확인). RHF+Zod 비밀번호 정책 검증. wireframes/web/15 준수, aria-describedby로 정책 안내. Playwright E2E(요청→재설정) 테스트를 작성하세요.` | 개발자 C |
+| 13.1.7 ✨ NEW | A-08 동의 수집 화면 | 2.12, 2.13 | M | P0 | 회원가입·당사자 등록 플로우 내 동의 수집 단계 — 필수/선택 분리 체크박스, 민감정보·고유식별정보 별도 동의, 14세 미만·피후견인 대리동의 안내. policy_version 표시, A-09/A-10 전문 보기 진입. 일괄 동의 금지(PIPA §22⑤). 참고: docs/05 §1-3, docs/16 §2·§3, wireframes/web/63-signup-consent.svg | `apps/web 회원가입 플로우에 A-08 동의 수집 화면을 구현하세요. API 연동 2.12(동의 INSERT)·2.13(주체 판정). 필수/선택 분리 체크박스(일괄 동의 금지)·민감/고유식별 별도 동의·대리동의 안내·policy_version 표시·A-09/A-10 전문 보기 링크. docs/05 §1-3·docs/16 §2·§3·wireframes/web/63 준수, fieldset·aria-required. Playwright E2E(필수 누락 차단·전체 동의→다음) 테스트를 작성하세요.` | 개발자 C |
+| 13.1.8 ✨ NEW | A-09 이용약관 · A-10 처리방침 전문 페이지 | — | S | P1 | 정적 전문 페이지(PIPA §30 게시 의무) — 이용약관(A-09)·개인정보 처리방침(A-10). A-08 전문 보기·푸터·설정에서 진입. 버전·시행일 표기, 변경 고지 연계(docs/16 §7). 콘텐츠는 17.4.x(법무) 산출물 게시. 참고: docs/16 §7, wireframes/web/64-legal-terms.svg·65-legal-privacy.svg | `apps/web에 A-09 이용약관·A-10 개인정보 처리방침 정적 전문 페이지를 구현하세요(P1, API 연동 없음). 버전·시행일 표기, 푸터·A-08·설정에서 진입. 콘텐츠는 17.4.x 법무 산출물을 게시. docs/16 §7·wireframes/web/64·65 준수, article landmark·heading 구조. Playwright E2E(진입·앵커 이동) 테스트를 작성하세요.` | 개발자 C |
 
 ## 13.2 메인 화면
 
@@ -595,6 +617,7 @@ Phase 19  CI/CD·배포                → Phase 0 파이프라인 완성
 | 13.3.3 | G-62 당사자 정보 편집 | 3.2.4 | M | P0 | 당사자 정보 편집. 참고: wireframes/web/25-guardian-person-edit.svg | `당사자 정보 편집 화면을 구현하세요. API 연동 3.2.4. RHF+Zod·prefill·mutation. wireframes/web/25 준수. Playwright E2E(저장) 테스트를 작성하세요.` | 개발자 C |
 | 13.3.4 | G-63 응급 정보 편집 | 3.2.5 | M | P0 | 응급 정보 편집(추가 인증). 참고: wireframes/web/26-guardian-emergency-edit.svg | `응급 정보 편집 화면을 구현하세요. API 연동 3.2.5(추가 인증). 진입 시 PIN/생체 인증 게이트·RHF+Zod·mutation. wireframes/web/26 준수. Playwright E2E(인증 통과→저장·실패 차단) 테스트를 작성하세요.` | 개발자 C |
 | 13.3.5 | G-64 알림 설정 | 10.2.4~7 | S | P0 | 알림 설정. 참고: wireframes/web/27-guardian-notification-settings.svg | `알림 설정 화면을 구현하세요. API 연동 10.2.4~10.2.7. 채널 토글·유형 매트릭스·방해 금지 시간대·mutation. wireframes/web/27 준수, switch aria. Playwright E2E(설정 저장) 테스트를 작성하세요.` | 개발자 C |
+| 13.3.6 ✨ NEW | G-65 동의·권리 관리 화면 | 2.12 | M | P1 | 개인정보·동의 관리(PIPA §5 권리행사 창구) — 동의 현황 조회·선택 동의 철회(granted=false 신규 행)·데이터 내보내기. 설정 허브(G-60) 하위 진입. 참고: docs/16 §5, docs/05 §1-3, wireframes/web/66-guardian-consent-mgmt.svg | `apps/web에 G-65 동의·권리 관리 화면을 구현하세요. API 연동 2.12(동의 조회·철회 INSERT). 동의 현황 리스트(유형·필수/선택·동의 시각·policy_version)·선택 동의 철회(granted=false 신규 행)·데이터 내보내기 진입. docs/16 §5·wireframes/web/66 준수. Playwright E2E(철회·필수 동의 철회 차단) 테스트를 작성하세요.` | 개발자 C |
 
 ---
 
@@ -696,7 +719,7 @@ Phase 19  CI/CD·배포                → Phase 0 파이프라인 완성
 | 16.1.1 | A-01 로그인 (모바일) | S | P0 | 모바일 로그인. 참고: docs/06 §5 모바일 앱 IA, wireframes/mobile/01-m-login.svg | `apps/mobile에 로그인 화면을 구현하세요. API 연동 2.2(웹과 동일, TanStack mutation 재사용). RHF+Zod 검증·접근성 레이블. docs/06 §5·wireframes/mobile/01 준수. Jest 단위(폼 검증) + Detox E2E(로그인 성공) 테스트를 작성하세요.` | 개발자 E |
 | 16.1.2 | A-03 회원가입 역할 선택 | S | P0 | 회원가입 역할 선택. 참고: wireframes/mobile/06-m-signup-role.svg | `모바일 회원가입 역할 선택 화면을 구현하세요. API 연동 2.1. 큰 선택 카드·accessibilityRole. wireframes/mobile/06 준수. Jest 단위 + Detox E2E(역할 선택→다음) 테스트를 작성하세요.` | 개발자 E |
 | 16.1.3 | A-02/04/05/07 회원가입·인증·재설정 통합 | M | P0 | 회원가입·이메일 인증·재설정 통합 플로우. 참고: docs/05 §1 온보딩 | `모바일 회원가입·이메일 인증·재설정 통합 플로우를 구현하세요. API 연동 2.1·2.4·2.5·2.6·2.7. 단계 네비게이션·RHF+Zod. docs/05 §1 준수. Jest 단위 + Detox E2E(가입→인증→완료) 테스트를 작성하세요.` | 개발자 E |
-| 16.1.4 | A-06 초대 수락 (Deep Link) | M | P0 | 초대 수락(Deep Link 처리). 참고: docs/08-wbs.md §16.6.6 | `모바일 초대 수락 화면을 구현하세요. API 연동 2.9. Deep Link(16.6.6)로 토큰 수신·신규/기존 분기. §16.6.6 준수. Jest 단위(딥링크 파싱) + Detox E2E(딥링크→수락) 테스트를 작성하세요.` | 개발자 E |
+| 16.1.4 | A-06 초대 수락 (Deep Link) | M | P0 | 초대 수락(Deep Link 처리). 참고: §16.6.6 | `모바일 초대 수락 화면을 구현하세요. API 연동 2.9. Deep Link(16.6.6)로 토큰 수신·신규/기존 분기. §16.6.6 준수. Jest 단위(딥링크 파싱) + Detox E2E(딥링크→수락) 테스트를 작성하세요.` | 개발자 E |
 
 ## 16.2 보호자
 
@@ -744,12 +767,12 @@ Phase 19  CI/CD·배포                → Phase 0 파이프라인 완성
 
 | ID | 작업 | 공수 | P | 세부사항 | AI 프롬프트 | 담당자 |
 |----|------|:---:|:-:| :-------- | :-------- | :----: |
-| 16.6.1 | FCM 푸시 알림 통합 | M | P0 | FCM 푸시 알림 통합(토큰 등록·수신). 참고: docs/05 §8 알림, docs/08-wbs.md §10.2.1·§10.2.8 | `apps/mobile에 FCM 푸시 알림을 통합하세요. 토큰 등록(10.2.8)·포그라운드/백그라운드 수신·탭 시 딥링크 라우팅. docs/05 §8·§10.2.1 준수. 알림 핸들러를 모킹해 Jest로 수신·라우팅을 단위 테스트하세요.` | 개발자 E |
+| 16.6.1 | FCM 푸시 알림 통합 | M | P0 | FCM 푸시 알림 통합(토큰 등록·수신). 참고: docs/05 §8 알림, §10.2.1·§10.2.8 | `apps/mobile에 FCM 푸시 알림을 통합하세요. 토큰 등록(10.2.8)·포그라운드/백그라운드 수신·탭 시 딥링크 라우팅. docs/05 §8·§10.2.1 준수. 알림 핸들러를 모킹해 Jest로 수신·라우팅을 단위 테스트하세요.` | 개발자 E |
 | 16.6.2 | 카메라/갤러리 (사진 첨부) | M | P0 | 카메라/갤러리 사진 첨부. 참고: docs/05 §5 파일 첨부 | `카메라/갤러리 사진 첨부 기능을 구현하세요. 권한 요청·이미지 선택·presigned URL(7.1) 업로드. docs/05 §5 준수. 권한 거부·선택 취소 분기를 Jest 단위 테스트하세요.` | 개발자 E |
-| 16.6.3 | 음성 메모 녹음 | M | P1 | 음성 메모 녹음(P1). 참고: docs/08-wbs.md §6.6 | `음성 메모 녹음 기능을 구현하세요(P1). 녹음·재생·업로드(6.6). §6.6 준수. 녹음 상태 전이·권한 거부를 Jest 단위 테스트하세요.` | 개발자 E |
+| 16.6.3 | 음성 메모 녹음 | M | P1 | 음성 메모 녹음(P1). 참고: §6.6 | `음성 메모 녹음 기능을 구현하세요(P1). 녹음·재생·업로드(6.6). §6.6 준수. 녹음 상태 전이·권한 거부를 Jest 단위 테스트하세요.` | 개발자 E |
 | 16.6.4 | 일지 오프라인 임시저장 (AsyncStorage) | L | P0 | 일지 오프라인 임시저장(AsyncStorage) 후 동기화. 참고: docs/04 §3 활동지원사 | `일지 오프라인 임시저장(AsyncStorage) 후 온라인 시 자동 동기화를 구현하세요. 충돌·중복 제출 방지. docs/04 §3 준수. 오프라인 저장→복구→동기화·충돌 케이스를 Jest 단위 + Detox E2E 테스트하세요.` | 개발자 E |
-| 16.6.5 | 생체 인증 (Face ID / 지문) | M | P0 | 생체 인증(Face ID/지문) — 민감정보 보호. 참고: docs/08-wbs.md §17.2.5 | `생체 인증(Face ID/지문) 게이트를 구현하세요. 응급정보 등 민감 화면 진입 시 인증 요구·폴백(PIN). §17.2.5 준수. 인증 성공/실패/미지원 분기를 Jest 단위 테스트하세요.` | 개발자 E |
-| 16.6.6 | Deep Link 라우팅 (초대 등) | M | P0 | Deep Link 라우팅(초대·알림 진입). 참고: docs/08-wbs.md §16.1.4 | `Deep Link 라우팅을 구현하세요. 초대(16.1.4)·알림 진입 URL을 파싱해 해당 화면으로 네비게이션. §16.1.4 준수. URL 파싱·라우팅 매핑을 Jest 단위 테스트하세요.` | 개발자 E |
+| 16.6.5 | 생체 인증 (Face ID / 지문) | M | P0 | 생체 인증(Face ID/지문) — 민감정보 보호. 참고: §17.2.5 | `생체 인증(Face ID/지문) 게이트를 구현하세요. 응급정보 등 민감 화면 진입 시 인증 요구·폴백(PIN). §17.2.5 준수. 인증 성공/실패/미지원 분기를 Jest 단위 테스트하세요.` | 개발자 E |
+| 16.6.6 | Deep Link 라우팅 (초대 등) | M | P0 | Deep Link 라우팅(초대·알림 진입). 참고: §16.1.4 | `Deep Link 라우팅을 구현하세요. 초대(16.1.4)·알림 진입 URL을 파싱해 해당 화면으로 네비게이션. §16.1.4 준수. URL 파싱·라우팅 매핑을 Jest 단위 테스트하세요.` | 개발자 E |
 | 16.6.7 | OTA 업데이트 (Expo Updates) | S | P1 | OTA 업데이트(Expo Updates, P1). | `Expo Updates OTA 업데이트를 구성하세요(P1). 업데이트 확인·다운로드·재시작 흐름. 업데이트 가용/불가 분기를 Jest 단위 테스트하세요.` | 개발자 E |
 
 ---
@@ -778,6 +801,7 @@ Phase 19  CI/CD·배포                → Phase 0 파이프라인 완성
 | 17.2.6 | 민감 파일 다운로드 워터마킹 | M | P1 | 민감 파일 다운로드 워터마킹(P1). | `민감 파일 다운로드 시 사용자·시각 워터마킹을 적용하세요(P1). 워터마크 삽입 로직을 Vitest 단위 테스트하세요.` | PL |
 | 17.2.7 | Rate Limiting (API) | S | P0 | API Rate Limiting. | `API Rate Limiting 미들웨어를 구현하세요. IP/사용자별 윈도우 제한·429 응답. 임계 초과 차단을 Vitest 단위 + Supertest 통합 테스트하세요.` | PL |
 | 17.2.8 | Audit log immutability (PostgreSQL) | S | P0 | Audit log 불변성(PostgreSQL append-only). 참고: docs/02 §2(access_logs), docs/03 §RLS | `access_logs append-only 불변성을 보강하세요. UPDATE/DELETE 차단 트리거·권한 회수. docs/02 §2·docs/03 §RLS 참고. pgTAP로 UPDATE/DELETE 차단·INSERT 허용을 회귀 검증하세요.` | PL |
+| 17.2.9 ✨ NEW | Sentry PII 스크러빙 (beforeSend 마스킹) | S | P0 | Sentry 에러 페이로드에서 민감정보(emergency_info·records.content·고유식별정보·이메일 등) 스크러빙 — beforeSend 훅 마스킹·민감 키 제거·국외이전 위탁(docs/16 §6.1) 위험 차단. 웹·모바일·서버 공통. 참고: docs/16 §6.2, docs/10 §6 | `웹·모바일·서버 Sentry에 beforeSend PII 스크러빙을 구현하세요. emergency_info·records.content·고유식별정보(secure_identifiers)·이메일·전화 등 민감 키를 마스킹/제거해 외부 전송(국외이전 수탁) 페이로드에서 제외하세요. docs/16 §6.2 따르기. 민감 필드 포함 에러를 던져 스크러빙 후 전송 페이로드에 PII 부재를 Vitest 단위 테스트하세요.` | PL |
 
 ## 17.3 접근성 (WCAG 2.1 AA)
 
@@ -787,6 +811,12 @@ Phase 19  CI/CD·배포                → Phase 0 파이프라인 완성
 | 17.3.2 | 스크린 리더 호환 (ARIA) | M | P0 | 스크린 리더 호환(ARIA 레이블). 참고: docs/07 §9 | `스크린 리더 호환을 위해 ARIA 레이블·landmark·live region을 점검·보강하세요. docs/07 §9 참고. axe-core 자동 검사로 ARIA 위반 0건을 검증하세요.` | PL |
 | 17.3.3 | 컬러 대비 4.5:1 검증 | S | P0 | 컬러 대비 4.5:1 검증. 참고: docs/07 §1 컬러 시스템·§9 | `전체 컬러 조합의 대비 4.5:1 이상을 검증·보정하세요. docs/07 §1·§9 참고. tokens 조합 대비비를 자동 계산하는 Vitest 단위 테스트 + axe-core 검사를 작성하세요.` | PL |
 | 17.3.4 | 당사자 모드 — TTS 통합 | M | P0 | 당사자 모드 TTS 통합. 참고: docs/07 §9 당사자 접근성 모드 | `당사자 모드 TTS를 통합하세요(웹 SpeechSynthesis·모바일 TTS). 기록 요약·안내 읽기. docs/07 §9 참고. TTS 호출을 모킹해 Vitest 단위 + Detox/Playwright E2E(재생) 테스트하세요.` | PL |
+
+## 17.4 법무·고지 (개인정보 거버넌스)
+
+| ID | 작업 | 공수 | P | 세부사항 | AI 프롬프트 | 담당자 |
+|----|------|:---:|:-:| :-------- | :-------- | :----: |
+| 17.4.1 ✨ NEW | 개인정보 처리방침·이용약관 게시 + CPO 지정 | S | P1 | PIPA §30·§31 게시 의무 — 개인정보 처리방침(수집항목·목적·보유기간·위탁·권리·CPO)·이용약관 작성·게시, 개인정보 보호책임자(CPO) 지정·공개. 수치·항목은 docs/16 §1·§4·§6과 일치. A-09/A-10 페이지(13.1.8)에 게시. 변경 시 시행 7일 전 고지(불리 변경 30일). 법무 협업·확정. 참고: docs/16 §7, docs/16 §9 TBD | `개인정보 처리방침·이용약관을 작성·게시하고 CPO를 지정하세요(P1, 법무 협업). 처리방침은 docs/16 §1 인벤토리·§4 보유기간·§6 위탁 현황과 수치·항목이 일치해야 하며 A-09/A-10 페이지(13.1.8)에 게시하세요. 변경 고지(시행 7일 전·불리 변경 30일) 절차와 policy_version 갱신 연계를 정의하세요. docs/16 §7·§9 TBD(보유기간·국외이전 리전) 확정 항목을 반영하세요.` | PL |
 
 ---
 
@@ -897,7 +927,7 @@ Phase 19  CI/CD·배포                → Phase 0 파이프라인 완성
 
 # 부록 B. MVP vs 차기 릴리스
 
-## MVP (P0 합계: ~280d, 5명 팀 약 12주)
+## MVP (P0 합계: ~295d, 5명 팀 약 12주)
 
 - 인증·사용자·당사자·권한 매트릭스 (전체)
 - 기록 6도메인 핵심 유형 (MED-001~008, EDU-001/003/004/007/009, WEL-001~006, DAI-002/003, TRA-001/002/003, LEG-001/002/003)
@@ -907,6 +937,7 @@ Phase 19  CI/CD·배포                → Phase 0 파이프라인 완성
 - 인수인계 핵심 4-step
 - 알림 (앱 푸시 + 이메일)
 - 접근 로그
+- **개인정보 거버넌스 P0 (✨ v1.1):** secure_identifiers·consents 테이블·deleted_at·부분인덱스(1.1.14~1.1.16), soft-delete 가시성·복호화 통제 RLS(1.2.6·1.2.7), 동의 수집/주체 판정 API(2.12·2.13), 고유식별정보 암호화 서비스(5.G.1), 로그 파기 배치(11.9), A-08 동의 수집 화면(13.1.7), Sentry PII 스크러빙(17.2.9)
 - **테스트 인프라·CI 기초 (0.13·0.14) + 백엔드 통합 테스트 체크포인트 (11.5)** ✨
 - 디자인 시스템 + 웹 UI (역할 7개 핵심 화면) + 모바일 핵심 화면
 - 보안·접근성 필수
@@ -915,11 +946,21 @@ Phase 19  CI/CD·배포                → Phase 0 파이프라인 완성
 ## 차기 릴리스 (P1, P2)
 
 - 영유아·노년기 전용 기록 (DAI-001, MED-010, WEL-007, TRA-007 등)
+- **개인정보 거버넌스 P1 (✨ v1.1):** 성년 도달 본인 동의 재취득(3.2.10), soft-delete hard-delete 배치(11.10), A-09/A-10 약관·처리방침 페이지(13.1.8), G-65 동의·권리 관리 화면(13.3.6), 처리방침·약관 게시+CPO 지정(17.4.1·법무)
 - SMS 채널·음성 메모
 - 시각 회귀·부하 테스트 고도화
 - i18n (영어)
 - OG 이미지·소셜 미리보기
 - 시각 분석 대시보드 (보호자용 통계)
+
+## 잔여 TBD (법무·인프라 확정 대상, docs/16 §9)
+
+- 고유식별정보 **암호화 도구·키관리** 선택(Supabase Vault vs pgcrypto+KMS) — 5.G.1·1.2.7 인터페이스만 고정 🟡
+- 로그/soft-delete **보유기간·유예기간 수치** — 11.9·11.10 함수는 구조만 확정, 수치 주입은 법무 확정 후 🟡
+- 만 14세 이상 미성년자 동의 분기·**법정대리인 자격 증빙 절차** — 2.13 분기 미세부 🟡
+- 본인 동의 전환 시 **기존 보호자 권한 처리**(유지/재동의/회수) — 3.2.10 연계 미정 🟡
+- **국외이전 리전 확정·DPA** — 17.4.1 처리방침 고지 전제 🟡
+- 침해사고 대응 플레이북·권리행사 접수 창구·본인확인 절차 🟡
 
 ---
 

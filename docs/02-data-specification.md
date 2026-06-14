@@ -1,7 +1,9 @@
 # 데이터 명세서 — OnDol 플랫폼
 
-> 버전: v1.0 | 작성일: 2026-06-12  
+> 버전: v1.1 | 작성일: 2026-06-12 (개정: 2026-06-14)  
 > DB: PostgreSQL (Supabase) | 기본 타임존: KST (UTC+9)
+>
+> **v1.1 변경(docs/16 거버넌스 정합):** ①고유식별정보 분리 암호화 저장 테이블 `secure_identifiers`(§2.14) 신설 — WEL-001·LEG-001 평문 분리(docs/16 TBD #2 해소) ②동의 이력 테이블 `consents`(§2.15) 신설(docs/16 §2 연계) ③사용자 대면 엔티티에 `deleted_at` soft-delete 컬럼 추가(docs/16 TBD #4 해소, append-only 로그는 제외) ④Enum 2종·부분 인덱스·제약 보강.
 
 ---
 
@@ -32,6 +34,10 @@
 | 11 | `life_milestones` | 생애 이정표 | persons |
 | 12 | `handovers` | 인수인계 | users, persons |
 | 13 | `notifications` | 알림 | users, records |
+| 14 | `secure_identifiers` | 고유식별정보 암호화 저장 (분리) | persons, records |
+| 15 | `consents` | 동의 이력 (필수/선택·민감·고유식별 분리) | users, persons |
+
+> **soft-delete 컬럼(`deleted_at`) 적용 정책 (docs/16 §4.3 연계):** 사용자 대면 엔티티(`persons`, `records`, `self_expressions`, `record_files`, `guardian_persons`, `person_accounts`, `secure_identifiers`, `consents`)는 `deleted_at TIMESTAMPTZ NULL`을 가진다 — 파기/탈퇴 시 논리 삭제 후 유예기간 경과 시 물리 삭제. 반면 **`access_logs`·`permission_logs`는 append-only(불변)** 으로 `deleted_at`을 두지 않으며, 법정 보유기간 경과분은 data-infra가 `docs/13 §4`에서 service_role 시스템 배치로 별도 파기한다(사용자 변조 차단 ≠ 시스템 파기 분리 원칙).
 
 ---
 
@@ -54,6 +60,9 @@
 | `current_life_stage` | TEXT | — | — | 현재 생애주기 단계 | `"child"` |
 | `created_at` | TIMESTAMPTZ | ✅ | NOW() | 등록일시 | |
 | `updated_at` | TIMESTAMPTZ | ✅ | NOW() | 수정일시 | |
+| `deleted_at` | TIMESTAMPTZ | — | NULL | soft-delete 시각 (NULL=활성). 파기/탈퇴 시 설정, 유예기간 경과 후 hard delete (docs/16 §4.3) | |
+
+> **soft-delete 주의:** `deleted_at IS NOT NULL` 행은 모든 조회·RLS에서 제외해야 한다. 조회 쿼리 기본 필터(`WHERE deleted_at IS NULL`)와 부분 인덱스(§5)로 처리한다. `persons` soft-delete 시 연결된 `records`·`self_expressions`·`record_files`·매핑 테이블도 함께 soft-delete 처리(애플리케이션 트랜잭션, docs/16 §4.2 FK 정책은 🟡 TBD).
 
 **`emergency_info` JSONB 스키마:**
 ```json
@@ -98,8 +107,9 @@
 | `is_primary` | BOOLEAN | ✅ | `false` | 주보호자 여부 | `true` |
 | `relationship` | TEXT | — | — | 관계 | `"부"`, `"모"`, `"형제"`, `"후견인"` |
 | `created_at` | TIMESTAMPTZ | ✅ | NOW() | 연결일시 | |
+| `deleted_at` | TIMESTAMPTZ | — | NULL | soft-delete 시각 (관계 종료·당사자 파기 시; docs/16 §4.3) | |
 
-**제약:** `UNIQUE(guardian_id, person_id)`
+**제약:** `UNIQUE(guardian_id, person_id)` — soft-delete 운영 시 부분 유니크 인덱스 `WHERE deleted_at IS NULL`로 대체(파기 후 재연결 허용)
 
 ---
 
@@ -112,6 +122,7 @@
 | `accessibility_settings` | JSONB | — | 아래 참조 | 접근성 설정 |
 | `ui_mode` | TEXT | — | `'icon'` | UI 모드 (icon/mixed) |
 | `created_at` | TIMESTAMPTZ | ✅ | NOW() | |
+| `deleted_at` | TIMESTAMPTZ | — | NULL | soft-delete 시각 (당사자 파기·계정 해제 시; docs/16 §4.3) |
 
 **`accessibility_settings` 기본값:**
 ```json
@@ -184,6 +195,9 @@
 | `tags` | TEXT[] | — | `'{}'` | 태그 목록 | `{"IEP","2024"}` |
 | `created_at` | TIMESTAMPTZ | ✅ | NOW() | | |
 | `updated_at` | TIMESTAMPTZ | ✅ | NOW() | | |
+| `deleted_at` | TIMESTAMPTZ | — | NULL | soft-delete 시각 (정정·삭제권 행사·파기 시; docs/16 §4.3·§5.1) | |
+
+> **고유식별정보 분리 (docs/16 §3.2 / PIPA §24):** `records.content`(JSONB)는 **평문**이므로 고유식별정보를 직접 담지 않는다. WEL-001 `registration_number`(장애인 등록번호)·LEG-001 `document_number`(증명서 문서번호)는 `content`에서 **제외**하고 §2.14 `secure_identifiers`에 암호화 저장하며, content에는 해당 식별정보를 가리키는 `secure_identifier_id`(UUID 참조)만 둔다. §3.C·§3.F 스키마 주석 참조.
 
 ---
 
@@ -202,8 +216,9 @@
 | `memo` | TEXT | — | — | 자유 메모 (선택) | |
 | `voice_memo_url` | TEXT | — | — | 음성 메모 URL | |
 | `created_at` | TIMESTAMPTZ | ✅ | NOW() | | |
+| `deleted_at` | TIMESTAMPTZ | — | NULL | soft-delete 시각 (파기·삭제권 행사 시; docs/16 §4.3) | |
 
-**제약:** `UNIQUE(person_id, expression_date)` — 하루 1건
+**제약:** `UNIQUE(person_id, expression_date)` — 하루 1건 (soft-delete 운영 시 부분 유니크 인덱스 `WHERE deleted_at IS NULL`로 대체)
 
 ---
 
@@ -221,6 +236,7 @@
 | `file_size` | BIGINT | — | 파일 크기 (bytes) |
 | `is_sensitive` | BOOLEAN | ✅ | `false` | 민감 문서 여부 (진단서 등) |
 | `created_at` | TIMESTAMPTZ | ✅ | NOW() | |
+| `deleted_at` | TIMESTAMPTZ | — | NULL | soft-delete 시각. Storage 객체 hard delete는 유예기간 경과 후 배치로 동시 처리 (docs/16 §4.3) |
 
 **제약:** `CHECK ((record_id IS NOT NULL) != (self_expression_id IS NOT NULL))`
 (둘 중 정확히 하나만 NOT NULL)
@@ -295,6 +311,59 @@
 | `body` | TEXT | — | 알림 내용 |
 | `is_read` | BOOLEAN | ✅ | `false` |
 | `created_at` | TIMESTAMPTZ | ✅ | NOW() |
+
+---
+
+### 2.14 `secure_identifiers` — 고유식별정보 암호화 저장 (PIPA §24)
+
+> **설계 결정 (확정):** PIPA §24③·시행령 §21은 고유식별정보의 **암호화 저장**을 의무화한다. `records.content`(JSONB)는 평문 저장 구조라 컬럼 단위 암호화가 불가하므로, 고유식별정보를 **content에서 분리**해 본 전용 테이블에 암호화 저장한다. content에는 평문 대신 본 테이블 행을 가리키는 `secure_identifier_id` 참조만 남긴다. **모델 구조(분리 저장)는 확정**이며, 구체 암호화 도구(Supabase Vault vs pgcrypto 앱레벨 암호화)·키 관리(KMS)는 법무·인프라 확정 대상 🟡 TBD.
+
+| 컬럼명 | 타입 | NOT NULL | 기본값 | 설명 |
+|--------|------|:--------:|--------|------|
+| `id` | UUID | ✅ | gen_random_uuid() | PK. content/persons가 참조하는 키 |
+| `person_id` | UUID | ✅ | — | FK → persons.id (소유 당사자) |
+| `record_id` | UUID | — | — | FK → records.id (출처 기록, NULL 가능) |
+| `identifier_type` | TEXT | ✅ | — | 식별정보 유형 (Enum: SecureIdentifierType) — `disability_registration_number`(WEL-001) / `disability_certificate_number`(LEG-001) |
+| `encrypted_value` | BYTEA | ✅ | — | **암호화된 원문**. 평문 저장 금지. pgcrypto `pgp_sym_encrypt` 또는 Supabase Vault 시크릿 참조 🟡 |
+| `value_masked` | TEXT | ✅ | — | **표시용 마스킹 값**(예: `123-45-****`). 화면·목록 출력은 항상 이 값만 사용 |
+| `encryption_ref` | TEXT | — | — | Vault 사용 시 시크릿/키 식별자(앱레벨 암호화 시 키 버전). 도구 확정 후 채움 🟡 |
+| `created_by` | UUID | ✅ | — | FK → users.id (입력자) |
+| `created_at` | TIMESTAMPTZ | ✅ | NOW() | |
+| `updated_at` | TIMESTAMPTZ | ✅ | NOW() | |
+| `deleted_at` | TIMESTAMPTZ | — | NULL | soft-delete 시각 (연결 기록·당사자 파기 시; docs/16 §4.3) |
+
+- **마스킹(표시용) vs 암호화(저장용) 역할 구분:** `value_masked`는 *표시 제어*(부분만 노출), `encrypted_value`는 *저장 보호*(DB 유출 시에도 원문 비노출)다. 둘은 별개 의무이며 본 설계는 양쪽을 모두 충족한다. 원문 복호화는 권한 재검증을 거친 서버(service_role/Edge Function)에서만 수행한다.
+- **접근 통제:** 본 테이블은 RLS로 보호자·권한자만 접근하며, 복호화는 docs/13에서 별도 정책으로 통제한다(data-infra 연계 🟡).
+- **수집 최소화:** PIPA §24 권고에 따라 서비스상 불필요하면 수집하지 않는다(docs/16 §3.2).
+- 🟡 **암호화 도구·키관리 권고(확정 필요):** 도구 선택은 **docs/16 §3.2.1** 권고안 참조 — 1차 출시는 **Supabase Vault**(`encryption_ref`에 Vault 시크릿 식별자), 규모·감사 요구 증대 시 **pgcrypto(`pgp_sym_encrypt`)+외부 KMS 봉투암호화**로 전환 가능하도록 `encryption_ref`를 키 식별 추상화 계층으로 사용한다. 키 회전 시 과거 키 버전을 `encryption_ref`에 보존해 기존 행 복호 가능성을 유지한다. 복호는 `service_role`/Edge Function 한정(docs/13 §3.5)이며 복호 1건마다 `access_logs`에 기록(권고). **도구·키 회전 주기는 인프라, PIPA §24③·시행령 §21 충족 여부는 법무 확정 대상.** 🔒 키가 `service_role` 키와 동일 신뢰경계에서 유출되면 분리 저장 의미가 소멸하므로 키 접근 경로를 별도 격리한다.
+
+---
+
+### 2.15 `consents` — 동의 이력 (PIPA §22~24)
+
+> **설계 결정 (확정):** docs/16 §2 동의 체계를 시스템에 반영한다. 필수/선택, 민감정보·고유식별정보 별도 동의를 **분리 레코드**로 보관하고, 14세 미만·피후견인은 법정대리인 대리동의를 기록한다(docs/05 §1 온보딩·§10 전환기 흐름과 연계).
+
+| 컬럼명 | 타입 | NOT NULL | 기본값 | 설명 |
+|--------|------|:--------:|--------|------|
+| `id` | UUID | ✅ | gen_random_uuid() | PK |
+| `subject_user_id` | UUID | — | — | FK → users.id (성인 본인 동의 시) |
+| `person_id` | UUID | — | — | FK → persons.id (당사자 정보 동의 시) |
+| `consent_type` | TEXT | ✅ | — | Enum: ConsentType (아래) |
+| `is_required` | BOOLEAN | ✅ | — | 필수(true)/선택(false) 구분 — 필수·선택 일괄동의 금지(PIPA §22⑤) |
+| `granted` | BOOLEAN | ✅ | — | 동의(true)/철회·거부(false) |
+| `consented_by` | UUID | ✅ | — | FK → users.id (실제 동의 클릭 주체 = 본인 또는 법정대리인) |
+| `on_behalf` | BOOLEAN | ✅ | `false` | 대리동의 여부 (법정대리인이 당사자 대신 동의) |
+| `legal_basis` | TEXT | — | — | 대리동의 근거 (`친권자`/`성년후견인` 등; docs/16 §2.2) |
+| `policy_version` | TEXT | ✅ | — | 동의 시점 처리방침/약관 버전 (docs/16 §7) |
+| `consented_at` | TIMESTAMPTZ | ✅ | NOW() | 동의 시각 |
+| `revoked_at` | TIMESTAMPTZ | — | NULL | 철회 시각 (NULL=유효) |
+| `deleted_at` | TIMESTAMPTZ | — | NULL | soft-delete 시각 (계정·당사자 파기 시; docs/16 §4.3) |
+
+**`consent_type` 값 (Enum: ConsentType):** `terms_of_service`(이용약관·필수) / `privacy_required`(개인정보 수집·이용 필수) / `sensitive_info`(민감정보 별도 필수, docs/16 §3.1) / `unique_identifier`(고유식별정보 별도 필수, docs/16 §3.2) / `third_party_processing`(위탁·국외이전 고지·동의, docs/16 §6) / `marketing`(마케팅·부가서비스 알림, 선택).
+
+- **`subject_user_id` XOR `person_id`**: 동의 대상이 이용자 본인이면 `subject_user_id`, 당사자 정보면 `person_id`를 채운다(둘 중 하나 NOT NULL).
+- **동의 철회(PIPA §22)**: 철회는 행 삭제가 아니라 `granted=false` 신규 행 추가 + 원 행 `revoked_at` 기록(이력 보존, docs/16 §5.1 처리정지·철회 연계).
+- **성년 전환 재동의(docs/16 §2.3)**: 당사자 성년 도달·후견 미개시 시, 기존 대리동의(`on_behalf=true`)는 유지하되 **본인 명의 신규 동의 레코드**(`subject_user_id`=당사자 계정, `on_behalf=false`)를 재취득한다(docs/05 §10 흐름).
 
 ---
 
@@ -681,9 +750,13 @@
 ### C. 복지서비스
 
 **WEL-001 장애 등록 정보**
+
+> 🟧 **고유식별정보 분리 (docs/16 §3.2 / PIPA §24):** `registration_number`(장애인 등록번호)는 고유식별정보다. **content에 평문 저장하지 않고** §2.14 `secure_identifiers`(`identifier_type='disability_registration_number'`)에 암호화 저장한다. content에는 참조 ID와 표시용 마스킹 값만 둔다.
+
 ```typescript
 {
-  registration_number?: string    // 장애인 등록 번호 (마스킹)
+  secure_identifier_id?: string   // → secure_identifiers.id (암호화된 등록번호 참조)
+  registration_number_masked?: string  // 표시용 마스킹 값 (예: "123-45-****") — 평문 금지
   registration_date: string
   disability_type: string         // 장애 유형
   disability_degree: 'severe' | 'not_severe'
@@ -1086,13 +1159,17 @@
 ### F. 법적/행정
 
 **LEG-001 장애인 증명서 보관**
+
+> 🟧 **고유식별정보 분리 (docs/16 §3.2 / PIPA §24):** `document_number`(증명서 문서번호)는 고유식별정보다. **content에 평문 저장하지 않고** §2.14 `secure_identifiers`(`identifier_type='disability_certificate_number'`)에 암호화 저장한다. content에는 참조 ID와 표시용 마스킹 값만 둔다.
+
 ```typescript
 {
   document_type: '장애인등록증' | '장애인증명서' | '복지카드' | '기타'
   issued_date: string
   issued_by: string               // 발급 기관 (주민센터 등)
   expiry_date?: string
-  document_number?: string        // 문서 번호 (마스킹 처리)
+  secure_identifier_id?: string   // → secure_identifiers.id (암호화된 문서번호 참조)
+  document_number_masked?: string // 표시용 마스킹 값 — 평문 금지
   file_attached: boolean
   notes?: string
 }
@@ -1225,6 +1302,22 @@ CREATE TYPE milestone_category AS ENUM (
   'legal_change',       -- 법적 지위 변경
   'other'
 );
+
+-- 고유식별정보 유형 (secure_identifiers — PIPA §24, docs/16 §3.2)
+CREATE TYPE secure_identifier_type AS ENUM (
+  'disability_registration_number',  -- 장애인 등록번호 (WEL-001)
+  'disability_certificate_number'    -- 장애인 증명서 문서번호 (LEG-001)
+);
+
+-- 동의 유형 (consents — PIPA §22~24, docs/16 §2·§3)
+CREATE TYPE consent_type AS ENUM (
+  'terms_of_service',       -- 이용약관 (필수)
+  'privacy_required',       -- 개인정보 수집·이용 (필수)
+  'sensitive_info',         -- 민감정보 별도 동의 (필수, docs/16 §3.1)
+  'unique_identifier',      -- 고유식별정보 별도 동의 (필수, docs/16 §3.2)
+  'third_party_processing', -- 위탁·국외이전 고지·동의 (docs/16 §6)
+  'marketing'               -- 마케팅·부가서비스 알림 (선택)
+);
 ```
 
 ---
@@ -1253,7 +1346,22 @@ CREATE INDEX idx_access_logs_user ON access_logs(user_id, created_at DESC);
 
 -- notifications 테이블
 CREATE INDEX idx_notifications_recipient ON notifications(recipient_id, is_read, created_at DESC);
+
+-- soft-delete 부분 인덱스 (deleted_at IS NULL 행만 조회 — docs/16 §4.3)
+-- 활성 행 위주 조회 성능 유지 + 유니크 제약을 활성 행으로 한정
+CREATE INDEX idx_records_active ON records(person_id, record_date DESC) WHERE deleted_at IS NULL;
+CREATE INDEX idx_self_expr_active ON self_expressions(person_id, expression_date DESC) WHERE deleted_at IS NULL;
+CREATE UNIQUE INDEX idx_self_expr_unique_active ON self_expressions(person_id, expression_date) WHERE deleted_at IS NULL;
+CREATE UNIQUE INDEX idx_guardian_persons_unique_active ON guardian_persons(guardian_id, person_id) WHERE deleted_at IS NULL;
+CREATE INDEX idx_persons_active ON persons(id) WHERE deleted_at IS NULL;
+
+-- secure_identifiers / consents (docs/16 §3·§2)
+CREATE INDEX idx_secure_ident_person ON secure_identifiers(person_id) WHERE deleted_at IS NULL;
+CREATE INDEX idx_consents_subject ON consents(subject_user_id, consent_type) WHERE deleted_at IS NULL;
+CREATE INDEX idx_consents_person ON consents(person_id, consent_type) WHERE deleted_at IS NULL;
 ```
+
+> **soft-delete 인덱스 영향:** 기존 비조건부 유니크 제약(`guardian_persons`·`self_expressions`)은 soft-delete 행이 유니크 충돌을 일으키므로, 위 **부분 유니크 인덱스**(`WHERE deleted_at IS NULL`)로 대체해 파기 후 재등록을 허용한다. 모든 일반 조회 쿼리는 `WHERE deleted_at IS NULL`을 기본 포함한다(RLS 정책에도 반영 — data-infra가 docs/13에서 처리 🟡).
 
 ---
 
@@ -1268,5 +1376,8 @@ CREATE INDEX idx_notifications_recipient ON notifications(recipient_id, is_read,
 | `record_files` | record_id XOR self_expression_id NOT NULL | 하나에만 연결 |
 | `records` | domain IN Enum값 | 유효 분야만 |
 | `notifications` | record_id XOR self_expression_id (둘 중 최대 하나만 NOT NULL) | 알림 원본 참조 무결성 |
-| `access_logs` | INSERT 전용 (UPDATE/DELETE 불가) | 감사 로그 불변성 |
-| `permission_logs` | INSERT 전용 | 권한 이력 불변성 |
+| `access_logs` | INSERT 전용 (UPDATE/DELETE 불가) | 감사 로그 불변성 (`deleted_at` 없음 — append-only) |
+| `permission_logs` | INSERT 전용 | 권한 이력 불변성 (`deleted_at` 없음 — append-only) |
+| `secure_identifiers` | `encrypted_value` 평문 저장 금지 | 고유식별정보 암호화 의무 (PIPA §24, docs/16 §3.2) |
+| `consents` | subject_user_id XOR person_id (둘 중 하나 NOT NULL) | 동의 대상 무결성 |
+| 사용자 대면 테이블 | `deleted_at` 부분 유니크 인덱스 `WHERE deleted_at IS NULL` | soft-delete 후 재등록 허용 (docs/16 §4.3) |

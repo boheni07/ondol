@@ -33,9 +33,9 @@
 
 > 📐 **설계 완료 · 구현 착수 전.** 본 저장소는 현재 **설계 문서 + 와이어프레임 + 작업 분해(WBS)** 단계다. 애플리케이션 코드(`apps/`)는 아직 없다.
 
-- 설계 문서 9종 (`docs/01`~`docs/09`)
-- 와이어프레임 86개 — 웹 62 · 모바일 24 (`wireframes/`, 미리보기: `wireframes/index.html`)
-- WBS 381개 작업 / 632 person-day / 7인 16주 추정 (`docs/08-wbs.md`)
+- 설계 문서 18종 (`docs/01`~`docs/18`) + `docs/structure.md`
+- 화면 인벤토리 96 — 웹 67 · 모바일 29 (`docs/11`, 와이어프레임 SVG 96개 제작 완료: `wireframes/index.html`)
+- WBS 402개 작업 / 665.5 person-day / 7인 16주 추정 (`docs/08-wbs-v1.1.md`)
 
 ## 문서 인덱스
 
@@ -48,14 +48,17 @@
 | [docs/05-workflows-feature.md](docs/05-workflows-feature.md) | 기능별 워크플로우 |
 | [docs/06-information-architecture.md](docs/06-information-architecture.md) | IA(정보구조도), 사이트맵, 주요 플로우 |
 | [docs/07-design-system.md](docs/07-design-system.md) | 컬러·타이포·컴포넌트·접근성 |
-| [docs/08-wbs.md](docs/08-wbs.md) | 작업 분해 구조 (담당자·공수·일정) |
-| [docs/09-wbs-github.md](docs/09-wbs-github.md) | GitHub Issues/Milestones/Projects 등록 가이드 |
+| [docs/08-wbs-v1.1.md](docs/08-wbs-v1.1.md) | 작업 분해 구조 (담당자·공수·일정) — **정본(SSOT)**. `docs/08-wbs.md`는 v1.0 deprecated |
+| [docs/09-wbs-github.md](docs/09-wbs-github.md) | GitHub Issues/Milestones/Projects 등록 가이드 (v1.0 기준 — 재생성 예정) |
 | [docs/10-tech-stack.md](docs/10-tech-stack.md) | 기술 스택 결정 |
-| [docs/11-screen-inventory.md](docs/11-screen-inventory.md) | 화면 인벤토리 SSOT (웹 62·모바일 24) |
+| [docs/11-screen-inventory.md](docs/11-screen-inventory.md) | 화면 인벤토리 SSOT (웹 67·모바일 29) |
 | [docs/12-api-index.md](docs/12-api-index.md) | API 엔드포인트 인덱스 |
 | [docs/13-rls-policy.md](docs/13-rls-policy.md) | RLS 정책 상세 매트릭스 |
 | [docs/14-accessibility-checklist.md](docs/14-accessibility-checklist.md) | 접근성 체크리스트 (WCAG 2.1) |
 | [docs/15-migration-order.md](docs/15-migration-order.md) | DB 마이그레이션 순서 |
+| [docs/16-privacy-data-governance.md](docs/16-privacy-data-governance.md) | 개인정보·데이터 거버넌스 (PIPA 동의·보관·파기·주체권리) |
+| [docs/17-test-strategy.md](docs/17-test-strategy.md) | 테스트 전략 SSOT (피라미드·커버리지·E2E·CI 게이트) |
+| [docs/18-error-handling-api-conventions.md](docs/18-error-handling-api-conventions.md) | 에러 처리·공통 API 규약 |
 | [docs/structure.md](docs/structure.md) | 폴더 구조·네이밍 컨벤션 |
 
 ## 기술 스택 (요약)
@@ -76,7 +79,7 @@ ondol/
 ├── apps/
 │   ├── web/         # Next.js (App Router) — 예정
 │   └── mobile/      # React Native (Expo) — 예정
-├── docs/            # 설계 문서 01~10
+├── docs/            # 설계 문서 01~18 + structure.md
 ├── wireframes/      # SVG 와이어프레임 (web/ · mobile/) + index.html
 ├── scripts/         # 유틸리티 (GitHub WBS 임포트 등)
 └── .claude/         # 개발 하네스 (에이전트·스킬)
@@ -92,11 +95,11 @@ open wireframes/index.html      # macOS
 start wireframes/index.html     # Windows
 ```
 
-구현 착수 시 `docs/10-tech-stack.md`의 셋업 순서와 `docs/08-wbs.md` Phase 0(프로젝트 셋업)을 따른다.
+구현 착수 시 `docs/10-tech-stack.md`의 셋업 순서와 `docs/08-wbs-v1.1.md` Phase 0(프로젝트 셋업)을 따른다.
 
 ## 개발 로드맵
 
-WBS 기준 20개 Phase(셋업 → DB/RLS → 인증 → 권한 → 기록 → … → 배포). MVP(P0)는 약 280 person-day, 5명 12주 추정. 담당자 배정·일정은 [docs/08-wbs.md](docs/08-wbs.md)와 [docs/09-wbs-github.md](docs/09-wbs-github.md) 참조.
+WBS 기준 20개 Phase(셋업 → DB/RLS → 인증 → 권한 → 기록 → … → 배포). MVP(P0)는 약 280 person-day, 5명 12주 추정. 담당자 배정·일정은 [docs/08-wbs-v1.1.md](docs/08-wbs-v1.1.md)와 [docs/09-wbs-github.md](docs/09-wbs-github.md) 참조.
 
 ## 개발 하네스
 

@@ -19,7 +19,7 @@ ondol/
 ├── supabase/           # 마이그레이션·RLS 정책·Edge Functions (또는 bkend 설정)
 │   ├── migrations/     # 15-migration-order.md 순서대로
 │   └── functions/      # Edge Functions (알림·cron·트리거)
-├── docs/               # 설계 문서 01~15
+├── docs/               # 설계 문서 01~18 + structure.md
 ├── wireframes/         # SVG 와이어프레임 + index.html
 ├── scripts/            # 유틸리티 (WBS GitHub 임포트 등)
 ├── .claude/            # 개발 하네스 (에이전트·스킬)
